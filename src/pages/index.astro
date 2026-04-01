@@ -3,10 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/UI/Header.astro';
 import Hero from '../components/UI/Hero.astro';
 import Footer from '../components/UI/Footer.astro';
-import Dass21 from '../components/Tests/Dass21';
 ---
 
-<Layout title="Αρχική | Ιατρική Ακριβείας & Νευροτροποποίηση">
+<Layout title="Αρχική | Dr. Πασχάλης Γκίκας">
   <Header />
   <main>
     <Hero />
@@ -15,8 +14,8 @@ import Dass21 from '../components/Tests/Dass21';
     <section id="pathologies" class="py-24 bg-white relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-          <span class="text-blue-700 font-bold tracking-wider text-sm uppercase">Smart CNS Center Matrix</span>
-          <h2 class="text-4xl font-bold text-slate-900 mt-2 mb-6">Πλαίσιο Παθήσεων & Γραμμές Θεραπείας</h2>
+          <span class="text-blue-700 font-bold tracking-wider text-sm uppercase">Ιατρικο Πλαισιο</span>
+          <h2 class="text-4xl font-bold text-slate-900 mt-2 mb-6">Παθήσεις & Γραμμές Θεραπείας</h2>
           <p class="text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto">
             Δεν αντιμετωπίζουμε απλώς "συμπτώματα". Αναλύουμε το νευρωνικό σας δίκτυο και προσφέρουμε εξατομικευμένες επιστημονικές λύσεις βάσει των αυστηρών πρωτοκόλλων (APA, FDA).
           </p>
@@ -74,30 +73,27 @@ import Dass21 from '../components/Tests/Dass21';
       </div>
     </section>
 
+    <!-- Psychometrics Replaced Link -->
     <section id="tests" class="py-24 bg-slate-50 border-t border-slate-200">
-      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="mb-10">
           <span class="text-blue-700 font-semibold tracking-wider text-sm uppercase">Interactive Tool</span>
-          <h2 class="text-4xl font-bold text-slate-900 mt-2 mb-6">Ψυχομετρικά Web-Tests</h2>
+          <h2 class="text-4xl font-bold text-slate-900 mt-2 mb-6">Ψυχομετρικά Εργαλεία</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            Συμπληρώστε το τεστ DASS-21 για μια γρήγορη αξιολόγηση των επιπέδων Κατάθλιψης, Άγχους και Στρες. 
-            <strong>Τα δεδομένα σας υφίστανται επεξεργασία 100% τοπικά στη συσκευή σας και ΔΕΝ αποθηκεύονται πουθενά.</strong>
+            Η ακριβής διάγνωση απαιτεί σύγχρονα, σταθμισμένα εργαλεία μέτρησης.
           </p>
         </div>
         
-        <!-- React Component Hydration -->
-        <div class="shadow-2xl shadow-blue-900/10 rounded-2xl bg-white border border-blue-100">
-          <Dass21 client:load />
-        </div>
+        <a href="/ypiresies/psychometrika-test" class="btn-primary">Μετάβαση στα Ψυχομετρικά Εργαλεία</a>
       </div>
     </section>
 
     <!-- Knowledge Base Placeholder -->
     <section class="py-24 bg-slate-900 text-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl font-bold mb-4">Βιβλιοθήκη & Οδηγοί</h2>
+        <h2 class="text-3xl font-bold mb-4">Άρθρα & Οδηγοί</h2>
         <p class="text-blue-200 mb-8 max-w-2xl mx-auto">
-          Σύντομα θα προστεθεί το υλικό μας με δωρεάν PDF οδηγούς αλλά και E-books για βαθύτερη κατανόηση της Νευροτροποποίησης.
+          Σύντομα θα προστεθεί το επιστημονικό μας υλικό (Blog).
         </p>
         <button class="btn-primary bg-blue-600 hover:bg-blue-500 border-white/20 opacity-90 cursor-not-allowed">Επερχόμενη Προσθήκη (Library)</button>
       </div>
