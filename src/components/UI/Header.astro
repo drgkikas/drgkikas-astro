@@ -13,11 +13,60 @@
       </div>
 
       <!-- Desktop Nav -->
-      <nav class="hidden md:flex space-x-6 lg:space-x-8">
+      <nav class="hidden md:flex space-x-6 lg:space-x-8 items-center">
         <a href="/" class="text-slate-600 hover:text-blue-700 font-medium transition-colors">Αρχική</a>
-        <a href="/iatros" class="text-slate-600 hover:text-blue-700 font-medium transition-colors">Ιατρός</a>
-        <a href="/ypiresies" class="text-slate-600 hover:text-blue-700 font-medium transition-colors">Υπηρεσίες</a>
-        <a href="/diataraxes" class="text-slate-600 hover:text-blue-700 font-medium transition-colors">Διαταραχές</a>
+        
+        <!-- Ιατρός Dropdown -->
+        <div class="relative group py-6">
+          <a href="/iatros" class="text-slate-600 group-hover:text-blue-700 font-medium transition-colors flex items-center gap-1">
+            Ιατρός
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </a>
+          <div class="absolute top-full left-0 w-64 bg-white shadow-xl rounded-xl border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-left -translate-y-2 group-hover:translate-y-0 p-2 z-50">
+            <a href="/iatros#cv" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">Βιογραφικό (CV)</a>
+            <a href="/iatros#education" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">Εκπαίδευση & Πιστοποιήσεις</a>
+            <a href="/iatros#media" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">Συνεργασίες & Media</a>
+          </div>
+        </div>
+
+        <!-- Υπηρεσίες Dropdown -->
+        <div class="relative group py-6">
+          <a href="/ypiresies" class="text-slate-600 group-hover:text-blue-700 font-medium transition-colors flex items-center gap-1">
+            Υπηρεσίες
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </a>
+          <div class="absolute top-full left-0 w-64 bg-white shadow-xl rounded-xl border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-left -translate-y-2 group-hover:translate-y-0 p-2 z-50">
+            <a href="/ypiresies/psychiatriki-parakolouthisi" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">Ψυχιατρική Παρακολούθηση</a>
+            <a href="/ypiresies/psychotherapeia" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">Ψυχοθεραπεία</a>
+            <a href="/ypiresies/pgx" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">Φαρμακογονιδιωματική (PGx)</a>
+            <a href="/ypiresies/online-synedria" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">Online Συνεδρία</a>
+            <a href="/ypiresies/gnomateyseis" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">Γνωματεύσεις / Πιστοποιητικά</a>
+            <a href="/ypiresies/psychometrika-test" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">Ψυχομετρικά Τεστ</a>
+          </div>
+        </div>
+
+        <!-- Διαταραχές Dropdown -->
+        <div class="relative group py-6">
+          <a href="/diataraxes" class="text-slate-600 group-hover:text-blue-700 font-medium transition-colors flex items-center gap-1">
+            Διαταραχές
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </a>
+          <div class="absolute top-full left-0 w-72 bg-white shadow-xl rounded-xl border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-left -translate-y-2 group-hover:translate-y-0 p-2 z-50 max-h-[70vh] overflow-y-auto">
+            <a href="/diataraxes/katathlipsi" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">Κατάθλιψη</a>
+            <a href="/diataraxes/dipoliki-diatarachi" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">Διπολική Διαταραχή</a>
+            <a href="/diataraxes/agxodeis-diataraxes" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">Αγχώδεις Διαταραχές</a>
+            <a href="/diataraxes/ideopsychanagkastiki-diatarachi" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">Ιδεοψυχαναγκαστική Διαταραχή (OCD)</a>
+            <a href="/diataraxes/diataraxes-ypnou" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">Διαταραχές Ύπνου</a>
+            <a href="/diataraxes/psychotikes-diataraxes" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">Ψυχωτικές Διαταραχές</a>
+            <a href="/diataraxes/diatarachi-xrisis-kokainis" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">Χρήση Κοκαΐνης</a>
+            <a href="/diataraxes/diatarachi-xrisis-alkool" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">Χρήση Αλκοόλ</a>
+            <a href="/diataraxes/anoies-diataraxes-mnimis" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">Άνοιες & Διαταραχές Μνήμης</a>
+            <a href="/diataraxes/diataraxes-proslipsis-trofis" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">Διαταραχές Πρόσληψης Τροφής</a>
+            <a href="/diataraxes/pmdd" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">PMDD</a>
+            <a href="/diataraxes/psychosomatikes-ekdiloseis" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">Ψυχοσωματικές Εκδηλώσεις</a>
+          </div>
+        </div>
+
         <a href="/rtms" class="text-slate-600 hover:text-blue-700 font-medium transition-colors">rTMS</a>
         <a href="/arthra-blog" class="text-slate-600 hover:text-blue-700 font-medium transition-colors">Άρθρα - Blog</a>
       </nav>
