@@ -27,6 +27,11 @@ const rtms = defineCollection({
   schema: pageSchema,
 });
 
+const farmakogonidiomatiki = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/farmakogonidiomatiki" }),
+  schema: pageSchema,
+});
+
 const blog = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/blog" }),
   schema: z.object({
@@ -42,5 +47,6 @@ export const collections = {
   services,
   disorders,
   rtms,
+  farmakogonidiomatiki,
   blog
 };
