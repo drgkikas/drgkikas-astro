@@ -6,12 +6,10 @@ import Footer from '../../components/UI/Footer.astro';
 
 export async function getStaticPaths() {
   const rtms = await getCollection('rtms');
-  return rtms
-    .filter(entry => entry.id !== 'core/ti-einai') // ti-einai is handled by index.astro
-    .map(entry => ({
-      params: { slug: entry.id },
-      props: { entry, allPages: rtms },
-    }));
+  return rtms.map(entry => ({
+    params: { slug: entry.id },
+    props: { entry, allPages: rtms },
+  }));
 }
 
 const { entry, allPages } = Astro.props;
@@ -63,11 +61,10 @@ const categoryNames = {
                     <ul class="space-y-2">
                       {pages.map(p => {
                         const isActive = entry.id === p.id;
-                        const url = p.id === 'core/ti-einai' ? '/rtms' : `/rtms/${p.id}`;
                         return (
                           <li>
                             <a 
-                              href={url} 
+                              href={`/rtms/${p.id}`} 
                               class={`block text-sm transition-all py-1.5 px-3 rounded-lg ${isActive ? 'bg-red-50 text-red-700 font-semibold' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'}`}
                             >
                               {p.data.title}
