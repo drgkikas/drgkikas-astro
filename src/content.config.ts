@@ -1,14 +1,30 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
+// Κοινό schema για σελίδες υπηρεσιών, διαταραχών και rTMS
+const pageSchema = z.object({
+  title: z.string(),
+  description: z.string(),
+  icon: z.string().optional(),
+  heroImage: z.string().optional(),
+  order: z.number().default(99),
+  draft: z.boolean().default(false),
+  seoTitle: z.string().optional()
+});
+
 const services = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/services" }),
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    icon: z.string().optional(),
-    order: z.number().default(0),
-  }),
+  schema: pageSchema,
+});
+
+const disorders = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/disorders" }),
+  schema: pageSchema,
+});
+
+const rtms = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/rtms" }),
+  schema: pageSchema,
 });
 
 const blog = defineCollection({
@@ -16,19 +32,15 @@ const blog = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    date: z.date(),
+    pubDate: z.date(),
     author: z.string().default('Dr. Πασχάλης Γκίκας'),
     image: z.string().optional(),
   }),
 });
 
-const faq = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/faq" }),
-  schema: z.object({
-    question: z.string(),
-    category: z.enum(['rTMS', 'tDCS', 'PGx', 'General']),
-    order: z.number().default(0),
-  }),
-});
-
-export const collections = { services, blog, faq };
+export const collections = {
+  services,
+  disorders,
+  rtms,
+  blog
+};
