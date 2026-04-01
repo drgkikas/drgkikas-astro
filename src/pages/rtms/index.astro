@@ -11,13 +11,17 @@ const rtmsPages = await getCollection('rtms');
   <Header />
   <main class="py-24 bg-slate-50 min-h-screen">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
-      <h1 class="text-4xl font-bold text-slate-900 mb-4">Top Pillar: rTMS</h1>
-      <p class="text-lg text-slate-600 mb-12">Δεν ανταποκρίνεστε στα φάρμακα; Υπάρχει επόμενο βήμα.</p>
+      <div class="bg-red-50 p-10 rounded-3xl border border-red-100 mb-16 text-center">
+        <h1 class="text-5xl font-bold text-slate-900 mb-6">Νευροτροποποίηση rTMS</h1>
+        <p class="text-xl text-slate-700 max-w-3xl mx-auto">Δεν ανταποκρίνεστε στα φάρμακα; Υπάρχει επόμενο βήμα. Μια σύγχρονη, ανώδυνη θεραπεία εγκεκριμένη από τον FDA.</p>
+      </div>
+      
+      <h2 class="text-2xl font-bold text-slate-900 mb-8 border-b pb-4">Όλα τα θέματα για το rTMS</h2>
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {rtmsPages.map(page => (
           <a href={`/rtms/${page.id}`} class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md hover:border-red-400 transition-all group block">
-            <h2 class="text-lg font-bold text-red-800 mb-3 group-hover:text-red-600">{page.data.title} &rarr;</h2>
+            <h3 class="text-lg font-bold text-red-800 mb-3 group-hover:text-red-600">{page.data.title} &rarr;</h3>
             <p class="text-sm text-slate-500 line-clamp-2">{page.data.description}</p>
           </a>
         ))}
