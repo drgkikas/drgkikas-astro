@@ -6,38 +6,100 @@ import Footer from '../components/UI/Footer.astro';
 import Dass21 from '../components/Tests/Dass21';
 ---
 
-<Layout title="Αρχική">
+<Layout title="Αρχική | Ιατρική Ακριβείας & Νευροτροποποίηση">
   <Header />
   <main>
     <Hero />
     
-    <section id="tests" class="py-24 bg-white relative">
-      <div class="absolute inset-0 bg-gradient-to-b from-slate-50 to-white -z-10 h-32"></div>
+    <!-- Medical Matrix Section -->
+    <section id="pathologies" class="py-24 bg-white relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <span class="text-blue-700 font-bold tracking-wider text-sm uppercase">Smart CNS Center Matrix</span>
+          <h2 class="text-4xl font-bold text-slate-900 mt-2 mb-6">Πλαίσιο Παθήσεων & Γραμμές Θεραπείας</h2>
+          <p class="text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto">
+            Δεν αντιμετωπίζουμε απλώς "συμπτώματα". Αναλύουμε το νευρωνικό σας δίκτυο και προσφέρουμε εξατομικευμένες επιστημονικές λύσεις βάσει των αυστηρών πρωτοκόλλων (APA, FDA).
+          </p>
+        </div>
+
+        <div class="overflow-hidden rounded-2xl shadow-xl border border-slate-200 bg-white">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="bg-slate-900 text-white">
+                <th class="py-5 px-6 font-semibold w-1/4">Κλινική Οντότητα</th>
+                <th class="py-5 px-6 font-semibold w-1/3">1st Line Treatment</th>
+                <th class="py-5 px-6 font-semibold w-full">Advanced Modulation (TRD)</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <tr class="hover:bg-blue-50/50 transition-colors">
+                <td class="py-6 px-6 align-top">
+                  <a href="/diataraxes/katathlipsi" class="text-lg font-bold text-blue-900 hover:text-blue-700">Κατάθλιψη (MDD) &rarr;</a>
+                </td>
+                <td class="py-6 px-6 align-top">
+                  <p class="text-slate-700 text-sm mb-2"><strong class="text-slate-900">Διάγνωση & PGx:</strong> Εύρεση γενετικού προφίλ για κατάλληλο SSRI/SNRI.</p>
+                  <a href="/ypiresies/farmakogonidiomatiki" class="text-xs font-semibold text-blue-600 uppercase tracking-wide">PGx DNA Test</a>
+                </td>
+                <td class="py-6 px-6 align-top">
+                  <p class="text-slate-700 text-sm mb-2"><strong class="text-red-700">rTMS (FDA Approved):</strong> Στόχευση του Αριστερού Ραχιοπλάγιου Προμετωπιαίου Φλοιού. Υψηλά ποσοστά πλήρους ύφεσης.</p>
+                  <a href="/rtms/ti-einai-rtms" class="text-xs font-semibold text-red-600 uppercase tracking-wide hover:underline">Ενδειξη rTMS</a>
+                </td>
+              </tr>
+              <tr class="hover:bg-blue-50/50 transition-colors">
+                <td class="py-6 px-6 align-top">
+                  <span class="text-lg font-bold text-slate-800">OCD / Ιδεοψυχαναγκαστική</span>
+                </td>
+                <td class="py-6 px-6 align-top">
+                  <p class="text-slate-700 text-sm mb-2"><strong class="text-slate-900">Psychotherapy:</strong> Εντατικό CBT (ERP) σε συνδυασμό με στοχευμένη φαρμακολογία.</p>
+                </td>
+                <td class="py-6 px-6 align-top">
+                  <p class="text-slate-700 text-sm mb-2"><strong class="text-red-700">Deep rTMS:</strong> Διέγερση βαθύτερων δομών (πρόσθιος φλοιός προσαγωγίου). Εγκεκριμένο πρωτόκολλο H-Coil.</p>
+                  <a href="/rtms/ti-einai-rtms" class="text-xs font-semibold text-red-600 uppercase tracking-wide hover:underline">Ενδειξη rTMS</a>
+                </td>
+              </tr>
+              <tr class="hover:bg-blue-50/50 transition-colors">
+                <td class="py-6 px-6 align-top">
+                  <span class="text-lg font-bold text-slate-800">Εθισμοί & Εξαρτήσεις</span>
+                </td>
+                <td class="py-6 px-6 align-top">
+                  <p class="text-slate-700 text-sm mb-2"><strong class="text-slate-900">Ψυχιατρική Παρακολούθηση:</strong> Απεξάρτηση και στενή παρακολούθηση υποτροπών.</p>
+                </td>
+                <td class="py-6 px-6 align-top">
+                  <p class="text-slate-700 text-sm mb-2"><strong class="text-red-700">Modulation:</strong> Εξειδικευμένο rTMS για Διακοπή Καπνίσματος (FDA 2020) και Έρευνα Κοκαΐνης.</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="tests" class="py-24 bg-slate-50 border-t border-slate-200">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-          <span class="text-teal-600 font-semibold tracking-wider text-sm uppercase">Interactive Tool</span>
+          <span class="text-blue-700 font-semibold tracking-wider text-sm uppercase">Interactive Tool</span>
           <h2 class="text-4xl font-bold text-slate-900 mt-2 mb-6">Ψυχομετρικά Web-Tests</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
             Συμπληρώστε το τεστ DASS-21 για μια γρήγορη αξιολόγηση των επιπέδων Κατάθλιψης, Άγχους και Στρες. 
-            <strong>Τα δεδομένα σας υφίστανται επεξεργασία 100% τοπικά στη συσκευή σας και ΔΕΝ αποθηκεύονται πουθενά (Zero-Data Retention).</strong>
+            <strong>Τα δεδομένα σας υφίστανται επεξεργασία 100% τοπικά στη συσκευή σας και ΔΕΝ αποθηκεύονται πουθενά.</strong>
           </p>
         </div>
         
         <!-- React Component Hydration -->
-        <div class="shadow-2xl shadow-slate-200/50 rounded-2xl">
+        <div class="shadow-2xl shadow-blue-900/10 rounded-2xl bg-white border border-blue-100">
           <Dass21 client:load />
         </div>
       </div>
     </section>
 
-    <!-- Library/Resources Placeholder -->
-    <section class="py-24 bg-slate-50 border-t border-slate-200">
+    <!-- Knowledge Base Placeholder -->
+    <section class="py-24 bg-slate-900 text-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl font-bold text-slate-900 mb-4">Βιβλιοθήκη & Οδηγοί</h2>
-        <p class="text-slate-600 mb-8 max-w-2xl mx-auto">
+        <h2 class="text-3xl font-bold mb-4">Βιβλιοθήκη & Οδηγοί</h2>
+        <p class="text-blue-200 mb-8 max-w-2xl mx-auto">
           Σύντομα θα προστεθεί το υλικό μας με δωρεάν PDF οδηγούς αλλά και E-books για βαθύτερη κατανόηση της Νευροτροποποίησης.
         </p>
-        <button class="btn-secondary opacity-50 cursor-not-allowed">Επερχόμενη Προσθήκη (Stripe)</button>
+        <button class="btn-primary bg-blue-600 hover:bg-blue-500 border-white/20 opacity-90 cursor-not-allowed">Επερχόμενη Προσθήκη (Library)</button>
       </div>
     </section>
   </main>
