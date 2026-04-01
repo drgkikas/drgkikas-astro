@@ -10,7 +10,5 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-
-  adapter: cloudflare(),
   integrations: [react()]
 });
