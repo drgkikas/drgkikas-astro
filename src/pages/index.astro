@@ -1,103 +1,286 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/UI/Header.astro';
-import Hero from '../components/UI/Hero.astro';
 import Footer from '../components/UI/Footer.astro';
 ---
 
-<Layout title="Αρχική | Dr. Πασχάλης Γκίκας">
+<Layout 
+  title="Δρ. Πασχάλης Γκίκας | Ψυχίατρος Αθήνα | rTMS & Φαρμακογονιδιωματική (PGx)" 
+  description="Εξειδικευμένη ψυχιατρική φροντίδα στο κέντρο της Αθήνας. Κλινική αξιολόγηση, Διακρανιακός Μαγνητικός Ερεθισμός (rTMS) και Φαρμακογονιδιωματική (PGx)."
+>
   <Header />
+
   <main>
-    <Hero />
-    
-    <!-- Medical Matrix Section -->
-    <section id="pathologies" class="py-24 bg-white relative">
+    <!-- 1. HERO SECTION -->
+    <section class="relative bg-slate-50 pt-36 pb-32 overflow-hidden border-b border-slate-200">
+      <!-- Background subtle elements -->
+      <div class="absolute inset-y-0 right-0 w-1/2 bg-blue-900 rounded-l-full transform translate-x-1/3 -z-10 opacity-5"></div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="lg:w-3/4 mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6 tracking-tight">
+            Σύγχρονη Ψυχιατρική Φροντίδα <br class="hidden md:block"/>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-sky-600">
+              με Επίκεντρο την Ακρίβεια.
+            </span>
+          </h1>
+          <p class="text-xl md:text-2xl text-slate-600 mb-10 leading-relaxed max-w-3xl mx-auto">
+            Συνδυάζουμε την ενδελεχή κλινική αξιολόγηση με τεχνολογίες Νευροτροποποίησης (rTMS) και Φαρμακογονιδιωματικής. Προσεγγίζουμε κάθε ασθενή αυστηρά εξατομικευμένα, με στόχο την ασφαλή και αποτελεσματική θεραπευτική διαχείριση.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/epikoinonia" class="btn-primary text-lg px-8 py-3.5 shadow-lg shadow-blue-500/20">Κλείστε Ραντεβού</a>
+            <a href="/rtms" class="btn-secondary text-lg px-8 py-3.5 bg-white border border-slate-300 hover:bg-slate-50">Μάθετε για το rTMS</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. ΔΙΑΦΟΡΟΠΟΙΗΣΗ / PRECISION PSYCHIATRY -->
+    <section class="py-20 bg-white">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <span class="text-blue-600 font-bold tracking-widest text-sm uppercase mb-3 block">Τι μας ξεχωριζει</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Ιατρική Ακρίβειας στην Ψυχική Υγεία</h2>
+        <p class="text-lg text-slate-600 leading-relaxed">
+          Κάθε ασθενής ανταποκρίνεται διαφορετικά στις θεραπευτικές προσεγγίσεις. Η κλασική κλινική αξιολόγηση παραμένει ο ακρογωνιαίος λίθος της φροντίδας μας, όμως πλέον ενισχύεται από δεδομένα υψηλής επιστημονικής εγκυρότητας. Μέσω της Φαρμακογονιδιωματικής και του rTMS, αποφεύγουμε τις άσκοπες δοκιμές φαρμάκων και σχεδιάζουμε ένα θεραπευτικό πλάνο που προσαρμόζεται στο δικό σας βιολογικό και γενετικό προφίλ, ενισχύοντας την πιθανότητα ταχύτερης κλινικής βελτίωσης.
+        </p>
+      </div>
+    </section>
+
+    <!-- 3. ΥΠΗΡΕΣΙΕΣ / ΠΥΛΩΝΕΣ -->
+    <section class="py-24 bg-slate-50 border-t border-slate-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <!-- rTMS -->
+          <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-lg transition-shadow duration-300 relative overflow-hidden group">
+            <div class="absolute top-0 left-0 w-full h-1 bg-red-600 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+            <div class="w-14 h-14 bg-red-50 text-red-600 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-slate-900">Διακρανιακός Μαγνητικός Ερεθισμός (rTMS)</h3>
+            <p class="text-slate-600 mb-6 text-sm leading-relaxed">
+              Μια μη επεμβατική, καλά ανεκτή θεραπευτική επιλογή που αξιοποιεί μαγνητικά πεδία για την στοχευμένη διέγερση νευρικών κυκλωμάτων του εγκεφάλου. Ενδείκνυται διεθνώς για την ανθεκτική κατάθλιψη και επιλεγμένες αγχώδεις διαταραχές.
+            </p>
+            <div class="mt-auto pt-4 border-t border-slate-100">
+              <span class="text-slate-800 font-semibold text-sm">✓ Σύγχρονη εναλλακτική, χωρίς συστηματικές παρενέργειες.</span>
+            </div>
+          </div>
+
+          <!-- PGx -->
+          <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-lg transition-shadow duration-300 relative overflow-hidden group">
+            <div class="absolute top-0 left-0 w-full h-1 bg-sky-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+            <div class="w-14 h-14 bg-sky-50 text-sky-600 rounded-xl flex items-center justify-center mb-6">
+               <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-slate-900">Φαρμακογονιδιωματική (PGx)</h3>
+            <p class="text-slate-600 mb-6 text-sm leading-relaxed">
+              Εξειδικευμένη ανάλυση DNA που εξετάζει τον τρόπο με τον οποίο ο οργανισμός σας μεταβολίζει τις φαρμακευτικές ουσίες. Μας βοηθά στη λήψη πιο στοχευμένων αποφάσεων για την επιλογή και τη δοσολογία της αγωγής.
+            </p>
+            <div class="mt-auto pt-4 border-t border-slate-100">
+              <span class="text-slate-800 font-semibold text-sm">✓ Πληροφορίες που στοχεύουν στη μείωση του χρόνου αναμονής.</span>
+            </div>
+          </div>
+
+          <!-- Clinical Psych -->
+          <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-lg transition-shadow duration-300 relative overflow-hidden group">
+            <div class="absolute top-0 left-0 w-full h-1 bg-blue-700 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+            <div class="w-14 h-14 bg-blue-50 text-blue-700 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-slate-900">Κλινική Ψυχιατρική & Ψυχομετρία</h3>
+            <p class="text-slate-600 mb-6 text-sm leading-relaxed">
+              Η ολοκληρωμένη διάγνωση προηγείται κάθε θεραπείας. Παρέχουμε αναλυτική ψυχιατρική παρακολούθηση, φαρμακοθεραπεία, ψυχοθεραπευτική υποστήριξη και εξειδικευμένα ψυχομετρικά τεστ.
+            </p>
+            <div class="mt-auto pt-4 border-t border-slate-100">
+              <span class="text-slate-800 font-semibold text-sm">✓ Η βάση για ένα έγκυρο θεραπευτικό πλάνο.</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. ΠΟΤΕ ΕΧΕΙ ΝΟΗΜΑ 5. ΠΕΡΙΟΧΕΣ -->
+    <section class="py-24 bg-white relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          
+          <div>
+            <span class="text-blue-600 font-bold tracking-widest text-sm uppercase mb-3 block">Ποτε να ζητησετε βοηθεια</span>
+            <h2 class="text-3xl font-bold text-slate-900 mb-6">Αναζητώντας την κατάλληλη Φροντίδα</h2>
+            <p class="text-slate-600 mb-8 leading-relaxed">
+              Η αναζήτηση ψυχιατρικής φροντίδας είναι ένα σημαντικό βήμα. Η προσέγγισή μας μπορεί να σας ωφελήσει ιδιαίτερα εάν:
+            </p>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100">
+                <div class="w-6 h-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center shrink-0 mt-0.5">✓</div>
+                <span class="text-slate-700 text-sm font-medium">Αισθάνεστε ότι τα συμπτώματα της κατάθλιψης ή του άγχους επιμένουν, παρά τις προηγούμενες προσπάθειες.</span>
+              </li>
+              <li class="flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100">
+                <div class="w-6 h-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center shrink-0 mt-0.5">✓</div>
+                <span class="text-slate-700 text-sm font-medium">Λαμβάνετε αγωγή η οποία δεν σας έχει καλύψει επαρκώς ή σας προκαλεί σοβαρές παρενέργειες.</span>
+              </li>
+              <li class="flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100">
+                <div class="w-6 h-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center shrink-0 mt-0.5">✓</div>
+                <span class="text-slate-700 text-sm font-medium">Αναζητάτε μια θεραπευτική λύση συμπληρωματική της φαρμακοθεραπείας (όπως το rTMS).</span>
+              </li>
+              <li class="flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100">
+                <div class="w-6 h-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center shrink-0 mt-0.5">✓</div>
+                <span class="text-slate-700 text-sm font-medium">Αντιμετωπίζετε σύνθετες διαταραχές που απαιτούν πολυδιάστατη παρακολούθηση.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-slate-900 text-white p-10 lg:p-12 rounded-[2rem] shadow-2xl relative overflow-hidden">
+            <div class="absolute -top-24 -right-24 w-64 h-64 bg-blue-800 rounded-full blur-3xl opacity-30"></div>
+            <h3 class="text-2xl font-bold mb-8">Περιοχές Κλινικής Εστίασης</h3>
+            <p class="text-slate-300 mb-8 font-light leading-relaxed">
+              Η κλινική μας εστιάζει στην ενδελεχή διάγνωση και διαχείριση περιστατικών που αφορούν:
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
+              <a href="/diataraxes/katathlipsi" class="flex items-center gap-3 text-blue-200 hover:text-white transition-colors py-2 border-b border-slate-800">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                Κατάθλιψη (TRD)
+              </a>
+              <a href="/diataraxes/agxodeis-diataraxes" class="flex items-center gap-3 text-blue-200 hover:text-white transition-colors py-2 border-b border-slate-800">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                Αγχώδεις Διαταραχές
+              </a>
+              <a href="/diataraxes/ideopsychanagkastiki-diatarachi" class="flex items-center gap-3 text-blue-200 hover:text-white transition-colors py-2 border-b border-slate-800">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                OCD (Ιδεοψυχαναγκαστική)
+              </a>
+              <a href="/diataraxes/dipoliki-diatarachi" class="flex items-center gap-3 text-blue-200 hover:text-white transition-colors py-2 border-b border-slate-800">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                Διπολική Διαταραχή
+              </a>
+              <a href="/diataraxes/diataraxes-ypnou" class="flex items-center gap-3 text-blue-200 hover:text-white transition-colors py-2 border-b border-slate-800">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                Διαταραχές Ύπνου
+              </a>
+              <a href="/diataraxes/diatarachi-xrisis-kokainis" class="flex items-center gap-3 text-blue-200 hover:text-white transition-colors py-2 border-b border-slate-800">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                Εξαρτήσεις / Ουσίες
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. ΠΩΣ ΞΕΚΙΝΑΜΕ -->
+    <section class="py-24 bg-slate-50 border-y border-slate-200 overflow-hidden relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-          <span class="text-blue-700 font-bold tracking-wider text-sm uppercase">Ιατρικο Πλαισιο</span>
-          <h2 class="text-4xl font-bold text-slate-900 mt-2 mb-6">Παθήσεις & Γραμμές Θεραπείας</h2>
-          <p class="text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto">
-            Δεν αντιμετωπίζουμε απλώς "συμπτώματα". Αναλύουμε το νευρωνικό σας δίκτυο και προσφέρουμε εξατομικευμένες επιστημονικές λύσεις βάσει των αυστηρών πρωτοκόλλων (APA, FDA).
-          </p>
+          <h2 class="text-3xl font-bold text-slate-900">Η Πορεία της Θεραπείας</h2>
         </div>
 
-        <div class="overflow-hidden rounded-2xl shadow-xl border border-slate-200 bg-white">
-          <table class="w-full text-left border-collapse">
-            <thead>
-              <tr class="bg-slate-900 text-white">
-                <th class="py-5 px-6 font-semibold w-1/4">Κλινική Οντότητα</th>
-                <th class="py-5 px-6 font-semibold w-1/3">1st Line Treatment</th>
-                <th class="py-5 px-6 font-semibold w-full">Advanced Modulation (TRD)</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-slate-100">
-              <tr class="hover:bg-blue-50/50 transition-colors">
-                <td class="py-6 px-6 align-top">
-                  <a href="/diataraxes/katathlipsi" class="text-lg font-bold text-blue-900 hover:text-blue-700">Κατάθλιψη (MDD) &rarr;</a>
-                </td>
-                <td class="py-6 px-6 align-top">
-                  <p class="text-slate-700 text-sm mb-2"><strong class="text-slate-900">Διάγνωση & PGx:</strong> Εύρεση γενετικού προφίλ για κατάλληλο SSRI/SNRI.</p>
-                  <a href="/ypiresies/farmakogonidiomatiki" class="text-xs font-semibold text-blue-600 uppercase tracking-wide">PGx DNA Test</a>
-                </td>
-                <td class="py-6 px-6 align-top">
-                  <p class="text-slate-700 text-sm mb-2"><strong class="text-red-700">rTMS (FDA Approved):</strong> Στόχευση του Αριστερού Ραχιοπλάγιου Προμετωπιαίου Φλοιού. Υψηλά ποσοστά πλήρους ύφεσης.</p>
-                  <a href="/rtms/ti-einai-rtms" class="text-xs font-semibold text-red-600 uppercase tracking-wide hover:underline">Ενδειξη rTMS</a>
-                </td>
-              </tr>
-              <tr class="hover:bg-blue-50/50 transition-colors">
-                <td class="py-6 px-6 align-top">
-                  <span class="text-lg font-bold text-slate-800">OCD / Ιδεοψυχαναγκαστική</span>
-                </td>
-                <td class="py-6 px-6 align-top">
-                  <p class="text-slate-700 text-sm mb-2"><strong class="text-slate-900">Psychotherapy:</strong> Εντατικό CBT (ERP) σε συνδυασμό με στοχευμένη φαρμακολογία.</p>
-                </td>
-                <td class="py-6 px-6 align-top">
-                  <p class="text-slate-700 text-sm mb-2"><strong class="text-red-700">Deep rTMS:</strong> Διέγερση βαθύτερων δομών (πρόσθιος φλοιός προσαγωγίου). Εγκεκριμένο πρωτόκολλο H-Coil.</p>
-                  <a href="/rtms/ti-einai-rtms" class="text-xs font-semibold text-red-600 uppercase tracking-wide hover:underline">Ενδειξη rTMS</a>
-                </td>
-              </tr>
-              <tr class="hover:bg-blue-50/50 transition-colors">
-                <td class="py-6 px-6 align-top">
-                  <span class="text-lg font-bold text-slate-800">Εθισμοί & Εξαρτήσεις</span>
-                </td>
-                <td class="py-6 px-6 align-top">
-                  <p class="text-slate-700 text-sm mb-2"><strong class="text-slate-900">Ψυχιατρική Παρακολούθηση:</strong> Απεξάρτηση και στενή παρακολούθηση υποτροπών.</p>
-                </td>
-                <td class="py-6 px-6 align-top">
-                  <p class="text-slate-700 text-sm mb-2"><strong class="text-red-700">Modulation:</strong> Εξειδικευμένο rTMS για Διακοπή Καπνίσματος (FDA 2020) και Έρευνα Κοκαΐνης.</p>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="relative max-w-5xl mx-auto">
+          <!-- Continuous connecting line -->
+          <div class="hidden md:block absolute top-[40px] left-[5%] right-[5%] h-1 bg-blue-100 z-0"></div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Step 1 -->
+            <div class="relative z-10 flex flex-col items-center text-center">
+              <div class="w-20 h-20 rounded-2xl bg-white border-2 border-blue-600 flex items-center justify-center text-blue-600 font-bold text-2xl shadow-lg mb-6">1</div>
+              <h4 class="text-lg font-bold text-slate-900 mb-3">Αρχική Αξιολόγηση</h4>
+              <p class="text-slate-600 text-sm leading-relaxed px-4">Συζητάμε διεξοδικά το ιατρικό ιστορικό, τα συμπτώματα και τις μέχρι τώρα θεραπείες σας σε ένα ασφαλές και ήρεμο περιβάλλον.</p>
+            </div>
+            
+            <!-- Step 2 -->
+             <div class="relative z-10 flex flex-col items-center text-center">
+              <div class="w-20 h-20 rounded-2xl bg-white border-2 border-slate-300 flex items-center justify-center text-slate-400 font-bold text-2xl shadow-sm mb-6">2</div>
+              <h4 class="text-lg font-bold text-slate-900 mb-3">Εξειδικευμένος Έλεγχος</h4>
+              <p class="text-slate-600 text-sm leading-relaxed px-4">Εφόσον κριθεί ωφέλιμο, εντάσσουμε ψυχομετρικά εργαλεία ή/και προχωράμε σε φαρμακογονιδιωματικό έλεγχο.</p>
+            </div>
+
+            <!-- Step 3 -->
+             <div class="relative z-10 flex flex-col items-center text-center">
+              <div class="w-20 h-20 rounded-2xl bg-white border-2 border-slate-300 flex items-center justify-center text-slate-400 font-bold text-2xl shadow-sm mb-6">3</div>
+              <h4 class="text-lg font-bold text-slate-900 mb-3">Σχεδιασμός Θεραπείας</h4>
+              <p class="text-slate-600 text-sm leading-relaxed px-4">Συνδιαμορφώνουμε ένα εξατομικευμένο πλάνο που μπορεί να περιλαμβάνει φαρμακοθεραπεία, rTMS ή συνδυασμό προσεγγίσεων.</p>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="relative z-10 flex flex-col items-center text-center">
+              <div class="w-20 h-20 rounded-2xl bg-white border-2 border-slate-300 flex items-center justify-center text-slate-400 font-bold text-2xl shadow-sm mb-6">4</div>
+              <h4 class="text-lg font-bold text-slate-900 mb-3">Παρακολούθηση</h4>
+              <p class="text-slate-600 text-sm leading-relaxed px-4">Αξιολογούμε την κλινική πορεία σε τακτά διαστήματα και αναπροσαρμόζουμε το πλάνο για τη βέλτιστη δυνατή ανταπόκριση.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Psychometrics Replaced Link -->
-    <section id="tests" class="py-24 bg-slate-50 border-t border-slate-200">
-      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div class="mb-10">
-          <span class="text-blue-700 font-semibold tracking-wider text-sm uppercase">Interactive Tool</span>
-          <h2 class="text-4xl font-bold text-slate-900 mt-2 mb-6">Ψυχομετρικά Εργαλεία</h2>
-          <p class="text-lg text-slate-600 leading-relaxed">
-            Η ακριβής διάγνωση απαιτεί σύγχρονα, σταθμισμένα εργαλεία μέτρησης.
-          </p>
+    <!-- 7. DOCTOR / TRUST -->
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row gap-16 items-center">
+          
+          <div class="w-full md:w-1/3 flex justify-center">
+            <!-- Doctor Placeholder -->
+            <div class="w-64 h-64 md:w-80 md:h-80 bg-slate-200 rounded-full border-8 border-slate-50 flex items-center justify-center shadow-2xl relative">
+              <span class="text-slate-400 font-medium">Φωτογραφία Ιατρού</span>
+              <div class="absolute -bottom-4 right-0 bg-blue-600 text-white px-4 py-2 rounded-lg font-bold shadow-lg transform rotate-[-5deg]">
+                Dr. Γκίκας
+              </div>
+            </div>
+          </div>
+
+          <div class="w-full md:w-2/3">
+            <h2 class="text-3xl font-bold text-slate-900 mb-6">Ιατρική Υπευθυνότητα & Εξειδίκευση</h2>
+            <p class="text-lg text-slate-600 leading-relaxed mb-10">
+              Ο <strong>Δρ. Πασχάλης Γκίκας</strong> είναι Ψυχίατρος – Ψυχοθεραπευτής και Ιατρικός Διευθυντής του Smart CNS Center στην Αθήνα. Με βασική αρχή τον αυστηρό σεβασμό στον ασθενή, συνδυάζει την εκτεταμένη κλινική εμπειρία σε νοσοκομειακές δομές και φορείς κοινοτικής ψυχιατρικής με τη διαρκή μετεκπαίδευση σε σύγχρονες τεχνολογίες νευροτροποποίησης, σε αναγνωρισμένα κέντρα του εξωτερικού.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="flex items-center gap-3 p-3 rounded-lg border border-slate-200 bg-slate-50">
+                <span class="text-xl">🎓</span>
+                <span class="text-sm font-semibold text-slate-800">Πιστοποίηση: Harvard University</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 rounded-lg border border-slate-200 bg-slate-50">
+                <span class="text-xl">🌐</span>
+                <span class="text-sm font-semibold text-slate-800">rTMS: Maastricht University Center</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 rounded-lg border border-slate-200 bg-slate-50">
+                <span class="text-xl">🏛️</span>
+                <span class="text-sm font-semibold text-slate-800">Μέλος APA & Hellenic-American PA</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 rounded-lg border border-slate-200 bg-slate-50">
+                <span class="text-xl">🏥</span>
+                <span class="text-sm font-semibold text-slate-800">Ιατρικός Διευθυντής Smart CNS</span>
+              </div>
+            </div>
+            
+            <div class="mt-8">
+              <a href="/iatros" class="text-blue-600 font-bold hover:text-blue-800 flex items-center gap-2">
+                Αναλυτικό Βιογραφικό
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </a>
+            </div>
+          </div>
+
         </div>
-        
-        <a href="/ypiresies/psychometrika-test" class="btn-primary">Μετάβαση στα Ψυχομετρικά Εργαλεία</a>
       </div>
     </section>
 
-    <!-- Knowledge Base Placeholder -->
-    <section class="py-24 bg-slate-900 text-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl font-bold mb-4">Άρθρα & Οδηγοί</h2>
-        <p class="text-blue-200 mb-8 max-w-2xl mx-auto">
-          Σύντομα θα προστεθεί το επιστημονικό μας υλικό (Blog).
+    <!-- 8. ΤΕΛΙΚΟ CTA -->
+    <section class="py-24 bg-blue-900 overflow-hidden relative text-center">
+      <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9IiNmZmZiZmYiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PC9zdmc+')]"></div>
+      <div class="max-w-3xl mx-auto px-4 relative z-10">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Προγραμματίστε τη Συνεδρία σας</h2>
+        <p class="text-xl text-blue-200 mb-10 leading-relaxed font-light">
+          Είτε αναζητάτε μια αρχική εκτίμηση είτε μια δεύτερη γνώμη για μια χρόνια κατάσταση, είμαστε εδώ για να συζητήσουμε τις κατάλληλες επιλογές για εσάς. Η επικοινωνία μας βασίζεται στην αμοιβαία εμπιστοσύνη και το ιατρικό απόρρητο.
         </p>
-        <button class="btn-primary bg-blue-600 hover:bg-blue-500 border-white/20 opacity-90 cursor-not-allowed">Επερχόμενη Προσθήκη (Library)</button>
+        <a href="/epikoinonia" class="inline-block bg-white text-blue-900 font-bold text-lg px-10 py-4 rounded-xl shadow-xl hover:bg-slate-100 hover:scale-105 transition-all duration-300">
+          Επικοινωνία & Ραντεβού
+        </a>
       </div>
     </section>
+
   </main>
+  
   <Footer />
 </Layout>
