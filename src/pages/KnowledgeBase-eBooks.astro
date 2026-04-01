@@ -1,0 +1,104 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/UI/Header.astro';
+import Footer from '../components/UI/Footer.astro';
+---
+
+<Layout 
+  title="eBooks & Knowledge Base | Dr. Πασχάλης Γκίκας"
+  description="Χρήσιμο βοηθητικό υλικό και ενημερωτικοί οδηγοί (eBooks) για διάφορες ψυχιατρικές παθήσεις. Επιστημονικά τεκμηριωμένη γνώση, προσβάσιμη σε όλους."
+>
+  <Header />
+
+  <main class="min-h-screen bg-slate-50 pt-32 pb-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Hero Section for eBooks -->
+      <div class="bg-white rounded-3xl p-10 md:p-16 shadow-sm border border-slate-200 mb-16 relative overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute -right-20 -top-20 w-64 h-64 bg-blue-50/50 rounded-full blur-3xl"></div>
+        <div class="absolute -left-20 -bottom-20 w-64 h-64 bg-sky-50/50 rounded-full blur-3xl"></div>
+        
+        <div class="relative z-10 max-w-3xl">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-widest border border-blue-200">
+              Βιβλιοθηκη / Ποροι
+            </span>
+          </div>
+          <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">
+            eBooks & Knowledge Base
+          </h1>
+          <p class="text-xl text-slate-600 leading-relaxed font-light mb-8">
+            Σε αυτή την ενότητα μπορείτε να βρείτε <strong class="text-slate-800 font-semibold">έγκυρο, βοηθητικό υλικό και ενημερωτικούς οδηγούς</strong> για διάφορες συναισθηματικές και ψυχικές παθήσεις. Η γνώση είναι το πρώτο βήμα για τη θεραπεία.
+          </p>
+        </div>
+      </div>
+
+      <!-- Categories / Coming Soon Grid -->
+      <div class="mb-12">
+        <h2 class="text-2xl font-bold text-slate-900 mb-2">Διαθέσιμο Υλικό</h2>
+        <p class="text-slate-600 mb-8">Επιλέξτε την κατηγορία που σας ενδιαφέρει για να διαβάσετε ή να κατεβάσετε τους διαθέσιμους οδηγούς.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Card 1 -->
+          <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-lg hover:border-blue-300 transition-all group flex flex-col h-full">
+            <div class="w-14 h-14 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center text-2xl mb-6 shadow-sm">🧠</div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-700 transition-colors">Οδηγός για την Κατάθλιψη</h3>
+            <p class="text-sm text-slate-600 mb-6 flex-grow leading-relaxed">
+              Ένας ολοκληρωμένος οδηγός για τα συμπτώματα, την αναγνώριση και τις σύγχρονες θεραπευτικές επιλογές (συμπεριλαμβανομένου του rTMS).
+            </p>
+            <div class="mt-auto">
+              <span class="inline-flex items-center text-sm font-semibold text-slate-400 bg-slate-50 px-3 py-1 rounded-lg border border-slate-100">
+                Προσεχώς...
+              </span>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-lg hover:border-blue-300 transition-all group flex flex-col h-full">
+            <div class="w-14 h-14 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center text-2xl mb-6 shadow-sm">🌿</div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-700 transition-colors">Διαχείριση Άγχους & Κρίσεων</h3>
+            <p class="text-sm text-slate-600 mb-6 flex-grow leading-relaxed">
+              Κατανοήστε το μηχανισμό του πανικού. Πρακτικές τεχνικές γείωσης και επιλογές Φαρμακοθεραπείας.
+            </p>
+            <div class="mt-auto">
+              <span class="inline-flex items-center text-sm font-semibold text-slate-400 bg-slate-50 px-3 py-1 rounded-lg border border-slate-100">
+                Προσεχώς...
+              </span>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-lg hover:border-blue-300 transition-all group flex flex-col h-full">
+            <div class="w-14 h-14 bg-rose-50 text-rose-600 rounded-xl flex items-center justify-center text-2xl mb-6 shadow-sm">🔍</div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-700 transition-colors">Κατανοώντας την OCD</h3>
+            <p class="text-sm text-slate-600 mb-6 flex-grow leading-relaxed">
+              Ιδεοληψίες και καταναγκασμοί: Πώς να σπάσετε τον κύκλο. Ενημέρωση για ειδικά θεραπευτικά σχήματα.
+            </p>
+            <div class="mt-auto">
+              <span class="inline-flex items-center text-sm font-semibold text-slate-400 bg-slate-50 px-3 py-1 rounded-lg border border-slate-100">
+                Προσεχώς...
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      
+      <!-- Newsletter / Notification Box -->
+      <div class="bg-gradient-to-r from-[#084a79] to-[#042840] rounded-3xl p-8 md:p-12 text-center text-white shadow-xl mt-20">
+        <h3 class="text-2xl md:text-3xl font-bold mb-4">Ενημερωθείτε για Νέο Υλικό</h3>
+        <p class="text-blue-100 max-w-2xl mx-auto mb-8 font-light">
+          Η ψηφιακή μας βιβλιοθήκη εμπλουτίζεται συνεχώς με νέους οδηγούς βασισμένους στα πιο πρόσφατα επιστημονικά δεδομένα.
+        </p>
+        <a href="/epikoinonia" class="inline-block bg-white text-[#084a79] font-bold px-8 py-3 rounded-xl hover:-translate-y-1 hover:shadow-lg transition-all">
+          Κλείστε Ραντεβού Ενημέρωσης
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
