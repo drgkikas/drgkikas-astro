@@ -30,8 +30,8 @@ collections:
       - {label: "Order", name: "order", widget: "number", default: 99}
       - {label: "Body", name: "body", widget: "markdown"}
 
-  - name: "rtms"
-    label: "rTMS Pillar"
+  - name: "rtms_core"
+    label: "rTMS - Βασικές Σελίδες"
     folder: "src/content/rtms"
     create: true
     slug: "{{slug}}"
@@ -41,15 +41,26 @@ collections:
       - {label: "Order", name: "order", widget: "number", default: 99}
       - {label: "Body", name: "body", widget: "markdown"}
 
-  - name: "farmakogonidiomatiki"
-    label: "Φαρμακογονιδιωματική (PGx)"
-    folder: "src/content/farmakogonidiomatiki"
+  - name: "rtms_endixeis"
+    label: "rTMS - Ενδείξεις"
+    folder: "src/content/rtms/endixeis"
     create: true
-    slug: "{{slug}}"
+    slug: "endixeis/{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Description", name: "description", widget: "text"}
-      - {label: "Order", name: "order", widget: "number", default: 99}
+      - {label: "Order", name: "order", widget: "number", default: 50}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "rtms_mechanisms"
+    label: "rTMS - Πώς Λειτουργεί (Μηχανισμοί)"
+    folder: "src/content/rtms/pos-leitourgei"
+    create: true
+    slug: "pos-leitourgei/{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Order", name: "order", widget: "number", default: 50}
       - {label: "Body", name: "body", widget: "markdown"}
 
   - name: "blog"
