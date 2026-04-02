@@ -25,9 +25,12 @@ const { Content } = await render(entry);
         <p class="text-xl text-slate-600 mb-12 pb-8 border-b border-slate-200 leading-relaxed">{entry.data.description}</p>
         
         <div class="prose prose-lg prose-blue max-w-none text-slate-700
-          prose-headings:text-blue-900 prose-headings:font-bold prose-h2:mt-12 prose-h2:mb-6
+          prose-p:mb-8 prose-p:leading-relaxed
+          prose-headings:text-blue-900 prose-headings:font-bold 
+          prose-h2:mt-16 prose-h2:mb-8 prose-h2:border-b prose-h2:border-slate-100 prose-h2:pb-4
+          prose-h3:mt-12 prose-h3:mb-6
           prose-a:text-blue-600 hover:prose-a:text-blue-800 transition-colors
-          prose-ul:my-6 prose-li:my-2">
+          prose-ul:my-8 prose-li:my-4 marker:text-blue-500">
           <Content />
         </div>
       </div>
