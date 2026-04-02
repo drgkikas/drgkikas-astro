@@ -118,7 +118,50 @@
         <a href="#contact" class="btn-primary px-5 py-2.5 text-sm">Κλειστε Ραντεβου</a>
       </div>
 
+      <!-- Mobile Menu Button -->
+      <div class="flex items-center md:hidden">
+        <button aria-label="Μενού" class="text-slate-600 hover:text-blue-900 focus:outline-none p-2 transition-colors" id="mobile-menu-btn">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+          </svg>
+        </button>
+      </div>
+
     </div>
+
+    <!-- Mobile Menu Panel -->
+    <div class="md:hidden hidden bg-white border-t border-slate-100 shadow-xl absolute left-0 w-full max-h-[80vh] overflow-y-auto" id="mobile-menu">
+      <div class="px-4 py-4 space-y-1 bg-white">
+        <a class="block px-3 py-2.5 text-base font-semibold text-slate-800 hover:bg-slate-50 hover:text-blue-700 rounded-lg" href="/">Αρχική</a>
+        
+        <div class="py-2 border-t border-slate-100 mt-2 pt-2">
+          <div class="px-3 py-1 text-xs font-bold text-slate-400 uppercase tracking-widest">Υπηρεσίες</div>
+          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href="/ypiresies/psychiatriki-parakolouthisi">Ψυχιατρική Παρακολούθηση</a>
+          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href="/ypiresies/psychotherapeia">Ψυχοθεραπεία</a>
+          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href="/ypiresies/pgx">Φαρμακογονιδιωματική (PGx)</a>
+          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href="/ypiresies/online-synedria">Online Συνεδρία</a>
+          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href="/ypiresies/gnomateyseis">Γνωματεύσεις / Πιστοποιητικά</a>
+        </div>
+        
+        <div class="py-2 border-t border-slate-100 mt-2 pt-2">
+          <div class="px-3 py-1 text-xs font-bold text-slate-400 uppercase tracking-widest">rTMS</div>
+          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href="/rtms/core/ti-einai">Τι είναι το rTMS</a>
+          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href="/rtms/core/kostos-kai-diadikasia">Κόστος & Διαδικασία</a>
+          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href="/rtms/core/syxnes">Συχνές Ερωτήσεις (FAQ)</a>
+        </div>
+        
+        <div class="border-t border-slate-100 mt-2 pt-2">
+          <a class="block px-3 py-2.5 text-base font-semibold text-slate-800 hover:bg-slate-50 hover:text-blue-700 rounded-lg" href="/diataraxes">Διαταραχές</a>
+          <a class="block px-3 py-2.5 text-base font-semibold text-slate-800 hover:bg-slate-50 hover:text-blue-700 rounded-lg" href="/iatros">Ιατρός</a>
+          <a class="block px-3 py-2.5 text-base font-semibold text-slate-800 hover:bg-slate-50 hover:text-blue-700 rounded-lg" href="/arthra-blog">Blog</a>
+        </div>
+        
+        <div class="mt-6 pt-4 pb-4 px-3 border-t border-slate-100">
+          <a class="block text-center w-full px-5 py-3 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-full shadow-sm transition-colors" href="/epikoinonia">Κλείστε Ραντεβού</a>
+        </div>
+      </div>
+    </div>
+
   </div>
 </header>
 
@@ -131,4 +174,14 @@
       header?.classList.remove('shadow-md');
     }
   });
+
+  // Mobile Menu Toggle
+  const mobileBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  
+  if (mobileBtn && mobileMenu) {
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  }
 </script>
