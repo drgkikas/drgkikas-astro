@@ -1,5 +1,5 @@
 ---
-title: "Online Ψυχιατρική Συνεδρία | Τηλεψυχιατρική | Dr. Γκίκας — Αθήνα"
+title: "Online Ψυχιατρική Συνεδρία <br/><span class='text-2xl md:text-3xl text-slate-500 font-normal mt-3 block'>drGkikas — Αθήνα</span>"
 description: "Online ψυχιατρική συνεδρία με Dr. Γκίκας — ασφαλής, εμπιστευτική βιντεοκλήση για ψυχιατρική παρακολούθηση και ψυχοθεραπεία. Χωρίς μετακίνηση."
 canonicalURL: "https://drgkikas.com/ypiresies/online-synedria"
 ---
