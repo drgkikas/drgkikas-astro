@@ -102,7 +102,6 @@ import Footer from '../components/UI/Footer.astro';
                   <div class="w-3 h-3 bg-blue-600 rounded-full"></div>
                 </div>
                 <div class="glass-card bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:border-blue-200 transition-colors">
-                  <span class="text-sm font-bold text-blue-600 mb-1 block">Μάρτιος 2019 – Σήμερα</span>
                   <h3 class="text-lg font-bold text-slate-900">Συνιδρυτής &amp; Ιατρικός Διευθυντής</h3>
                   <p class="text-slate-600 font-medium mb-3">Smart CNS Center, Αθήνα</p>
                   <p class="text-sm text-slate-500">Εξειδικευμένο κέντρο Ψυχιατρικής με έμφαση στη Νευροτροποποίηση (rTMS, tDCS), τη Φαρμακογονιδιωματική, την Ψυχοθεραπεία και τη Φωτοθεραπεία.</p>
@@ -111,10 +110,10 @@ import Footer from '../components/UI/Footer.astro';
 
               <!-- Private Practice -->
               <div class="relative pl-12 flex flex-col justify-center mt-6">
-                <div class="absolute w-4 h-4 bg-slate-300 rounded-full left-[12px] top-6 border-2 border-white"></div>
+                <div class="absolute w-4 h-4 bg-slate-300 rounded-full left-[12px] top-2 border-2 border-white"></div>
                 <div>
-                  <span class="text-sm font-bold text-slate-500 mr-4">Σεπτέμβριος 2014 – Σήμερα</span>
-                  <span class="text-slate-800 font-medium">Ψυχίατρος, Ιδιωτικό Ιατρείο</span> (Αθήνα)
+                  <span class="text-slate-800 font-medium block">Ψυχίατρος, Ιδιωτικό Ιατρείο</span>
+                  <span class="text-slate-500 text-sm">Αθήνα</span>
                 </div>
               </div>
 
@@ -123,11 +122,11 @@ import Footer from '../components/UI/Footer.astro';
                 <div class="absolute w-4 h-4 bg-slate-300 rounded-full left-[12px] top-2 border-2 border-white"></div>
                 <div class="pl-0">
                   <h4 class="text-md font-bold text-slate-900 mb-2">Κοινοτική Ψυχιατρική &amp; Επιστημονική Ευθύνη (ΜΚΟ)</h4>
-                  <ul class="space-y-3 text-sm text-slate-600">
-                    <li><strong class="text-slate-700">ΜΚΟ ΞΕΝΙΟΣ ΖΕΥΣ</strong> (Σεπτέμβριος 2025* – Σήμερα): Επιστημονικός Συνεργάτης προστατευόμενων διαμερισμάτων.</li>
-                    <li><strong class="text-slate-700">ΜΚΟ ΑΛΘΑΙΑ</strong> (Οκτώβριος 2018 – Σήμερα): Επιστημονικός Υπεύθυνος Στεγαστικών Δομών και Προστατευόμενων Διαμερισμάτων.</li>
-                    <li><strong class="text-slate-700">ΜΚΟ ΙΑΣΙΣ</strong> (Ιούνιος 2024 – Σήμερα): Επιστημονικός Υπεύθυνος / Ψυχίατρος σε δομές (π.χ. Άγιος Μάρκος).</li>
-                    <li><strong class="text-slate-700">ΜΚΟ ΕΠΑΨΥ</strong> (Φεβρουάριος 2015 – Σήμερα): Επιστημονικός Συνεργάτης δομών (Χαλκίδα, Ερέτρια).</li>
+                  <ul class="space-y-3 text-sm text-slate-600 pl-4 list-disc marker:text-slate-300">
+                    <li><strong class="text-slate-700">ΜΚΟ ΞΕΝΙΟΣ ΖΕΥΣ</strong>: Επιστημονικός Συνεργάτης προστατευόμενων διαμερισμάτων.</li>
+                    <li><strong class="text-slate-700">ΜΚΟ ΑΛΘΑΙΑ</strong>: Επιστημονικός Υπεύθυνος Στεγαστικών Δομών και Προστατευόμενων Διαμερισμάτων.</li>
+                    <li><strong class="text-slate-700">ΜΚΟ ΙΑΣΙΣ</strong>: Επιστημονικός Υπεύθυνος / Ψυχίατρος σε δομές (π.χ. Άγιος Μάρκος).</li>
+                    <li><strong class="text-slate-700">ΜΚΟ ΕΠΑΨΥ</strong>: Επιστημονικός Συνεργάτης δομών.</li>
                   </ul>
                   <p class="text-xs text-slate-400 mt-2 italic">Η δραστηριότητά μου στον χώρο της κοινοτικής ψυχιατρικής εστιάζει στη μακροχρόνια παρακολούθηση ασθενών με σοβαρές ψυχικές διαταραχές, στη λειτουργική αποκατάσταση και ενσωμάτωσή τους.</p>
                 </div>
@@ -136,25 +135,13 @@ import Footer from '../components/UI/Footer.astro';
               <!-- Hospital History -->
               <div class="relative pl-12 flex flex-col pt-4">
                 <div class="absolute w-4 h-4 bg-slate-200 rounded-full left-[12px] top-5 border-2 border-white"></div>
-                <h4 class="text-sm font-bold text-slate-500 uppercase tracking-wide mb-3">Ειδικότητα &amp; Νοσοκομειακή Εμπειρία</h4>
-                <div class="space-y-4 text-sm text-slate-600">
-                  <div class="grid grid-cols-[120px_1fr] gap-4">
-                    <div class="text-slate-400 font-medium">2010 – 2014</div>
-                    <div><strong>Ειδικευόμενος Ψυχιατρικής</strong>, Ψυχιατρικό Νοσοκομείο Αττικής "Δαφνί" (Επείγοντα, 18 ΑΝΩ).</div>
-                  </div>
-                  <div class="grid grid-cols-[120px_1fr] gap-4">
-                    <div class="text-slate-400 font-medium">2009 – 2010</div>
-                    <div><strong>Ειδικευόμενος Νευρολογίας</strong>, Γενικό Νοσοκομείο ΚΑΤ.</div>
-                  </div>
-                  <div class="grid grid-cols-[120px_1fr] gap-4">
-                    <div class="text-slate-400 font-medium">2006 – 2009</div>
-                    <div><strong>Clinical Project Leader / CRA</strong>, Zeincro Hellas S.A. (Clinical Operations).</div>
-                  </div>
-                  <div class="grid grid-cols-[120px_1fr] gap-4">
-                    <div class="text-slate-400 font-medium">2005 – 2006</div>
-                    <div><strong>Ειδικευόμενος Παθολογίας</strong>, 1ο Θεραπευτήριο ΙΚΑ (Μελίσσια) &amp; Γ.Ν. Σύρου "Βαρδάκειο & Πρώιο".</div>
-                  </div>
-                </div>
+                <h4 class="text-sm font-bold text-slate-500 uppercase tracking-wide mb-4">Ειδικότητα &amp; Νοσοκομειακή Εμπειρία</h4>
+                <ul class="space-y-4 text-sm text-slate-600 pl-4 list-disc marker:text-slate-300">
+                  <li><strong>Ειδικευόμενος Ψυχιατρικής</strong>, Ψυχιατρικό Νοσοκομείο Αττικής "Δαφνί" (Επείγοντα, 18 ΑΝΩ).</li>
+                  <li><strong>Ειδικευόμενος Νευρολογίας</strong>, Γενικό Νοσοκομείο ΚΑΤ.</li>
+                  <li><strong>Clinical Project Leader / CRA</strong>, Zeincro Hellas S.A. (Clinical Operations).</li>
+                  <li><strong>Ειδικευόμενος Παθολογίας</strong>, 1ο Θεραπευτήριο ΙΚΑ (Μελίσσια) &amp; Γ.Ν. Σύρου "Βαρδάκειο & Πρώιο".</li>
+                </ul>
               </div>
             </div>
           </section>
@@ -176,23 +163,19 @@ import Footer from '../components/UI/Footer.astro';
                   Νευροεπιστήμες & rTMS
                 </h3>
                 <ul class="space-y-5 text-sm">
-                  <li class="pl-4 border-l-2 border-slate-100">
-                    <span class="block text-slate-400 text-xs font-bold mb-1">MΑΡΤΙΟΣ 2022</span>
+                  <li class="pl-4 border-l-2 border-slate-100 pb-2">
                     <strong class="text-slate-800 block">Advanced TMS Update Course</strong>
                     <span class="text-slate-600 block">Maastricht Brain Imaging Center, Ολλανδία</span>
                   </li>
-                  <li class="pl-4 border-l-2 border-slate-100">
-                    <span class="block text-slate-400 text-xs font-bold mb-1">MAIOΣ 2020</span>
+                  <li class="pl-4 border-l-2 border-slate-100 pb-2">
                     <strong class="text-slate-800 block">Fundamentals of Neuroscience</strong>
                     <span class="text-slate-600 block">Harvard University, Η.Π.Α.</span>
                   </li>
-                  <li class="pl-4 border-l-2 border-slate-100">
-                    <span class="block text-slate-400 text-xs font-bold mb-1">MAIOΣ 2019</span>
+                  <li class="pl-4 border-l-2 border-slate-100 pb-2">
                     <strong class="text-slate-800 block">TMS Clinical Applications</strong>
                     <span class="text-slate-600 block">APA Annual Meeting, San Francisco, Η.Π.Α.</span>
                   </li>
-                  <li class="pl-4 border-l-2 border-slate-100">
-                    <span class="block text-slate-400 text-xs font-bold mb-1">ΦΕΒΡΟΥΑΡΙΟΣ 2019</span>
+                  <li class="pl-4 border-l-2 border-slate-100 pb-2">
                     <strong class="text-slate-800 block">Clinical TMS Certification Course</strong>
                     <span class="text-slate-600 block">Maastricht University, Διεξαγωγή στο Λονδίνο, Η.Β.</span>
                   </li>
@@ -205,22 +188,18 @@ import Footer from '../components/UI/Footer.astro';
                   Ψυχοθεραπεία & Ακαδημαϊκά
                 </h3>
                 <ul class="space-y-5 text-sm">
-                  <li class="pl-4 border-l-2 border-slate-100">
-                    <span class="block text-slate-400 text-xs font-bold mb-1">MΑΙΟΣ 2014</span>
+                  <li class="pl-4 border-l-2 border-slate-100 pb-2">
                     <strong class="text-slate-800 block">Λήψη Ειδικότητας Ψυχιατρικής (Board Certification)</strong>
                   </li>
-                  <li class="pl-4 border-l-2 border-slate-100">
-                    <span class="block text-slate-400 text-xs font-bold mb-1">ΜΑΡΤΙΟΣ 2003</span>
+                  <li class="pl-4 border-l-2 border-slate-100 pb-2">
                     <strong class="text-slate-800 block">Πτυχίο Ιατρικής (M.D.)</strong>
                     <span class="text-slate-600 block">Università di Bologna, Ιταλία</span>
                   </li>
-                  <li class="pl-4 border-l-2 border-slate-100">
-                    <span class="block text-slate-400 text-xs font-bold mb-1">2014 – 2017</span>
+                  <li class="pl-4 border-l-2 border-slate-100 pb-2">
                     <strong class="text-slate-800 block">Οικογενειακή Συστημική Ψυχοθεραπεία</strong>
                     <span class="text-slate-600 block">Ψυχιατρικό Νοσοκομείο Αττικής</span>
                   </li>
-                  <li class="pl-4 border-l-2 border-slate-100">
-                    <span class="block text-slate-400 text-xs font-bold mb-1">2011 – 2013</span>
+                  <li class="pl-4 border-l-2 border-slate-100 pb-2">
                     <strong class="text-slate-800 block">Γνωσιακή Συμπεριφορική Ψυχοθεραπεία (CBT)</strong>
                     <span class="text-slate-600 block">Κέντρο Εφαρμοσμένης Ψυχοθεραπείας, Αθήνα</span>
                   </li>
