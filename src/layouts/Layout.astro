@@ -4,9 +4,11 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  canonicalURL?: string;
 }
 
-const { title, description = "Κλινική Ιατρικής Ακριβείας & Νευροτροποποίησης. Εξατομικευμένες θεραπείες rTMS, Φαρμακογονιδιωματικής και Ψυχοθεραπείας." } = Astro.props;
+const { title, description = "Κλινική Ιατρικής Ακριβείας & Νευροτροποποίησης. Εξατομικευμένες θεραπείες rTMS, Φαρμακογονιδιωματικής και Ψυχοθεραπείας.", canonicalURL } = Astro.props;
+const canonical = canonicalURL ?? new URL(Astro.url.pathname, 'https://drgkikas-astro.pages.dev').href;
 ---
 
 <!doctype html>
@@ -16,7 +18,8 @@ const { title, description = "Κλινική Ιατρικής Ακριβείας
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title} | Dr. Πασχάλης Γκίκας</title>
+    <title>{title}</title>
+    <link rel="canonical" href={canonical} />
     <meta name="description" content={description} />
     <script type="application/ld+json" set:html={`
       {
