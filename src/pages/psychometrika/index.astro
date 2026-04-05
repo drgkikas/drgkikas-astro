@@ -1,0 +1,153 @@
+---
+export const prerender = false;
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/UI/Header.astro';
+import Footer from '../../components/UI/Footer.astro';
+
+const tests = [
+  {
+    slug: 'dass21',
+    title: 'DASS-21',
+    subtitle: 'Κατάθλιψη, Άγχος & Stress',
+    description: 'Μετρά την ένταση συμπτωμάτων κατάθλιψης, άγχους και stress τις τελευταίες εβδομάδες σε τρεις ξεχωριστές κλίμακες.',
+    questions: 21,
+    minutes: 5,
+    badge: 'Κατάθλιψη · Άγχος · Stress',
+  },
+  {
+    slug: 'phq9',
+    title: 'PHQ-9',
+    subtitle: 'Κατάθλιψη',
+    description: 'Διεθνώς αναγνωρισμένη κλίμακα για ανίχνευση και αξιολόγηση βαρύτητας καταθλιπτικών συμπτωμάτων.',
+    questions: 9,
+    minutes: 3,
+    badge: 'Κατάθλιψη',
+  },
+  {
+    slug: 'gad7',
+    title: 'GAD-7',
+    subtitle: 'Γενικευμένο Άγχος',
+    description: 'Αξιολογεί την ένταση και τη συχνότητα του γενικευμένου άγχους καθώς και τον αντίκτυπό του στην καθημερινότητα.',
+    questions: 8,
+    minutes: 3,
+    badge: 'Άγχος',
+  },
+  {
+    slug: 'mdq',
+    title: 'MDQ',
+    subtitle: 'Διπολική Διαταραχή',
+    description: 'Ανιχνεύει ενδείξεις εναλλαγών διάθεσης και υπομανιακών/μανιακών επεισοδίων μέσω 3 κλιμακωτών πυλών.',
+    questions: 15,
+    minutes: 4,
+    badge: 'Διαταραχή Διάθεσης',
+  },
+  {
+    slug: 'asrs',
+    title: 'ASRS-v1.1',
+    subtitle: 'ADHD Ενηλίκων',
+    description: 'Κλίμακα αυτοαναφοράς για ADHD ενηλίκων (WHO). Αξιολογεί απροσεξία και υπερκινητικότητα/παρορμητικότητα.',
+    questions: 18,
+    minutes: 5,
+    badge: 'ADHD',
+  },
+  {
+    slug: 'audit',
+    title: 'AUDIT',
+    subtitle: 'Χρήση Αλκοόλ',
+    description: 'Εργαλείο του Παγκόσμιου Οργανισμού Υγείας για ανίχνευση επικίνδυνης ή επιβλαβούς χρήσης αλκοόλ.',
+    questions: 10,
+    minutes: 3,
+    badge: 'Αλκοόλ',
+  },
+  {
+    slug: 'pcl5',
+    title: 'PCL-5',
+    subtitle: 'Μετατραυματικό Στρες (PTSD)',
+    description: 'Μετρά την ένταση συμπτωμάτων μετατραυματικού στρες σε 4 clusters βάσει DSM-5 κριτηρίων.',
+    questions: 20,
+    minutes: 6,
+    badge: 'Τραύμα · PTSD',
+  },
+];
+
+const badgeColors: Record<string, string> = {
+  'Κατάθλιψη · Άγχος · Stress': 'bg-violet-100 text-violet-700',
+  'Κατάθλιψη': 'bg-blue-100 text-blue-700',
+  'Άγχος': 'bg-amber-100 text-amber-700',
+  'Διαταραχή Διάθεσης': 'bg-orange-100 text-orange-700',
+  'ADHD': 'bg-emerald-100 text-emerald-700',
+  'Αλκοόλ': 'bg-rose-100 text-rose-700',
+  'Τραύμα · PTSD': 'bg-slate-100 text-slate-700',
+};
+---
+
+<Layout
+  title="Ψυχομετρικά Εργαλεία | Dr. Γκίκας"
+  description="7 επιστημονικά επικυρωμένα ψυχομετρικά ερωτηματολόγια. Λάβετε τα αποτελέσματά σας αμέσως και ερμηνεία στο email σας."
+  canonicalURL="https://drgkikas.gr/psychometrika"
+>
+  <Header />
+  <main class="min-h-screen bg-slate-50 py-24">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+
+      {/* Hero */}
+      <div class="mb-14 text-center">
+        <p class="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-3">Ψυχομετρικά Εργαλεία</p>
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 leading-tight">
+          Αξιολογήστε την ψυχική σας υγεία
+        </h1>
+        <p class="mt-5 text-lg text-slate-500 max-w-2xl mx-auto">
+          Επιστημονικά σταθμισμένα ερωτηματολόγια. Τα αποτελέσματα εμφανίζονται αμέσως και αποστέλλονται με ερμηνεία στο email σας.
+        </p>
+        <p class="mt-3 text-sm text-slate-400">
+          Τα αποτελέσματα δεν αποτελούν διάγνωση και δεν υποκαθιστούν την κλινική αξιολόγηση.
+        </p>
+      </div>
+
+      {/* Cards grid */}
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {tests.map(test => (
+          <div class="bg-white rounded-2xl border border-slate-200 p-6 flex flex-col shadow-sm hover:shadow-md hover:border-blue-300 transition-all group">
+            <div class="flex items-start justify-between mb-4">
+              <div>
+                <h2 class="text-xl font-bold text-blue-900 group-hover:text-blue-700 transition-colors">{test.title}</h2>
+                <p class="text-sm text-slate-500 mt-0.5">{test.subtitle}</p>
+              </div>
+              <span class={`text-xs font-semibold px-2.5 py-1 rounded-full whitespace-nowrap ${badgeColors[test.badge] ?? 'bg-slate-100 text-slate-600'}`}>
+                {test.badge}
+              </span>
+            </div>
+
+            <p class="text-sm text-slate-600 leading-relaxed flex-1 mb-5">
+              {test.description}
+            </p>
+
+            <div class="flex items-center justify-between text-xs text-slate-400 mb-5 pt-4 border-t border-slate-100">
+              <span>📝 {test.questions} ερωτήσεις</span>
+              <span>⏱ ~{test.minutes} λεπτά</span>
+            </div>
+
+            <a
+              href={`/psychometrika/${test.slug}`}
+              class="block w-full text-center py-3 px-5 bg-blue-700 text-white text-sm font-semibold rounded-xl hover:bg-blue-800 transition-colors shadow-sm"
+            >
+              Συμπλήρωσε το ερωτηματολόγιο →
+            </a>
+          </div>
+        ))}
+      </div>
+
+      {/* Footer note */}
+      <div class="mt-16 text-center">
+        <p class="text-sm text-slate-400 max-w-xl mx-auto">
+          Για κλινική αξιολόγηση ή ερμηνεία αποτελεσμάτων, μπορείτε να επικοινωνήσετε απευθείας ή να κλείσετε ραντεβού.
+        </p>
+        <a href="/epikoinonia" class="inline-block mt-4 text-blue-700 font-semibold text-sm hover:underline">
+          Επικοινωνία & Ραντεβού →
+        </a>
+      </div>
+
+    </div>
+  </main>
+  <Footer />
+</Layout>

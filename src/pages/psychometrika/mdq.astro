@@ -1,0 +1,34 @@
+---
+export const prerender = false;
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/UI/Header.astro';
+import Footer from '../../components/UI/Footer.astro';
+import Mdq from '../../components/Tests/Mdq';
+---
+
+<Layout
+  title="MDQ — Ερωτηματολόγιο Διαταραχής Διάθεσης | Dr. Γκίκας"
+  description="Ανιχνεύστε ενδείξεις διπολικής διαταραχής με το MDQ. Άμεσα αποτελέσματα και ερμηνεία στο email σας."
+  canonicalURL="https://drgkikas.gr/psychometrika/mdq"
+>
+  <Header />
+  <main class="min-h-screen bg-slate-50 py-24">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 mt-12">
+
+      <div class="mb-8">
+        <a href="/psychometrika" class="inline-flex items-center gap-1.5 text-sm text-slate-400 hover:text-blue-600 transition-colors mb-6">
+          ← Όλα τα ερωτηματολόγια
+        </a>
+        <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-700">
+          <strong>Σημείωση:</strong> Αυτό το ερωτηματολόγιο δεν αποτελεί διαγνωστικό εργαλείο και δεν υποκαθιστά την κλινική αξιολόγηση από ειδικό.
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8">
+        <Mdq client:load />
+      </div>
+
+    </div>
+  </main>
+  <Footer />
+</Layout>
