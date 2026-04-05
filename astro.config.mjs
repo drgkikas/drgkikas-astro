@@ -10,7 +10,10 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   output: 'server',
   site: 'https://drgkikas.gr',
-  adapter: cloudflare(),
+  adapter: cloudflare({
+    imageService: 'compile',
+    sessionKVBindingName: undefined,
+  }),
   vite: {
     plugins: [tailwindcss()]
   },
