@@ -8,7 +8,9 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://drgkikas-astro.pages.dev',
+  output: 'hybrid',
+  site: 'https://drgkikas.gr',
+  adapter: cloudflare({ mode: 'directory' }),
   vite: {
     plugins: [tailwindcss()]
   },

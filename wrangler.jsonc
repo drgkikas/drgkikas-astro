@@ -9,5 +9,12 @@
 	},
 	"observability": {
 		"enabled": true
-	}
+	},
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "psychometrika",
+			"database_id": "REPLACE_WITH_ACTUAL_ID_AFTER_WRANGLER_D1_CREATE"
+		}
+	]
 }
