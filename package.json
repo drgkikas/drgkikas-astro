@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node -e \"require('fs').writeFileSync('dist/_worker.js', 'export { default } from \\\"./server/entry.mjs\\\";');\"",
     "preview": "astro preview",
     "astro": "astro",
     "generate-types": "wrangler types"
