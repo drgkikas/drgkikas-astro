@@ -1,0 +1,12 @@
+name = "drgkikas-astro"
+pages_build_output_dir = "dist/client"
+compatibility_date = "2026-03-29"
+compatibility_flags = ["global_fetch_strictly_public"]
+
+[observability]
+enabled = true
+
+[[d1_databases]]
+binding = "DB"
+database_name = "psychometrika"
+database_id = "e34e1613-8ea4-4f0a-b458-dc694575e420"
