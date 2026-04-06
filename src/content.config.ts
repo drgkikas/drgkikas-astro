@@ -31,10 +31,14 @@ const blog = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/blog" }),
   schema: z.object({
     title: z.string(),
+    seoTitle: z.string().optional(),
     description: z.string(),
-    pubDate: z.date(),
+    date: z.date().optional(),
+    pubDate: z.date().optional(),
     author: z.string().default('Dr. Πασχάλης Γκίκας'),
     image: z.string().optional(),
+    kategoria: z.string().optional(),
+    keywords: z.string().optional(),
   }),
 });
 
