@@ -12,7 +12,6 @@ export default defineConfig({
   site: 'https://drgkikas.gr',
   adapter: cloudflare({
     imageService: 'compile',
-    sessionKVBindingName: undefined,
   }),
   vite: {
     plugins: [tailwindcss()]

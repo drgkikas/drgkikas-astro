@@ -15,6 +15,7 @@
   "dependencies": {
     "@astrojs/cloudflare": "^13.1.6",
     "@astrojs/react": "^5.0.2",
+    "@astrojs/sitemap": "^3.7.2",
     "@tailwindcss/vite": "^4.2.2",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
@@ -26,8 +27,5 @@
   },
   "overrides": {
     "vite": "^7"
-  },
-  "devDependencies": {
-    "@astrojs/sitemap": "^3.7.2"
   }
 }
