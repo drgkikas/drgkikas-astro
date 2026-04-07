@@ -5,6 +5,7 @@ import { glob } from 'astro/loaders';
 const pageSchema = z.object({
   title: z.string(),
   description: z.string(),
+  canonicalURL: z.string().optional(),
   icon: z.string().optional(),
   heroImage: z.string().optional(),
   order: z.number().default(99),
