@@ -10,14 +10,14 @@ order: 10
 Η κατάθλιψη συνδέεται με μειωμένη νευροπλαστικότητα, ειδικά στον προμετωπιαίο φλοιό και τον ιππόκαμπο. Συνεπώς, το rTMS δεν «αποκτυπά» απλώς νευρώνες — αποκαθιστά τη δυνατότητα του εγκεφάλου να αλλάξει. Ως αποτέλεσμα, η κλινική βελτίωση εμφανίζεται συχνά σταδιακά, μετά τη 2η–3η εβδομάδα, και παραμένει μετά τη λήξη της θεραπείας. Επιπλέον, αυτό εξηγεί γιατί ο πλήρης κύκλος συνεδριών είναι απαραίτητος για μέγιστο και διαρκές αποτέλεσμα.
 
 ### Μηχανισμός
-- LTP (Long-Term Potentiation): υψίσυχνα πρωτόκολλα (≥5 Hz, iTBS) ενισχύουν τη συναπτική μετάδοση — επαναλαμβανόμενη διέγερση αυξάνει AMPA receptor density και την έκφραση του BDNF
+- LTP (Long-Term Potentiation): υψίσυχνα πρωτόκολλα (≥5 Hz, [iTBS](/rtms/core/ti-einai)) ενισχύουν τη συναπτική μετάδοση — επαναλαμβανόμενη διέγερση αυξάνει AMPA receptor density και την έκφραση του BDNF
 - LTD (Long-Term Depression): χαμηλόσυχνα πρωτόκολλα (≤1 Hz) μειώνουν τη διεγερσιμότητα — χρήσιμο σε δομές με παθολογική υπερδιεγερσιμότητα (π.χ. αυξημένο άγχος)
 - BDNF upregulation: το rTMS αυξάνει τα επίπεδα του Brain-Derived Neurotrophic Factor, που προάγει επιβίωση νευρώνων και σχηματισμό νέων συνάψεων
 - Synaptogenesis: νέες δενδριτικές ακίδες εμφανίζονται μετά από επαναλαμβανόμενη διέγερση σε ζωικά μοντέλα
 - Network-level remodeling: οι επιδράσεις διαδίδονται σε συνδεδεμένες δομές μέσω cortico-subcortical loops (DLPFC → ACC → amygdala → hippocampus)
 
 ### Κλινική Σημασία
-Ασθενείς με MDD εμφανίζουν μειωμένη δραστηριότητα στον DLPFC. Συγκεκριμένα, το rTMS αναστρέφει αυτά τα ευρήματα μέσω μηχανισμών νευροπλαστικότητας. Επιπλέον, μελέτες fMRI τεκμηριώνουν αυξημένη λειτουργική συνδεσιμότητα μεταξύ DLPFC και sgACC μετά από rTMS. Ως εκ τούτου, η νευροπλαστικότητα αποτελεί τον κεντρικό μηχανισμό μέσω του οποίου το rTMS επιτυγχάνει διαρκή κλινική βελτίωση στον ασθενή.
+Ασθενείς με MDD εμφανίζουν μειωμένη δραστηριότητα στον [DLPFC](/rtms/pos-leitourgei/dlpfc). Συγκεκριμένα, το rTMS αναστρέφει αυτά τα ευρήματα μέσω μηχανισμών νευροπλαστικότητας. Επιπλέον, μελέτες fMRI τεκμηριώνουν αυξημένη λειτουργική συνδεσιμότητα μεταξύ DLPFC και sgACC μετά από rTMS. Ως εκ τούτου, η νευροπλαστικότητα αποτελεί τον κεντρικό μηχανισμό μέσω του οποίου το rTMS επιτυγχάνει διαρκή κλινική βελτίωση στον ασθενή.
 
 ### Explicit Relations (Entity Graph)
 - Neuroplasticity → mechanism of → rTMS effect
@@ -26,7 +26,7 @@ order: 10
 - Neuroplasticity → mediated by → BDNF
 - Neuroplasticity → impaired in → MDD
 - Neuroplasticity → restored by → rTMS
-- Neuroplasticity → measured via → fMRI connectivity / MEP amplitude changes
+- Neuroplasticity → measured via → fMRI connectivity / [MEP](/rtms/pos-leitourgei/mep) amplitude changes
 
 ### Βιβλιογραφία
 *   Huang YZ, Edwards MJ, Rounis E, Bhatia KP, Rothwell JC (2005). Theta burst stimulation of the human motor cortex. Neuron.
