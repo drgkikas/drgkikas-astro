@@ -4,17 +4,13 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/UI/Header.astro';
 import Footer from '../../components/UI/Footer.astro';
 
-export const prerender = true;
+import { getEntry } from 'astro:content';
 
-export async function getStaticPaths() {
-  const rtms = await getCollection('rtms');
-  return rtms.map(entry => ({
-    params: { slug: entry.id },
-    props: { entry, allPages: rtms },
-  }));
-}
-
-const { entry, allPages } = Astro.props;
+const { slug } = Astro.params;
+if (!slug) return Astro.redirect('/404');
+const entry = await getEntry('rtms', slug);
+if (!entry) return Astro.redirect('/404');
+const allPages = await getCollection('rtms');
 const { Content } = await render(entry);
 
 // Group pages by category (folder)
