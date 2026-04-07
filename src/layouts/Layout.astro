@@ -21,6 +21,9 @@ const canonical = canonicalURL ?? new URL(Astro.url.pathname, 'https://drgkikas-
     <title>{title}</title>
     <link rel="canonical" href={canonical} />
     <meta name="description" content={description} />
+    {Astro.url.hostname.includes('pages.dev') && (
+      <meta name="robots" content="noindex, nofollow" />
+    )}
     <script type="application/ld+json" set:html={`
       {
         "@context": "https://schema.org",
