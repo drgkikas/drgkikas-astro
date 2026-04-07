@@ -18,3 +18,4 @@ export default defineConfig({
   },
   integrations: [react(), sitemap()]
 });
+// update for github desktop
