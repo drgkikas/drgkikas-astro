@@ -47,9 +47,13 @@ import Footer from '../components/UI/Footer.astro';
             <div class="text-2xl font-bold text-[#084a79]">PGx</div>
             <div class="text-xs text-slate-500 uppercase tracking-wide mt-1">Γενετική ανάλυση αγωγής</div>
           </div>
-          <a href="/psychometrika" class="px-2 block group">
-            <div class="text-2xl font-bold text-[#084a79] group-hover:text-blue-500 transition-colors">Ψυχομετρικά</div>
-            <div class="text-sm font-medium text-slate-500 tracking-wide mt-1 group-hover:text-blue-400">Ποσοτική αξιολόγηση</div>
+          <a href="/psychometrika" class="px-2 block group hover:-translate-y-1 transition-transform">
+            <div class="text-2xl font-bold text-[#084a79] group-hover:text-blue-600 transition-colors flex items-center justify-center gap-1">
+              <span class="text-blue-600 group-hover:opacity-0 hidden lg:inline">&rarr;</span> 
+              Ψυχομετρικά 
+              <span class="text-blue-600 lg:hidden">&rarr;</span>
+            </div>
+            <div class="text-sm font-bold text-blue-600 tracking-wide mt-1 underline underline-offset-4 decoration-blue-200 decoration-2">Κάντε τα Τεστ</div>
           </a>
           <div class="px-2">
             <div class="text-2xl font-bold text-[#084a79]">Online</div>
