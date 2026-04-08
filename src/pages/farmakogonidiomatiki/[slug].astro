@@ -13,7 +13,7 @@ if (!page) return Astro.redirect('/404');
 const { Content } = await render(page);
 ---
 
-<Layout title={`${page.data.title} | Φαρμακογονιδιωματική`}>
+<Layout title={`${page.data.title} | Φαρμακογονιδιωματική`} description={page.data.description}>
   <Header />
   <main class="py-24 bg-white min-h-screen">
     <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 prose prose-lg prose-sky">
