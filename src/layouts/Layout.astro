@@ -7,7 +7,7 @@ interface Props {
   canonicalURL?: string;
 }
 
-const { title, description = "Κλινική Ιατρικής Ακριβείας & Νευροτροποποίησης. Εξατομικευμένες θεραπείες rTMS, Φαρμακογονιδιωματικής και Ψυχοθεραπείας.", canonicalURL } = Astro.props;
+const { title, description = "Πασχάλης Γκίκας — Ψυχίατρος στην Αθήνα. Εξειδικευμένες υπηρεσίες rTMS, Φαρμακογονιδιωματικής και Ψυχοθεραπείας στο Smart CNS Center.", canonicalURL } = Astro.props;
 const canonical = canonicalURL ?? new URL(Astro.url.pathname, 'https://drgkikas-astro.pages.dev').href;
 ---
 
