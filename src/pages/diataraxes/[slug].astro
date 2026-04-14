@@ -83,7 +83,7 @@ const schemaBundle = JSON.stringify({
 });
 ---
 
-<Layout schema={schemaBundle} title={`${entry.data.title} | Πασχάλης Γκίκας`} description={entry.data.description}>
+<Layout schema={schemaBundle} title={`${entry.data.title}`} description={entry.data.description}>
   
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
