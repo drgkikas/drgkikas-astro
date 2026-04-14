@@ -49,6 +49,6 @@ canonicalURL: "https://drgkikas.com/ypiresies/online-synedria"
 ### Τι εξοπλισμό χρειάζομαι;
 Υπολογιστή ή smartphone με κάμερα και μικρόφωνο, καλή σύνδεση ίντερνετ και έναν ήσυχο ιδιωτικό χώρο. Τίποτε άλλο.
 
-- [→ Κλείστε Online Ραντεβού](/epikoinonia)
+- [→ Κλείστε Online Ραντεβού](https://appt.link/meet-with-paschalis-gkikas/therapy-session)
 - [→ Ψυχιατρική Παρακολούθηση](/ypiresies/psychiatriki-parakolouthisi)
 - [→ Ψυχοθεραπεία](/ypiresies/psychotherapeia)
