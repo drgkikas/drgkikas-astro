@@ -63,7 +63,14 @@ const combinedSchemaGraph = [
       "@type": "MedicalCondition",
       "name": entry.data.title,
       "description": entry.data.description,
-      "associatedAnatomy": "Brain"
+      "associatedAnatomy": "Brain",
+      ...(entry.data.icd10 && {
+        "code": {
+          "@type": "MedicalCode",
+          "codeValue": entry.data.icd10,
+          "codingSystem": "ICD-10"
+        }
+      })
     },
     {
       "@type": "BreadcrumbList",
