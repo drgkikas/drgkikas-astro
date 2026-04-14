@@ -43,8 +43,36 @@ const categoryNames = {
       </nav>
 
       <div class="flex flex-col lg:flex-row gap-10">
+        <!-- Main Content area -->
+        <article class="w-full lg:w-3/4">
+          <div class="bg-white rounded-3xl p-8 md:p-14 shadow-sm border border-slate-100 relative overflow-hidden">
+            <!-- Top Red Line -->
+            <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-red-500 to-red-800"></div>
+            
+            <header class="text-center mb-16 border-b border-slate-100 pb-12">
+              <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-8 leading-normal tracking-tight" set:html={entry.data.title}></h1>
+              <p class="text-xl md:text-2xl text-slate-600 leading-relaxed max-w-3xl mx-auto font-light">{entry.data.description}</p>
+            </header>
+            
+            <div class="prose prose-lg md:prose-xl max-w-none text-slate-700
+              prose-p:mb-10 prose-p:leading-[1.9]
+              prose-headings:text-slate-900 prose-headings:font-bold prose-headings:tracking-tight
+              prose-h2:text-3xl prose-h2:mt-20 prose-h2:mb-8 prose-h2:border-b prose-h2:border-slate-100 prose-h2:pb-4
+              prose-h3:text-2xl prose-h3:mt-14 prose-h3:mb-6
+              prose-a:font-bold prose-a:text-red-900 prose-a:bg-red-100 prose-a:px-2 prose-a:py-0.5 prose-a:rounded-lg prose-a:no-underline hover:prose-a:bg-red-700 hover:prose-a:text-white prose-a:transition-colors
+              prose-ul:my-10 prose-li:my-5 prose-strong:text-slate-900
+              marker:text-red-500 
+              prose-blockquote:border-l-4 prose-blockquote:border-red-500 prose-blockquote:bg-red-50/50 prose-blockquote:py-3 prose-blockquote:px-8 prose-blockquote:rounded-r-xl prose-blockquote:not-italic prose-blockquote:text-slate-800 prose-blockquote:font-medium
+              prose-img:rounded-2xl prose-img:shadow-sm
+              ">
+              <Content />
+            </div>
+            
+          </div>
+        </article>
+
         <!-- Sidebar Navigation -->
-        <aside class="w-full lg:w-1/4">
+        <aside class="w-full lg:w-1/4 order-last lg:order-first">
           <div class="sticky top-28 bg-white p-6 md:p-8 rounded-3xl border border-slate-100 shadow-sm">
             <h3 class="text-sm font-bold text-slate-900 mb-6 flex items-center gap-2">
               <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"></path></svg>
@@ -86,38 +114,6 @@ const categoryNames = {
 
           </div>
         </aside>
-
-        <!-- Main Content area -->
-        <article class="w-full lg:w-3/4">
-          <div class="bg-white rounded-3xl p-8 md:p-14 shadow-sm border border-slate-100 relative overflow-hidden">
-            <!-- Top Red Line -->
-            <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-red-500 to-red-800"></div>
-            
-            <header class="text-center mb-16 border-b border-slate-100 pb-12">
-              <div class="flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-wider mb-6">
-                <span class="py-1 px-4 rounded-full bg-red-50 text-red-700 border border-red-100">Νευροτροποποίηση</span>
-                <span class="py-1 px-4 rounded-full bg-slate-50 text-slate-500 border border-slate-200">2026</span>
-              </div>
-              <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-8 leading-normal tracking-tight" set:html={entry.data.title}></h1>
-              <p class="text-xl md:text-2xl text-slate-600 leading-relaxed max-w-3xl mx-auto font-light">{entry.data.description}</p>
-            </header>
-            
-            <div class="prose prose-lg md:prose-xl max-w-none text-slate-700
-              prose-p:mb-10 prose-p:leading-[1.9]
-              prose-headings:text-slate-900 prose-headings:font-bold prose-headings:tracking-tight
-              prose-h2:text-3xl prose-h2:mt-20 prose-h2:mb-8 prose-h2:border-b prose-h2:border-slate-100 prose-h2:pb-4
-              prose-h3:text-2xl prose-h3:mt-14 prose-h3:mb-6
-              prose-a:font-bold prose-a:text-red-900 prose-a:bg-red-100 prose-a:px-2 prose-a:py-0.5 prose-a:rounded-lg prose-a:no-underline hover:prose-a:bg-red-700 hover:prose-a:text-white prose-a:transition-colors
-              prose-ul:my-10 prose-li:my-5 prose-strong:text-slate-900
-              marker:text-red-500 
-              prose-blockquote:border-l-4 prose-blockquote:border-red-500 prose-blockquote:bg-red-50/50 prose-blockquote:py-3 prose-blockquote:px-8 prose-blockquote:rounded-r-xl prose-blockquote:not-italic prose-blockquote:text-slate-800 prose-blockquote:font-medium
-              prose-img:rounded-2xl prose-img:shadow-sm
-              ">
-              <Content />
-            </div>
-            
-          </div>
-        </article>
       </div>
 
     </div>
