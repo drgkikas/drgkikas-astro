@@ -18,7 +18,9 @@ const posts = await getCollection('blog');
         {posts.map(post => (
           <a href={`/arthra-blog/${post.id}`} class="bg-white rounded-2xl shadow-sm border border-slate-200 hover:shadow-md hover:border-blue-400 transition-all group block overflow-hidden">
             {post.data.image ? (
-              <img src={post.data.image} alt={post.data.title} loading="lazy" class="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              <div class="h-48 w-full bg-slate-50 flex items-center justify-center overflow-hidden">
+                <img src={post.data.image} alt={post.data.title} loading="lazy" class="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105" />
+              </div>
             ) : (
               <div class="h-48 bg-slate-100 w-full flex items-center justify-center text-slate-400 text-sm font-medium">Χωρίς Εικόνα</div>
             )}
