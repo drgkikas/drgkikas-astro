@@ -6,7 +6,7 @@ import Footer from '../components/UI/Footer.astro';
 
 <Layout 
   title="Επικοινωνία | Πασχάλης Γκίκας | Ψυχίατρος Αθήνα"
-  description="Επικοινωνήστε με τον ψυχίατρο Πασχάλη Γκίκα για να κλείσετε το ραντεβού σας. Ιατρείο στο κέντρο της Αθήνας (Σύνταγμα) και στο Smart CNS Center."
+  description="Επικοινωνήστε με τον ψυχίατρο Πασχάλη Γκίκα για να κλείσετε το ραντεβού σας. Ιατρείο στο κέντρο της Αθήνας (Σύνταγμα)."
 >
   <Header />
 
@@ -19,7 +19,7 @@ import Footer from '../components/UI/Footer.astro';
       <div class="text-center md:text-left mb-16">
         <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">Επικοινωνία & Ραντεβού</h1>
         <p class="text-xl text-slate-600 max-w-2xl leading-relaxed">
-          Προγραμματίστε το ραντεβού σας με τον γιατρό. Μπορείτε να επικοινωνήσετε τηλεφωνικά, μέσω email ή να συμπληρώσετε τη φόρμα επικοινωνίας.
+          Προγραμματίστε το ραντεβού σας. Μπορείτε να επικοινωνήσετε τηλεφωνικά, μέσω email ή συμπληρώνοντας τη φόρμα επικοινωνίας.
         </p>
       </div>
 
@@ -28,115 +28,133 @@ import Footer from '../components/UI/Footer.astro';
         <!-- Contact Info & Cards (Left Column) -->
         <div class="lg:col-span-5 space-y-8">
           
-          <!-- Call US Card -->
-          <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
-            <h3 class="text-lg font-bold text-slate-900 mb-6 flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+          <!-- Unified Scan-Friendly NAP Card -->
+          <div class="bg-white rounded-3xl shadow-lg border border-slate-200 overflow-hidden">
+            <div class="bg-slate-900 text-white p-6">
+              <h3 class="text-xl font-bold uppercase tracking-widest text-[#d4af37]">Ιδιωτικο Ιατρειο</h3>
+              <p class="text-slate-300 text-sm mt-1">Πασχάλης Γκίκας, Ψυχίατρος - Ψυχοθεραπευτής</p>
+            </div>
+            
+            <div class="p-8 space-y-8">
+              <!-- Location -->
+              <div class="flex items-start gap-4">
+                <div class="mt-1 w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-xl shrink-0 shadow-sm border border-slate-100">📍</div>
+                <div>
+                  <div class="text-xs font-bold text-slate-400 tracking-widest uppercase mb-1">Διευθυνση</div>
+                  <div class="text-slate-900 font-bold text-lg">Ξενοφώντος 15Α, Τ.Κ. 105 57</div>
+                  <div class="text-slate-500 font-medium mb-3">Σύνταγμα, Αθήνα</div>
+                  <a href="https://maps.app.goo.gl/ygEdMyCULtaLUGNCA" target="_blank" rel="noopener noreferrer" class="text-sm font-bold text-[#084a79] hover:text-blue-800 transition-colors inline-flex items-center gap-1 group">
+                    Οδηγίες Google Maps <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+                  </a>
+                </div>
               </div>
-              Τηλέφωνα
-            </h3>
-            <div class="space-y-4">
-              <a href="tel:2118500016" class="flex items-center justify-between p-4 rounded-xl bg-slate-50 hover:bg-blue-50 transition-colors group">
-                <span class="text-slate-600 font-medium">Σταθερό Ιατρείου</span>
-                <span class="text-xl font-bold text-slate-900 group-hover:text-blue-700">211 850 0016</span>
-              </a>
-              <a href="tel:6940308700" class="flex items-center justify-between p-4 rounded-xl bg-slate-50 hover:bg-blue-50 transition-colors group">
-                <span class="text-slate-600 font-medium">Κινητό Τηλέφωνο</span>
-                <span class="text-xl font-bold text-slate-900 group-hover:text-blue-700">6940 308 700</span>
-              </a>
+              
+              <hr class="border-slate-100" />
+              
+              <!-- Phones -->
+              <div class="flex flex-col gap-5">
+                <div class="flex items-center gap-4">
+                  <div class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-xl shrink-0 shadow-sm border border-slate-100">📞</div>
+                  <div class="flex-1">
+                    <div class="text-xs font-bold text-slate-400 tracking-widest uppercase mb-0.5">Σταθερο</div>
+                    <a href="tel:2118500016" class="text-slate-900 font-bold text-xl hover:text-[#084a79] transition-colors block">211 850 0016</a>
+                  </div>
+                </div>
+                <div class="flex items-center gap-4">
+                  <div class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-xl shrink-0 shadow-sm border border-slate-100">📱</div>
+                  <div class="flex-1">
+                     <div class="text-xs font-bold text-slate-400 tracking-widest uppercase mb-0.5">Κινητο</div>
+                     <a href="tel:6940308700" class="text-slate-900 font-bold text-xl hover:text-[#084a79] transition-colors block">6940 308 700</a>
+                  </div>
+                </div>
+              </div>
+
+              <hr class="border-slate-100" />
+
+              <!-- Email -->
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-xl shrink-0 shadow-sm border border-slate-100">✉️</div>
+                <div class="flex-1">
+                  <div class="text-xs font-bold text-slate-400 tracking-widest uppercase mb-0.5">E-mail</div>
+                  <a href="mailto:contact@drgkikas.com" class="text-slate-900 font-bold text-lg hover:text-[#084a79] transition-colors">contact@drgkikas.com</a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Map Embed directly inside NAP -->
+            <div class="h-[250px] w-full bg-slate-100 border-t border-slate-200">
+               <iframe 
+                src="https://maps.google.com/maps?q=%CE%A8%CF%85%CF%87%CE%AF%CE%B1%CF%84%CF%81%CE%BF%CF%82+-+%CE%A8%CF%85%CF%87%CE%BF%CE%B8%CE%B5%CF%81%CE%B1%CF%80%CE%B5%CF%85%CF%84%CE%AE%CF%82,+%CE%A0%CE%B1%CF%83%CF%87%CE%AC%CE%BB%CE%B7%CF%82+%CE%93%CE%BA%CE%AF%CE%BA%CE%B1%CF%82&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                class="w-full h-full grayscale-[20%] contrast-[1.1]"
+              ></iframe>
             </div>
           </div>
 
-          <!-- Email Card -->
-          <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
-            <h3 class="text-lg font-bold text-slate-900 mb-6 flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-              </div>
-              Ηλεκτρονική Διεύθυνση
-            </h3>
-            <a href="mailto:contact@drgkikas.com" class="text-xl font-bold text-blue-700 hover:text-blue-800 transition-colors">
-              contact@drgkikas.com
-            </a>
+          <div class="bg-blue-50/70 p-6 rounded-2xl border border-blue-100 flex items-start gap-4">
+             <div class="mt-1 w-8 h-8 rounded-full bg-blue-100 text-blue-800 flex items-center justify-center text-sm shrink-0">ℹ</div>
+             <div>
+              <h4 class="text-slate-800 font-bold mb-1">rTMS & Smart CNS Center</h4>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Οι συνεδρίες Νευροτροποποίησης διεξάγονται αποκλειστικά στις εξειδικευμένες εγκαταστάσεις του Smart CNS Center. Επικοινωνήστε μαζί μας για τον προγραμματισμό και τυχόν απορίες.
+              </p>
+             </div>
           </div>
 
         </div>
 
-        <!-- Form & Addresses (Right Column) -->
-        <div class="lg:col-span-7 space-y-8">
-          
-          <!-- Locations Grid -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <!-- Location 1 -->
-            <a href="https://maps.app.goo.gl/ygEdMyCULtaLUGNCA" target="_blank" rel="noopener noreferrer" class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-400 focus:ring-2 focus:ring-blue-500 transition-all font-medium text-left group">
-              <h4 class="text-slate-500 text-xs font-bold uppercase tracking-wider mb-2">ΙΔΙΩΤΙΚΟ ΙΑΤΡΕΙΟ</h4>
-              <p class="text-slate-900 text-lg font-bold mb-1">Αθήνα / Σύνταγμα</p>
-              <p class="text-slate-600 mb-4">Ξενοφώντος 15Α, Τ.Κ. 105 57</p>
-              <span class="text-blue-600 text-sm font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                Οδηγίες Google Maps &rarr;
-              </span>
-            </a>
-
-            <!-- Location 2 -->
-             <a href="https://maps.app.goo.gl/nEXdHfev93aauWkN7" target="_blank" rel="noopener noreferrer" class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-400 focus:ring-2 focus:ring-blue-500 transition-all font-medium text-left group">
-              <h4 class="text-slate-500 text-xs font-bold uppercase tracking-wider mb-2">Smart CNS Center</h4>
-              <p class="text-slate-900 text-lg font-bold mb-1">Ιατρικό Κέντρο</p>
-              <p class="text-slate-600 mb-4">Αθήνα (Εξειδίκευση rTMS)</p>
-              <span class="text-blue-600 text-sm font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                Οδηγίες Google Maps &rarr;
-              </span>
-            </a>
-          </div>
-
-          <!-- Contact Form -->
-          <div class="bg-white p-8 md:p-10 rounded-3xl shadow-lg border border-slate-100">
+        <!-- Form (Right Column) -->
+        <div class="lg:col-span-7">
+          <div class="bg-white p-8 md:p-12 rounded-3xl shadow-lg border border-slate-100 h-full">
             <h3 class="text-2xl font-bold text-slate-900 mb-2">Φόρμα Επικοινωνίας</h3>
-            <p class="text-slate-500 mb-8 text-sm">Τα πεδία με αστερίσκο (*) είναι υποχρεωτικά. Θα επικοινωνήσουμε σύντομα μαζί σας.</p>
+            <p class="text-slate-500 mb-10 text-sm">Τα πεδία με αστερίσκο (*) είναι υποχρεωτικά.</p>
 
             <form action="#" method="POST" class="space-y-6">
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label for="firstname" class="block text-sm font-medium text-slate-700 mb-2">Όνομα *</label>
-                  <input type="text" id="firstname" name="firstname" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-shadow" placeholder="π.χ. Γιάννης">
+                  <input type="text" id="firstname" name="firstname" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-[#084a79] focus:border-[#084a79] outline-none transition-shadow" placeholder="π.χ. Γιάννης">
                 </div>
                 <div>
                   <label for="lastname" class="block text-sm font-medium text-slate-700 mb-2">Επώνυμο *</label>
-                  <input type="text" id="lastname" name="lastname" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-shadow" placeholder="π.χ. Παπαδόπουλος">
+                  <input type="text" id="lastname" name="lastname" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-[#084a79] focus:border-[#084a79] outline-none transition-shadow" placeholder="π.χ. Παπαδόπουλος">
                 </div>
               </div>
 
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label for="email" class="block text-sm font-medium text-slate-700 mb-2">E-mail *</label>
-                  <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-shadow" placeholder="email@example.com">
+                  <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-[#084a79] focus:border-[#084a79] outline-none transition-shadow" placeholder="email@example.com">
                 </div>
                 <div>
                   <label for="phone" class="block text-sm font-medium text-slate-700 mb-2">Τηλέφωνο επικοινωνίας *</label>
-                  <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-shadow" placeholder="π.χ. 6900000000">
+                  <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-[#084a79] focus:border-[#084a79] outline-none transition-shadow" placeholder="π.χ. 6900000000">
                 </div>
               </div>
 
               <div>
                 <label for="message" class="block text-sm font-medium text-slate-700 mb-2">Το μήνυμά σας *</label>
-                <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-shadow resize-none" placeholder="Πώς μπορούμε να σας βοηθήσουμε;"></textarea>
+                <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-[#084a79] focus:border-[#084a79] outline-none transition-shadow resize-none" placeholder="Πώς μπορούμε να σας βοηθήσουμε;"></textarea>
               </div>
 
               <div class="flex items-start">
                 <div class="flex items-center h-5">
-                  <input id="privacy" name="privacy" type="checkbox" required class="w-4 h-4 border border-slate-300 rounded bg-white focus:ring-3 focus:ring-blue-300">
+                  <input id="privacy" name="privacy" type="checkbox" required class="w-4 h-4 border border-slate-300 rounded bg-white text-[#084a79] focus:ring-3 focus:ring-blue-300">
                 </div>
                 <label for="privacy" class="ml-3 text-sm text-slate-600">
-                  Αποδέχομαι τους <a href="/privacy-policy" class="text-blue-600 hover:underline font-medium">Όρους Χρήσης και την Πολιτική Απορρήτου *</a>.
+                  Αποδέχομαι τους <a href="/privacy-policy" class="text-[#084a79] hover:underline font-bold">Όρους Χρήσης και την Πολιτική Απορρήτου *</a>.
                 </label>
               </div>
 
-              <button type="submit" class="w-full btn-primary py-4 text-lg mt-4 shadow-lg shadow-blue-500/30">
+              <button type="submit" class="w-full btn-primary bg-[#084a79] hover:bg-[#063354] text-white py-4 rounded-xl text-lg font-bold mt-4 shadow-lg shadow-[#084a79]/30 transition-all hover:-translate-y-1">
                 Αποστολή Μηνύματος
               </button>
             </form>
           </div>
-
         </div>
       </div>
     </div>
