@@ -1,5 +1,5 @@
 ---
-title: "Ψυχιατρική Παρακολούθηση Αθήνα | Dr. Γκίκας — Smart CNS Center"
+title: "Ψυχιατρική Παρακολούθηση Αθήνα | Πασχάλης Γκίκας — Smart CNS Center"
 description: "Εξατομικευμένη ψυχιατρική παρακολούθηση στο κέντρο της Αθήνας. Διάγνωση, φαρμακοθεραπεία και συνεχής αξιολόγηση βασισμένη στα κλινικά και γενετικά δεδομένα σας."
 canonicalURL: "https://drgkikas.com/ypiresies/psychiatriki-parakolouthisi"
 ---
