@@ -5,10 +5,17 @@ interface Props {
   title: string;
   description?: string;
   canonicalURL?: string;
+  image?: string;
 }
 
-const { title, description = "Πασχάλης Γκίκας — Ψυχίατρος στην Αθήνα. Εξειδικευμένες υπηρεσίες rTMS, Φαρμακογονιδιωματικής και Ψυχοθεραπείας στο Smart CNS Center.", canonicalURL } = Astro.props;
-const canonical = canonicalURL ?? new URL(Astro.url.pathname, 'https://drgkikas-astro.pages.dev').href;
+const { 
+  title, 
+  description = "Πασχάλης Γκίκας — Ψυχίατρος στην Αθήνα. Εξειδικευμένες υπηρεσίες rTMS, Φαρμακογονιδιωματικής και Ψυχοθεραπείας στο Smart CNS Center.", 
+  canonicalURL,
+  image = "/images/dr-gkikas-portrait.jpg"
+} = Astro.props;
+const canonical = canonicalURL ?? new URL(Astro.url.pathname, 'https://drgkikas.gr').href;
+const socialImageURL = new URL(image, 'https://drgkikas.gr').href;
 ---
 
 <!doctype html>
@@ -21,6 +28,20 @@ const canonical = canonicalURL ?? new URL(Astro.url.pathname, 'https://drgkikas-
     <title>{title}</title>
     <link rel="canonical" href={canonical} />
     <meta name="description" content={description} />
+    
+    <!-- OpenGraph Tags -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={socialImageURL} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Πασχάλης Γκίκας | Ψυχίατρος Αθήνα" />
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageURL} />
     {Astro.url.hostname.includes('pages.dev') && (
       <meta name="robots" content="noindex, nofollow" />
     )}
