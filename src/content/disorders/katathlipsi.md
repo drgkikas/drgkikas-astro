@@ -62,7 +62,7 @@ faqs:
 ---
 
 ## Σαφείς Συσχετίσεις (Entity Graph)
-- **Κατάθλιψη (MDD)** → κύριο σύμπτωμα → [Ανηδονία](/rtms/endixeis/anidonia)
+- **Κατάθλιψη (MDD)** → κύριο σύμπτωμα → Ανηδονία
 - **MDD** → βιολογική βάση → υπολειτουργία [DLPFC](/rtms/pos-leitourgei/dlpfc) / υπερδραστηριότητα αμυγδαλής
 - **MDD** → θεραπεία 1ης γραμμής → [Φαρμακοθεραπεία](/ypiresies/psychiatriki-parakolouthisi) / [PGx](/ypiresies/pgx) / CBT
 - **MDD** → θεραπεία ανθεκτικών περιπτώσεων → [rTMS](/rtms) / [iTBS](/rtms/core/ti-einai)
