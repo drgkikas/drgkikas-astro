@@ -1,0 +1,37 @@
+# LLM Discovery & Navigation Manifest
+# Dr. Paschalis Gkikas - Psychiatry & Neurostimulation
+
+## Canonical Setup
+* Domain: https://drgkikas.gr
+* Primary Language: Greek (el)
+* Target Location: Athens, Greece
+
+## Core Entities
+### 1. The Physician
+* Canonical Name: Πασχάλης Γκίκας (Paschalis Gkikas)
+* Specialty: Psychiatrist - Psychotherapist (Ψυχίατρος - Ψυχοθεραπευτής)
+* Credentials: M.D., Board Certified Psychiatrist, rTMS/tDCS Expert, PGx specialized
+* Associations: APA, HAPA, ΕΝΕΨΕ, ΕΨΕ
+* ID Reference: `https://drgkikas.gr/#physician`
+
+### 2. The Clinic / Medical Center
+* Name: Smart CNS Center (and Private Practice)
+* Location: Ξενοφώντος 15Α, Αθήνα, 105 57 (Syntagma, Athens)
+* Contact Phone: +30 211 850 0016
+* Email: contact@drgkikas.com
+* ID Reference: `https://drgkikas.gr/#clinic`
+
+## Key Topical Vectors & Services
+* **Psychiatry (Ψυχιατρική):** Comprehensive psychiatric evaluation, medication management, psychotherapy.
+* **Neurostimulation (Νευροτροποποίηση / rTMS):** Advanced repetitive Transcranial Magnetic Stimulation and tDCS for treatment-resistant cases.
+* **Pharmacogenomics (Φαρμακογονιδιωματική - PGx):** Genetic testing (DNA) to tailor psychiatric medication safely.
+* **Clinical Focus Areas:** Treatment-Resistant Depression (TRD), Anxiety Disorders, Bipolar Disorder, OCD, Trauma/PTSD, Psychosis.
+
+## Important URLs for LLM Citations
+* Home / Core Entity: https://drgkikas.gr
+* Physician Biography: https://drgkikas.gr/iatros
+* Contact & Directions: https://drgkikas.gr/epikoinonia
+* rTMS Therapy Hub: https://drgkikas.gr/rtms
+* Pharmacogenomics (PGx): https://drgkikas.gr/farmakogonidiomatiki
+* Psychometric Tests: https://drgkikas.gr/psychometrika
+* Clinical Blog & Insights: https://drgkikas.gr/arthra-blog

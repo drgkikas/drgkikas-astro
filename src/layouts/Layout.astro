@@ -6,13 +6,15 @@ interface Props {
   description?: string;
   canonicalURL?: string;
   image?: string;
+  schema?: string;
 }
 
 const { 
   title, 
   description = "Πασχάλης Γκίκας — Ψυχίατρος στην Αθήνα. Εξειδικευμένες υπηρεσίες rTMS, Φαρμακογονιδιωματικής και Ψυχοθεραπείας στο Smart CNS Center.", 
   canonicalURL,
-  image = "/images/dr-gkikas-portrait.jpg"
+  image = "/images/dr-gkikas-portrait.jpg",
+  schema
 } = Astro.props;
 const canonical = canonicalURL ?? new URL(Astro.url.pathname, 'https://drgkikas.gr').href;
 const socialImageURL = new URL(image, 'https://drgkikas.gr').href;
@@ -45,40 +47,7 @@ const socialImageURL = new URL(image, 'https://drgkikas.gr').href;
     {Astro.url.hostname.includes('pages.dev') && (
       <meta name="robots" content="noindex, nofollow" />
     )}
-    <script type="application/ld+json" set:html={`
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "Physician",
-            "name": "Πασχάλης Γκίκας",
-            "description": "Ψυχίατρος - Ψυχοθεραπευτής με εξειδίκευση στη Νευροτροποποίηση (rTMS / tDCS) και Φαρμακογονιδιωματική.",
-            "url": "https://drgkikas.com",
-            "image": "https://drgkikas.com/wp-content/uploads/2021/01/logo.png",
-            "telephone": "+302118500016",
-            "email": "contact@drgkikas.com",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "Ξενοφώντος 15Α",
-              "addressLocality": "Αθήνα",
-              "postalCode": "10557",
-              "addressCountry": "GR"
-            },
-            "medicalSpecialty": "Psychiatric",
-            "memberOf": [
-              {"@type": "Organization", "name": "American Psychiatric Association (APA)"},
-              {"@type": "Organization", "name": "Hellenic American Psychiatric Association (HAPA)"},
-              {"@type": "Organization", "name": "EN.E.PS.E."}
-            ]
-          },
-          {
-            "@type": "MedicalWebPage",
-            "name": "${title}",
-            "headline": "${description}"
-          }
-        ]
-      }
-    `} />
+    {schema && <script type="application/ld+json" set:html={schema} />}
   </head>
   <body class="flex flex-col min-h-screen">
     <slot />

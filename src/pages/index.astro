@@ -2,9 +2,41 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/UI/Header.astro';
 import Footer from '../components/UI/Footer.astro';
+
+const schemaBundle = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Physician",
+      "@id": "https://drgkikas.gr/#physician",
+      "name": "Πασχάλης Γκίκας",
+      "medicalSpecialty": "Psychiatry",
+      "url": "https://drgkikas.gr"
+    },
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://drgkikas.gr/#clinic",
+      "name": "Smart CNS Center",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Ξενοφώντος 15Α",
+        "addressLocality": "Αθήνα",
+        "postalCode": "105 57",
+        "addressCountry": "GR"
+      },
+      "telephone": "2118500016"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://drgkikas.gr/#website",
+      "url": "https://drgkikas.gr",
+      "name": "Δρ. Πασχάλης Γκίκας - Ψυχίατρος"
+    }
+  ]
+});
 ---
 
-<Layout 
+<Layout schema={schemaBundle} 
   title="Πασχάλης Γκίκας | Ψυχίατρος Αθήνα | rTMS & Φαρμακογονιδιωματική" 
   description="Πασχάλης Γκίκας — Ψυχίατρος στην Αθήνα. Εξειδικευμένες υπηρεσίες rTMS, Φαρμακογονιδιωματικής και Ψυχοθεραπείας στο Smart CNS Center."
 >

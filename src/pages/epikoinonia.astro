@@ -2,9 +2,38 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/UI/Header.astro';
 import Footer from '../components/UI/Footer.astro';
+
+const schemaBundle = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Physician",
+      "@id": "https://drgkikas.gr/#physician"
+    },
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://drgkikas.gr/#clinic",
+      "name": "Ιδιωτικό Ιατρείο Πασχάλης Γκίκας",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Ξενοφώντος 15Α",
+        "addressLocality": "Αθήνα",
+        "postalCode": "105 57",
+        "addressCountry": "GR"
+      },
+      "telephone": "+302118500016",
+      "email": "contact@drgkikas.com",
+      "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+302118500016",
+          "contactType": "Customer Service"
+      }
+    }
+  ]
+});
 ---
 
-<Layout 
+<Layout schema={schemaBundle} 
   title="Επικοινωνία | Πασχάλης Γκίκας | Ψυχίατρος Αθήνα"
   description="Επικοινωνήστε με τον ψυχίατρο Πασχάλη Γκίκα για να κλείσετε το ραντεβού σας. Ιατρείο στο κέντρο της Αθήνας (Σύνταγμα)."
 >

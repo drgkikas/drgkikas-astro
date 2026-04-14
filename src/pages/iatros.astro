@@ -2,9 +2,27 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/UI/Header.astro';
 import Footer from '../components/UI/Footer.astro';
+
+const schemaBundle = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Person", "Physician"],
+      "@id": "https://drgkikas.gr/#physician",
+      "name": "Πασχάλης Γκίκας",
+      "jobTitle": "Ψυχίατρος - Ψυχοθεραπευτής",
+      "worksFor": {
+        "@id": "https://drgkikas.gr/#clinic"
+      },
+      "alumniOf": "Harvard Medical School (Cert), Maastricht University",
+      "medicalSpecialty": "Psychiatry",
+      "url": "https://drgkikas.gr/iatros"
+    }
+  ]
+});
 ---
 
-<Layout title="Πασχάλης Γκίκας | Ψυχίατρος - Ψυχοθεραπευτής στην Αθήνα" description="Βιογραφικό του Πασχάλη Γκίκα, εξειδικευμένου ψυχιάτρου στη Νευροτροποποίηση (rTMS) και Φαρμακογονιδιωματική (PGx).">
+<Layout schema={schemaBundle} title="Πασχάλης Γκίκας | Ψυχίατρος - Ψυχοθεραπευτής στην Αθήνα" description="Βιογραφικό του Πασχάλη Γκίκα, εξειδικευμένου ψυχιάτρου στη Νευροτροποποίηση (rTMS) και Φαρμακογονιδιωματική (PGx).">
   <Header />
   
   <main class="pt-20">
