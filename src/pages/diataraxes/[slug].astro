@@ -14,56 +14,30 @@ const { Content } = await render(entry);
 
 // Schema.org Data
 const canonicalURL = new URL(Astro.url.pathname, 'https://drgkikas.com').href;
-const breadcrumbSchema = {
+
+// FAQ Schema (optional)
+const faqEntities = (entry.data.faqs && entry.data.faqs.length > 0)
+  ? [{
+      "@type": "FAQPage",
+      "mainEntity": entry.data.faqs.map(f => ({
+        "@type": "Question",
+        "name": f.question,
+        "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+      }))
+    }]
+  : [];
+
+const schemaBundle = JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Αρχική",
-      "item": "https://drgkikas.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Διαταραχές",
-      "item": "https://drgkikas.com/diataraxes/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": entry.data.title,
-      "item": canonicalURL
-    }
-  ]
-};
-
-// FAQ Schema
-let faqSchema = null;
-if (entry.data.faqs && entry.data.faqs.length > 0) {
-  faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": entry.data.faqs.map(f => ({
-      "@type": "Question",
-      "name": f.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": f.answer
-      }
-    }))
-  };
-}
-
-
-const hasFAQ = Content && Content.toString().includes('FAQ'); // naive check or user manual entry wrapper
-const combinedSchemaGraph = [
+  "@graph": [
     {
       "@type": "MedicalCondition",
       "name": entry.data.title,
       "description": entry.data.description,
-      "associatedAnatomy": "Brain",
+      "associatedAnatomy": {
+        "@type": "AnatomicalStructure",
+        "name": "Εγκέφαλος"
+      },
       ...(entry.data.icd10 && {
         "code": {
           "@type": "MedicalCode",
@@ -79,21 +53,15 @@ const combinedSchemaGraph = [
         { "@type": "ListItem", "position": 2, "name": "Διαταραχές", "item": "https://drgkikas.com/diataraxes" },
         { "@type": "ListItem", "position": 3, "name": entry.data.title, "item": "https://drgkikas.com/diataraxes/" + slug }
       ]
-    }
-];
-
-// If there was an existing breadcrumbSchema or FAQ, merge them dynamically on build.
-// (diataraxes/[slug] already has breadcrumbSchema built-in, but we will overwrite Layout schema with our entity graph)
-const schemaBundle = JSON.stringify({
-  "@context": "https://schema.org",
-  "@graph": combinedSchemaGraph
+    },
+    ...faqEntities
+  ]
 });
 ---
 
 <Layout schema={schemaBundle} title={`${entry.data.title}`} description={entry.data.description}>
   
-  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
-  {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
+  <!-- Schema injected via Layout schemaBundle -->
   
   <Header />
   

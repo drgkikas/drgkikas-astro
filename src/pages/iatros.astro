@@ -1,4 +1,4 @@
-﻿---
+---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/UI/Header.astro';
 import Footer from '../components/UI/Footer.astro';
@@ -14,11 +14,15 @@ const schemaBundle = JSON.stringify({
       "worksFor": {
         "@id": "https://drgkikas.com/#clinic"
       },
-      "alumniOf": "Harvard Medical School (Cert), Maastricht University",
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "Università di Bologna" },
+        { "@type": "CollegeOrUniversity", "name": "Harvard University" },
+        { "@type": "CollegeOrUniversity", "name": "Maastricht University" }
+      ],
       "medicalSpecialty": "Psychiatry",
       "url": "https://drgkikas.com/iatros",
       "image": "https://drgkikas.com/images/iatros-profile.png",
-      "telephone": "2118500016",
+      "telephone": "+302118500016",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Ξενοφώντος 15Α",
