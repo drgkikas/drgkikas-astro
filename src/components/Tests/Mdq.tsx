@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+﻿import { useState, useCallback } from 'react';
 import { calcScore } from '../../lib/clientScoring';
 
 const APPT_LINK = 'https://appt.link/meet-with-paschalis-gkikas/therapy-session';
@@ -83,7 +83,7 @@ export default function Mdq() {
           <p className="text-sm text-slate-500 mb-3">{emailSent ? `Αποτελέσματα στάλθηκαν στο ${email}.` : 'Επεξεργασία...'}</p>
           {isPositive
             ? <a href={APPT_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold text-sm hover:bg-blue-800 transition-colors">Κλείστε Ραντεβού →</a>
-            : <a href="https://drgkikas.gr/epikoinonia" className="text-sm text-blue-700 font-semibold hover:underline">Επικοινωνήστε μαζί μου →</a>
+            : <a href="https://drgkikas.com/epikoinonia" className="text-sm text-blue-700 font-semibold hover:underline">Επικοινωνήστε μαζί μου →</a>
           }
         </div>
         <button onClick={() => { setPartA(Array(13).fill(null)); setPartB(null); setPartC(null); setState('quiz'); setResult(null); }} className="text-sm text-slate-400 hover:text-slate-600 underline underline-offset-4">Επανάληψη</button>

@@ -1,4 +1,4 @@
-// ============================================================
+﻿// ============================================================
 // EMAIL LIBRARY — Templates for all 7 psychometric tests
 // ============================================================
 
@@ -18,7 +18,7 @@ function footer() {
     <hr style="border:none;border-top:1px solid #e2e8f0;margin:40px 0 24px;">
     <p style="font-size:13px;color:#94a3b8;line-height:1.6;">
       Αυτό το αποτέλεσμα δεν αποτελεί διάγνωση και δεν υποκαθιστά την κλινική αξιολόγηση.<br>
-      <a href="https://drgkikas.gr" style="color:#3b82f6;">drgkikas.gr</a> | Δρ. Παντελής Γκίκας, Ψυχίατρος
+      <a href="https://drgkikas.com" style="color:#3b82f6;">drgkikas.com</a> | Δρ. Παντελής Γκίκας, Ψυχίατρος
     </p>
   `;
 }
@@ -32,7 +32,7 @@ function wrapper(content: string) {
       <div style="max-width:600px;margin:32px auto;background:#ffffff;border-radius:16px;overflow:hidden;border:1px solid #e2e8f0;">
         <div style="background:linear-gradient(135deg,#1e3a5f 0%,#2563eb 100%);padding:32px 40px;">
           <p style="color:#93c5fd;font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin:0 0 8px;">Αποτελέσματα Ψυχομετρικής Αξιολόγησης</p>
-          <p style="color:#ffffff;font-size:14px;margin:0;opacity:0.85;">drgkikas.gr — Δρ. Παντελής Γκίκας</p>
+          <p style="color:#ffffff;font-size:14px;margin:0;opacity:0.85;">drgkikas.com — Δρ. Παντελής Γκίκας</p>
         </div>
         <div style="padding:40px;">
           ${content}
@@ -68,7 +68,7 @@ function ctaByLevel(worstLevel: string) {
   const mid = ['mild', 'moderate', 'hazardous'];
   if (low.includes(worstLevel)) {
     return `<p style="color:#64748b;margin-top:24px;">Αν έχετε ερωτήσεις ή θέλετε να τα συζητήσουμε, μπορείτε να επικοινωνήσετε μαζί μου.</p>
-            ${ctaButton('Επικοινωνήστε μαζί μου', 'https://drgkikas.gr/epikoinonia', '#64748b')}`;
+            ${ctaButton('Επικοινωνήστε μαζί μου', 'https://drgkikas.com/epikoinonia', '#64748b')}`;
   }
   if (mid.includes(worstLevel)) {
     return `<p style="color:#64748b;margin-top:24px;">Θα χαρώ να τα συζητήσουμε σε μια συνεδρία αξιολόγησης.</p>

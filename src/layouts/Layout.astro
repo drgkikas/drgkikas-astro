@@ -1,4 +1,4 @@
----
+﻿---
 import '../styles/global.css';
 
 interface Props {
@@ -16,8 +16,8 @@ const {
   image = "/images/dr-gkikas-portrait.jpg",
   schema
 } = Astro.props;
-const canonical = canonicalURL ?? new URL(Astro.url.pathname, 'https://drgkikas.gr').href;
-const socialImageURL = new URL(image, 'https://drgkikas.gr').href;
+const canonical = canonicalURL ?? new URL(Astro.url.pathname, 'https://drgkikas.com').href;
+const socialImageURL = new URL(image, 'https://drgkikas.com').href;
 ---
 
 <!doctype html>

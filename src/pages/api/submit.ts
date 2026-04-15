@@ -8,19 +8,28 @@ import type { APIRoute } from 'astro';
 import { calculateScore, type TestName } from '../../lib/scoring';
 import { buildEmail } from '../../lib/emails';
 
-const ALLOWED_ORIGIN = 'https://drgkikas.gr';
+const ALLOWED_ORIGINS = [
+  'https://drgkikas.com',
+  'https://www.drgkikas.com',
+];
 
-const corsHeaders = {
-  'Access-Control-Allow-Origin': ALLOWED_ORIGIN,
-  'Access-Control-Allow-Methods': 'POST, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type',
-};
+function getCorsHeaders(request: Request) {
+  const origin = request.headers.get('Origin') ?? '';
+  const allowedOrigin = ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0];
+  return {
+    'Access-Control-Allow-Origin': allowedOrigin,
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Vary': 'Origin',
+  };
+}
 
-export const OPTIONS: APIRoute = async () => {
-  return new Response(null, { status: 204, headers: corsHeaders });
+export const OPTIONS: APIRoute = async ({ request }) => {
+  return new Response(null, { status: 204, headers: getCorsHeaders(request) });
 };
 
 export const POST: APIRoute = async ({ request, locals }) => {
+  const corsHeaders = getCorsHeaders(request);
   try {
     // 1. Parse body
     const body = await request.json() as {
@@ -82,7 +91,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            from: 'Δρ. Γκίκας <noreply@drgkikas.gr>',
+            from: 'Δρ. Γκίκας <noreply@drgkikas.com>',
             to: emailContent.to,
             subject: emailContent.subject,
             html: emailContent.html,

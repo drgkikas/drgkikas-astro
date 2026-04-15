@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+﻿import { useState, useCallback } from 'react';
 import { calcScore, type TestName } from '../../lib/clientScoring';
 
 // ─── Types ────────────────────────────────────────────────────
@@ -41,7 +41,7 @@ function CtaBlock({ level }: { level: string }) {
   const safe = ['normal', 'minimal', 'low', 'negative'];
   const mid  = ['mild', 'moderate', 'hazardous'];
   if (safe.includes(level)) return (
-    <a href="https://drgkikas.gr/epikoinonia"
+    <a href="https://drgkikas.com/epikoinonia"
       className="inline-flex items-center gap-2 mt-4 text-blue-700 font-semibold hover:underline text-sm">
       Επικοινωνήστε μαζί μου →
     </a>
