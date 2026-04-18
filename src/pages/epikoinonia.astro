@@ -68,7 +68,10 @@ if (Astro.request.method === 'POST') {
       }),
     });
 
-    if (!resendRes.ok) throw new Error('Resend failed');
+    if (!resendRes.ok) {
+      const errorBody = await resendRes.json().catch(() => ({ message: resendRes.statusText })) as any;
+      throw new Error(`Resend error ${resendRes.status}: ${errorBody?.message || errorBody?.name || 'Unknown error'}`);
+    }
 
     return new Response(JSON.stringify({ success: true }), { status: 200 });
   } catch (err: any) {
