@@ -38,11 +38,34 @@ if (Astro.request.method === 'POST') {
     const body = await Astro.request.json();
     const { firstname, lastname, email, phone, message } = body;
 
-    // Astro 6 + Cloudflare environment access (Dynamic import to avoid build errors)
-    const { env } = await import('cloudflare:workers' as any);
-    const resendKey = (env as any).RESEND_API_KEY;
+    // Astro 6 + Cloudflare environment access (Multi-source fallback)
+    let resendKey: string | undefined;
     
-    if (!resendKey) throw new Error('Key missing from environment');
+    try {
+      // 1. Try cloudflare:workers (Astro 6 official)
+      const cf = await import('cloudflare:workers' as any);
+      resendKey = cf.env?.RESEND_API_KEY;
+    } catch (e) {}
+
+    // 2. Try Astro.locals fallbacks (Compatibility)
+    if (!resendKey) {
+      resendKey = (Astro.locals as any).runtime?.env?.RESEND_API_KEY;
+    }
+
+    // 3. Try build-time env (Local dev / CI)
+    if (!resendKey) {
+      resendKey = import.meta.env.RESEND_API_KEY;
+    }
+
+    if (!resendKey) {
+      // Debug: Show available keys to help identified the issue
+      let availableKeys = "None";
+      try {
+        const cf = await import('cloudflare:workers' as any);
+        availableKeys = Object.keys(cf.env || {}).join(', ');
+      } catch(e) {}
+      throw new Error(`Key missing from environment. Found keys: [${availableKeys}]`);
+    }
 
     const emailHtml = `<p><strong>Από:</strong> ${firstname} ${lastname}</p><p><strong>Email:</strong> ${email}</p><p><strong>Τηλ:</strong> ${phone}</p><hr/><p>${message}</p>`;
 
