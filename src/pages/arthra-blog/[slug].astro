@@ -1,4 +1,5 @@
 ---
+export const prerender = true;
 import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/UI/Header.astro';
@@ -6,8 +7,12 @@ import Footer from '../../components/UI/Footer.astro';
 
 import { getEntry } from 'astro:content';
 
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(p => ({ params: { slug: p.id } }));
+}
+
 const { slug } = Astro.params;
-if (!slug) return Astro.redirect('/404');
 const entry = await getEntry('blog', slug);
 if (!entry) return Astro.redirect('/404');
 const { Content } = await render(entry);
