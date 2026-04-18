@@ -1,4 +1,4 @@
-﻿// ============================================================
+// ============================================================
 // EMAIL LIBRARY — Templates for all 7 psychometric tests
 // ============================================================
 
@@ -18,7 +18,7 @@ function footer() {
     <hr style="border:none;border-top:1px solid #e2e8f0;margin:40px 0 24px;">
     <p style="font-size:13px;color:#94a3b8;line-height:1.6;">
       Αυτό το αποτέλεσμα δεν αποτελεί διάγνωση και δεν υποκαθιστά την κλινική αξιολόγηση.<br>
-      <a href="https://drgkikas.com" style="color:#3b82f6;">drgkikas.com</a> | Δρ. Παντελής Γκίκας, Ψυχίατρος
+      <a href="https://drgkikas.com" style="color:#3b82f6;">drgkikas.com</a> | Πασχάλης Γκίκας, Ψυχίατρος-ψυχοθεραπευτής
     </p>
   `;
 }
@@ -32,7 +32,7 @@ function wrapper(content: string) {
       <div style="max-width:600px;margin:32px auto;background:#ffffff;border-radius:16px;overflow:hidden;border:1px solid #e2e8f0;">
         <div style="background:linear-gradient(135deg,#1e3a5f 0%,#2563eb 100%);padding:32px 40px;">
           <p style="color:#93c5fd;font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin:0 0 8px;">Αποτελέσματα Ψυχομετρικής Αξιολόγησης</p>
-          <p style="color:#ffffff;font-size:14px;margin:0;opacity:0.85;">drgkikas.com — Δρ. Παντελής Γκίκας</p>
+          <p style="color:#ffffff;font-size:14px;margin:0;opacity:0.85;">drgkikas.com — Πασχάλης Γκίκας, Ψυχίατρος-ψυχοθεραπευτής</p>
         </div>
         <div style="padding:40px;">
           ${content}
