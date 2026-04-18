@@ -31,6 +31,37 @@ const schemaBundle = JSON.stringify({
     }
   ]
 });
+
+// SSR Handle POST submission
+if (Astro.request.method === 'POST') {
+  try {
+    const body = await Astro.request.json();
+    const { firstname, lastname, email, phone, message } = body;
+
+    const resendKey = (Astro.locals as any).runtime?.env?.RESEND_API_KEY;
+    if (!resendKey) throw new Error('Key missing');
+
+    const emailHtml = `<p><strong>Από:</strong> ${firstname} ${lastname}</p><p><strong>Email:</strong> ${email}</p><p><strong>Τηλ:</strong> ${phone}</p><hr/><p>${message}</p>`;
+
+    const resendRes = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: { 'Authorization': `Bearer ${resendKey}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        from: 'Δρ. Γκίκας <noreply@drgkikas.com>',
+        to: 'contact@drgkikas.com',
+        subject: `Μήνυμα από ${firstname} ${lastname}`,
+        html: emailHtml,
+        reply_to: email,
+      }),
+    });
+
+    if (!resendRes.ok) throw new Error('Resend failed');
+
+    return new Response(JSON.stringify({ success: true }), { status: 200 });
+  } catch (err: any) {
+    return new Response(JSON.stringify({ error: err.message }), { status: 500 });
+  }
+}
 ---
 
 <Layout schema={schemaBundle} 
@@ -242,7 +273,7 @@ const schemaBundle = JSON.stringify({
         const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries());
         
-        const response = await fetch('/api/contact', {
+        const response = await fetch('/epikoinonia', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
