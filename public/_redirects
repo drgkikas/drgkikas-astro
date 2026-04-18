@@ -27,10 +27,8 @@
 /rtms/neuroplasticity/ /rtms/pos-leitourgei/neuroplasticity 301
 /rtms/trd/ /rtms/endixeis/trd 301
 /psyxotherapeia/ /ypiresies/psychotherapeia 301
-/ypiresies/ /ypiresies 301
 /pgx/ /ypiresies/pgx 301
-/rtms/ /rtms 301
-/epikoinonia/ /epikoinonia 301
+/pgx /ypiresies/pgx 301
 
 # Handle wildcard/trailing slash variations
 /agxodeis-diataraxes /diataraxes/agxodeis-diataraxes 301
