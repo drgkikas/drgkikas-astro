@@ -7,6 +7,7 @@ export const prerender = false;
 import type { APIRoute } from 'astro';
 import { calculateScore, type TestName } from '../../lib/scoring';
 import { buildEmail } from '../../lib/emails';
+import { env } from 'cloudflare:workers';
 
 const ALLOWED_ORIGINS = [
   'https://drgkikas.com',
@@ -59,8 +60,8 @@ export const POST: APIRoute = async ({ request, locals }) => {
     // 2. Calculate score
     const result = calculateScore(test_name, answers);
 
-    // 3. Save to D1
-    const db = (locals as Record<string, unknown>).runtime?.env?.DB as D1Database | undefined;
+    // 3. Save to D1 (Astro 6 Cloudflare module access)
+    const db = (env as any).DB as D1Database | undefined;
 
     let rowId: number | null = null;
     if (db) {
@@ -77,8 +78,8 @@ export const POST: APIRoute = async ({ request, locals }) => {
       rowId = insertResult.meta?.last_row_id ?? null;
     }
 
-    // 4. Send email via Resend
-    const resendKey = (locals as Record<string, unknown>).runtime?.env?.RESEND_API_KEY as string | undefined;
+    // 4. Send email via Resend (Astro 6 Cloudflare module access)
+    const resendKey = (env as any).RESEND_API_KEY as string | undefined;
 
     let emailSent = false;
     if (resendKey) {

@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/UI/Header.astro';
 import Footer from '../components/UI/Footer.astro';
+import { env } from 'cloudflare:workers';
 
 const schemaBundle = JSON.stringify({
   "@context": "https://schema.org",
@@ -38,8 +39,10 @@ if (Astro.request.method === 'POST') {
     const body = await Astro.request.json();
     const { firstname, lastname, email, phone, message } = body;
 
-    const resendKey = (Astro.locals as any).runtime?.env?.RESEND_API_KEY;
-    if (!resendKey) throw new Error('Key missing');
+    // 4. Send email via Resend (Astro 6 Cloudflare module access)
+    const resendKey = (env as any).RESEND_API_KEY as string | undefined;
+    
+    if (!resendKey) throw new Error('Key missing from environment');
 
     const emailHtml = `<p><strong>Από:</strong> ${firstname} ${lastname}</p><p><strong>Email:</strong> ${email}</p><p><strong>Τηλ:</strong> ${phone}</p><hr/><p>${message}</p>`;
 
