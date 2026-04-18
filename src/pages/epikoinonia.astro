@@ -60,8 +60,8 @@ if (Astro.request.method === 'POST') {
       method: 'POST',
       headers: { 'Authorization': `Bearer ${resendKey}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        from: 'Δρ. Γκίκας <noreply@drgkikas.com>',
-        to: 'contact@drgkikas.com',
+        from: 'ΦΟΡΜΑ ΕΠΙΚΟΙΝΩΝΙΑΣ <noreply@drgkikas.com>',
+        to: ['contact@drgkikas.com', 'paschalis.gkikas@gmail.com'],
         subject: `Μήνυμα από ${firstname} ${lastname}`,
         html: emailHtml,
         reply_to: email,
@@ -69,8 +69,7 @@ if (Astro.request.method === 'POST') {
     });
 
     if (!resendRes.ok) {
-      const errorBody = await resendRes.json().catch(() => ({ message: resendRes.statusText })) as any;
-      throw new Error(`Resend error ${resendRes.status}: ${errorBody?.message || errorBody?.name || 'Unknown error'}`);
+      throw new Error('Η αποστολή απέτυχε. Παρακαλούμε προσπαθήστε αργότερα.');
     }
 
     return new Response(JSON.stringify({ success: true }), { status: 200 });
