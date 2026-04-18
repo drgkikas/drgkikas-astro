@@ -2,6 +2,9 @@
 import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/UI/Header.astro';
+import SymptomTeaser from '../../components/UI/SymptomTeaser.astro';
+import FaqBlock from '../../components/UI/FaqBlock.astro';
+import CtaBlock from '../../components/UI/CtaBlock.astro';
 import Footer from '../../components/UI/Footer.astro';
 
 import { getEntry } from 'astro:content';
@@ -106,6 +109,9 @@ const schemaBundle = JSON.stringify({
           prose-img:rounded-2xl prose-img:shadow-sm
           ">
           <Content />
+          <SymptomTeaser />
+          <FaqBlock faqs={entry.data.faqs} />
+          <CtaBlock primaryHref="/ypiresies/adhd-evaluation" title="Κλείστε ραντεβού αξιολόγησης" />
         </div>
       </div>
     </div>
