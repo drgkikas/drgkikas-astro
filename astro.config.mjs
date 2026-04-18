@@ -11,6 +11,7 @@ export default defineConfig({
   output: 'static',
   site: 'https://drgkikas.com',
   adapter: cloudflare({
+    platform: 'pages',
     imageService: 'passthrough',
     platformProxy: { enabled: false }
   }),
