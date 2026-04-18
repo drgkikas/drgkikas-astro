@@ -160,7 +160,8 @@ const schemaBundle = JSON.stringify({
 
             <!-- Error Message (Hidden by default) -->
             <div id="error-message" class="hidden mb-8 bg-red-50 border border-red-100 text-red-700 px-6 py-4 rounded-xl text-sm font-medium">
-               Κάτι πήγε στραβά. Παρακαλούμε προσπαθήστε ξανά ή καλέστε μας στο <a href="tel:2118500016" class="underline">211 850 0016</a>.
+               <span id="error-text">Κάτι πήγε στραβά.</span> 
+               Παρακαλούμε προσπαθήστε ξανά ή καλέστε μας στο <a href="tel:2118500016" class="underline">211 850 0016</a>.
             </div>
 
             <form id="contact-form" class="space-y-6">
@@ -259,8 +260,10 @@ const schemaBundle = JSON.stringify({
         } else {
           throw new Error(result.error || 'Submission failed');
         }
-      } catch (err) {
+      } catch (err: any) {
         console.error('Submit error:', err);
+        const errorText = document.getElementById('error-text');
+        if (errorText) errorText.textContent = err.message + '. ';
         errorMsg?.classList.remove('hidden');
         if (submitBtn) {
           submitBtn.disabled = false;

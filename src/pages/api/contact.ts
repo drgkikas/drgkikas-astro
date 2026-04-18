@@ -57,7 +57,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
       },
       body: JSON.stringify({
         from: 'Δρ. Γκίκας Φόρμα <noreply@drgkikas.com>',
-        to: ['contact@drgkikas.com', 'paschalis.gkikas@gmail.com'],
+        to: 'contact@drgkikas.com',
         subject: `Νέο Μήνυμα από ${firstname} ${lastname}`,
         html: emailHtml,
         reply_to: email as string,
@@ -65,9 +65,12 @@ export const POST: APIRoute = async ({ request, locals }) => {
     });
 
     if (!resendRes.ok) {
-      const errorData = await resendRes.json();
+      const errorData = await resendRes.json() as any;
       console.error('Resend API Error:', errorData);
-      throw new Error('Email delivery failed');
+      return new Response(JSON.stringify({ error: `Resend Error: ${errorData.message || resendRes.statusText}` }), {
+        status: 500,
+        headers: { 'Content-Type': 'application/json' },
+      });
     }
 
     return new Response(JSON.stringify({ success: true, message: 'Το μήνυμά σας στάλθηκε με επιτυχία!' }), {
