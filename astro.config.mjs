@@ -8,10 +8,9 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'static',
+  output: 'server',
   site: 'https://drgkikas.com',
   adapter: cloudflare({
-    platform: 'pages',
     imageService: 'passthrough',
     platformProxy: { enabled: false }
   }),
