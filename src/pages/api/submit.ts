@@ -101,7 +101,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            from: 'Δρ. Γκίκας <noreply@drgkikas.com>',
+            from: 'drGkikas <noreply@drgkikas.com>',
             to: emailContent.to,
             subject: emailContent.subject,
             html: emailContent.html,
