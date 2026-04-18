@@ -9,7 +9,7 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   output: 'server',
-  site: 'https://drgkikas.gr',
+  site: 'https://drgkikas.com',
   adapter: cloudflare({
     imageService: 'compile',
   }),
