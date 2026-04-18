@@ -1,0 +1,21 @@
+---
+---
+<!-- CtaBlock.astro -->
+<script lang="ts">
+  export let primaryHref: string = "#";
+  export let secondaryHref?: string;
+  export let title: string = "";
+  export let text: string = "";
+</script>
+<div class="glass-card p-8 md:p-12 mb-12 text-center">
+  {#if title}
+    <h2 class="text-2xl font-semibold mb-4 text-slate-900">{title}</h2>
+  {/if}
+  {#if text}
+    <p class="mb-6 text-slate-700">{text}</p>
+  {/if}
+  <a href={primaryHref} class="btn-primary inline-block mx-2">{title || 'Κλείστε ραντεβού αξιολόγησης'}</a>
+  {#if secondaryHref}
+    <a href={secondaryHref} class="btn-secondary inline-block mx-2">Διαβάστε περισσότερα</a>
+  {/if}
+</div>

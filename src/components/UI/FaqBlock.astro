@@ -1,0 +1,25 @@
+---
+---
+<!-- FaqBlock.astro -->
+<script lang="ts">
+  export interface FaqItem { question: string; answer: string; }
+  export let faqs: FaqItem[] = [];
+  let openIndex = -1;
+  const toggle = (i: number) => { openIndex = openIndex === i ? -1 : i; };
+</script>
+<div class="glass-card p-8 md:p-12 mb-12">
+  <h2 class="text-2xl font-semibold mb-4 text-slate-900">Συχνές Ερωτήσεις</h2>
+  <ul class="space-y-4">
+    {faqs.map((item, i) => (
+      <li class="border-b pb-2">
+        <button class="w-full text-left flex justify-between items-center text-slate-800 font-medium" on:click={() => toggle(i)}>
+          <span>{item.question}</span>
+          <span class="text-sm">{openIndex === i ? '−' : '+'}</span>
+        </button>
+        {openIndex === i && (
+          <p class="mt-2 text-slate-600">{item.answer}</p>
+        )}
+      </li>
+    ))}
+  </ul>
+</div>
