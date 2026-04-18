@@ -59,17 +59,13 @@ export const POST: APIRoute = async ({ request, locals }) => {
     // 2. Calculate score
     const result = calculateScore(test_name, answers);
 
-    // 3. Save to D1 (Astro 6 Cloudflare robust access)
+    // 3. Save to D1 (Astro 6 Cloudflare robust access - NO RUNTIME REFS)
     let db: D1Database | undefined;
     try {
       const cf = await import('cloudflare:workers' as any);
       db = cf.env?.DB;
     } catch (e) {}
     
-    if (!db) {
-       db = (locals as any).runtime?.env?.DB;
-    }
-
     let rowId: number | null = null;
     if (db) {
       const insertResult = await db.prepare(`
@@ -85,19 +81,13 @@ export const POST: APIRoute = async ({ request, locals }) => {
       rowId = insertResult.meta?.last_row_id ?? null;
     }
 
-    // 4. Send email via Resend (Astro 6 Cloudflare robust access)
+    // 4. Send email via Resend (Astro 6 Cloudflare robust access - NO RUNTIME REFS)
     let resendKey: string | undefined;
     try {
       const cf = await import('cloudflare:workers' as any);
       resendKey = cf.env?.RESEND_API_KEY;
-    } catch(e) {}
-
-    if (!resendKey) {
-      resendKey = (locals as any).runtime?.env?.RESEND_API_KEY;
-    }
-
-    if (!resendKey) {
-      resendKey = import.meta.env.RESEND_API_KEY;
+    } catch(e) {
+      resendKey = (import.meta as any).env?.RESEND_API_KEY;
     }
 
     let emailSent = false;
