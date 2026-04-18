@@ -8,12 +8,8 @@ import type { APIRoute } from 'astro';
 
 export const POST: APIRoute = async ({ request, locals }) => {
   try {
-    const formData = await request.formData();
-    const firstname = formData.get('firstname');
-    const lastname = formData.get('lastname');
-    const email = formData.get('email');
-    const phone = formData.get('phone');
-    const message = formData.get('message');
+    const body = await request.json();
+    const { firstname, lastname, email, phone, message } = body;
 
     // 1. Basic Validation
     if (!firstname || !lastname || !email || !message) {
