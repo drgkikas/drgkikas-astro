@@ -11,7 +11,8 @@ export default defineConfig({
   output: 'static',
   site: 'https://drgkikas.com',
   adapter: cloudflare({
-    imageService: 'compile',
+    imageService: 'passthrough',
+    platformProxy: { enabled: false }
   }),
   vite: {
     plugins: [tailwindcss()]
