@@ -2,6 +2,7 @@
 
 @import "tailwindcss";
 @reference "tailwindcss";
+/* Performance: Google Fonts moved to Layout.astro for faster loading */
 
 @layer base {
   body {
