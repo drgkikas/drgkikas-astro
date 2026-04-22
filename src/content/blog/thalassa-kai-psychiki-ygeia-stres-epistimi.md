@@ -186,10 +186,16 @@ schema: |
 
 ## Βιβλιογραφία
 
-1. Wheeler BW, White M, Stahl-Timmins W, Depledge MH. Does living by the coast improve health and wellbeing? Health & Place. 2012;18(5):1198–1201.
-2. Garrett JK, White MP, Huang J, et al. Coastal proximity and mental health among urban adults in England: The moderating effect of household income. Health & Place. 2019;59:102200.
-3. Cracknell D, White MP, Pahl S, Nichols WJ, Depledge MH. Marine biota and psychological well-being: A preliminary examination of dose-response effects in an aquarium setting. Environment and Behavior. 2016.
-4. Nichols WJ. Blue Mind: How Water Makes You Happier, More Connected and Better at What You Do. Little, Brown; 2014.
-5. Carta MG, Maggiani F, Pilutzu L, et al. Sailing can improve quality of life of people with severe mental disorders: Results of a cross over randomized controlled trial. Clinical Practice & Epidemiology in Mental Health. 2014;10:73-86.
-6. Sancassiani F, Cocco A, Cossu G, et al. “VelaMente?!” - Sailing in a crew to improve self-efficacy in people with psychosocial disabilities: A randomized controlled trial. Clinical Practice & Epidemiology in Mental Health. 2017;13:200–212.
-7. Marchand WR, Klinger W, Block K, et al. Mindfulness training plus nature exposure for veterans with psychiatric and substance use disorders: A model intervention. International Journal of Environmental Research and Public Health. 2019;16(23):4726.
+**1.** Wheeler BW, White M, Stahl-Timmins W, Depledge MH. Does living by the coast improve health and wellbeing? Health & Place. 2012;18(5):1198–1201.
+
+**2.** Garrett JK, White MP, Huang J, et al. Coastal proximity and mental health among urban adults in England: The moderating effect of household income. Health & Place. 2019;59:102200.
+
+**3.** Cracknell D, White MP, Pahl S, Nichols WJ, Depledge MH. Marine biota and psychological well-being: A preliminary examination of dose-response effects in an aquarium setting. Environment and Behavior. 2016.
+
+**4.** Nichols WJ. Blue Mind: How Water Makes You Happier, More Connected and Better at What You Do. Little, Brown; 2014.
+
+**5.** Carta MG, Maggiani F, Pilutzu L, et al. Sailing can improve quality of life of people with severe mental disorders: Results of a cross over randomized controlled trial. Clinical Practice & Epidemiology in Mental Health. 2014;10:73-86.
+
+**6.** Sancassiani F, Cocco A, Cossu G, et al. “VelaMente?!” - Sailing in a crew to improve self-efficacy in people with psychosocial disabilities: A randomized controlled trial. Clinical Practice & Epidemiology in Mental Health. 2017;13:200–212.
+
+**7.** Marchand WR, Klinger W, Block K, et al. Mindfulness training plus nature exposure for veterans with psychiatric and substance use disorders: A model intervention. International Journal of Environmental Research and Public Health. 2019;16(23):4726.
