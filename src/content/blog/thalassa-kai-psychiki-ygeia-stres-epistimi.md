@@ -184,7 +184,7 @@ schema: |
 - [Διαταραχές Ύπνου](https://drgkikas.com/diataraxes/diataraxes-ypnou)
 - [Ψυχοθεραπεία](https://drgkikas.com/ypiresies/psychotherapeia)
 
-### Βιβλιογραφία
+## Βιβλιογραφία
 
 1. Wheeler BW, White M, Stahl-Timmins W, Depledge MH. Does living by the coast improve health and wellbeing? Health & Place. 2012;18(5):1198–1201.
 2. Garrett JK, White MP, Huang J, et al. Coastal proximity and mental health among urban adults in England: The moderating effect of household income. Health & Place. 2019;59:102200.
