@@ -17,7 +17,7 @@ if (!entry) return Astro.redirect('/404');
 const { Content } = await render(entry);
 ---
 
-<Layout title={entry.data.title} description={entry.data.description}>
+<Layout title={entry.data.title} description={entry.data.description} schema={entry.data.schema}>
   <Header />
   <main class="pt-24 pb-16 bg-white min-h-screen">
     <article class="max-w-3xl mx-auto px-4 sm:px-6 mt-12 prose prose-lg prose-blue">

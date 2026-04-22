@@ -40,6 +40,7 @@ const blog = defineCollection({
     image: z.string().optional(),
     kategoria: z.string().optional(),
     keywords: z.string().optional(),
+    schema: z.string().optional(),
   }),
 });
 
