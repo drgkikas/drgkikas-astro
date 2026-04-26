@@ -45,17 +45,25 @@ export const POST: APIRoute = async ({ request, locals }) => {
 
     // Turnstile Verification
     let turnstileSecret: string | undefined;
-    try {
-      const cf = await import('cloudflare:workers' as any);
-      turnstileSecret = cf.env?.TURNSTILE_SECRET_KEY;
-    } catch(e) {
-      turnstileSecret = (import.meta as any).env?.TURNSTILE_SECRET_KEY;
+    let resendKey: string | undefined;
+    let db: D1Database | undefined;
+
+    // Standard Astro 6 + Cloudflare way to access env/bindings
+    const runtime = (locals as any).runtime;
+    if (runtime?.env) {
+      turnstileSecret = runtime.env.TURNSTILE_SECRET_KEY;
+      resendKey = runtime.env.RESEND_API_KEY;
+      db = runtime.env.DB;
     }
+
+    // Fallbacks (for local dev or other environments)
+    turnstileSecret = turnstileSecret || (import.meta as any).env?.TURNSTILE_SECRET_KEY;
+    resendKey = resendKey || (import.meta as any).env?.RESEND_API_KEY;
     
-    // Default to a test secret if not configured (placeholder)
     const SECRET_KEY = turnstileSecret || '1x0000000000000000000000000000000AA';
 
     if (turnstile_token) {
+      console.log('Verifying Turnstile token...');
       const verifyRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -65,15 +73,17 @@ export const POST: APIRoute = async ({ request, locals }) => {
           remoteip: ip,
         }),
       });
-      const verifyData = await verifyRes.json() as { success: boolean };
+      const verifyData = await verifyRes.json() as { success: boolean, 'error-codes'?: string[] };
       if (!verifyData.success) {
-        return new Response(JSON.stringify({ error: 'Security verification failed' }), {
+        console.error('Turnstile verification failed:', verifyData['error-codes']);
+        return new Response(JSON.stringify({ error: 'Security verification failed', details: verifyData['error-codes'] }), {
           status: 403,
           headers: { 'Content-Type': 'application/json', ...corsHeaders },
         });
       }
+      console.log('Turnstile verified successfully.');
     } else {
-      // If token is missing, reject (unless you want to make it optional for now)
+      console.warn('Turnstile token missing in request');
       return new Response(JSON.stringify({ error: 'Security token missing' }), {
         status: 403,
         headers: { 'Content-Type': 'application/json', ...corsHeaders },
@@ -92,37 +102,27 @@ export const POST: APIRoute = async ({ request, locals }) => {
     // 2. Calculate score
     const result = calculateScore(test_name, answers);
 
-    // 3. Save to D1 (Astro 6 Cloudflare robust access - NO RUNTIME REFS)
-    let db: D1Database | undefined;
-    try {
-      const cf = await import('cloudflare:workers' as any);
-      db = cf.env?.DB;
-    } catch (e) {}
-    
+    // 3. Save to D1
     let rowId: number | null = null;
     if (db) {
-      const insertResult = await db.prepare(`
-        INSERT INTO submissions (test_name, email, score_json, level, raw_answers)
-        VALUES (?, ?, ?, ?, ?)
-      `).bind(
-        test_name,
-        email.toLowerCase().trim(),
-        JSON.stringify(result.score_json),
-        result.level,
-        JSON.stringify(answers),
-      ).run();
-      rowId = insertResult.meta?.last_row_id ?? null;
+      try {
+        const insertResult = await db.prepare(`
+          INSERT INTO submissions (test_name, email, score_json, level, raw_answers)
+          VALUES (?, ?, ?, ?, ?)
+        `).bind(
+          test_name,
+          email.toLowerCase().trim(),
+          JSON.stringify(result.score_json),
+          result.level,
+          JSON.stringify(answers),
+        ).run();
+        rowId = insertResult.meta?.last_row_id ?? null;
+      } catch (dbErr) {
+        console.error('Database insertion failed:', dbErr);
+      }
     }
 
-    // 4. Send email via Resend (Astro 6 Cloudflare robust access - NO RUNTIME REFS)
-    let resendKey: string | undefined;
-    try {
-      const cf = await import('cloudflare:workers' as any);
-      resendKey = cf.env?.RESEND_API_KEY;
-    } catch(e) {
-      resendKey = (import.meta as any).env?.RESEND_API_KEY;
-    }
-
+    // 4. Send email via Resend
     let emailSent = false;
     if (resendKey) {
       try {
@@ -141,6 +141,10 @@ export const POST: APIRoute = async ({ request, locals }) => {
           }),
         });
         emailSent = resendRes.ok;
+        if (!emailSent) {
+          const errorData = await resendRes.json();
+          console.error('Resend API error:', errorData);
+        }
 
         // 5. Update email_sent flag
         if (emailSent && db && rowId) {
@@ -148,9 +152,10 @@ export const POST: APIRoute = async ({ request, locals }) => {
             .bind(rowId).run();
         }
       } catch (emailErr) {
-        console.error('Email send failed:', emailErr);
-        // Don't fail the whole request if email fails
+        console.error('Email sending process failed:', emailErr);
       }
+    } else {
+      console.warn('RESEND_API_KEY is missing, skipping email.');
     }
 
     return new Response(JSON.stringify({

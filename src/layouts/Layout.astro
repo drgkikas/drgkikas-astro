@@ -61,6 +61,11 @@ const socialImageURL = new URL(image, 'https://drgkikas.com').href;
 
     {/* Turnstile Integration */}
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <script is:inline>
+      function onTurnstileSuccess(token) {
+        window.dispatchEvent(new CustomEvent('turnstile-success', { detail: { token } }));
+      }
+    </script>
   </head>
   <body class="flex flex-col min-h-screen">
     <slot />

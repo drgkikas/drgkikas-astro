@@ -112,10 +112,19 @@ export default function QuizShell({ testName, title, subtitle, questions, getAns
           turnstile_token: turnstileToken, // Pass token to backend
         }),
       });
-      const data = await res.json() as { email_sent?: boolean };
-      setEmailSent(data.email_sent ?? false);
-    } catch {
-      // Silent — user already has results
+      
+      const data = await res.json() as { success: boolean; email_sent?: boolean; error?: string; details?: any };
+      
+      if (!res.ok) {
+        console.error('Submission failed:', data.error, data.details);
+        // We still show the local result to the user, but we can set a state for the email status
+        setEmailSent(false);
+      } else {
+        setEmailSent(data.email_sent ?? false);
+      }
+    } catch (err) {
+      console.error('Network or Parse error:', err);
+      setEmailSent(false);
     }
   };
 
@@ -249,15 +258,6 @@ export default function QuizShell({ testName, title, subtitle, questions, getAns
         >
           {state === 'submitting' ? 'Επεξεργασία...' : 'Δες τα αποτελέσματά σου'}
         </button>
-
-        {/* Turnstile Callback Handler */}
-        <script dangerouslySetInnerHTML={{ __html: `
-          function onTurnstileSuccess(token) {
-            // We need to communicate back to the React component
-            // Dispatch a custom event that the component can listen to
-            window.dispatchEvent(new CustomEvent('turnstile-success', { detail: { token } }));
-          }
-        `}} />
 
         {!isComplete && (
           <p className="text-xs text-slate-400 text-center">

@@ -1,4 +1,4 @@
-﻿import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { calcScore } from '../../lib/clientScoring';
 
 const APPT_LINK = 'https://appt.link/meet-with-paschalis-gkikas/therapy-session';
@@ -31,9 +31,10 @@ export default function Mdq() {
   const [partB, setPartB] = useState<boolean | null>(null);
   const [partC, setPartC] = useState<string | null>(null);
   const [email, setEmail] = useState('');
-  const [state, setState] = useState<'quiz' | 'done'>('quiz');
+  const [state, setState] = useState<'quiz' | 'submitting' | 'done' | 'error'>('quiz');
   const [result, setResult] = useState<{ level: string; score_json: Record<string, unknown> } | null>(null);
   const [emailSent, setEmailSent] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
 
   const partADone = partA.every(v => v !== null);
   const allDone = partADone && partB !== null && partC !== null;
@@ -42,8 +43,17 @@ export default function Mdq() {
   const total = 15;
   const progress = Math.round((answered / total) * 100);
 
+  useEffect(() => {
+    const handleSuccess = (e: any) => {
+      setTurnstileToken(e.detail.token);
+    };
+    window.addEventListener('turnstile-success', handleSuccess);
+    return () => window.removeEventListener('turnstile-success', handleSuccess);
+  }, []);
+
   const handleSubmit = async () => {
     if (!allDone || !email) return;
+    setState('submitting');
     const answers = { partA: partA as boolean[], partB: partB as boolean, partC: partC as string };
     const localResult = calcScore('mdq', answers);
     setResult(localResult);
@@ -53,18 +63,22 @@ export default function Mdq() {
       const res = await fetch('/api/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ test_name: 'mdq', email, answers }),
+        body: JSON.stringify({ test_name: 'mdq', email, answers, turnstile_token: turnstileToken }),
       });
-      const data = await res.json() as { email_sent?: boolean };
-      setEmailSent(data.email_sent ?? false);
-    } catch { /* silent */ }
+      const data = await res.json() as { success: boolean; email_sent?: boolean; error?: string };
+      if (!res.ok) {
+        setEmailSent(false);
+      } else {
+        setEmailSent(data.email_sent ?? false);
+      }
+    } catch { setState('error'); }
   };
 
   if (state === 'done' && result) {
     const isPositive = result.level === 'positive';
     const s = result.score_json as Record<string, unknown>;
     return (
-      <div className="space-y-6">
+      <div className="space-y-6 animate-fade-in">
         <div className={`flex items-center gap-3 p-4 rounded-xl border ${isPositive ? 'bg-amber-50 border-amber-200' : 'bg-emerald-50 border-emerald-200'}`}>
           <div>
             <p className="text-xs font-bold uppercase tracking-wider opacity-60">Αποτέλεσμα MDQ</p>
@@ -80,7 +94,7 @@ export default function Mdq() {
           <div className="flex justify-between"><span>Πύλη 3 (πρόβλημα)</span><strong className={s.gate3 ? 'text-emerald-600':'text-slate-400'}>{s.gate3?'✓':'✗'}</strong></div>
         </div>
         <div className="bg-white border border-slate-200 rounded-xl p-6">
-          <p className="text-sm text-slate-500 mb-3">{emailSent ? `Αποτελέσματα στάλθηκαν στο ${email}.` : 'Επεξεργασία...'}</p>
+          <p className="text-sm text-slate-500 mb-3">{emailSent ? `Αποτελέσματα στάλθηκαν στο ${email}.` : 'Τα αποτελέσματά σας επεξεργάζονται...'}</p>
           {isPositive
             ? <a href={APPT_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold text-sm hover:bg-blue-800 transition-colors">Κλείστε Ραντεβού →</a>
             : <a href="https://drgkikas.com/epikoinonia" className="text-sm text-blue-700 font-semibold hover:underline">Επικοινωνήστε μαζί μου →</a>
@@ -100,10 +114,9 @@ export default function Mdq() {
 
       <div>
         <div className="flex justify-between text-xs text-slate-400 mb-1"><span>{answered}/{total}</span><span>{progress}%</span></div>
-        <div className="h-2 bg-slate-100 rounded-full"><div className="h-full bg-blue-600 rounded-full transition-all" style={{width:`${progress}%`}} /></div>
+        <div className="h-2 bg-slate-100 rounded-full overflow-hidden"><div className="h-full bg-blue-600 rounded-full transition-all duration-300" style={{width:`${progress}%`}} /></div>
       </div>
 
-      {/* Part A */}
       <div>
         <p className="text-sm font-bold text-slate-700 mb-4 uppercase tracking-wide">Μέρος Α — Ποτέ στη ζωή σας, έχετε βιώσει μια περίοδο όπου...</p>
         <div className="space-y-4">
@@ -123,7 +136,6 @@ export default function Mdq() {
         </div>
       </div>
 
-      {/* Part B */}
       <div className={`p-5 rounded-xl border transition-all ${partB !== null ? 'border-blue-200 bg-blue-50/30' : 'border-slate-200 bg-white'}`}>
         <p className="font-bold text-slate-800 mb-1">Μέρος Β</p>
         <p className="text-sm text-slate-600 mb-4">Αν ναι στο Μέρος Α — συνέβησαν ταυτόχρονα πολλά από αυτά τα συμπτώματα;</p>
@@ -137,7 +149,6 @@ export default function Mdq() {
         </div>
       </div>
 
-      {/* Part C */}
       <div className={`p-5 rounded-xl border transition-all ${partC !== null ? 'border-blue-200 bg-blue-50/30' : 'border-slate-200 bg-white'}`}>
         <p className="font-bold text-slate-800 mb-1">Μέρος Γ</p>
         <p className="text-sm text-slate-600 mb-4">Πόσα προβλήματα σάς έχουν δημιουργήσει αυτά τα συμπτώματα (στη δουλειά, σε σχέσεις, στα οικονομικά, στη νομική θέση σας κλπ.);</p>
@@ -151,16 +162,20 @@ export default function Mdq() {
         </div>
       </div>
 
-      {/* Email + Submit */}
       <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 space-y-4">
         <div>
           <label htmlFor="mdq-email" className="block text-sm font-semibold text-slate-700 mb-2">Email για αποστολή αποτελεσμάτων</label>
           <input id="mdq-email" type="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder="your@email.com"
             className="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
         </div>
-        <button onClick={handleSubmit} disabled={!allDone || !email}
-          className={`w-full py-4 rounded-xl font-bold text-base transition-all ${allDone&&email ? 'bg-blue-700 text-white hover:bg-blue-800 shadow-md' : 'bg-slate-200 text-slate-400 cursor-not-allowed'}`}>
-          Δες τα αποτελέσματά σου
+        {allDone && email && (
+          <div className="flex justify-center py-2">
+            <div className="cf-turnstile" data-sitekey="0x4AAAAAAA4_S437qf6B9A_E" data-callback="onTurnstileSuccess"></div>
+          </div>
+        )}
+        <button onClick={handleSubmit} disabled={!allDone || !email || state === 'submitting' || !turnstileToken}
+          className={`w-full py-4 rounded-xl font-bold text-base transition-all ${allDone&&email&&turnstileToken ? 'bg-blue-700 text-white hover:bg-blue-800 shadow-md' : 'bg-slate-200 text-slate-400 cursor-not-allowed'}`}>
+          {state === 'submitting' ? 'Επεξεργασία...' : 'Δες τα αποτελέσματά σου'}
         </button>
       </div>
       <p className="text-xs text-slate-400 text-center">Τα αποτελέσματα δεν αποτελούν διάγνωση.</p>
