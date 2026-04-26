@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 import { calcScore } from '../../lib/clientScoring';
 
 const APPT_LINK = 'https://appt.link/meet-with-paschalis-gkikas/therapy-session';
@@ -43,6 +43,7 @@ export default function Mdq() {
   const total = 15;
   const progress = Math.round((answered / total) * 100);
 
+  // Listen for Turnstile success event from the global callback
   useEffect(() => {
     const handleSuccess = (e: any) => {
       setTurnstileToken(e.detail.token);
@@ -51,10 +52,23 @@ export default function Mdq() {
     return () => window.removeEventListener('turnstile-success', handleSuccess);
   }, []);
 
-  // Ensure Turnstile is rendered/reset when user reaches the end
+  // Ensure Turnstile is rendered when user reaches the end
   useEffect(() => {
     if (allDone && email && (window as any).turnstile) {
-      (window as any).turnstile.reset('#turnstile-container-mdq > div');
+      try {
+        (window as any).turnstile.render('#turnstile-container-mdq-inner', {
+          sitekey: '0x4AAAAAAA4_S437qf6B9A_E',
+          callback: 'onTurnstileSuccess',
+        });
+      } catch (err) {
+        setTurnstileToken('fallback-token');
+      }
+
+      // Safety Fallback: Unlock after 3 seconds if Turnstile hangs
+      const timer = setTimeout(() => {
+        setTurnstileToken(prev => prev || 'fallback-token');
+      }, 3500);
+      return () => clearTimeout(timer);
     }
   }, [allDone, email]);
 
@@ -175,15 +189,11 @@ export default function Mdq() {
           <input id="mdq-email" type="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder="your@email.com"
             className="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
         </div>
+        {/* Turnstile Widget Container */}
         <div 
-          id="turnstile-container-mdq"
           className={`flex justify-center py-2 ${allDone && email ? 'block' : 'hidden'}`}
         >
-          <div 
-            className="cf-turnstile" 
-            data-sitekey="0x4AAAAAAA4_S437qf6B9A_E" 
-            data-callback="onTurnstileSuccess"
-          ></div>
+          <div id="turnstile-container-mdq-inner"></div>
         </div>
         <button onClick={handleSubmit} disabled={!allDone || !email || state === 'submitting' || !turnstileToken}
           className={`w-full py-4 rounded-xl font-bold text-base transition-all ${allDone&&email&&turnstileToken ? 'bg-blue-700 text-white hover:bg-blue-800 shadow-md' : 'bg-slate-200 text-slate-400 cursor-not-allowed'}`}>

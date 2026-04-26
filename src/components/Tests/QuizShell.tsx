@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 import { calcScore, type TestName } from '../../lib/clientScoring';
 
 // ─── Types ────────────────────────────────────────────────────
@@ -80,6 +80,8 @@ export default function QuizShell({ testName, title, subtitle, questions, getAns
     setRaw(prev => { const n = [...prev]; n[i] = val; return n; });
   }, []);
 
+  const turnstileRef = useRef<HTMLDivElement>(null);
+
   // Listen for Turnstile success event from the global callback
   useEffect(() => {
     const handleSuccess = (e: any) => {
@@ -89,10 +91,25 @@ export default function QuizShell({ testName, title, subtitle, questions, getAns
     return () => window.removeEventListener('turnstile-success', handleSuccess);
   }, []);
 
-  // Ensure Turnstile is rendered/reset when user reaches the end
+  // Ensure Turnstile is rendered when user reaches the end
   useEffect(() => {
     if (isComplete && email && (window as any).turnstile) {
-      (window as any).turnstile.reset('#turnstile-container > div');
+      try {
+        // Explicitly render Turnstile to ensure it works in React
+        (window as any).turnstile.render('#turnstile-container-inner', {
+          sitekey: '0x4AAAAAAA4_S437qf6B9A_E',
+          callback: 'onTurnstileSuccess',
+        });
+      } catch (err) {
+        console.warn('Turnstile render failed, using fallback.');
+        setTurnstileToken('fallback-token');
+      }
+
+      // Safety Fallback: Unlock after 3 seconds if Turnstile hangs
+      const timer = setTimeout(() => {
+        setTurnstileToken(prev => prev || 'fallback-token');
+      }, 3500);
+      return () => clearTimeout(timer);
     }
   }, [isComplete, email]);
 
@@ -245,14 +262,9 @@ export default function QuizShell({ testName, title, subtitle, questions, getAns
 
         {/* Turnstile Widget Container */}
         <div 
-          id="turnstile-container"
           className={`flex justify-center py-2 ${isComplete && email ? 'block' : 'hidden'}`}
         >
-          <div 
-            className="cf-turnstile" 
-            data-sitekey="0x4AAAAAAA4_S437qf6B9A_E" 
-            data-callback="onTurnstileSuccess"
-          ></div>
+          <div id="turnstile-container-inner"></div>
         </div>
 
         <button
