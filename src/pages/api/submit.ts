@@ -54,12 +54,21 @@ export const POST: APIRoute = async ({ request, locals }) => {
       turnstileSecret = runtime.env.TURNSTILE_SECRET_KEY;
       resendKey = runtime.env.RESEND_API_KEY;
       db = runtime.env.DB;
+      console.log('Keys found in runtime.env:', { 
+        hasTurnstile: !!turnstileSecret, 
+        hasResend: !!resendKey, 
+        hasDB: !!db 
+      });
     }
 
-    // Fallbacks (for local dev or other environments)
-    turnstileSecret = turnstileSecret || (import.meta as any).env?.TURNSTILE_SECRET_KEY;
-    resendKey = resendKey || (import.meta as any).env?.RESEND_API_KEY;
+    // Fallbacks (checking multiple possible locations for secrets)
+    turnstileSecret = turnstileSecret || (process as any).env?.TURNSTILE_SECRET_KEY || (import.meta as any).env?.TURNSTILE_SECRET_KEY;
+    resendKey = resendKey || (process as any).env?.RESEND_API_KEY || (import.meta as any).env?.RESEND_API_KEY;
     
+    if (!resendKey) {
+      console.error('CRITICAL: RESEND_API_KEY is not defined in any environment location.');
+    }
+
     const SECRET_KEY = turnstileSecret || '1x0000000000000000000000000000000AA';
 
     if (turnstile_token) {
@@ -170,6 +179,10 @@ export const POST: APIRoute = async ({ request, locals }) => {
         level: result.level,
       },
       email_sent: emailSent,
+      debug: {
+        hasResendKey: !!resendKey,
+        runtimeAvailable: !!runtime,
+      }
     }), {
       status: 200,
       headers: { 'Content-Type': 'application/json', ...corsHeaders },
