@@ -1,0 +1,5 @@
+Contact: mailto:paschalis.gkikas@gmail.com
+Expires: 2027-04-27T00:00:00Z
+Preferred-Languages: el, en
+Canonical: https://drgkikas.com/.well-known/security.txt
+Policy: https://drgkikas.com/privacy

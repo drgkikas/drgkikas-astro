@@ -1,4 +1,4 @@
-﻿import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { calcScore, type TestName } from '../../lib/clientScoring';
 
 // ─── Types ────────────────────────────────────────────────────
@@ -69,6 +69,7 @@ export default function QuizShell({ testName, title, subtitle, questions, getAns
   const [state, setState] = useState<'quiz' | 'submitting' | 'done' | 'error'>('quiz');
   const [result, setResult] = useState<{ level: string; score_json: Record<string, unknown> } | null>(null);
   const [emailSent, setEmailSent] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
 
   const answered = raw.filter(v => v !== null).length;
   const total = questions.length;
@@ -77,6 +78,15 @@ export default function QuizShell({ testName, title, subtitle, questions, getAns
 
   const setAnswer = useCallback((i: number, val: number | string | boolean) => {
     setRaw(prev => { const n = [...prev]; n[i] = val; return n; });
+  }, []);
+
+  // Listen for Turnstile success event from the global callback
+  useEffect(() => {
+    const handleSuccess = (e: any) => {
+      setTurnstileToken(e.detail.token);
+    };
+    window.addEventListener('turnstile-success', handleSuccess);
+    return () => window.removeEventListener('turnstile-success', handleSuccess);
   }, []);
 
   const handleSubmit = async () => {
@@ -95,7 +105,12 @@ export default function QuizShell({ testName, title, subtitle, questions, getAns
       const res = await fetch('/api/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ test_name: testName, email, answers }),
+        body: JSON.stringify({ 
+          test_name: testName, 
+          email, 
+          answers,
+          turnstile_token: turnstileToken, // Pass token to backend
+        }),
       });
       const data = await res.json() as { email_sent?: boolean };
       setEmailSent(data.email_sent ?? false);
@@ -212,17 +227,37 @@ export default function QuizShell({ testName, title, subtitle, questions, getAns
           <p className="text-xs text-slate-400 mt-1.5">Χρησιμοποιείται μόνο για την αποστολή αποτελεσμάτων.</p>
         </div>
 
+        {/* Turnstile Widget */}
+        {isComplete && email && (
+          <div className="flex justify-center py-2">
+            <div 
+              className="cf-turnstile" 
+              data-sitekey="0x4AAAAAAA4_S437qf6B9A_E" // Placeholder - Replace with your actual Site Key
+              data-callback="onTurnstileSuccess"
+            ></div>
+          </div>
+        )}
+
         <button
           onClick={handleSubmit}
-          disabled={!isComplete || !email || state === 'submitting'}
+          disabled={!isComplete || !email || state === 'submitting' || !turnstileToken}
           className={`w-full py-4 rounded-xl font-bold text-base transition-all ${
-            isComplete && email && state !== 'submitting'
+            isComplete && email && state !== 'submitting' && turnstileToken
               ? 'bg-blue-700 text-white hover:bg-blue-800 shadow-md hover:-translate-y-0.5 transform'
               : 'bg-slate-200 text-slate-400 cursor-not-allowed'
           }`}
         >
           {state === 'submitting' ? 'Επεξεργασία...' : 'Δες τα αποτελέσματά σου'}
         </button>
+
+        {/* Turnstile Callback Handler */}
+        <script dangerouslySetInnerHTML={{ __html: `
+          function onTurnstileSuccess(token) {
+            // We need to communicate back to the React component
+            // Dispatch a custom event that the component can listen to
+            window.dispatchEvent(new CustomEvent('turnstile-success', { detail: { token } }));
+          }
+        `}} />
 
         {!isComplete && (
           <p className="text-xs text-slate-400 text-center">

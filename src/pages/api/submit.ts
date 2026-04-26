@@ -32,17 +32,50 @@ export const POST: APIRoute = async ({ request, locals }) => {
   const corsHeaders = getCorsHeaders(request);
   try {
     // 1. Parse body
-    const body = await request.json() as {
-      test_name: TestName;
-      email: string;
-      answers: unknown;
-    };
-
-    const { test_name, email, answers } = body;
+    const body = await request.json() as any;
+    const { test_name, email, answers, turnstile_token } = body;
+    const ip = request.headers.get('CF-Connecting-IP') || '';
 
     if (!test_name || !email || !answers) {
       return new Response(JSON.stringify({ error: 'Missing required fields' }), {
         status: 400,
+        headers: { 'Content-Type': 'application/json', ...corsHeaders },
+      });
+    }
+
+    // Turnstile Verification
+    let turnstileSecret: string | undefined;
+    try {
+      const cf = await import('cloudflare:workers' as any);
+      turnstileSecret = cf.env?.TURNSTILE_SECRET_KEY;
+    } catch(e) {
+      turnstileSecret = (import.meta as any).env?.TURNSTILE_SECRET_KEY;
+    }
+    
+    // Default to a test secret if not configured (placeholder)
+    const SECRET_KEY = turnstileSecret || '1x0000000000000000000000000000000AA';
+
+    if (turnstile_token) {
+      const verifyRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          secret: SECRET_KEY,
+          response: turnstile_token,
+          remoteip: ip,
+        }),
+      });
+      const verifyData = await verifyRes.json() as { success: boolean };
+      if (!verifyData.success) {
+        return new Response(JSON.stringify({ error: 'Security verification failed' }), {
+          status: 403,
+          headers: { 'Content-Type': 'application/json', ...corsHeaders },
+        });
+      }
+    } else {
+      // If token is missing, reject (unless you want to make it optional for now)
+      return new Response(JSON.stringify({ error: 'Security token missing' }), {
+        status: 403,
         headers: { 'Content-Type': 'application/json', ...corsHeaders },
       });
     }
