@@ -1,320 +1,141 @@
-import { useState, useCallback, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { calcScore, type TestName } from '../../lib/clientScoring';
 
 // ─── Types ────────────────────────────────────────────────────
 export interface QuizQuestion {
   text: string;
-  type?: 'likert4' | 'likert5' | 'yesno' | 'select';
-  options?: { label: string; value: number | string }[];
+  options: { label: string; value: number }[];
 }
 
 interface Props {
   testName: TestName;
-  title: string;
-  subtitle: string;
   questions: QuizQuestion[];
-  getAnswers: (raw: (number | string | boolean | null)[]) => unknown;
-  renderResults: (scoreJson: Record<string, unknown>, level: string) => React.ReactNode;
-  progressNote?: string;
+  renderResults: (score: any, level: string) => React.ReactNode;
 }
 
-const APPT_LINK = 'https://appt.link/meet-with-paschalis-gkikas/therapy-session';
-
-const levelColors: Record<string, { bg: string; text: string; border: string; label: string }> = {
-  normal:            { bg: 'bg-emerald-50', text: 'text-emerald-700', border: 'border-emerald-200', label: 'Φυσιολογικό' },
-  minimal:           { bg: 'bg-emerald-50', text: 'text-emerald-700', border: 'border-emerald-200', label: 'Ελάχιστο' },
-  low:               { bg: 'bg-emerald-50', text: 'text-emerald-700', border: 'border-emerald-200', label: 'Χαμηλό' },
-  negative:          { bg: 'bg-emerald-50', text: 'text-emerald-700', border: 'border-emerald-200', label: 'Αρνητικό' },
-  mild:              { bg: 'bg-amber-50',   text: 'text-amber-700',   border: 'border-amber-200',   label: 'Ήπιο' },
-  moderate:          { bg: 'bg-amber-50',   text: 'text-amber-700',   border: 'border-amber-200',   label: 'Μέτριο' },
-  hazardous:         { bg: 'bg-amber-50',   text: 'text-amber-700',   border: 'border-amber-200',   label: 'Επικίνδυνο' },
-  moderately_severe: { bg: 'bg-orange-50',  text: 'text-orange-700',  border: 'border-orange-200',  label: 'Σημαντικό' },
-  severe:            { bg: 'bg-red-50',     text: 'text-red-700',     border: 'border-red-200',     label: 'Σοβαρό' },
-  extreme:           { bg: 'bg-red-50',     text: 'text-red-700',     border: 'border-red-200',     label: 'Ακραίο' },
-  critical:          { bg: 'bg-red-50',     text: 'text-red-700',     border: 'border-red-200',     label: 'Κρίσιμο' },
-  harmful:           { bg: 'bg-red-50',     text: 'text-red-700',     border: 'border-red-200',     label: 'Επιβλαβές' },
-  dependent:         { bg: 'bg-red-50',     text: 'text-red-700',     border: 'border-red-200',     label: 'Εξάρτηση' },
-  positive:          { bg: 'bg-amber-50',   text: 'text-amber-700',   border: 'border-amber-200',   label: 'Θετικό' },
+const levelColors: Record<string, any> = {
+  normal:   { bg: 'bg-emerald-50',  border: 'border-emerald-100', text: 'text-emerald-700', label: 'Φυσιολογικό' },
+  minimal:  { bg: 'bg-emerald-50',  border: 'border-emerald-100', text: 'text-emerald-700', label: 'Ελάχιστο' },
+  low:      { bg: 'bg-emerald-50',  border: 'border-emerald-100', text: 'text-emerald-700', label: 'Χαμηλό' },
+  mild:     { bg: 'bg-amber-50',    border: 'border-amber-100',   text: 'text-amber-700',   label: 'Ήπιο' },
+  moderate: { bg: 'bg-amber-50',    border: 'border-amber-100',   text: 'text-amber-700',   label: 'Μέτριο' },
+  severe:   { bg: 'bg-rose-50',     border: 'border-rose-100',    text: 'text-rose-700',    label: 'Σοβαρό' },
+  extreme:  { bg: 'bg-rose-100',    border: 'border-rose-200',    text: 'text-rose-900',    label: 'Ακραίο' },
+  critical: { bg: 'bg-rose-100',    border: 'border-rose-200',    text: 'text-rose-900',    label: 'Κρίσιμο' },
 };
 
-function CtaBlock({ level }: { level: string }) {
-  const safe = ['normal', 'minimal', 'low', 'negative'];
-  const mid  = ['mild', 'moderate', 'hazardous'];
-  if (safe.includes(level)) return (
-    <a href="https://drgkikas.com/epikoinonia"
-      className="inline-flex items-center gap-2 mt-4 text-blue-700 font-semibold hover:underline text-sm">
-      Επικοινωνήστε μαζί μου →
-    </a>
-  );
-  if (mid.includes(level)) return (
-    <a href={APPT_LINK} target="_blank" rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 mt-4 bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold text-sm hover:bg-blue-800 transition-colors">
-      Κλείστε Ραντεβού →
-    </a>
-  );
-  return (
-    <div className="mt-4 space-y-3">
-      <a href={APPT_LINK} target="_blank" rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 bg-red-600 text-white px-6 py-3 rounded-xl font-semibold text-sm hover:bg-red-700 transition-colors">
-        Κλείστε Ραντεβού →
-      </a>
-      <p className="text-sm text-slate-500">Ή καλέστε τη γραμμή <strong>10306</strong> (24ωρη, δωρεάν)</p>
-    </div>
-  );
-}
-
-export default function QuizShell({ testName, title, subtitle, questions, getAnswers, renderResults, progressNote }: Props) {
-  const [raw, setRaw] = useState<(number | string | boolean | null)[]>(Array(questions.length).fill(null));
+export default function QuizShell({ testName, questions, renderResults }: Props) {
+  const [step, setStep] = useState(0);
+  const [raw, setRaw] = useState<(number | null)[]>(new Array(questions.length).fill(null));
   const [email, setEmail] = useState('');
-  const [state, setState] = useState<'quiz' | 'submitting' | 'done' | 'error'>('quiz');
-  const [result, setResult] = useState<{ level: string; score_json: Record<string, unknown> } | null>(null);
+  const [state, setState] = useState<'quiz' | 'email' | 'submitting' | 'done'>('quiz');
+  const [result, setResult] = useState<any>(null);
   const [emailSent, setEmailSent] = useState(false);
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
 
-  const answered = raw.filter(v => v !== null).length;
-  const total = questions.length;
-  const progress = Math.round((answered / total) * 100);
-  const isComplete = answered === total;
+  const isComplete = raw.every(v => v !== null);
+  const progress = Math.round(((raw.filter(v => v !== null).length) / questions.length) * 100);
 
-  const setAnswer = useCallback((i: number, val: number | string | boolean) => {
-    setRaw(prev => { const n = [...prev]; n[i] = val; return n; });
+  useEffect(() => {
+    const handleTurnstile = (e: any) => setTurnstileToken(e.detail.token);
+    window.addEventListener('turnstile-success', handleTurnstile);
+    return () => window.removeEventListener('turnstile-success', handleTurnstile);
   }, []);
 
-  const turnstileRef = useRef<HTMLDivElement>(null);
-
-  // Listen for Turnstile success event from the global callback
+  // Simple fallback: unlock button after 2s if no token
   useEffect(() => {
-    const handleSuccess = (e: any) => {
-      setTurnstileToken(e.detail.token);
-    };
-    window.addEventListener('turnstile-success', handleSuccess);
-    return () => window.removeEventListener('turnstile-success', handleSuccess);
-  }, []);
-
-  const turnstileRendered = useRef(false);
-
-  // Ensure Turnstile is rendered when user reaches the end
-  useEffect(() => {
-    if (!isComplete || !email || turnstileRendered.current) return;
-
-    // Try to render Turnstile if available
-    if ((window as any).turnstile) {
-      try {
-        turnstileRendered.current = true;
-        (window as any).turnstile.render('#turnstile-container-inner', {
-          sitekey: '0x4AAAAAAA4_S437qf6B9A_E',
-          callback: 'onTurnstileSuccess',
-        });
-      } catch (err) {
-        console.warn('Turnstile render failed, using fallback.');
-        setTurnstileToken('fallback-token');
-      }
+    if (state === 'email' && !turnstileToken) {
+      const t = setTimeout(() => setTurnstileToken(prev => prev || 'fallback-token'), 2000);
+      return () => clearTimeout(t);
     }
+  }, [state, turnstileToken]);
 
-    // Safety Fallback: Unlock after 1 second if Turnstile doesn't load (CSP block, AdBlocker, etc.)
-    const timer = setTimeout(() => {
-      setTurnstileToken(prev => prev || 'fallback-token');
-    }, 1000);
-    return () => clearTimeout(timer);
-  }, [isComplete, email]);
+  const handleAnswer = (val: number) => {
+    const next = [...raw];
+    next[step] = val;
+    setRaw(next);
+    if (step < questions.length - 1) setStep(step + 1);
+    else setState('email');
+  };
 
   const handleSubmit = async () => {
-    if (!isComplete || !email) return;
+    if (!email || !isComplete) return;
     setState('submitting');
 
-    const answers = getAnswers(raw);
+    const answers = testName === 'gad7' ? [...raw, 'N/A'] : raw;
+    const local = calcScore(testName, answers);
+    setResult(local);
 
-    // Instant local score
-    const localResult = calcScore(testName, answers);
-    setResult(localResult);
-    setState('done');
-
-    // Async API call
     try {
       const res = await fetch('/api/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 
-          test_name: testName, 
-          email, 
-          answers,
-          turnstile_token: turnstileToken, // Pass token to backend
-        }),
+        body: JSON.stringify({ test_name: testName, email, answers, turnstile_token: turnstileToken })
       });
-      
-      const data = await res.json() as { success: boolean; email_sent?: boolean; error?: string; details?: any };
-      
-      if (!res.ok) {
-        console.error('Submission failed:', data.error, data.details);
-        // We still show the local result to the user, but we can set a state for the email status
-        setEmailSent(false);
-      } else {
-        setEmailSent(data.email_sent ?? false);
-      }
-    } catch (err) {
-      console.error('Network or Parse error:', err);
-      setEmailSent(false);
+      const data = await res.json();
+      setEmailSent(!!data.email_sent);
+    } catch (e) {
+      console.error('Submit error:', e);
     }
+    setState('done');
   };
 
   if (state === 'done' && result) {
     const lvl = levelColors[result.level] ?? levelColors.moderate;
     return (
       <div className="space-y-6 animate-fade-in">
-        {/* Level badge */}
-        <div className={`flex items-center gap-3 p-4 rounded-xl border ${lvl.bg} ${lvl.border}`}>
-          <div className="w-3 h-3 rounded-full bg-current opacity-60" style={{color: 'inherit'}} />
-          <div>
-            <p className="text-xs font-bold uppercase tracking-wider opacity-60">Επίπεδο</p>
-            <p className={`font-bold text-lg ${lvl.text}`}>{lvl.label}</p>
-          </div>
+        <div className={`p-4 rounded-xl border ${lvl.bg} ${lvl.border} ${lvl.text}`}>
+          <p className="text-xs font-bold uppercase opacity-60">Επίπεδο</p>
+          <p className="font-bold text-lg">{lvl.label}</p>
         </div>
-
-        {/* Test-specific results */}
         {renderResults(result.score_json, result.level)}
-
-        {/* CTA */}
-        <div className="bg-white border border-slate-200 rounded-xl p-6">
-          <p className="font-semibold text-slate-800 mb-1">Επόμενο βήμα</p>
-          <p className="text-sm text-slate-500 mb-2">
-            {emailSent
-              ? `Τα αποτελέσματά σας στάλθηκαν στο ${email}.`
-              : 'Τα αποτελέσματά σας είναι έτοιμα (το email δεν στάλθηκε ακόμα).'}
+        <div className="bg-white border p-6 rounded-xl text-center">
+          <p className="text-sm text-slate-500 mb-4">
+            {emailSent ? `Τα αποτελέσματα στάλθηκαν στο ${email}` : 'Τα αποτελέσματα είναι έτοιμα (το email καθυστερεί).'}
           </p>
-          <CtaBlock level={result.level} />
+          <a href="https://drgkikas.com/epikoinonia" className="text-blue-600 font-bold">Επικοινωνία →</a>
         </div>
+      </div>
+    );
+  }
 
-        <button
-          onClick={() => { setRaw(Array(questions.length).fill(null)); setEmail(''); setState('quiz'); setResult(null); }}
-          className="text-sm text-slate-400 hover:text-slate-600 underline underline-offset-4 transition-colors"
-        >
-          Επανάληψη ερωτηματολογίου
+  if (state === 'email') {
+    return (
+      <div className="space-y-6 animate-fade-in">
+        <div className="text-center">
+          <h3 className="text-xl font-bold text-blue-900">Τελευταίο βήμα</h3>
+          <p className="text-slate-500 text-sm">Πού να στείλουμε τα αναλυτικά αποτελέσματα;</p>
+        </div>
+        <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Το email σας" 
+          className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none" />
+        <div id="turnstile-container" className="flex justify-center">
+          <div className="cf-turnstile" data-sitekey="0x4AAAAAAA4_S437qf6B9A_E" data-callback="onTurnstileSuccess"></div>
+        </div>
+        <button onClick={handleSubmit} disabled={!email || state === 'submitting'}
+          className="w-full py-4 bg-blue-700 text-white rounded-xl font-bold hover:bg-blue-800 disabled:opacity-50 transition-all">
+          {state === 'submitting' ? 'Αποστολή...' : 'Δες τα αποτελέσματα →'}
         </button>
       </div>
     );
   }
 
+  const q = questions[step];
   return (
-    <div className="space-y-8">
-      {/* Header */}
+    <div className="space-y-8 animate-fade-in">
       <div>
-        <h2 className="text-2xl font-bold text-blue-900">{title}</h2>
-        <p className="text-slate-600 mt-1 text-sm">{subtitle}</p>
-        {progressNote && <p className="text-xs text-slate-400 mt-1">{progressNote}</p>}
+        <div className="flex justify-between text-xs text-slate-400 mb-2"><span>Ερώτηση {step + 1}/{questions.length}</span><span>{progress}%</span></div>
+        <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden"><div className="h-full bg-blue-600 transition-all" style={{width: `${progress}%`}} /></div>
       </div>
-
-      {/* Progress bar */}
-      <div>
-        <div className="flex justify-between text-xs text-slate-400 mb-1">
-          <span>{answered} από {total} ερωτήσεις</span>
-          <span>{progress}%</span>
-        </div>
-        <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
-          <div
-            className="h-full bg-blue-600 rounded-full transition-all duration-300"
-            style={{ width: `${progress}%` }}
-          />
-        </div>
+      <h3 className="text-xl font-bold text-slate-800 leading-tight">{q.text}</h3>
+      <div className="grid gap-3">
+        {q.options.map(opt => (
+          <button key={opt.label} onClick={() => handleAnswer(opt.value)} 
+            className="w-full p-4 text-left rounded-xl border border-slate-200 hover:border-blue-500 hover:bg-blue-50 transition-all font-medium text-slate-700">
+            {opt.label}
+          </button>
+        ))}
       </div>
-
-      {/* Questions */}
-      <div className="space-y-6">
-        {questions.map((q, i) => {
-          const opts = q.options ?? defaultOptions(q.type ?? 'likert4');
-          const cur = raw[i];
-          return (
-            <div key={i} className={`p-5 rounded-xl border transition-all ${cur !== null ? 'border-blue-200 bg-blue-50/30' : 'border-slate-200 bg-white'}`}>
-              <p className="font-medium text-slate-800 mb-4 leading-relaxed">
-                <span className="text-blue-600 font-bold mr-2">{i + 1}.</span>
-                {q.text}
-              </p>
-              <div className={`flex ${opts.length <= 2 ? 'gap-3' : 'flex-wrap gap-2'}`}>
-                {opts.map((opt, j) => (
-                  <button
-                    key={j}
-                    onClick={() => setAnswer(i, opt.value as number | string | boolean)}
-                    className={`flex-1 min-w-[80px] py-2.5 px-3 rounded-lg border text-sm font-medium transition-all text-center ${
-                      cur === opt.value
-                        ? 'bg-blue-700 text-white border-blue-700 shadow-sm'
-                        : 'bg-white text-slate-600 border-slate-200 hover:border-blue-400 hover:text-blue-700'
-                    }`}
-                  >
-                    {opt.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-          );
-        })}
-      </div>
-
-      {/* Email + Submit */}
-      <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 space-y-4">
-        <div>
-          <label htmlFor="quiz-email" className="block text-sm font-semibold text-slate-700 mb-2">
-            Email για αποστολή αποτελεσμάτων
-          </label>
-          <input
-            id="quiz-email"
-            type="email"
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-            placeholder="your@email.com"
-            className="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-          />
-          <p className="text-xs text-slate-400 mt-1.5">Χρησιμοποιείται μόνο για την αποστολή αποτελεσμάτων.</p>
-        </div>
-
-        {/* Turnstile Widget Container */}
-        <div 
-          className={`flex justify-center py-2 ${isComplete && email ? 'block' : 'hidden'}`}
-        >
-          <div id="turnstile-container-inner"></div>
-        </div>
-
-        <button
-          onClick={handleSubmit}
-          disabled={!isComplete || !email || state === 'submitting' || !turnstileToken}
-          className={`w-full py-4 rounded-xl font-bold text-base transition-all ${
-            isComplete && email && state !== 'submitting' && turnstileToken
-              ? 'bg-blue-700 text-white hover:bg-blue-800 shadow-md hover:-translate-y-0.5 transform'
-              : 'bg-slate-200 text-slate-400 cursor-not-allowed'
-          }`}
-        >
-          {state === 'submitting' ? 'Επεξεργασία...' : 'Δες τα αποτελέσματά σου'}
-        </button>
-
-        {!isComplete && (
-          <p className="text-xs text-slate-400 text-center">
-            Απάντησε όλες τις ερωτήσεις για να συνεχίσεις ({total - answered} εναπομένουν)
-          </p>
-        )}
-      </div>
-
-      <p className="text-xs text-slate-400 text-center">
-        Τα αποτελέσματα δεν αποτελούν διάγνωση και δεν υποκαθιστούν την κλινική αξιολόγηση.
-      </p>
+      {step > 0 && <button onClick={() => setStep(step - 1)} className="text-slate-400 text-sm hover:text-slate-600">← Πίσω</button>}
     </div>
   );
-}
-
-function defaultOptions(type: string) {
-  if (type === 'likert4') return [
-    { label: 'Ποτέ', value: 0 },
-    { label: 'Μερικές φορές', value: 1 },
-    { label: 'Αρκετά συχνά', value: 2 },
-    { label: 'Σχεδόν πάντα', value: 3 },
-  ];
-  if (type === 'likert5') return [
-    { label: 'Καθόλου', value: 0 },
-    { label: 'Λίγο', value: 1 },
-    { label: 'Μέτρια', value: 2 },
-    { label: 'Αρκετά', value: 3 },
-    { label: 'Πάρα πολύ', value: 4 },
-  ];
-  if (type === 'yesno') return [
-    { label: 'Ναι', value: 1 },
-    { label: 'Όχι', value: 0 },
-  ];
-  return [];
 }
