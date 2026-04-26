@@ -117,7 +117,7 @@ export default function Mdq() {
           <div className="flex justify-between"><span>Πύλη 3 (πρόβλημα)</span><strong className={s.gate3 ? 'text-emerald-600':'text-slate-400'}>{s.gate3?'✓':'✗'}</strong></div>
         </div>
         <div className="bg-white border border-slate-200 rounded-xl p-6">
-          <p className="text-sm text-slate-500 mb-3">{emailSent ? `Αποτελέσματα στάλθηκαν στο ${email}.` : 'Τα αποτελέσματά σας επεξεργάζονται...'}</p>
+          <p className="text-sm text-slate-500 mb-3">{emailSent ? `Αποτελέσματα στάλθηκαν στο ${email}.` : 'Τα αποτελέσματά σας είναι έτοιμα (το email δεν στάλθηκε ακόμα).'}</p>
           {isPositive
             ? <a href={APPT_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold text-sm hover:bg-blue-800 transition-colors">Κλείστε Ραντεβού →</a>
             : <a href="https://drgkikas.com/epikoinonia" className="text-sm text-blue-700 font-semibold hover:underline">Επικοινωνήστε μαζί μου →</a>

@@ -176,7 +176,7 @@ export default function QuizShell({ testName, title, subtitle, questions, getAns
           <p className="text-sm text-slate-500 mb-2">
             {emailSent
               ? `Τα αποτελέσματά σας στάλθηκαν στο ${email}.`
-              : 'Τα αποτελέσματά σας επεξεργάζονται...'}
+              : 'Τα αποτελέσματά σας είναι έτοιμα (το email δεν στάλθηκε ακόμα).'}
           </p>
           <CtaBlock level={result.level} />
         </div>
