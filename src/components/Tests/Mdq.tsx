@@ -67,10 +67,10 @@ export default function Mdq() {
       }
     }
 
-    // Safety Fallback: Unlock after 3 seconds if Turnstile doesn't load
+    // Safety Fallback: Unlock after 1 second if Turnstile doesn't load
     const timer = setTimeout(() => {
       setTurnstileToken(prev => prev || 'fallback-token');
-    }, 3500);
+    }, 1000);
     return () => clearTimeout(timer);
   }, [allDone, email]);
 

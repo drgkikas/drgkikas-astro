@@ -108,10 +108,10 @@ export default function QuizShell({ testName, title, subtitle, questions, getAns
       }
     }
 
-    // Safety Fallback: Unlock after 3 seconds if Turnstile doesn't load (CSP block, AdBlocker, etc.)
+    // Safety Fallback: Unlock after 1 second if Turnstile doesn't load (CSP block, AdBlocker, etc.)
     const timer = setTimeout(() => {
       setTurnstileToken(prev => prev || 'fallback-token');
-    }, 3500);
+    }, 1000);
     return () => clearTimeout(timer);
   }, [isComplete, email]);
 
