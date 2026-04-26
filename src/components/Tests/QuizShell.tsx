@@ -89,6 +89,13 @@ export default function QuizShell({ testName, title, subtitle, questions, getAns
     return () => window.removeEventListener('turnstile-success', handleSuccess);
   }, []);
 
+  // Ensure Turnstile is rendered/reset when user reaches the end
+  useEffect(() => {
+    if (isComplete && email && (window as any).turnstile) {
+      (window as any).turnstile.reset('#turnstile-container > div');
+    }
+  }, [isComplete, email]);
+
   const handleSubmit = async () => {
     if (!isComplete || !email) return;
     setState('submitting');
@@ -236,16 +243,17 @@ export default function QuizShell({ testName, title, subtitle, questions, getAns
           <p className="text-xs text-slate-400 mt-1.5">Χρησιμοποιείται μόνο για την αποστολή αποτελεσμάτων.</p>
         </div>
 
-        {/* Turnstile Widget */}
-        {isComplete && email && (
-          <div className="flex justify-center py-2">
-            <div 
-              className="cf-turnstile" 
-              data-sitekey="0x4AAAAAAA4_S437qf6B9A_E" // Placeholder - Replace with your actual Site Key
-              data-callback="onTurnstileSuccess"
-            ></div>
-          </div>
-        )}
+        {/* Turnstile Widget Container */}
+        <div 
+          id="turnstile-container"
+          className={`flex justify-center py-2 ${isComplete && email ? 'block' : 'hidden'}`}
+        >
+          <div 
+            className="cf-turnstile" 
+            data-sitekey="0x4AAAAAAA4_S437qf6B9A_E" 
+            data-callback="onTurnstileSuccess"
+          ></div>
+        </div>
 
         <button
           onClick={handleSubmit}

@@ -51,6 +51,13 @@ export default function Mdq() {
     return () => window.removeEventListener('turnstile-success', handleSuccess);
   }, []);
 
+  // Ensure Turnstile is rendered/reset when user reaches the end
+  useEffect(() => {
+    if (allDone && email && (window as any).turnstile) {
+      (window as any).turnstile.reset('#turnstile-container-mdq > div');
+    }
+  }, [allDone, email]);
+
   const handleSubmit = async () => {
     if (!allDone || !email) return;
     setState('submitting');
@@ -168,11 +175,16 @@ export default function Mdq() {
           <input id="mdq-email" type="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder="your@email.com"
             className="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
         </div>
-        {allDone && email && (
-          <div className="flex justify-center py-2">
-            <div className="cf-turnstile" data-sitekey="0x4AAAAAAA4_S437qf6B9A_E" data-callback="onTurnstileSuccess"></div>
-          </div>
-        )}
+        <div 
+          id="turnstile-container-mdq"
+          className={`flex justify-center py-2 ${allDone && email ? 'block' : 'hidden'}`}
+        >
+          <div 
+            className="cf-turnstile" 
+            data-sitekey="0x4AAAAAAA4_S437qf6B9A_E" 
+            data-callback="onTurnstileSuccess"
+          ></div>
+        </div>
         <button onClick={handleSubmit} disabled={!allDone || !email || state === 'submitting' || !turnstileToken}
           className={`w-full py-4 rounded-xl font-bold text-base transition-all ${allDone&&email&&turnstileToken ? 'bg-blue-700 text-white hover:bg-blue-800 shadow-md' : 'bg-slate-200 text-slate-400 cursor-not-allowed'}`}>
           {state === 'submitting' ? 'Επεξεργασία...' : 'Δες τα αποτελέσματά σου'}
