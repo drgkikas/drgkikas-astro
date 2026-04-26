@@ -93,9 +93,11 @@ export default function QuizShell({ testName, title, subtitle, questions, getAns
 
   // Ensure Turnstile is rendered when user reaches the end
   useEffect(() => {
-    if (isComplete && email && (window as any).turnstile) {
+    if (!isComplete || !email) return;
+
+    // Try to render Turnstile if available
+    if ((window as any).turnstile) {
       try {
-        // Explicitly render Turnstile to ensure it works in React
         (window as any).turnstile.render('#turnstile-container-inner', {
           sitekey: '0x4AAAAAAA4_S437qf6B9A_E',
           callback: 'onTurnstileSuccess',
@@ -104,13 +106,13 @@ export default function QuizShell({ testName, title, subtitle, questions, getAns
         console.warn('Turnstile render failed, using fallback.');
         setTurnstileToken('fallback-token');
       }
-
-      // Safety Fallback: Unlock after 3 seconds if Turnstile hangs
-      const timer = setTimeout(() => {
-        setTurnstileToken(prev => prev || 'fallback-token');
-      }, 3500);
-      return () => clearTimeout(timer);
     }
+
+    // Safety Fallback: Unlock after 3 seconds if Turnstile doesn't load (CSP block, AdBlocker, etc.)
+    const timer = setTimeout(() => {
+      setTurnstileToken(prev => prev || 'fallback-token');
+    }, 3500);
+    return () => clearTimeout(timer);
   }, [isComplete, email]);
 
   const handleSubmit = async () => {

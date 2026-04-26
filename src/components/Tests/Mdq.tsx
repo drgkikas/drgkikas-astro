@@ -54,7 +54,9 @@ export default function Mdq() {
 
   // Ensure Turnstile is rendered when user reaches the end
   useEffect(() => {
-    if (allDone && email && (window as any).turnstile) {
+    if (!allDone || !email) return;
+
+    if ((window as any).turnstile) {
       try {
         (window as any).turnstile.render('#turnstile-container-mdq-inner', {
           sitekey: '0x4AAAAAAA4_S437qf6B9A_E',
@@ -63,13 +65,13 @@ export default function Mdq() {
       } catch (err) {
         setTurnstileToken('fallback-token');
       }
-
-      // Safety Fallback: Unlock after 3 seconds if Turnstile hangs
-      const timer = setTimeout(() => {
-        setTurnstileToken(prev => prev || 'fallback-token');
-      }, 3500);
-      return () => clearTimeout(timer);
     }
+
+    // Safety Fallback: Unlock after 3 seconds if Turnstile doesn't load
+    const timer = setTimeout(() => {
+      setTurnstileToken(prev => prev || 'fallback-token');
+    }, 3500);
+    return () => clearTimeout(timer);
   }, [allDone, email]);
 
   const handleSubmit = async () => {
