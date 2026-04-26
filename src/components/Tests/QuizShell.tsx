@@ -91,13 +91,16 @@ export default function QuizShell({ testName, title, subtitle, questions, getAns
     return () => window.removeEventListener('turnstile-success', handleSuccess);
   }, []);
 
+  const turnstileRendered = useRef(false);
+
   // Ensure Turnstile is rendered when user reaches the end
   useEffect(() => {
-    if (!isComplete || !email) return;
+    if (!isComplete || !email || turnstileRendered.current) return;
 
     // Try to render Turnstile if available
     if ((window as any).turnstile) {
       try {
+        turnstileRendered.current = true;
         (window as any).turnstile.render('#turnstile-container-inner', {
           sitekey: '0x4AAAAAAA4_S437qf6B9A_E',
           callback: 'onTurnstileSuccess',

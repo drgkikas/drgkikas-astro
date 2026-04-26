@@ -116,10 +116,11 @@ export const POST: APIRoute = async ({ request, locals }) => {
     // 2. Calculate score
     const result = calculateScore(test_name, answers);
 
-    // 3. Save to D1
+    // 3. Save to D1 (Non-blocking)
     let rowId: number | null = null;
     if (db) {
       try {
+        console.log('Attempting DB insertion...');
         const insertResult = await db.prepare(`
           INSERT INTO submissions (test_name, email, score_json, level, raw_answers)
           VALUES (?, ?, ?, ?, ?)
@@ -131,9 +132,13 @@ export const POST: APIRoute = async ({ request, locals }) => {
           JSON.stringify(answers),
         ).run();
         rowId = insertResult.meta?.last_row_id ?? null;
-      } catch (dbErr) {
-        console.error('Database insertion failed:', dbErr);
+        console.log('DB insertion successful, ID:', rowId);
+      } catch (dbErr: any) {
+        console.error('DATABASE ERROR (but continuing):', dbErr?.message || dbErr);
+        // We continue because email is more important than the log
       }
+    } else {
+      console.warn('DB binding is missing - skipping database log.');
     }
 
     // 4. Send email via Resend

@@ -35,6 +35,7 @@ export default function Mdq() {
   const [result, setResult] = useState<{ level: string; score_json: Record<string, unknown> } | null>(null);
   const [emailSent, setEmailSent] = useState(false);
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const turnstileRendered = useRef(false);
 
   const partADone = partA.every(v => v !== null);
   const allDone = partADone && partB !== null && partC !== null;
@@ -54,10 +55,11 @@ export default function Mdq() {
 
   // Ensure Turnstile is rendered when user reaches the end
   useEffect(() => {
-    if (!allDone || !email) return;
+    if (!allDone || !email || turnstileRendered.current) return;
 
     if ((window as any).turnstile) {
       try {
+        turnstileRendered.current = true;
         (window as any).turnstile.render('#turnstile-container-mdq-inner', {
           sitekey: '0x4AAAAAAA4_S437qf6B9A_E',
           callback: 'onTurnstileSuccess',
