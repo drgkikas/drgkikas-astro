@@ -25,16 +25,14 @@ const levelColors: Record<string, any> = {
 };
 
 export default function QuizShell({ testName, questions, renderResults }: Props) {
-  const [step, setStep] = useState(0);
   const [raw, setRaw] = useState<(number | null)[]>(new Array(questions.length).fill(null));
   const [email, setEmail] = useState('');
-  const [state, setState] = useState<'quiz' | 'email' | 'submitting' | 'done'>('quiz');
+  const [state, setState] = useState<'quiz' | 'submitting' | 'done'>('quiz');
   const [result, setResult] = useState<any>(null);
   const [emailSent, setEmailSent] = useState(false);
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
 
   const isComplete = raw.every(v => v !== null);
-  const progress = Math.round(((raw.filter(v => v !== null).length) / questions.length) * 100);
 
   useEffect(() => {
     const handleTurnstile = (e: any) => setTurnstileToken(e.detail.token);
@@ -42,23 +40,14 @@ export default function QuizShell({ testName, questions, renderResults }: Props)
     return () => window.removeEventListener('turnstile-success', handleTurnstile);
   }, []);
 
-  // Simple fallback: unlock button after 2s if no token
-  useEffect(() => {
-    if (state === 'email' && !turnstileToken) {
-      const t = setTimeout(() => setTurnstileToken(prev => prev || 'fallback-token'), 2000);
-      return () => clearTimeout(t);
-    }
-  }, [state, turnstileToken]);
-
-  const handleAnswer = (val: number) => {
+  const handleAnswer = (index: number, val: number) => {
     const next = [...raw];
-    next[step] = val;
+    next[index] = val;
     setRaw(next);
-    if (step < questions.length - 1) setStep(step + 1);
-    else setState('email');
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
     if (!email || !isComplete) return;
     setState('submitting');
 
@@ -84,58 +73,82 @@ export default function QuizShell({ testName, questions, renderResults }: Props)
     const lvl = levelColors[result.level] ?? levelColors.moderate;
     return (
       <div className="space-y-6 animate-fade-in">
-        <div className={`p-4 rounded-xl border ${lvl.bg} ${lvl.border} ${lvl.text}`}>
-          <p className="text-xs font-bold uppercase opacity-60">Επίπεδο</p>
-          <p className="font-bold text-lg">{lvl.label}</p>
+        <div className={`p-6 rounded-2xl border ${lvl.bg} ${lvl.border} ${lvl.text}`}>
+          <p className="text-xs font-bold uppercase opacity-60">Αποτέλεσμα</p>
+          <p className="font-bold text-2xl">{lvl.label}</p>
         </div>
         {renderResults(result.score_json, result.level)}
-        <div className="bg-white border p-6 rounded-xl text-center">
-          <p className="text-sm text-slate-500 mb-4">
-            {emailSent ? `Τα αποτελέσματα στάλθηκαν στο ${email}` : 'Τα αποτελέσματα είναι έτοιμα (το email καθυστερεί).'}
+        <div className="bg-white border border-slate-200 p-8 rounded-2xl text-center shadow-sm">
+          <p className="text-slate-600 mb-6">
+            {emailSent ? `Τα αναλυτικά αποτελέσματα στάλθηκαν στο ${email}` : 'Τα αποτελέσματα είναι έτοιμα.'}
           </p>
-          <a href="https://drgkikas.com/epikoinonia" className="text-blue-600 font-bold">Επικοινωνία →</a>
+          <a href="/epikoinonia/" className="inline-block bg-[#084a79] text-white px-8 py-3 rounded-xl font-bold hover:bg-[#063557] transition-all">Επικοινωνία & Ραντεβού</a>
         </div>
       </div>
     );
   }
 
-  if (state === 'email') {
-    return (
-      <div className="space-y-6 animate-fade-in">
-        <div className="text-center">
-          <h3 className="text-xl font-bold text-blue-900">Τελευταίο βήμα</h3>
-          <p className="text-slate-500 text-sm">Πού να στείλουμε τα αναλυτικά αποτελέσματα;</p>
-        </div>
-        <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Το email σας" 
-          className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none" />
-        <div id="turnstile-container" className="flex justify-center">
-          <div className="cf-turnstile" data-sitekey="0x4AAAAAAA4_S437qf6B9A_E" data-callback="onTurnstileSuccess"></div>
-        </div>
-        <button onClick={handleSubmit} disabled={!email || state === 'submitting'}
-          className="w-full py-4 bg-blue-700 text-white rounded-xl font-bold hover:bg-blue-800 disabled:opacity-50 transition-all">
-          {state === 'submitting' ? 'Αποστολή...' : 'Δες τα αποτελέσματα →'}
-        </button>
-      </div>
-    );
-  }
-
-  const q = questions[step];
   return (
-    <div className="space-y-8 animate-fade-in">
-      <div>
-        <div className="flex justify-between text-xs text-slate-400 mb-2"><span>Ερώτηση {step + 1}/{questions.length}</span><span>{progress}%</span></div>
-        <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden"><div className="h-full bg-blue-600 transition-all" style={{width: `${progress}%`}} /></div>
-      </div>
-      <h3 className="text-xl font-bold text-slate-800 leading-tight">{q.text}</h3>
-      <div className="grid gap-3">
-        {q.options.map(opt => (
-          <button key={opt.label} onClick={() => handleAnswer(opt.value)} 
-            className="w-full p-4 text-left rounded-xl border border-slate-200 hover:border-blue-500 hover:bg-blue-50 transition-all font-medium text-slate-700">
-            {opt.label}
-          </button>
+    <form onSubmit={handleSubmit} className="space-y-12">
+      <div className="space-y-10">
+        {questions.map((q, qIdx) => (
+          <div key={qIdx} className="space-y-4">
+            <h3 className="text-lg font-bold text-slate-800 leading-tight">
+              <span className="text-slate-400 mr-2">{qIdx + 1}.</span> {q.text}
+            </h3>
+            <div className="grid grid-cols-1 gap-2">
+              {q.options.map(opt => (
+                <button
+                  type="button"
+                  key={opt.label}
+                  onClick={() => handleAnswer(qIdx, opt.value)}
+                  className={`w-full p-4 text-left rounded-xl border transition-all font-medium ${
+                    raw[qIdx] === opt.value 
+                      ? 'border-blue-600 bg-blue-50 text-blue-800 shadow-sm' 
+                      : 'border-slate-200 hover:border-blue-300 hover:bg-slate-50 text-slate-600'
+                  }`}
+                >
+                  {opt.label}
+                </button>
+              ))}
+            </div>
+          </div>
         ))}
       </div>
-      {step > 0 && <button onClick={() => setStep(step - 1)} className="text-slate-400 text-sm hover:text-slate-600">← Πίσω</button>}
-    </div>
+
+      <div className="pt-10 border-t border-slate-100 space-y-6">
+        <div className="text-center mb-6">
+          <h3 className="text-xl font-bold text-slate-900 mb-2">Υποβολή Αποτελεσμάτων</h3>
+          <p className="text-slate-500 text-sm">Συμπληρώστε το email σας για να δείτε το αποτέλεσμα και να λάβετε την πλήρη αναφορά.</p>
+        </div>
+        
+        <div className="max-w-md mx-auto space-y-4">
+          <input 
+            type="email" 
+            required 
+            value={email} 
+            onChange={e => setEmail(e.target.value)} 
+            placeholder="Το email σας" 
+            className="w-full px-5 py-4 rounded-xl border border-slate-300 focus:ring-2 focus:ring-[#084a79] focus:border-[#084a79] outline-none transition-shadow" 
+          />
+          
+          <div className="flex justify-center py-2">
+            <div className="cf-turnstile" data-sitekey="0x4AAAAAAA4_S437qf6B9A_E" data-callback="onTurnstileSuccess"></div>
+          </div>
+
+          <button 
+            type="submit" 
+            disabled={state === 'submitting' || !isComplete}
+            className="w-full py-5 bg-[#084a79] text-white rounded-xl font-bold text-lg hover:bg-[#063557] disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-lg shadow-blue-900/10"
+          >
+            {state === 'submitting' ? 'Επεξεργασία...' : 'Δείτε τα Αποτελέσματα'}
+          </button>
+          
+          {!isComplete && (
+            <p className="text-center text-xs text-rose-600 font-bold">Παρακαλώ απαντήστε σε όλες τις ερωτήσεις για να συνεχίσετε.</p>
+          )}
+        </div>
+      </div>
+    </form>
   );
 }
