@@ -165,10 +165,10 @@ export default function QuizShell({ testName, title, subtitle, progressNote, que
       
       <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-10 shadow-sm">
         <h3 className="text-2xl font-bold text-slate-800 leading-tight mb-8">{q.text}</h3>
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-wrap gap-2 sm:flex-nowrap">
           {options.map(opt => (
             <button key={opt.label} onClick={() => handleAnswer(opt.value)} 
-              className="w-full p-5 text-left rounded-xl border border-slate-200 hover:border-blue-500 hover:bg-blue-50 hover:shadow-md transition-all font-medium text-slate-700 text-lg">
+              className="flex-1 p-3 sm:p-5 text-center rounded-xl border border-slate-200 hover:border-blue-500 hover:bg-blue-50 hover:shadow-md transition-all font-medium text-slate-700 text-sm sm:text-base">
               {opt.label}
             </button>
           ))}
