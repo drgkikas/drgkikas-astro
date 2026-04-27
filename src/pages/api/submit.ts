@@ -25,14 +25,14 @@ export const OPTIONS: APIRoute = async ({ request }) => {
   });
 };
 
-export const POST: APIRoute = async ({ request }) => {
+export const POST: APIRoute = async ({ request, locals }) => {
   const corsHeaders = getCorsHeaders(request);
 
   try {
     const body = await request.json();
     const { test_name, email, answers } = body;
 
-    // 1. Get Keys (Robust Method)
+    // 1. Get Keys (Super Robust Method)
     let resendKey: string | undefined;
     let db: D1Database | undefined;
     
@@ -40,10 +40,12 @@ export const POST: APIRoute = async ({ request }) => {
       const cf = await import('cloudflare:workers' as any);
       resendKey = cf.env?.RESEND_API_KEY;
       db = cf.env?.DB;
-    } catch (e) {
-      // Fallback for local dev
-      resendKey = (process as any).env?.RESEND_API_KEY;
-    }
+    } catch (e) {}
+
+    // Fallbacks
+    const runtime = (locals as any).runtime?.env || {};
+    resendKey = resendKey || runtime.RESEND_API_KEY || (process as any).env?.RESEND_API_KEY;
+    db = db || runtime.DB;
 
     // 2. Calculate Result
     const result = calculateScore(test_name, answers);

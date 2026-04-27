@@ -166,10 +166,13 @@ export default function QuizShell({ testName, title, subtitle, progressNote, que
       
       <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-10 shadow-sm">
         <h3 className="text-2xl font-bold text-slate-800 leading-tight mb-8">{q.text}</h3>
-        <div className={isLikert ? `grid grid-cols-${options.length} gap-2` : "flex flex-col gap-3"}>
+        <div 
+          className={isLikert ? "grid gap-2" : "flex flex-col gap-3"}
+          style={isLikert ? { gridTemplateColumns: `repeat(${options.length}, minmax(0, 1fr))` } : {}}
+        >
           {options.map(opt => (
             <button key={opt.label} onClick={() => handleAnswer(opt.value)} 
-              className={`p-3 text-center rounded-xl border border-slate-200 hover:border-blue-500 hover:bg-blue-50 hover:shadow-md transition-all font-medium text-slate-700 ${isLikert ? 'text-[10px] sm:text-sm px-1' : 'text-lg p-5 text-left'}`}>
+              className={`text-center rounded-xl border border-slate-200 hover:border-blue-500 hover:bg-blue-50 hover:shadow-md transition-all font-medium text-slate-700 ${isLikert ? 'text-[10px] sm:text-sm px-1 py-3' : 'text-lg p-5 text-left w-full'}`}>
               {opt.label}
             </button>
           ))}
