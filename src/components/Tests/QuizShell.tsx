@@ -147,7 +147,7 @@ export default function QuizShell({ testName, title, subtitle, progressNote, que
   const isLikert = q.type === 'likert4' || q.type === 'likert5';
 
   return (
-    <div className="space-y-8 animate-fade-in max-w-3xl mx-auto">
+    <div className="space-y-8 animate-fade-in max-w-3xl mx-auto mt-4">
       <header className="mb-8 text-center">
         <h1 className="text-3xl font-extrabold text-slate-900 mb-3">{title}</h1>
         {subtitle && <p className="text-slate-500 text-sm">{subtitle}</p>}
