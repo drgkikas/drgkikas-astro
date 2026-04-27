@@ -244,7 +244,7 @@ if (Astro.request.method === 'POST') {
                   <input id="privacy" name="privacy" type="checkbox" required class="w-4 h-4 border border-slate-300 rounded bg-white text-[#084a79] focus:ring-3 focus:ring-blue-300">
                 </div>
                 <label for="privacy" class="ml-3 text-sm text-slate-600">
-                  Αποδέχομαι τους <a href="/privacy-policy" class="text-[#084a79] hover:underline font-bold">Όρους Χρήσης και την Πολιτική Απορρήτου *</a>.
+                  Αποδέχομαι τους <a href="/privacy-policy/" class="text-[#084a79] hover:underline font-bold">Όρους Χρήσης και την Πολιτική Απορρήτου *</a>.
                 </label>
               </div>
 
@@ -289,7 +289,7 @@ if (Astro.request.method === 'POST') {
         const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries());
         
-        const response = await fetch('/epikoinonia', {
+        const response = await fetch('/epikoinonia/', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

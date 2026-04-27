@@ -65,7 +65,7 @@ const posLeitourgeiPages = allRtmsPages.filter(p => p.id.startsWith('pos-leitour
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {corePages.map(page => (
-            <a href={`/rtms/${page.id}`} class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md hover:border-red-400 transition-all group block">
+            <a href={`/rtms/${page.id}/`} class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md hover:border-red-400 transition-all group block">
               <h3 class="text-lg font-bold text-red-900 mb-3 group-hover:text-red-600 leading-tight">{page.data.title}</h3>
               <p class="text-sm text-slate-500 line-clamp-2 leading-relaxed">{page.data.description}</p>
             </a>
@@ -84,7 +84,7 @@ const posLeitourgeiPages = allRtmsPages.filter(p => p.id.startsWith('pos-leitour
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {endixeisPages.map(page => (
-            <a href={`/rtms/${page.id}`} class="relative group bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:shadow-red-900/5 transition-all block min-h-[160px]">
+            <a href={`/rtms/${page.id}/`} class="relative group bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:shadow-red-900/5 transition-all block min-h-[160px]">
               <div class="absolute top-6 right-8 text-red-100 group-hover:text-red-200 transition-colors">
                 <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
               </div>
@@ -104,7 +104,7 @@ const posLeitourgeiPages = allRtmsPages.filter(p => p.id.startsWith('pos-leitour
         <div class="bg-white rounded-3xl p-4 md:p-8 border border-slate-100 shadow-sm">
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {posLeitourgeiPages.map(page => (
-              <a href={`/rtms/${page.id}`} class="flex items-center gap-4 p-4 rounded-xl hover:bg-red-50 transition-colors border border-transparent hover:border-red-100 group">
+              <a href={`/rtms/${page.id}/`} class="flex items-center gap-4 p-4 rounded-xl hover:bg-red-50 transition-colors border border-transparent hover:border-red-100 group">
                 <div class="w-2 h-2 rounded-full bg-red-400 group-hover:scale-150 transition-transform"></div>
                 <span class="text-slate-700 font-bold group-hover:text-red-800">{page.data.title}</span>
               </a>
@@ -141,7 +141,7 @@ const posLeitourgeiPages = allRtmsPages.filter(p => p.id.startsWith('pos-leitour
               <p class="text-lg leading-relaxed mb-6">
                 Ο ιατρικός εξοπλισμός τελευταίας γενιάς και η εμπειρία του <strong>Πασχάλη Γκίκα</strong> εξασφαλίζουν τη μέγιστη ασφάλεια και αποτελεσματικότητα στη θεραπεία.
               </p>
-              <a href="/epikoinonia" class="inline-block bg-red-600 text-white font-black px-8 py-4 rounded-2xl hover:bg-red-700 transition-all shadow-lg shadow-red-900/20">
+              <a href="/epikoinonia/" class="inline-block bg-red-600 text-white font-black px-8 py-4 rounded-2xl hover:bg-red-700 transition-all shadow-lg shadow-red-900/20">
                 Κλείστε Ραντεβού Αξιολόγησης &rarr;
               </a>
               <p class="mt-4 text-xs font-medium text-slate-500 uppercase tracking-widest text-center md:text-left">Ξενοφώντος 15Α, Σύνταγμα</p>
