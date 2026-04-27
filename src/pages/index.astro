@@ -144,7 +144,7 @@ const schemaBundle = JSON.stringify({
     </section>
 
     <!-- SECTION 2: ΓΙΑΤΙ SMART CNS / ΦΙΛΟΣΟΦΙΑ -->
-    <section class="py-24 bg-white overflow-hidden relative">
+    <section class="py-24 bg-white overflow-hidden relative content-visibility-auto">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div>
@@ -195,7 +195,7 @@ const schemaBundle = JSON.stringify({
     </section>
 
     <!-- SECTION 3: ΣΕ ΠΟΙΕΣ ΚΑΤΑΣΤΑΣΕΙΣ ΒΟΗΘΑΜΕ -->
-    <section class="py-24 bg-slate-50 border-y border-slate-100">
+    <section class="py-24 bg-slate-50 border-y border-slate-100 content-visibility-auto">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <span class="text-[#084a79] font-bold tracking-widest text-xs uppercase mb-2 block">Ενδείξεις</span>
@@ -221,7 +221,7 @@ const schemaBundle = JSON.stringify({
     </section>
 
     <!-- SECTION 4: FEATURED PATH — RTMS -->
-    <section class="py-24 bg-white">
+    <section class="py-24 bg-white content-visibility-auto">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="relative rounded-[3rem] bg-gradient-to-br from-[#084a79] to-[#042a46] p-12 md:p-20 overflow-hidden shadow-2xl">
           <div class="absolute top-0 right-0 w-1/3 h-full bg-white/5 skew-x-12 transform translate-x-1/2"></div>
@@ -265,7 +265,7 @@ const schemaBundle = JSON.stringify({
     </section>
 
     <!-- SECTION 5: BIO / TRUST -->
-    <section class="py-24 bg-[#f8fafc]">
+    <section class="py-24 bg-[#f8fafc] content-visibility-auto">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col md:flex-row gap-16 items-center">
           <div class="w-full md:w-1/3">
@@ -304,7 +304,7 @@ const schemaBundle = JSON.stringify({
     </section>
 
     <!-- SECTION 6: CONTACT & MAP -->
-    <section class="py-24 bg-white">
+    <section class="py-24 bg-white content-visibility-auto">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden flex flex-col lg:flex-row">
           <div class="lg:w-1/2 p-12 md:p-20">
@@ -358,5 +358,10 @@ const schemaBundle = JSON.stringify({
     transition-property: all;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 300ms;
+  }
+  
+  .content-visibility-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 1000px; /* Estimated height */
   }
 </style>
