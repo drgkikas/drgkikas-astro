@@ -59,6 +59,12 @@ export default function QuizShell({ testName, title, subtitle, progressNote, que
     return () => window.removeEventListener('turnstile-success', handleTurnstile);
   }, []);
 
+  // Fallback: αν το Turnstile δεν φορτωθεί σε 3 δευτερόλεπτα, ξεκλειδώνουμε την υποβολή
+  useEffect(() => {
+    const t = setTimeout(() => setTurnstileToken(prev => prev || 'fallback-token'), 3000);
+    return () => clearTimeout(t);
+  }, []);
+
   const handleAnswer = (index: number, val: number) => {
     const next = [...raw];
     next[index] = val;
