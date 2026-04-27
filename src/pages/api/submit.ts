@@ -7,54 +7,48 @@ export const prerender = false;
 
 const ALLOWED_ORIGINS = ['https://drgkikas.com', 'https://www.drgkikas.com'];
 
-export const OPTIONS: APIRoute = async ({ request }) => {
+function getCorsHeaders(request: Request) {
   const origin = request.headers.get('Origin') ?? '';
   const allowed = ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0];
+  return {
+    'Access-Control-Allow-Origin': allowed,
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Vary': 'Origin'
+  };
+}
+
+export const OPTIONS: APIRoute = async ({ request }) => {
   return new Response(null, {
     status: 204,
-    headers: {
-      'Access-Control-Allow-Origin': allowed,
-      'Access-Control-Allow-Methods': 'POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type',
-    }
+    headers: getCorsHeaders(request)
   });
 };
 
-export const POST: APIRoute = async ({ request, locals }) => {
-  const origin = request.headers.get('Origin') ?? '';
-  const allowed = ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0];
-  const corsHeaders = {
-    'Access-Control-Allow-Origin': allowed,
-    'Content-Type': 'application/json'
-  };
+export const POST: APIRoute = async ({ request }) => {
+  const corsHeaders = getCorsHeaders(request);
 
   try {
     const body = await request.json();
-    const { test_name, email, answers, turnstile_token } = body;
+    const { test_name, email, answers } = body;
 
-    // Get Keys
-    const env = (locals as any).runtime?.env || (process as any).env || {};
-    const resendKey = env.RESEND_API_KEY;
-    const turnstileSecret = env.TURNSTILE_SECRET_KEY || '1x0000000000000000000000000000000AA';
-    const db = env.DB;
-
-    // 1. Calculate Result Immediately
-    const result = calculateScore(test_name, answers);
-
-    // 2. Verification (Optional Fallback)
-    if (turnstile_token && turnstile_token !== 'fallback-token') {
-      const v = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ secret: turnstileSecret, response: turnstile_token })
-      });
-      const vData = await v.json() as any;
-      if (!vData.success) {
-        console.error('Turnstile Fail:', vData['error-codes']);
-      }
+    // 1. Get Keys (Robust Method)
+    let resendKey: string | undefined;
+    let db: D1Database | undefined;
+    
+    try {
+      const cf = await import('cloudflare:workers' as any);
+      resendKey = cf.env?.RESEND_API_KEY;
+      db = cf.env?.DB;
+    } catch (e) {
+      // Fallback for local dev
+      resendKey = (process as any).env?.RESEND_API_KEY;
     }
 
-    // 3. Send Email (Main Goal)
+    // 2. Calculate Result
+    const result = calculateScore(test_name, answers);
+
+    // 3. Send Email
     let emailSent = false;
     if (resendKey) {
       try {
@@ -70,28 +64,32 @@ export const POST: APIRoute = async ({ request, locals }) => {
           })
         });
         emailSent = res.ok;
-      } catch (e) { console.error('Email error:', e); }
+      } catch (e) { 
+        console.error('Email error:', e); 
+      }
     }
 
-    // 4. Save to DB (Silent)
+    // 4. Save to DB
     if (db) {
       try {
         await db.prepare('INSERT INTO submissions (test_name, email, score_json, level, raw_answers, email_sent) VALUES (?, ?, ?, ?, ?, ?)')
           .bind(test_name, email, JSON.stringify(result.score_json), result.level, JSON.stringify(answers), emailSent ? 1 : 0)
           .run();
-      } catch (dbE) { console.error('DB error:', dbE); }
+      } catch (dbE) { 
+        console.error('DB error:', dbE); 
+      }
     }
 
     return new Response(JSON.stringify({ success: true, result, email_sent: emailSent }), {
       status: 200,
-      headers: corsHeaders
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
     });
 
   } catch (err: any) {
     console.error('API Error:', err);
     return new Response(JSON.stringify({ error: err.message || 'Internal Server Error' }), {
       status: 500,
-      headers: corsHeaders
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
     });
   }
 };
