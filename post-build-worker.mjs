@@ -8,12 +8,8 @@ import { resolve } from 'path';
 
 // 1. Remove .wrangler/ to prevent redirect issues
 if (existsSync('.wrangler')) {
-  try {
-    rmSync('.wrangler', { recursive: true, force: true, maxRetries: 5 });
-    console.log('✓ Removed .wrangler/ redirect config');
-  } catch (err) {
-    console.warn('⚠️ Could not remove .wrangler/:', err.message);
-  }
+  rmSync('.wrangler', { recursive: true, force: true });
+  console.log('✓ Removed .wrangler/ redirect config');
 }
 
 // 2. Ensure dist/client exists

@@ -14,7 +14,6 @@ export default defineConfig({
     imageService: 'passthrough',
     platformProxy: { enabled: false }
   }),
-  trailingSlash: 'always',
   vite: {
     plugins: [tailwindcss()]
   },
