@@ -9,11 +9,11 @@ import { getEntry } from 'astro:content';
 
 export async function getStaticPaths() {
   const services = await getCollection('services');
-  return services.map(s => ({ params: { slug: s.id } }));
+  return services.map(s => ({ params: { slug: s.id.toLowerCase() } }));
 }
 
 const { slug } = Astro.params;
-const entry = await getEntry('services', slug);
+const entry = await getEntry('services', slug) || (await getCollection('services')).find(s => s.id.toLowerCase() === slug);
 if (!entry) return Astro.redirect('/404');
 const { Content } = await render(entry);
 
