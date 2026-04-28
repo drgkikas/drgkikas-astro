@@ -7,7 +7,7 @@ pubDate: 2026-04-27
 author: "Πασχάλης Γκίκας, Ψυχίατρος - Ψυχοθεραπευτής"
 kategoria: "Απαντήσεις ψυχικής υγείας"
 keywords: "αντικαταθλιπτικά, φοβάμαι να πάρω αντικαταθλιπτικά, SSRI παρενέργειες, κατάθλιψη, άγχος, ψυχίατρος Αθήνα, drgkikas"
-image: "/images/blog/placeholder-antidepressants.webp"
+image: "/images/blog/fovamai-antikatathliptika-cover.webp"
 schema: |
   {
     "@context": "https://schema.org",
