@@ -171,44 +171,19 @@ const services = allServices
     color: #084a79;
     text-decoration: underline;
     text-decoration-color: #cbd5e1;
-    text-underline-offset: 3px;
+    text-underline-offset: 4px;
     font-size: 0.825rem;
-    white-space: nowrap; /* Prevents text from cutting off/wrapping */
+    white-space: nowrap;
     transition: all 0.2s;
   }
 
-  /* Some links in image were black text */
-  .footer-links li:nth-child(even) a,
-  .footer-links li.no-underline a {
-    color: #333;
-    text-decoration: none;
-  }
-  
-  /* Reset some specific colors based on image */
-  .footer-col:nth-child(2) li:nth-child(6) a,
-  .footer-col:nth-child(2) li:nth-child(7) a,
-  .footer-col:nth-child(2) li:nth-child(8) a,
-  .footer-col:nth-child(2) li:nth-child(12) a,
-  .footer-col:nth-child(2) li:nth-child(13) a,
-  .footer-col:nth-child(2) li:nth-child(14) a {
-    color: #333;
-    text-decoration: none;
-  }
-
-  .footer-col:nth-child(3) li:nth-child(2) a,
-  .footer-col:nth-child(3) li:nth-child(3) a,
-  .footer-col:nth-child(3) li:nth-child(6) a {
-    color: #333;
-    text-decoration: none;
-  }
-
   .footer-links a:hover {
-    color: #084a79;
+    color: #0d6efd;
     text-decoration-color: #084a79;
   }
 
   .footer-highlight-link {
-    color: #b15d8d !important; /* Pinkish color from image for Psychometrics */
+    color: #b15d8d !important;
     font-weight: 700;
   }
 
@@ -228,7 +203,12 @@ const services = allServices
   .footer-tel-link {
     color: #084a79;
     text-decoration: underline;
+    text-decoration-color: #cbd5e1;
+    text-underline-offset: 4px;
     font-weight: 600;
+  }
+  .footer-tel-link:hover {
+    color: #0d6efd;
   }
 
   .footer-bottom {
