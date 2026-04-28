@@ -4,9 +4,24 @@ import { getCollection } from 'astro:content';
 const disorders = await getCollection('disorders');
 const services = await getCollection('services');
 
-// Sort alphabetically by title for consistent ordering
-const sortedDisorders = disorders.sort((a, b) => a.data.title.localeCompare(b.data.title, 'el'));
-const sortedServices = services.sort((a, b) => a.data.title.localeCompare(b.data.title, 'el'));
+// Function to shorten titles (keep text before :, (, or –)
+const shorten = (title) => {
+  return title.split(/[:\-(–]/)[0].trim();
+};
+
+// Sort and map with shortened titles
+const sortedDisorders = disorders
+  .sort((a, b) => a.data.title.localeCompare(b.data.title, 'el'))
+  .map(d => ({ ...d, shortTitle: shorten(d.data.title) }));
+
+const sortedServices = services
+  .sort((a, b) => a.data.title.localeCompare(b.data.title, 'el'))
+  .map(s => ({ ...s, shortTitle: shorten(s.data.title) }));
+
+// Split disorders into two halves for 2 columns
+const mid = Math.ceil(sortedDisorders.length / 2);
+const disorders1 = sortedDisorders.slice(0, mid);
+const disorders2 = sortedDisorders.slice(mid);
 ---
 <footer class="site-footer">
   <div class="footer-main">
@@ -14,103 +29,113 @@ const sortedServices = services.sort((a, b) => a.data.title.localeCompare(b.data
 
       <!-- Στήλη 1: Μήνυμα Από Τον Ιατρό -->
       <div class="footer-col">
-        <h3 class="footer-col-title">ΜΗΝΥΜΑ ΑΠΟ ΤΟΝ ΙΑΤΡΟ</h3>
+        <h3 class="footer-col-title">Ο ΙΑΤΡΟΣ</h3>
         <p class="footer-col-text">
-          Στην παρούσα ιστοσελίδα μπορείτε να βρείτε χρήσιμες πληροφορίες που αφορούν την ψυχική υγεία.
-          Περιηγηθείτε ελεύθερα και μην διστάσετε να επικοινωνήσετε μαζί μου για οποιαδήποτε διευκρίνιση.
-          Καλή περιήγηση!
+          Χρήσιμες πληροφορίες για την ψυχική υγεία και σύγχρονες θεραπευτικές προσεγγίσεις.
         </p>
-        <div class="footer-contact-block">
-          <ul class="footer-contact">
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-              <span>Ξενοφώντος 15Α, Σύνταγμα, Αθήνα</span>
-            </li>
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.17 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.54a16 16 0 0 0 6.55 6.55l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-              <a href="tel:+302118500016">211 850 0016</a>
-            </li>
-          </ul>
-        </div>
-        <div class="footer-general-links">
-          <a href="/psychometrika" class="footer-highlight-link">Ψυχομετρικά Τεστ &rarr;</a>
-          <a href="/KnowledgeBase-eBooks">Βιβλιοθήκη &amp; eBooks</a>
-          <a href="/epikoinonia">Επικοινωνία - Ραντεβού</a>
-          <a href="/privacy-policy">Πολιτική Απορρήτου</a>
+        <div class="footer-logo-sub">
+          <strong>Πασχάλης Γκίκας</strong>
+          <span>Ψυχίατρος - Ψυχοθεραπευτής</span>
         </div>
       </div>
 
-      <!-- Στήλη 2: Διαταραχές — δυναμικά από content collection -->
+      <!-- Στήλη 2: Διαταραχές Α -->
       <div class="footer-col">
         <h3 class="footer-col-title"><a href="/diataraxes" class="footer-col-title-link">ΔΙΑΤΑΡΑΧΕΣ</a></h3>
         <ul class="footer-links">
-          {sortedDisorders.map(dis => (
-            <li>
-              <a href={`/diataraxes/${dis.id}`}>{dis.data.title}</a>
-            </li>
+          {disorders1.map(dis => (
+            <li><a href={`/diataraxes/${dis.id}`}>{dis.shortTitle}</a></li>
           ))}
         </ul>
       </div>
 
-      <!-- Στήλη 3: Υπηρεσίες — δυναμικά από content collection -->
+      <!-- Στήλη 3: Διαταραχές Β -->
+      <div class="footer-col">
+        <h3 class="footer-col-title invisible md:visible"><span class="hidden md:inline">&nbsp;</span></h3>
+        <ul class="footer-links">
+          {disorders2.map(dis => (
+            <li><a href={`/diataraxes/${dis.id}`}>{dis.shortTitle}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Στήλη 4: Υπηρεσίες -->
       <div class="footer-col">
         <h3 class="footer-col-title"><a href="/ypiresies" class="footer-col-title-link">ΥΠΗΡΕΣΙΕΣ</a></h3>
         <ul class="footer-links">
           {sortedServices.map(service => (
-            <li>
-              <a href={`/ypiresies/${service.id}`}>{service.data.title}</a>
-            </li>
+            <li><a href={`/ypiresies/${service.id}`}>{service.shortTitle}</a></li>
           ))}
+        </ul>
+      </div>
+
+      <!-- Στήλη 5: Σύνδεσμοι & Επικοινωνία -->
+      <div class="footer-col">
+        <h3 class="footer-col-title">ΕΠΙΚΟΙΝΩΝΙΑ</h3>
+        <ul class="footer-contact mb-6">
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.17 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.54a16 16 0 0 0 6.55 6.55l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <a href="tel:+302118500016">211 850 0016</a>
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span class="text-[0.75rem]">Ξενοφώντος 15Α, Σύνταγμα</span>
+          </li>
+        </ul>
+        <h3 class="footer-col-title">ΣΥΝΔΕΣΜΟΙ</h3>
+        <ul class="footer-links">
+          <li><a href="/psychometrika" class="footer-highlight-link">Ψυχομετρικά Τεστ &rarr;</a></li>
+          <li><a href="/KnowledgeBase-eBooks">Βιβλιοθήκη & eBooks</a></li>
+          <li><a href="/epikoinonia">Ραντεβού</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
         </ul>
       </div>
 
     </div>
   </div>
 
-  <!-- Copyright Bar -->
   <div class="footer-bottom">
     <p>&copy; {new Date().getFullYear()} drGkikas.com - All rights reserved.</p>
   </div>
 </footer>
 
-<style is:inline> /* Optimized: Inline CSS to avoid render-blocking */
+<style is:inline>
   .site-footer {
-    background-color: #222222;
+    background-color: #1a1a1a;
     color: #cccccc;
     font-family: inherit;
-    margin-top: auto;
+    border-top: 1px solid #333;
   }
 
   .footer-main {
-    padding: 3.5rem 0 2.5rem;
+    padding: 4rem 0 3rem;
   }
 
   .footer-inner {
-    max-width: 1280px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 2rem;
     display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr;
-    gap: 3rem;
+    grid-template-columns: 1.2fr 1fr 1fr 1fr 1.2fr;
+    gap: 2.5rem;
     align-items: start;
   }
 
   .footer-col-title {
     color: #ffffff;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    margin: 0 0 1rem 0;
-    padding-bottom: 0.75rem;
-    border-bottom: 2px solid #444444;
+    margin: 0 0 1.25rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #333;
   }
 
-  /* Clickable column headers (Διαταραχές / Υπηρεσίες) */
   .footer-col-title-link {
     color: #ffffff;
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: color 0.2s;
   }
   .footer-col-title-link:hover {
     color: #60a5fa;
@@ -118,118 +143,106 @@ const sortedServices = services.sort((a, b) => a.data.title.localeCompare(b.data
 
   .footer-col-text {
     font-size: 0.85rem;
-    line-height: 1.75;
-    color: #bbbbbb;
-    margin: 0 0 1rem 0;
+    line-height: 1.6;
+    color: #999;
+    margin-bottom: 1rem;
   }
 
-  /* Contact block inside column 1 */
-  .footer-contact-block {
-    margin-bottom: 1.25rem;
-  }
-
-  /* General links at the bottom of column 1 */
-  .footer-general-links {
+  .footer-logo-sub {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
+    gap: 0.2rem;
   }
-  .footer-general-links a {
-    color: #bbbbbb;
-    text-decoration: none;
-    font-size: 0.8rem;
-    transition: color 0.2s ease;
+  .footer-logo-sub strong {
+    color: #eee;
+    font-size: 0.9rem;
   }
-  .footer-general-links a:hover {
-    color: #ffffff;
-  }
-  .footer-highlight-link {
-    color: #60a5fa !important;
-    font-weight: 700;
+  .footer-logo-sub span {
+    color: #666;
+    font-size: 0.75rem;
   }
 
-  /* Disorder & Service link lists */
   .footer-links {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.45rem;
+    gap: 0.5rem;
   }
 
   .footer-links a {
-    color: #bbbbbb;
+    color: #aaa;
     text-decoration: none;
     font-size: 0.8rem;
-    line-height: 1.4;
-    transition: color 0.2s ease;
+    transition: all 0.2s;
+    display: block;
   }
 
   .footer-links a:hover {
-    color: #ffffff;
+    color: #fff;
+    transform: translateX(3px);
   }
 
-  /* Contact list */
+  .footer-highlight-link {
+    color: #60a5fa !important;
+    font-weight: 700;
+  }
+
   .footer-contact {
     list-style: none;
-    margin: 0;
     padding: 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
   }
-
   .footer-contact li {
     display: flex;
     align-items: center;
-    gap: 0.65rem;
-    font-size: 0.85rem;
-    color: #bbbbbb;
+    gap: 0.6rem;
+    font-size: 0.8rem;
+    color: #aaa;
   }
-
   .footer-contact svg {
-    width: 1rem;
-    height: 1rem;
-    color: #888888;
-    flex-shrink: 0;
+    width: 0.9rem;
+    height: 0.9rem;
+    color: #555;
   }
-
   .footer-contact a {
-    color: #bbbbbb;
+    color: #aaa;
     text-decoration: none;
-    transition: color 0.2s ease;
   }
-
   .footer-contact a:hover {
-    color: #ffffff;
+    color: #fff;
   }
 
   .footer-bottom {
-    background-color: #1a1a1a;
-    border-top: 1px solid #333333;
+    background-color: #111;
     text-align: center;
-    padding: 0.85rem 2rem;
+    padding: 1.5rem;
+    border-top: 1px solid #222;
   }
-
   .footer-bottom p {
+    font-size: 0.75rem;
+    color: #555;
     margin: 0;
-    font-size: 0.8rem;
-    color: #888888;
   }
 
-  @media (max-width: 960px) {
+  @media (max-width: 1100px) {
     .footer-inner {
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
     }
   }
-
-  @media (max-width: 580px) {
+  @media (max-width: 768px) {
+    .footer-inner {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (max-width: 480px) {
     .footer-inner {
       grid-template-columns: 1fr;
-      gap: 2rem;
     }
   }
 </style>
