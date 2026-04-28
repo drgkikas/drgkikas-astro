@@ -108,6 +108,46 @@ const schemaBundle = JSON.stringify({
           ">
           <Content />
         </div>
+
+        {/* ΔΥΝΑΜΙΚΑ INTERNAL LINKS ΓΙΑ SEO */}
+        <div class="mt-20 pt-12 border-t border-slate-100">
+          <h2 class="text-2xl font-bold text-slate-900 mb-8">Σχετικές Υπηρεσίες & Θεραπείες</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {slug === 'katathlipsi' && (
+              <>
+                <a href="/ypiresies/rtms/" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-amber-300 transition-all font-bold text-slate-800">rTMS — Νευροτροποποίηση &rarr;</a>
+                <a href="/ypiresies/psychiatriki-parakolouthisi/" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-amber-300 transition-all font-bold text-slate-800">Ψυχιατρική Παρακολούθηση &rarr;</a>
+                <a href="/ypiresies/pgx/" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-amber-300 transition-all font-bold text-slate-800">Φαρμακογονιδιωματική (PGx) &rarr;</a>
+              </>
+            )}
+            {slug === 'agxodeis-diataraxes' && (
+              <>
+                <a href="/ypiresies/psychiatriki-parakolouthisi/" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-amber-300 transition-all font-bold text-slate-800">Ψυχιατρική Παρακολούθηση &rarr;</a>
+                <a href="/ypiresies/psychotherapeia/" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-amber-300 transition-all font-bold text-slate-800">Ψυχοθεραπεία (CBT) &rarr;</a>
+                <a href="/ypiresies/online-synedria/" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-amber-300 transition-all font-bold text-slate-800">Online Ψυχιατρική Συνεδρία &rarr;</a>
+              </>
+            )}
+            {slug === 'adhd-adult' && (
+              <>
+                <a href="/ypiresies/adhd-evaluation/" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-amber-300 transition-all font-bold text-slate-800">Αξιολόγηση ΔΕΠΥ (ADHD) &rarr;</a>
+                <a href="/ypiresies/psychometrika-test/" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-amber-300 transition-all font-bold text-slate-800">Ψυχομετρικά Τεστ &rarr;</a>
+                <a href="/ypiresies/psychiatriki-parakolouthisi/" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-amber-300 transition-all font-bold text-slate-800">Ψυχιατρική Παρακολούθηση &rarr;</a>
+              </>
+            )}
+            {slug === 'diataraxes-ypnou' && (
+              <>
+                <a href="/ypiresies/psychiatriki-parakolouthisi/" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-amber-300 transition-all font-bold text-slate-800">Ψυχιατρική Παρακολούθηση &rarr;</a>
+                <a href="/ypiresies/online-synedria/" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-amber-300 transition-all font-bold text-slate-800">Online Ψυχιατρική Συνεδρία &rarr;</a>
+              </>
+            )}
+            {!['katathlipsi', 'agxodeis-diataraxes', 'adhd-adult', 'diataraxes-ypnou'].includes(slug) && (
+              <>
+                <a href="/ypiresies/psychiatriki-parakolouthisi/" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-amber-300 transition-all font-bold text-slate-800">Ψυχιατρική Παρακολούθηση &rarr;</a>
+                <a href="/ypiresies/online-synedria/" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-amber-300 transition-all font-bold text-slate-800">Online Ψυχιατρική Συνεδρία &rarr;</a>
+              </>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   </main>

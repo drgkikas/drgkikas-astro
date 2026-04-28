@@ -111,7 +111,7 @@ const schemaBundle = JSON.stringify({
             <div class="w-14 h-14 bg-red-50 text-red-700 rounded-xl flex items-center justify-center text-2xl mb-8">🧲</div>
             <h3 class="text-2xl font-bold text-slate-900 mb-4">rTMS — Νευροτροποποίηση</h3>
             <p class="text-slate-600 leading-relaxed mb-8 flex-grow">Εγκεκριμένη, μη επεμβατική θεραπεία για ανθεκτική κατάθλιψη, OCD και εξαρτήσεις. Στοχευμένη διέγερση νευρικών κυκλωμάτων χωρίς φάρμακα.</p>
-            <a href="/rtms" aria-label="Περισσότερα για τις θεραπείες rTMS" class="group flex items-center gap-2 text-[#084a79] font-black hover:gap-3 transition-all duration-300">
+            <a href="/ypiresies/rtms" aria-label="Περισσότερα για τις θεραπείες rTMS" class="group flex items-center gap-2 text-[#084a79] font-black hover:gap-3 transition-all duration-300">
               Περισσότερα για το rTMS
               <span>&rarr;</span>
             </a>
@@ -122,7 +122,7 @@ const schemaBundle = JSON.stringify({
             <div class="w-14 h-14 bg-blue-50 text-blue-700 rounded-xl flex items-center justify-center text-2xl mb-8">🧬</div>
             <h3 class="text-2xl font-bold text-slate-900 mb-4">Φαρμακογονιδιωματική</h3>
             <p class="text-slate-600 leading-relaxed mb-8 flex-grow">Ανάλυση DNA για την επιλογή της καταλληλότερης φαρμακευτικής αγωγής. Σωστό φάρμακο και σωστή δόση από την πρώτη στιγμή.</p>
-            <a href="/pgx" aria-label="Περισσότερα για την Φαρμακογονιδιωματική" class="group flex items-center gap-2 text-[#084a79] font-black hover:gap-3 transition-all duration-300">
+            <a href="/ypiresies/pgx" aria-label="Περισσότερα για την Φαρμακογονιδιωματική" class="group flex items-center gap-2 text-[#084a79] font-black hover:gap-3 transition-all duration-300">
               Ανάλυση PGx
               <span>&rarr;</span>
             </a>
@@ -133,10 +133,16 @@ const schemaBundle = JSON.stringify({
             <div class="w-14 h-14 bg-purple-50 text-purple-700 rounded-xl flex items-center justify-center text-2xl mb-8">🩺</div>
             <h3 class="text-2xl font-bold text-slate-900 mb-4">Κλινική Ψυχιατρική</h3>
             <p class="text-slate-600 leading-relaxed mb-8 flex-grow">Ολοκληρωμένη διαγνωστική αξιολόγηση, ψυχοθεραπεία και συνεδρίες (δια ζώσης ή online) για την πλήρη υποστήριξη της ψυχικής υγείας.</p>
-            <a href="/ypiresies" aria-label="Δείτε όλες τις κλινικές υπηρεσίες" class="group flex items-center gap-2 text-[#084a79] font-black hover:gap-3 transition-all duration-300">
-              Όλες οι Υπηρεσίες
-              <span>&rarr;</span>
-            </a>
+            <div class="flex flex-col gap-3">
+              <a href="/ypiresies/psychiatriki-parakolouthisi" class="group flex items-center gap-2 text-[#084a79] font-black hover:gap-3 transition-all duration-300">
+                Ψυχιατρική Παρακολούθηση
+                <span>&rarr;</span>
+              </a>
+              <a href="/ypiresies/psychotherapeia" class="group flex items-center gap-2 text-[#084a79] font-black hover:gap-3 transition-all duration-300">
+                Ψυχοθεραπεία (CBT)
+                <span>&rarr;</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -203,12 +209,14 @@ const schemaBundle = JSON.stringify({
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
           {[
-            { t: "Ανθεκτική Κατάθλιψη", l: "/diataraxes/katathlipsi" },
-            { t: "Ιδεοψυχαναγκαστική Διαταραχή (OCD)", l: "/rtms/endixeis/ocd" },
-            { t: "Γενικευμένη Αγχώδης Διαταραχή", l: "/diataraxes/agxodeis-diataraxes" },
+            { t: "Κατάθλιψη (MDD)", l: "/diataraxes/katathlipsi" },
+            { t: "Αγχώδεις Διαταραχές", l: "/diataraxes/agxodeis-diataraxes" },
+            { t: "ΔΕΠΥ (ADHD) Ενηλίκων", l: "/diataraxes/adhd-adult" },
+            { t: "Διαταραχές Ύπνου", l: "/diataraxes/diataraxes-ypnou" },
+            { t: "Ιδεοψυχαναγκαστική Διαταραχή (OCD)", l: "/diataraxes/ideopsychanagkastiki-diatarachi" },
             { t: "Διπολική Διαταραχή", l: "/diataraxes/dipoliki-diatarachi" },
             { t: "Εξαρτήσεις (Κάπνισμα, Αλκοόλ)", l: "/diataraxes/diatarachi-xrisis-alkool" },
-            { t: "Χρόνιος Πόνος & Ινομυαλγία", l: "/rtms/endixeis/ponos" }
+            { t: "Σωματοδυσμορφική Διαταραχή", l: "/diataraxes/body-dysmorphic" }
           ].map(item => (
             <a href={item.l} class="flex items-center justify-between p-6 bg-white border border-slate-100 rounded-2xl hover:border-blue-300 hover:shadow-md transition-all group">
               <span class="font-bold text-slate-800 text-lg">{item.t}</span>
