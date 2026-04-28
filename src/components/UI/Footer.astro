@@ -16,9 +16,9 @@ const disorderTitles = {
   'dipoliki-diatarachi': 'Διπολική Διαταραχή',
   'ideopsychanagkastiki-diatarachi': 'ΙΔΨ Διαταραχή (OCD)',
   'katathlipsi': 'Κατάθλιψη (MDD)',
-  'BODY-DYSMORPHIC': 'Σύμπλεγμα Θερσίτη',
+  'BODY-DYSMORPHIC': 'Σωματοδυσμορφική Διαταραχή',
   'psychosomatikes-ekdiloseis': 'Ψυχοσωματικές Εκδηλώσεις',
-  'psychotikes-diataraxes': 'Ψυχωτικές Διαταραχές',
+  'psychotikes-diataraxes': 'Ψυχιατρικές Διαταραχές',
   'pmdd': 'PMDD'
 };
 
@@ -96,7 +96,7 @@ const services = allServices
             <span>Ξενοφώντος 15Α, Σύνταγμα, Αθήνα</span>
           </li>
           <li>
-            <a href="tel:+302118500016" class="footer-tel-link">211 850 0016</a>
+            <span class="footer-tel-text">211 850 0016</span>
           </li>
         </ul>
       </div>
@@ -200,15 +200,9 @@ const services = allServices
     color: #333;
     line-height: 1.5;
   }
-  .footer-tel-link {
-    color: #084a79;
-    text-decoration: underline;
-    text-decoration-color: #cbd5e1;
-    text-underline-offset: 4px;
-    font-weight: 600;
-  }
-  .footer-tel-link:hover {
-    color: #0d6efd;
+  .footer-tel-text {
+    color: #1a1a1a;
+    font-weight: 700;
   }
 
   .footer-bottom {
