@@ -1,142 +1,97 @@
 // src/pages/api/submit.ts
-// Astro SSR endpoint — handles psychometric form submissions
-// Saves to D1, sends email via Resend
+import type { APIRoute } from 'astro';
+import { calculateScore } from '../../lib/scoring';
+import { buildEmail } from '../../lib/emails';
 
 export const prerender = false;
 
-import type { APIRoute } from 'astro';
-import { calculateScore, type TestName } from '../../lib/scoring';
-import { buildEmail } from '../../lib/emails';
-
-const ALLOWED_ORIGINS = [
-  'https://drgkikas.com',
-  'https://www.drgkikas.com',
-];
+const ALLOWED_ORIGINS = ['https://drgkikas.com', 'https://www.drgkikas.com'];
 
 function getCorsHeaders(request: Request) {
   const origin = request.headers.get('Origin') ?? '';
-  const allowedOrigin = ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0];
+  const allowed = ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0];
   return {
-    'Access-Control-Allow-Origin': allowedOrigin,
+    'Access-Control-Allow-Origin': allowed,
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',
-    'Vary': 'Origin',
+    'Vary': 'Origin'
   };
 }
 
 export const OPTIONS: APIRoute = async ({ request }) => {
-  return new Response(null, { status: 204, headers: getCorsHeaders(request) });
+  return new Response(null, {
+    status: 204,
+    headers: getCorsHeaders(request)
+  });
 };
 
 export const POST: APIRoute = async ({ request, locals }) => {
   const corsHeaders = getCorsHeaders(request);
-  try {
-    // 1. Parse body
-    const body = await request.json() as {
-      test_name: TestName;
-      email: string;
-      answers: unknown;
-    };
 
+  try {
+    const body = await request.json();
     const { test_name, email, answers } = body;
 
-    if (!test_name || !email || !answers) {
-      return new Response(JSON.stringify({ error: 'Missing required fields' }), {
-        status: 400,
-        headers: { 'Content-Type': 'application/json', ...corsHeaders },
-      });
-    }
-
-    // Basic email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      return new Response(JSON.stringify({ error: 'Invalid email' }), {
-        status: 400,
-        headers: { 'Content-Type': 'application/json', ...corsHeaders },
-      });
-    }
-
-    // 2. Calculate score
-    const result = calculateScore(test_name, answers);
-
-    // 3. Save to D1 (Astro 6 Cloudflare robust access - NO RUNTIME REFS)
-    let db: D1Database | undefined;
-    try {
-      const cf = await import('cloudflare:workers' as any);
-      db = cf.env?.DB;
-    } catch (e) {}
-    
-    let rowId: number | null = null;
-    if (db) {
-      const insertResult = await db.prepare(`
-        INSERT INTO submissions (test_name, email, score_json, level, raw_answers)
-        VALUES (?, ?, ?, ?, ?)
-      `).bind(
-        test_name,
-        email.toLowerCase().trim(),
-        JSON.stringify(result.score_json),
-        result.level,
-        JSON.stringify(answers),
-      ).run();
-      rowId = insertResult.meta?.last_row_id ?? null;
-    }
-
-    // 4. Send email via Resend (Astro 6 Cloudflare robust access - NO RUNTIME REFS)
+    // 1. Get Keys (Super Robust Method)
     let resendKey: string | undefined;
+    let db: D1Database | undefined;
+    
     try {
       const cf = await import('cloudflare:workers' as any);
       resendKey = cf.env?.RESEND_API_KEY;
-    } catch(e) {
-      resendKey = (import.meta as any).env?.RESEND_API_KEY;
-    }
+      db = cf.env?.DB;
+    } catch (e) {}
 
+    // Fallbacks
+    const runtime = (locals as any).runtime?.env || {};
+    resendKey = resendKey || runtime.RESEND_API_KEY || (process as any).env?.RESEND_API_KEY;
+    db = db || runtime.DB;
+
+    // 2. Calculate Result
+    const result = calculateScore(test_name, answers);
+
+    // 3. Send Email
     let emailSent = false;
     if (resendKey) {
       try {
-        const emailContent = buildEmail(test_name, email, result.score_json as Record<string, unknown>);
-        const resendRes = await fetch('https://api.resend.com/emails', {
+        const mail = buildEmail(test_name, email, result.score_json as any);
+        const res = await fetch('https://api.resend.com/emails', {
           method: 'POST',
-          headers: {
-            'Authorization': `Bearer ${resendKey}`,
-            'Content-Type': 'application/json',
-          },
+          headers: { 'Authorization': `Bearer ${resendKey}`, 'Content-Type': 'application/json' },
           body: JSON.stringify({
             from: 'drGkikas <noreply@drgkikas.com>',
-            to: emailContent.to,
-            subject: emailContent.subject,
-            html: emailContent.html,
-          }),
+            to: mail.to,
+            subject: mail.subject,
+            html: mail.html,
+          })
         });
-        emailSent = resendRes.ok;
-
-        // 5. Update email_sent flag
-        if (emailSent && db && rowId) {
-          await db.prepare('UPDATE submissions SET email_sent = 1 WHERE id = ?')
-            .bind(rowId).run();
-        }
-      } catch (emailErr) {
-        console.error('Email send failed:', emailErr);
-        // Don't fail the whole request if email fails
+        emailSent = res.ok;
+      } catch (e) { 
+        console.error('Email error:', e); 
       }
     }
 
-    return new Response(JSON.stringify({
-      success: true,
-      result: {
-        score_json: result.score_json,
-        level: result.level,
-      },
-      email_sent: emailSent,
-    }), {
+    // 4. Save to DB
+    if (db) {
+      try {
+        await db.prepare('INSERT INTO submissions (test_name, email, score_json, level, raw_answers, email_sent) VALUES (?, ?, ?, ?, ?, ?)')
+          .bind(test_name, email, JSON.stringify(result.score_json), result.level, JSON.stringify(answers), emailSent ? 1 : 0)
+          .run();
+      } catch (dbE) { 
+        console.error('DB error:', dbE); 
+      }
+    }
+
+    return new Response(JSON.stringify({ success: true, result, email_sent: emailSent }), {
       status: 200,
-      headers: { 'Content-Type': 'application/json', ...corsHeaders },
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
     });
 
-  } catch (err) {
-    console.error('Submit error:', err);
-    return new Response(JSON.stringify({ error: 'Internal server error' }), {
+  } catch (err: any) {
+    console.error('API Error:', err);
+    return new Response(JSON.stringify({ error: err.message || 'Internal Server Error' }), {
       status: 500,
-      headers: { 'Content-Type': 'application/json', ...corsHeaders },
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
     });
   }
 };

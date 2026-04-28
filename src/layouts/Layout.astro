@@ -27,10 +27,18 @@ const socialImageURL = new URL(image, 'https://drgkikas.com').href;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <!-- Font Preloading Optimization -->
+    <!-- Performance Optimization: Preconnect & Font Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://analytics.ahrefs.com">
+    <link rel="preconnect" href="https://challenges.cloudflare.com">
+    <link rel="preconnect" href="https://maps.googleapis.com">
+    <link rel="preconnect" href="https://maps.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    </noscript>
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
@@ -55,12 +63,19 @@ const socialImageURL = new URL(image, 'https://drgkikas.com').href;
       <meta name="robots" content="noindex, nofollow" />
     )}
     {schema && <script type="application/ld+json" set:html={schema} />}
-    <!-- [Ahrefs Analytics Script] - Safely removable -->
-    <script src="https://analytics.ahrefs.com/analytics.js" data-key="hKDhDXLoXZvN5sqL6+g1ew" async></script>
-    <!-- [/Ahrefs Analytics Script] -->
   </head>
   <body class="flex flex-col min-h-screen">
     <slot />
+    
+    <!-- Non-critical Scripts: Loaded with async to prevent render blocking -->
+    <script src="https://analytics.ahrefs.com/analytics.js" data-key="hKDhDXLoXZvN5sqL6+g1ew" async crossorigin="anonymous"></script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <script is:inline>
+      // Handle Turnstile success event globally
+      window.onTurnstileSuccess = function(token) {
+        window.dispatchEvent(new CustomEvent('turnstile-success', { detail: { token } }));
+      };
+    </script>
   </body>
 </html>
 <!-- Performance Optimized -->

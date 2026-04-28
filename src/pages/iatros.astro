@@ -1,4 +1,5 @@
 ---
+export const prerender = true;
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/UI/Header.astro';
 import Footer from '../components/UI/Footer.astro';
@@ -20,7 +21,7 @@ const schemaBundle = JSON.stringify({
         { "@type": "CollegeOrUniversity", "name": "Maastricht University" }
       ],
       "medicalSpecialty": "Psychiatry",
-      "url": "https://drgkikas.com/iatros",
+      "url": "https://drgkikas.com/iatros/",
       "image": "https://drgkikas.com/images/iatros-profile.png",
       "telephone": "+302118500016",
       "address": {
@@ -85,7 +86,7 @@ const schemaBundle = JSON.stringify({
               <a href="#media" class="block text-slate-600 hover:text-blue-700 font-medium text-sm transition-colors">Συνεργασίες & Εταιρείες</a>
             </nav>
             <div class="mt-8 pt-6 border-t border-slate-100">
-              <a href="/epikoinonia" class="block w-full text-center bg-slate-100 hover:bg-slate-200 text-slate-800 font-medium px-4 py-2 rounded-lg text-sm transition-colors">Κλείστε Ραντεβού</a>
+              <a href="/epikoinonia/" class="block w-full text-center bg-slate-100 hover:bg-slate-200 text-slate-800 font-medium px-4 py-2 rounded-lg text-sm transition-colors">Κλείστε Ραντεβού</a>
             </div>
           </div>
         </div>
