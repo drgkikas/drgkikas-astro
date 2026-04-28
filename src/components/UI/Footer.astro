@@ -1,4 +1,12 @@
 ---
+import { getCollection } from 'astro:content';
+
+const disorders = await getCollection('disorders');
+const services = await getCollection('services');
+
+// Sort alphabetically by title for consistent ordering
+const sortedDisorders = disorders.sort((a, b) => a.data.title.localeCompare(b.data.title, 'el'));
+const sortedServices = services.sort((a, b) => a.data.title.localeCompare(b.data.title, 'el'));
 ---
 <footer class="site-footer">
   <div class="footer-main">
@@ -12,35 +20,47 @@
           Περιηγηθείτε ελεύθερα και μην διστάσετε να επικοινωνήσετε μαζί μου για οποιαδήποτε διευκρίνιση.
           Καλή περιήγηση!
         </p>
+        <div class="footer-contact-block">
+          <ul class="footer-contact">
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>Ξενοφώντος 15Α, Σύνταγμα, Αθήνα</span>
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.17 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.54a16 16 0 0 0 6.55 6.55l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <a href="tel:+302118500016">211 850 0016</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-general-links">
+          <a href="/psychometrika" class="footer-highlight-link">Ψυχομετρικά Τεστ &rarr;</a>
+          <a href="/KnowledgeBase-eBooks">Βιβλιοθήκη &amp; eBooks</a>
+          <a href="/epikoinonia">Επικοινωνία - Ραντεβού</a>
+          <a href="/privacy-policy">Πολιτική Απορρήτου</a>
+        </div>
       </div>
 
-      <!-- Στήλη 2: Χρήσιμοι Σύνδεσμοι -->
+      <!-- Στήλη 2: Διαταραχές — δυναμικά από content collection -->
       <div class="footer-col">
-        <h3 class="footer-col-title">ΧΡΗΣΙΜΟΙ ΣΥΝΔΕΣΜΟΙ</h3>
+        <h3 class="footer-col-title"><a href="/diataraxes" class="footer-col-title-link">ΔΙΑΤΑΡΑΧΕΣ</a></h3>
         <ul class="footer-links">
-          <li><a href="/psychometrika" class="!text-blue-400 font-bold tracking-wide">Ψυχομετρικά Τεστ &rarr;</a></li>
-          <li><a href="/KnowledgeBase-eBooks">Βιβλιοθήκη & eBooks</a></li>
-          <li><a href="/epikoinonia">Επικοινωνία - Ραντεβού</a></li>
-          <li><a href="/privacy-policy">Πολιτική Απορρήτου</a></li>
+          {sortedDisorders.map(dis => (
+            <li>
+              <a href={`/diataraxes/${dis.id}`}>{dis.data.title}</a>
+            </li>
+          ))}
         </ul>
       </div>
 
-      <!-- Στήλη 3: Στοιχεία Επικοινωνίας -->
+      <!-- Στήλη 3: Υπηρεσίες — δυναμικά από content collection -->
       <div class="footer-col">
-        <h3 class="footer-col-title">ΣΤΟΙΧΕΙΑ ΕΠΙΚΟΙΝΩΝΙΑΣ</h3>
-        <ul class="footer-contact">
-          <li>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-            <span>Ξενοφώντος 15Α, Σύνταγμα, Αθήνα</span>
-          </li>
-          <li>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-            <a href="mailto:contact@drgkikas.com">email</a>
-          </li>
-          <li>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.17 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.54a16 16 0 0 0 6.55 6.55l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-            <a href="tel:+302118500016">211 850 0016</a>
-          </li>
+        <h3 class="footer-col-title"><a href="/ypiresies" class="footer-col-title-link">ΥΠΗΡΕΣΙΕΣ</a></h3>
+        <ul class="footer-links">
+          {sortedServices.map(service => (
+            <li>
+              <a href={`/ypiresies/${service.id}`}>{service.data.title}</a>
+            </li>
+          ))}
         </ul>
       </div>
 
