@@ -1,93 +1,103 @@
 ---
 import { getCollection } from 'astro:content';
 
-const disorders = await getCollection('disorders');
-const services = await getCollection('services');
+const allDisorders = await getCollection('disorders');
+const allServices = await getCollection('services');
 
-// Function to shorten titles (keep text before :, (, or –)
-const shorten = (title) => {
-  return title.split(/[:\-(–]/)[0].trim();
+// Manual mapping for titles to match the image exactly
+const disorderTitles = {
+  'agxodeis-diataraxes': 'Αγχώδεις Διαταραχές',
+  'anoies-diataraxes-mnimis': 'Άνοια',
+  'adhd-adult': 'ΔΕΠΥ (ADHD) Ενηλίκων',
+  'diataraxes-proslipsis-trofis': 'Διαταραχές Πρόσληψης Τροφής',
+  'diataraxes-ypnou': 'Διαταραχές Ύπνου',
+  'diatarachi-xrisis-alkool': 'Διαταραχή Χρήσης Αλκοόλ',
+  'diatarachi-xrisis-kokainis': 'Διαταραχή Χρήσης Κοκαΐνης',
+  'dipoliki-diatarachi': 'Διπολική Διαταραχή',
+  'ideopsychanagkastiki-diatarachi': 'ΙΔΨ Διαταραχή (OCD)',
+  'katathlipsi': 'Κατάθλιψη (MDD)',
+  'BODY-DYSMORPHIC': 'Σύμπλεγμα Θερσίτη',
+  'psychosomatikes-ekdiloseis': 'Ψυχοσωματικές Εκδηλώσεις',
+  'psychotikes-diataraxes': 'Ψυχωτικές Διαταραχές',
+  'pmdd': 'PMDD'
 };
 
-// Sort and map with shortened titles
-const sortedDisorders = disorders
-  .sort((a, b) => a.data.title.localeCompare(b.data.title, 'el'))
-  .map(d => ({ ...d, shortTitle: shorten(d.data.title) }));
+const serviceTitles = {
+  'adhd-evaluation': 'Αξιολόγηση ΔΕΠΥ Ενηλίκων',
+  'psychotherapy': 'Στοχευμένη Ψυχοθεραπεία',
+  'pgx': 'Φαρμακογονιδιωματική (PGx)',
+  'gnomateyseis': 'Ψυχιατρικές Γνωματεύσεις',
+  'psychiatriki-parakolouthisi': 'Ψυχιατρική παρακολούθηση',
+  'psychotherapeia': 'Ψυχοθεραπεία',
+  'psychometrika-test': 'Ψυχομετρικά Τεστ & Αξιολόγηση',
+  'online-synedria': 'Online Ψυχιατρική',
+  'rtms': 'rTMS'
+};
 
-const sortedServices = services
-  .sort((a, b) => a.data.title.localeCompare(b.data.title, 'el'))
-  .map(s => ({ ...s, shortTitle: shorten(s.data.title) }));
+// Map and Sort
+const disorders = allDisorders
+  .map(d => ({ ...d, displayTitle: disorderTitles[d.id] || d.data.title }))
+  .sort((a, b) => a.displayTitle.localeCompare(b.displayTitle, 'el'));
 
-// Split disorders into two halves for 2 columns
-const mid = Math.ceil(sortedDisorders.length / 2);
-const disorders1 = sortedDisorders.slice(0, mid);
-const disorders2 = sortedDisorders.slice(mid);
+const services = allServices
+  .map(s => ({ ...s, displayTitle: serviceTitles[s.id] || s.data.title }))
+  .sort((a, b) => a.displayTitle.localeCompare(b.displayTitle, 'el'));
 ---
 <footer class="site-footer">
   <div class="footer-main">
     <div class="footer-inner">
 
       <!-- Στήλη 1: Μήνυμα Από Τον Ιατρό -->
-      <div class="footer-col">
-        <h3 class="footer-col-title">Ο ΙΑΤΡΟΣ</h3>
+      <div class="footer-col bio-col">
+        <h3 class="footer-col-title">ΜΗΝΥΜΑ ΑΠΟ ΤΟΝ ΙΑΤΡΟ</h3>
         <p class="footer-col-text">
-          Χρήσιμες πληροφορίες για την ψυχική υγεία και σύγχρονες θεραπευτικές προσεγγίσεις.
+          Στην παρούσα ιστοσελίδα μπορείτε να βρείτε χρήσιμες πληροφορίες που αφορούν την ψυχική υγεία.
+          Περιηγηθείτε ελεύθερα και μην διστάσετε να επικοινωνήσετε μαζί μου για οποιαδήποτε διευκρίνιση.
+          Καλή περιήγηση!
         </p>
-        <div class="footer-logo-sub">
-          <strong>Πασχάλης Γκίκας</strong>
-          <span>Ψυχίατρος - Ψυχοθεραπευτής</span>
-        </div>
       </div>
 
-      <!-- Στήλη 2: Διαταραχές Α -->
+      <!-- Στήλη 2: Διαταραχές -->
       <div class="footer-col">
-        <h3 class="footer-col-title"><a href="/diataraxes" class="footer-col-title-link">ΔΙΑΤΑΡΑΧΕΣ</a></h3>
+        <h3 class="footer-col-title"><a href="/diataraxes">ΔΙΑΤΑΡΑΧΕΣ</a></h3>
         <ul class="footer-links">
-          {disorders1.map(dis => (
-            <li><a href={`/diataraxes/${dis.id}`}>{dis.shortTitle}</a></li>
+          {disorders.map(dis => (
+            <li><a href={`/diataraxes/${dis.id}`}>{dis.displayTitle}</a></li>
           ))}
         </ul>
       </div>
 
-      <!-- Στήλη 3: Διαταραχές Β -->
+      <!-- Στήλη 3: Υπηρεσίες -->
       <div class="footer-col">
-        <h3 class="footer-col-title invisible md:visible"><span class="hidden md:inline">&nbsp;</span></h3>
+        <h3 class="footer-col-title"><a href="/ypiresies">ΥΠΗΡΕΣΙΕΣ</a></h3>
         <ul class="footer-links">
-          {disorders2.map(dis => (
-            <li><a href={`/diataraxes/${dis.id}`}>{dis.shortTitle}</a></li>
+          {services.map(service => (
+            <li><a href={`/ypiresies/${service.id}`}>{service.displayTitle}</a></li>
           ))}
         </ul>
       </div>
 
-      <!-- Στήλη 4: Υπηρεσίες -->
+      <!-- Στήλη 4: Πηγές & Εργαλεία -->
       <div class="footer-col">
-        <h3 class="footer-col-title"><a href="/ypiresies" class="footer-col-title-link">ΥΠΗΡΕΣΙΕΣ</a></h3>
-        <ul class="footer-links">
-          {sortedServices.map(service => (
-            <li><a href={`/ypiresies/${service.id}`}>{service.shortTitle}</a></li>
-          ))}
-        </ul>
-      </div>
-
-      <!-- Στήλη 5: Σύνδεσμοι & Επικοινωνία -->
-      <div class="footer-col">
-        <h3 class="footer-col-title">ΕΠΙΚΟΙΝΩΝΙΑ</h3>
-        <ul class="footer-contact mb-6">
-          <li>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.17 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.54a16 16 0 0 0 6.55 6.55l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-            <a href="tel:+302118500016">211 850 0016</a>
-          </li>
-          <li>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-            <span class="text-[0.75rem]">Ξενοφώντος 15Α, Σύνταγμα</span>
-          </li>
-        </ul>
-        <h3 class="footer-col-title">ΣΥΝΔΕΣΜΟΙ</h3>
+        <h3 class="footer-col-title">ΠΗΓΕΣ & ΕΡΓΑΛΕΙΑ</h3>
         <ul class="footer-links">
           <li><a href="/psychometrika" class="footer-highlight-link">Ψυχομετρικά Τεστ &rarr;</a></li>
           <li><a href="/KnowledgeBase-eBooks">Βιβλιοθήκη & eBooks</a></li>
-          <li><a href="/epikoinonia">Ραντεβού</a></li>
-          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/epikoinonia">Επικοινωνία - Ραντεβού</a></li>
+          <li><a href="/privacy-policy">Πολιτική Απορρήτου</a></li>
+        </ul>
+      </div>
+
+      <!-- Στήλη 5: Επικοινωνία -->
+      <div class="footer-col">
+        <h3 class="footer-col-title">ΕΠΙΚΟΙΝΩΝΙΑ</h3>
+        <ul class="footer-contact">
+          <li>
+            <span>Ξενοφώντος 15Α, Σύνταγμα, Αθήνα</span>
+          </li>
+          <li>
+            <a href="tel:+302118500016" class="footer-tel-link">211 850 0016</a>
+          </li>
         </ul>
       </div>
 
@@ -101,14 +111,14 @@ const disorders2 = sortedDisorders.slice(mid);
 
 <style is:inline>
   .site-footer {
-    background-color: #1a1a1a;
-    color: #cccccc;
+    background-color: #ffffff;
+    color: #333333;
     font-family: inherit;
-    border-top: 1px solid #333;
+    border-top: 1px solid #eaeaea;
   }
 
   .footer-main {
-    padding: 4rem 0 3rem;
+    padding: 5rem 0;
   }
 
   .footer-inner {
@@ -116,50 +126,36 @@ const disorders2 = sortedDisorders.slice(mid);
     margin: 0 auto;
     padding: 0 2rem;
     display: grid;
-    grid-template-columns: 1.2fr 1fr 1fr 1fr 1.2fr;
-    gap: 2.5rem;
+    /* Custom columns to allow enough space for long titles in Col 2 & 3 */
+    grid-template-columns: 1.2fr 1.3fr 1.3fr 1fr 0.8fr;
+    gap: 2rem;
     align-items: start;
   }
 
   .footer-col-title {
-    color: #ffffff;
-    font-size: 0.8rem;
+    color: #1a1a1a;
+    font-size: 0.85rem;
     font-weight: 800;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin: 0 0 1.25rem 0;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid #333;
+    letter-spacing: 0.05em;
+    margin: 0 0 1.5rem 0;
+    white-space: nowrap;
   }
 
-  .footer-col-title-link {
-    color: #ffffff;
+  .footer-col-title a {
+    color: inherit;
     text-decoration: none;
-    transition: color 0.2s;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s;
   }
-  .footer-col-title-link:hover {
-    color: #60a5fa;
+  .footer-col-title a:hover {
+    border-bottom-color: #084a79;
   }
 
   .footer-col-text {
     font-size: 0.85rem;
-    line-height: 1.6;
-    color: #999;
-    margin-bottom: 1rem;
-  }
-
-  .footer-logo-sub {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-  }
-  .footer-logo-sub strong {
-    color: #eee;
-    font-size: 0.9rem;
-  }
-  .footer-logo-sub span {
-    color: #666;
-    font-size: 0.75rem;
+    line-height: 1.7;
+    color: #555;
+    max-width: 280px;
   }
 
   .footer-links {
@@ -168,24 +164,51 @@ const disorders2 = sortedDisorders.slice(mid);
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.65rem;
   }
 
   .footer-links a {
-    color: #aaa;
-    text-decoration: none;
-    font-size: 0.8rem;
+    color: #084a79;
+    text-decoration: underline;
+    text-decoration-color: #cbd5e1;
+    text-underline-offset: 3px;
+    font-size: 0.825rem;
+    white-space: nowrap; /* Prevents text from cutting off/wrapping */
     transition: all 0.2s;
-    display: block;
+  }
+
+  /* Some links in image were black text */
+  .footer-links li:nth-child(even) a,
+  .footer-links li.no-underline a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  /* Reset some specific colors based on image */
+  .footer-col:nth-child(2) li:nth-child(6) a,
+  .footer-col:nth-child(2) li:nth-child(7) a,
+  .footer-col:nth-child(2) li:nth-child(8) a,
+  .footer-col:nth-child(2) li:nth-child(12) a,
+  .footer-col:nth-child(2) li:nth-child(13) a,
+  .footer-col:nth-child(2) li:nth-child(14) a {
+    color: #333;
+    text-decoration: none;
+  }
+
+  .footer-col:nth-child(3) li:nth-child(2) a,
+  .footer-col:nth-child(3) li:nth-child(3) a,
+  .footer-col:nth-child(3) li:nth-child(6) a {
+    color: #333;
+    text-decoration: none;
   }
 
   .footer-links a:hover {
-    color: #fff;
-    transform: translateX(3px);
+    color: #084a79;
+    text-decoration-color: #084a79;
   }
 
   .footer-highlight-link {
-    color: #60a5fa !important;
+    color: #b15d8d !important; /* Pinkish color from image for Psychometrics */
     font-weight: 700;
   }
 
@@ -195,41 +218,31 @@ const disorders2 = sortedDisorders.slice(mid);
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 1rem;
   }
   .footer-contact li {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    font-size: 0.8rem;
-    color: #aaa;
+    font-size: 0.85rem;
+    color: #333;
+    line-height: 1.5;
   }
-  .footer-contact svg {
-    width: 0.9rem;
-    height: 0.9rem;
-    color: #555;
-  }
-  .footer-contact a {
-    color: #aaa;
-    text-decoration: none;
-  }
-  .footer-contact a:hover {
-    color: #fff;
+  .footer-tel-link {
+    color: #084a79;
+    text-decoration: underline;
+    font-weight: 600;
   }
 
   .footer-bottom {
-    background-color: #111;
+    border-top: 1px solid #f1f5f9;
+    padding: 2rem;
     text-align: center;
-    padding: 1.5rem;
-    border-top: 1px solid #222;
   }
   .footer-bottom p {
     font-size: 0.75rem;
-    color: #555;
+    color: #94a3b8;
     margin: 0;
   }
 
-  @media (max-width: 1100px) {
+  @media (max-width: 1200px) {
     .footer-inner {
       grid-template-columns: repeat(3, 1fr);
       gap: 3rem;
@@ -238,6 +251,9 @@ const disorders2 = sortedDisorders.slice(mid);
   @media (max-width: 768px) {
     .footer-inner {
       grid-template-columns: 1fr 1fr;
+    }
+    .footer-links a {
+        white-space: normal; /* Allow wrap on mobile if screen is too small */
     }
   }
   @media (max-width: 480px) {
