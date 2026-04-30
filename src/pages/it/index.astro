@@ -1,0 +1,32 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/UI/Header.astro';
+import Footer from '../../components/UI/Footer.astro';
+---
+
+<Layout title="In Costruzione | Dr. Paschalis Gkikas" description="La versione italiana sarà disponibile a breve.">
+  <Header />
+  <main class="min-h-screen flex items-center justify-center bg-slate-50 pt-20">
+    <div class="max-w-xl mx-auto px-4 text-center">
+      <div class="w-20 h-20 bg-blue-100 text-blue-600 rounded-3xl flex items-center justify-center text-4xl mx-auto mb-8 animate-pulse">
+        🇮🇹
+      </div>
+      <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">Prossimamente</h1>
+      <p class="text-xl text-slate-600 mb-10 leading-relaxed">
+        Stiamo traducendo i nostri contenuti clinici e servizi in italiano per accogliere al meglio i nostri pazienti internazionali.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/" class="px-8 py-4 bg-[#084a79] text-white rounded-2xl font-bold hover:bg-[#063557] transition-all">
+          Torna alla versione greca
+        </a>
+        <a href="tel:+302118500016" class="px-8 py-4 bg-white border border-slate-200 text-slate-700 rounded-2xl font-bold hover:bg-slate-50 transition-all">
+          Chiamaci: +30 211 850 0016
+        </a>
+      </div>
+      <div class="mt-16 pt-8 border-t border-slate-200">
+        <p class="text-sm text-slate-400 uppercase tracking-widest font-bold">Smart CNS Center | Atene, Grecia</p>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

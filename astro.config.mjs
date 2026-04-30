@@ -17,6 +17,13 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-  integrations: [react(), sitemap()]
+  integrations: [react(), sitemap()],
+  i18n: {
+    defaultLocale: 'el',
+    locales: ['el', 'en', 'it'],
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
 });
 // update for github desktop
