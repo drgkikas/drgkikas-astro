@@ -7,7 +7,7 @@ pubDate: 2026-04-30
 author: "Πασχάλης Γκίκας"
 kategoria: "Απαντήσεις ψυχικής υγείας"
 keywords: "ΔΕΠΥ ενηλίκων, ADHD adults, ψυχίατρος, DIVA-5, κλινική αξιολόγηση"
-image: "/images/blog/depy-enilikon-ellada-adiagnosti.png"
+image: "/images/blog/adhd_adult_greece_blog_1777524375249.webp"
 schema: |
   {
     "@context": "https://schema.org",
