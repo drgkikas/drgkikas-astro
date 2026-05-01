@@ -1,47 +1,130 @@
----
-import { getCollection } from 'astro:content';
+const { currentLocale } = Astro;
 
 const allDisorders = await getCollection('disorders');
 const allServices = await getCollection('services');
 
+const t = {
+  el: {
+    bio_title: "ΜΗΝΥΜΑ ΑΠΟ ΤΟΝ ΙΑΤΡΟ",
+    bio_text: "Στην παρούσα ιστοσελίδα μπορείτε να βρείτε χρήσιμες πληροφορίες που αφορούν την ψυχική υγεία. Περιηγηθείτε ελεύθερα και μην διστάσετε να επικοινωνήσετε μαζί μου για οποιαδήποτε διευκρίνιση. Καλή περιήγηση!",
+    disorders_title: "ΔΙΑΤΑΡΑΧΕΣ",
+    services_title: "ΥΠΗΡΕΣΙΕΣ",
+    resources_title: "ΠΗΓΕΣ & ΕΡΓΑΛΕΙΑ",
+    contact_title: "ΕΠΙΚΟΙΝΩΝΙΑ",
+    psychometrics: "Ψυχομετρικά Τεστ",
+    library: "Βιβλιοθήκη & eBooks",
+    contact_link: "Επικοινωνία - Ραντεβού",
+    privacy: "Πολιτική Απορρήτου",
+    address: "Ξενοφώντος 15Α, Σύνταγμα, Αθήνα",
+    tel_label: "Τηλέφωνο"
+  },
+  en: {
+    bio_title: "DOCTOR'S MESSAGE",
+    bio_text: "On this website, you can find useful information about mental health. Feel free to browse and contact me for any clarification. Enjoy your visit.",
+    disorders_title: "DISORDERS",
+    services_title: "SERVICES",
+    resources_title: "RESOURCES & TOOLS",
+    contact_title: "CONTACT",
+    psychometrics: "Psychometric Tests",
+    library: "Library & eBooks",
+    contact_link: "Contact - Appointment",
+    privacy: "Privacy Policy",
+    address: "15A Xenofontos Street, Syntagma, Athens",
+    tel_label: "Phone"
+  },
+  it: {
+    bio_title: "MESSAGGIO DEL MEDICO",
+    bio_text: "In questo sito puoi trovare informazioni utili sulla salute mentale. Naviga liberamente e non esitare a contattarmi per qualsiasi chiarimento. Buona navigazione.",
+    disorders_title: "DISTURBI",
+    services_title: "SERVIZI",
+    resources_title: "RISORSE E STRUMENTI",
+    contact_title: "CONTATTO",
+    psychometrics: "Test Psicometrici",
+    library: "Libreria ed eBooks",
+    contact_link: "Contatto - Appuntamento",
+    privacy: "Informativa sulla privacy",
+    address: "Via Xenofontos 15A, Syntagma, Atene",
+    tel_label: "Telefono"
+  }
+};
+
+const labels = t[currentLocale] || t.el;
+
 // Manual mapping for titles to match the image exactly
 const disorderTitles = {
-  'agxodeis-diataraxes': 'Αγχώδεις Διαταραχές',
-  'anoies-diataraxes-mnimis': 'Άνοια',
-  'adhd-adult': 'ΔΕΠΥ (ADHD) Ενηλίκων',
-  'diataraxes-proslipsis-trofis': 'Διαταραχές Πρόσληψης Τροφής',
-  'diataraxes-ypnou': 'Διαταραχές Ύπνου',
-  'diatarachi-xrisis-alkool': 'Διαταραχή Χρήσης Αλκοόλ',
-  'diatarachi-xrisis-kokainis': 'Διαταραχή Χρήσης Κοκαΐνης',
-  'dipoliki-diatarachi': 'Διπολική Διαταραχή',
-  'ideopsychanagkastiki-diatarachi': 'ΙΔΨ Διαταραχή (OCD)',
-  'katathlipsi': 'Κατάθλιψη (MDD)',
-  'body-dysmorphic': 'Σωματοδυσμορφική Διαταραχή (BDD)',
-  'psychosomatikes-ekdiloseis': 'Ψυχοσωματικές Εκδηλώσεις',
-  'psychotikes-diataraxes': 'Ψυχιατρικές Διαταραχές',
-  'pmdd': 'PMDD'
+  'el': {
+    'agxodeis-diataraxes': 'Αγχώδεις Διαταραχές',
+    'anoies-diataraxes-mnimis': 'Άνοια',
+    'adhd-adult': 'ΔΕΠΥ (ADHD) Ενηλίκων',
+    'diataraxes-proslipsis-trofis': 'Διαταραχές Πρόσληψης Τροφής',
+    'diataraxes-ypnou': 'Διαταραχές Ύπνου',
+    'diatarachi-xrisis-alkool': 'Διαταραχή Χρήσης Αλκοόλ',
+    'diatarachi-xrisis-kokainis': 'Διαταραχή Χρήσης Κοκαΐνης',
+    'dipoliki-diatarachi': 'Διπολική Διαταραχή',
+    'ideopsychanagkastiki-diatarachi': 'ΙΔΨ Διαταραχή (OCD)',
+    'katathlipsi': 'Κατάθλιψη (MDD)',
+    'body-dysmorphic': 'Σωματοδυσμορφική Διαταραχή (BDD)',
+    'psychosomatikes-ekdiloseis': 'Ψυχοσωματικές Εκδηλώσεις',
+    'psychotikes-diataraxes': 'Ψυχιατρικές Διαταραχές',
+    'pmdd': 'PMDD'
+  },
+  'en': {
+    'agxodeis-diataraxes': 'Anxiety Disorders',
+    'adhd-adult': 'Adult ADHD',
+    'dipoliki-diatarachi': 'Bipolar Disorder',
+    'ideopsychanagkastiki-diatarachi': 'OCD',
+    'katathlipsi': 'Depression (MDD)',
+    'body-dysmorphic': 'Body Dysmorphic (BDD)'
+  },
+  'it': {
+    'agxodeis-diataraxes': 'Disturbi d’ansia',
+    'adhd-adult': 'ADHD Adulti',
+    'dipoliki-diatarachi': 'Disturbo bipolare',
+    'ideopsychanagkastiki-diatarachi': 'DOC',
+    'katathlipsi': 'Depressione (MDD)',
+    'body-dysmorphic': 'Dismorfismo corporeo (BDD)'
+  }
 };
 
 const serviceTitles = {
-  'adhd-evaluation': 'Αξιολόγηση ΔΕΠΥ Ενηλίκων',
-  'psychotherapy': 'Στοχευμένη Ψυχοθεραπεία',
-  'pgx': 'Φαρμακογονιδιωματική (PGx)',
-  'gnomateyseis': 'Ψυχιατρικές Γνωματεύσεις',
-  'psychiatriki-parakolouthisi': 'Ψυχιατρική παρακολούθηση',
-  'psychotherapeia': 'Ψυχοθεραπεία',
-  'psychometrika-test': 'Ψυχομετρικά Τεστ & Αξιολόγηση',
-  'online-synedria': 'Online Ψυχιατρική',
-  'rtms': 'rTMS'
+  'el': {
+    'adhd-evaluation': 'Αξιολόγηση ΔΕΠΥ Ενηλίκων',
+    'psychotherapy': 'Στοχευμένη Ψυχοθεραπεία',
+    'pgx': 'Φαρμακογονιδιωματική (PGx)',
+    'gnomateyseis': 'Ψυχιατρικές Γνωματεύσεις',
+    'psychiatriki-parakolouthisi': 'Ψυχιατρική παρακολούθηση',
+    'psychotherapeia': 'Ψυχοθεραπεία',
+    'psychometrika-test': 'Ψυχομετρικά Τεστ & Αξιολόγηση',
+    'online-synedria': 'Online Ψυχιατρική',
+    'rtms': 'rTMS'
+  },
+  'en': {
+    'rtms': 'rTMS Therapy',
+    'pgx': 'Pharmacogenomics (PGx)',
+    'psychiatriki-parakolouthisi': 'Psychiatric Monitoring',
+    'psychotherapeia': 'Psychotherapy'
+  },
+  'it': {
+    'rtms': 'Terapia rTMS',
+    'pgx': 'Farmacogenomica (PGx)',
+    'psychiatriki-parakolouthisi': 'Monitoraggio Psichiatrico',
+    'psychotherapeia': 'Psicoterapia'
+  }
 };
 
-// Map and Sort
+const currentDisorderTitles = disorderTitles[currentLocale] || disorderTitles.el;
+const currentServiceTitles = serviceTitles[currentLocale] || serviceTitles.el;
+
+// Map and Sort - Filter only translated if in EN/IT? 
+// For now, let's show all but use localized title if available, otherwise Greek fallback
 const disorders = allDisorders
-  .map(d => ({ ...d, displayTitle: disorderTitles[d.id.toLowerCase()] || d.data.title }))
-  .sort((a, b) => a.displayTitle.localeCompare(b.displayTitle, 'el'));
+  .map(d => ({ ...d, displayTitle: currentDisorderTitles[d.id.toLowerCase()] || d.data.title }))
+  .sort((a, b) => a.displayTitle.localeCompare(b.displayTitle, currentLocale || 'el'))
+  .slice(0, 10); // Limit to top 10 for footer space
 
 const services = allServices
-  .map(s => ({ ...s, displayTitle: serviceTitles[s.id.toLowerCase()] || s.data.title }))
-  .sort((a, b) => a.displayTitle.localeCompare(b.displayTitle, 'el'));
+  .map(s => ({ ...s, displayTitle: currentServiceTitles[s.id.toLowerCase()] || s.data.title }))
+  .sort((a, b) => a.displayTitle.localeCompare(b.displayTitle, currentLocale || 'el'));
 ---
 <footer class="site-footer">
   <div class="footer-main">
@@ -49,17 +132,15 @@ const services = allServices
 
       <!-- Στήλη 1: Μήνυμα Από Τον Ιατρό -->
       <div class="footer-col bio-col">
-        <h3 class="footer-col-title">ΜΗΝΥΜΑ ΑΠΟ ΤΟΝ ΙΑΤΡΟ</h3>
+        <h3 class="footer-col-title uppercase">{labels.bio_title}</h3>
         <p class="footer-col-text">
-          Στην παρούσα ιστοσελίδα μπορείτε να βρείτε χρήσιμες πληροφορίες που αφορούν την ψυχική υγεία.
-          Περιηγηθείτε ελεύθερα και μην διστάσετε να επικοινωνήσετε μαζί μου για οποιαδήποτε διευκρίνιση.
-          Καλή περιήγηση!
+          {labels.bio_text}
         </p>
       </div>
 
       <!-- Στήλη 2: Διαταραχές -->
       <div class="footer-col">
-        <h3 class="footer-col-title"><a href="/diataraxes">ΔΙΑΤΑΡΑΧΕΣ</a></h3>
+        <h3 class="footer-col-title"><a href="/diataraxes">{labels.disorders_title}</a></h3>
         <ul class="footer-links">
           {disorders.map(dis => (
             <li><a href={`/diataraxes/${dis.id.toLowerCase()}/`}>{dis.displayTitle}</a></li>
@@ -69,7 +150,7 @@ const services = allServices
 
       <!-- Στήλη 3: Υπηρεσίες -->
       <div class="footer-col">
-        <h3 class="footer-col-title"><a href="/ypiresies">ΥΠΗΡΕΣΙΕΣ</a></h3>
+        <h3 class="footer-col-title"><a href="/ypiresies">{labels.services_title}</a></h3>
         <ul class="footer-links">
           {services.map(service => (
             <li><a href={`/ypiresies/${service.id.toLowerCase()}/`}>{service.displayTitle}</a></li>
@@ -79,24 +160,26 @@ const services = allServices
 
       <!-- Στήλη 4: Πηγές & Εργαλεία -->
       <div class="footer-col">
-        <h3 class="footer-col-title">ΠΗΓΕΣ & ΕΡΓΑΛΕΙΑ</h3>
+        <h3 class="footer-col-title uppercase">{labels.resources_title}</h3>
         <ul class="footer-links">
-          <li><a href="/psychometrika" class="footer-highlight-link">Ψυχομετρικά Τεστ &rarr;</a></li>
-          <li><a href="/KnowledgeBase-eBooks">Βιβλιοθήκη & eBooks</a></li>
-          <li><a href="/epikoinonia">Επικοινωνία - Ραντεβού</a></li>
-          <li><a href="/privacy-policy">Πολιτική Απορρήτου</a></li>
+          { (currentLocale === 'el' || !currentLocale) && (
+            <li><a href="/psychometrika" class="footer-highlight-link">{labels.psychometrics} &rarr;</a></li>
+          )}
+          <li><a href="/KnowledgeBase-eBooks">{labels.library}</a></li>
+          <li><a href="/epikoinonia">{labels.contact_link}</a></li>
+          <li><a href="/privacy-policy">{labels.privacy}</a></li>
         </ul>
       </div>
 
       <!-- Στήλη 5: Επικοινωνία -->
       <div class="footer-col">
-        <h3 class="footer-col-title">ΕΠΙΚΟΙΝΩΝΙΑ</h3>
+        <h3 class="footer-col-title uppercase">{labels.contact_title}</h3>
         <ul class="footer-contact">
           <li>
-            <span>Ξενοφώντος 15Α, Σύνταγμα, Αθήνα</span>
+            <span>{labels.address}</span>
           </li>
           <li>
-            <span class="footer-tel-text">211 850 0016</span>
+            <span class="footer-tel-text">+30 211 850 0016</span>
           </li>
         </ul>
       </div>
