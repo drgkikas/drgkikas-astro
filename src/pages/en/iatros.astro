@@ -1,0 +1,317 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/UI/Header.astro';
+import Footer from '../../components/UI/Footer.astro';
+
+const { currentLocale } = Astro;
+
+const schemaBundle = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Person", "Physician"],
+      "@id": "https://drgkikas.com/#physician",
+      "name": "Paschalis Gkikas",
+      "jobTitle": "Psychiatrist - Psychotherapist",
+      "worksFor": {
+        "@id": "https://drgkikas.com/#clinic"
+      },
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "Università di Bologna" },
+        { "@type": "CollegeOrUniversity", "name": "Harvard University" },
+        { "@type": "CollegeOrUniversity", "name": "Maastricht University" }
+      ],
+      "medicalSpecialty": "Psychiatry",
+      "url": "https://drgkikas.com/en/iatros",
+      "image": "https://drgkikas.com/images/iatros-profile.png",
+      "telephone": "+302118500016",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "15A Xenofontos Street",
+        "addressLocality": "Athens",
+        "postalCode": "105 57",
+        "addressCountry": "GR"
+      }
+    }
+  ]
+});
+---
+
+<Layout schema={schemaBundle} title="Paschalis Gkikas | Psychiatrist – Psychotherapist in Athens" description="Biography of Paschalis Gkikas, psychiatrist specialized in Neuromodulation (rTMS) and Pharmacogenomics (PGx).">
+  <Header />
+  
+  <main class="pt-20">
+    <!-- Hero / Profile Section -->
+    <section class="bg-slate-900 text-white py-20 lg:py-32 relative overflow-hidden">
+      <!-- Background pattern -->
+      <div class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAzNHYtbGgtdmhwIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIvPjwvZz48L3N2Zz4=')]"></div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center gap-12">
+        <div class="w-48 h-48 md:w-64 md:h-64 flex-shrink-0 bg-slate-800 rounded-full border-4 border-slate-700 shadow-2xl overflow-hidden">
+          <img src="/images/iatros-profile.png" width="400" height="400" loading="lazy" decoding="async" alt="Paschalis Gkikas Psychiatrist" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+        </div>
+        
+        <div class="text-center md:text-left">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-900/50 border border-blue-800 text-blue-300 text-xs font-semibold uppercase tracking-widest mb-4">
+            Medical Director, Smart CNS Center
+          </div>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-4">
+            Paschalis Gkikas
+          </h1>
+          <p class="text-xl md:text-2xl text-slate-300 font-light mb-8 max-w-2xl">
+            Psychiatrist–Psychotherapist specialized in Neuromodulation — rTMS / tDCS — and Pharmacogenomic Assessment.
+          </p>
+          <div class="flex flex-wrap justify-center md:justify-start gap-4">
+            <a href="#cv" class="btn-primary bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-lg font-medium transition-colors">Full CV</a>
+            <a href="#contact" class="btn-secondary bg-slate-800 hover:bg-slate-700 text-white px-6 py-3 rounded-lg font-medium transition-colors border border-slate-700">Contact</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Page Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Sticky Sidebar Navigation -->
+        <div class="hidden lg:block lg:col-span-3">
+          <div class="sticky top-28 bg-white glass-card p-6 rounded-2xl shadow-sm border border-slate-100">
+            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Page contents</h4>
+            <nav class="space-y-3">
+              <a href="#cv" class="block text-slate-600 hover:text-blue-700 font-medium text-sm transition-colors">Biography & profile</a>
+              <a href="#experience" class="block text-slate-600 hover:text-blue-700 font-medium text-sm transition-colors">Clinical experience</a>
+              <a href="#education" class="block text-slate-600 hover:text-blue-700 font-medium text-sm transition-colors">Education & certifications</a>
+              <a href="#media" class="block text-slate-600 hover:text-blue-700 font-medium text-sm transition-colors">Collaborations & scientific societies</a>
+            </nav>
+            <div class="mt-8 pt-6 border-t border-slate-100">
+              <a href="/en/epikoinonia" class="block w-full text-center bg-slate-100 hover:bg-slate-200 text-slate-800 font-medium px-4 py-2 rounded-lg text-sm transition-colors">Book an appointment</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Content Column -->
+        <div class="lg:col-span-9 space-y-16">
+          
+          <!-- SECTION 1: CV / Profile -->
+          <section id="cv" class="scroll-mt-28">
+            <div class="flex items-center gap-4 mb-8">
+              <div class="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center text-blue-700">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+              </div>
+              <h2 class="text-3xl font-bold text-slate-900">Biography</h2>
+            </div>
+            
+            <div class="prose prose-lg max-w-none text-slate-600 leading-relaxed">
+              <p>I was born and raised in Athens. I studied Medicine at the University of Bologna in Italy and completed my Psychiatry specialty training at the Psychiatric Hospital of Attica “Dafni”, where I trained in the Emergency Department, the 18 ANO Addiction Treatment Unit and the Peristeri Mental Health Center.</p>
+              
+              <p>Alongside my psychiatric specialty training, I trained in Cognitive Behavioural Therapy (CBT) and Family Systemic Psychotherapy. I hold certification in the fundamentals of neuroscience from <strong>Harvard University</strong> and specialized training in Transcranial Magnetic Stimulation (<strong>rTMS</strong>) through intensive training programs at <strong>Maastricht University</strong>, in the United Kingdom (London) and in the United States (San Francisco).</p>
+              
+              <h3 class="text-xl font-bold text-slate-900 mt-8 mb-4">Clinical specializations</h3>
+              <p>A significant part of my clinical experience concerns <strong>mood disorders</strong> — especially Bipolar Disorder and Treatment-Resistant Depression (TRD) — as well as anxiety disorders, sleep disorders and psychosomatic manifestations. I also work extensively in the therapeutic management of substance use disorders, with a particular focus on cocaine addiction.</p>
+              
+              <div class="bg-blue-50 border-l-4 border-blue-600 p-6 my-8 rounded-r-xl">
+                <p class="mb-0 text-blue-900 font-medium">In my clinical practice, I use modern non-invasive methods (rTMS / tDCS) and pharmacogenomic assessment (PGx), aiming for safer personalization of treatment based on each patient’s genetic profile.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- SECTION 2: Experience Timeline -->
+          <section id="experience" class="scroll-mt-28">
+            <div class="flex items-center gap-4 mb-8">
+              <div class="w-12 h-12 rounded-xl bg-teal-100 flex items-center justify-center text-teal-700">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+              </div>
+              <h2 class="text-3xl font-bold text-slate-900">Clinical experience</h2>
+            </div>
+
+            <div class="space-y-8 relative before:absolute before:inset-y-0 before:left-[19px] before:w-[2px] before:bg-slate-200 ml-2">
+              
+              <!-- Smart CNS -->
+              <div class="relative pl-12">
+                <div class="absolute w-10 h-10 bg-white rounded-full border-4 border-blue-600 left-[-1px] top-0 flex items-center justify-center shadow-sm">
+                  <div class="w-3 h-3 bg-blue-600 rounded-full"></div>
+                </div>
+                <div class="glass-card bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:border-blue-200 transition-colors">
+                  <h3 class="text-lg font-bold text-slate-900">Co-founder & Medical Director</h3>
+                  <p class="text-slate-600 font-medium mb-3">Smart CNS Center, Athens</p>
+                  <p class="text-sm text-slate-500">Specialized psychiatric center with emphasis on Neuromodulation — rTMS, tDCS — Pharmacogenomics, Psychotherapy and Light Therapy.</p>
+                </div>
+              </div>
+
+              <!-- Private Practice -->
+              <div class="relative pl-12 flex flex-col justify-center mt-6">
+                <div class="absolute w-4 h-4 bg-slate-300 rounded-full left-[12px] top-2 border-2 border-white"></div>
+                <div>
+                  <span class="text-slate-800 font-medium block">Psychiatrist, private practice</span>
+                  <span class="text-slate-500 text-sm">Athens</span>
+                </div>
+              </div>
+
+              <!-- NGOs (Active) -->
+              <div class="relative pl-12">
+                <div class="absolute w-4 h-4 bg-slate-300 rounded-full left-[12px] top-2 border-2 border-white"></div>
+                <div class="pl-0">
+                  <h4 class="text-md font-bold text-slate-900 mb-2">Community psychiatry & scientific responsibility — NGOs</h4>
+                  <ul class="space-y-3 text-sm text-slate-600 pl-4 list-disc marker:text-slate-300">
+                    <li><strong class="text-slate-700">NGO XENIOS ZEUS</strong>: Scientific collaborator for supported apartments.</li>
+                    <li><strong class="text-slate-700">NGO ALTHAIA</strong>: Scientific Director of residential facilities and supported apartments.</li>
+                    <li><strong class="text-slate-700">NGO IASIS</strong>: Scientific Director / Psychiatrist in facilities, including Agios Markos.</li>
+                    <li><strong class="text-slate-700">NGO EPAPSY</strong>: Scientific collaborator in mental health facilities.</li>
+                  </ul>
+                  <p class="text-xs text-slate-400 mt-2 italic">My work in community psychiatry focuses on long-term monitoring of patients with severe mental disorders, functional rehabilitation and social integration.</p>
+                </div>
+              </div>
+
+              <!-- Hospital History -->
+              <div class="relative pl-12 flex flex-col pt-4" id="contact">
+                <div class="absolute w-4 h-4 bg-slate-200 rounded-full left-[12px] top-5 border-2 border-white"></div>
+                <h4 class="text-sm font-bold text-slate-500 uppercase tracking-wide mb-4">Hospital experience</h4>
+                <ul class="space-y-4 text-sm text-slate-600 pl-4 list-disc marker:text-slate-300">
+                  <li>Psychiatric Hospital of Attica “Dafni”</li>
+                  <li>KAT General Hospital</li>
+                  <li>1st IKA Therapeutic Hospital of Melissia</li>
+                  <li>Syros General Hospital “Vardakeio & Proio”</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- SECTION 3: Education & Training -->
+          <section id="education" class="scroll-mt-28">
+            <div class="flex items-center gap-4 mb-8">
+              <div class="w-12 h-12 rounded-xl bg-orange-100 flex items-center justify-center text-orange-700">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14v7M5 9.42V14a7 7 0 0014 0V9.42"></path></svg>
+              </div>
+              <h2 class="text-3xl font-bold text-slate-900">Education & certifications</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              
+              <div class="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm">
+                <h3 class="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-orange-500"></span>
+                  Neuroscience & rTMS
+                </h3>
+                <ul class="space-y-5 text-sm">
+                  <li class="pl-4 border-l-2 border-slate-100 pb-2">
+                    <strong class="text-slate-800 block">Advanced TMS Update Course</strong>
+                    <span class="text-slate-600 block">Maastricht Brain Imaging Center, Netherlands</span>
+                  </li>
+                  <li class="pl-4 border-l-2 border-slate-100 pb-2">
+                    <strong class="text-slate-800 block">Fundamentals of Neuroscience</strong>
+                    <span class="text-slate-600 block">Harvard University, USA</span>
+                  </li>
+                  <li class="pl-4 border-l-2 border-slate-100 pb-2">
+                    <strong class="text-slate-800 block">TMS Clinical Applications</strong>
+                    <span class="text-slate-600 block">APA Annual Meeting, San Francisco, USA</span>
+                  </li>
+                  <li class="pl-4 border-l-2 border-slate-100 pb-2">
+                    <strong class="text-slate-800 block">Clinical TMS Certification Course</strong>
+                    <span class="text-slate-600 block">Maastricht University, held in London, UK</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm">
+                <h3 class="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-slate-400"></span>
+                  Psychotherapy & academic training
+                </h3>
+                <ul class="space-y-5 text-sm">
+                  <li class="pl-4 border-l-2 border-slate-100 pb-2">
+                    <strong class="text-slate-800 block">Psychiatry specialty qualification / board certification</strong>
+                  </li>
+                  <li class="pl-4 border-l-2 border-slate-100 pb-2">
+                    <strong class="text-slate-800 block">Medical Degree (M.D.)</strong>
+                    <span class="text-slate-600 block">Università di Bologna, Italy</span>
+                  </li>
+                  <li class="pl-4 border-l-2 border-slate-100 pb-2">
+                    <strong class="text-slate-800 block">Family Systemic Psychotherapy</strong>
+                    <span class="text-slate-600 block">Psychiatric Hospital of Attica</span>
+                  </li>
+                  <li class="pl-4 border-l-2 border-slate-100 pb-2">
+                    <strong class="text-slate-800 block">Cognitive Behavioural Therapy (CBT)</strong>
+                    <span class="text-slate-600 block">Center for Applied Psychotherapy, Athens</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- SECTION 4: Media, Societies & Accreditations -->
+          <section id="media" class="scroll-mt-28 mb-16">
+            <div class="flex items-center gap-4 mb-8">
+              <div class="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center text-purple-700">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+              </div>
+              <h2 class="text-3xl font-bold text-slate-900">Collaborations & scientific work</h2>
+            </div>
+
+            <div class="glass-card bg-slate-900 text-white rounded-2xl p-8 md:p-12 shadow-lg">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                
+                <div>
+                  <h3 class="text-lg font-bold text-blue-300 mb-6 uppercase tracking-wider text-sm flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    Scientific societies
+                  </h3>
+                  <ul class="space-y-4 text-slate-300 text-sm">
+                    <li class="flex gap-3">
+                      <span class="text-blue-500 mt-1">✓</span>
+                      <span>Treasurer of the <strong>Hellenic Association of Private Psychiatrists (EN.E.PS.E.)</strong> (for two terms)</span>
+                    </li>
+                    <li class="flex gap-3">
+                      <span class="text-blue-500 mt-1">✓</span>
+                      <span>Secretary of the Private Practice Section of the <strong>Hellenic Psychiatric Association</strong> for two terms</span>
+                    </li>
+                    <li class="flex gap-3">
+                      <span class="text-blue-500 mt-1">✓</span>
+                      <span>Member of the <strong>American Psychiatric Association (APA)</strong></span>
+                    </li>
+                    <li class="flex gap-3">
+                      <span class="text-blue-500 mt-1">✓</span>
+                      <span>Member of the <strong>Hellenic-American Psychiatric Association (HAPA)</strong></span>
+                    </li>
+                    <li class="flex gap-3">
+                      <span class="text-blue-500 mt-1">✓</span>
+                      <span>Member of the <strong>Hellenic Psychiatric–Forensic Association</strong> and of the Mental Health Committee of the <strong>Athens Medical Association</strong>.</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                   <h3 class="text-lg font-bold text-purple-300 mb-6 uppercase tracking-wider text-sm flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                    Educational & social work
+                  </h3>
+                   <ul class="space-y-4 text-slate-300 text-sm">
+                    <li class="flex items-start gap-3">
+                      <span class="w-1.5 h-1.5 rounded-full bg-purple-400 mt-2 shrink-0"></span>
+                      <span>Taught Cognitive Behavioural Therapy (CBT) at a certified Lifelong Learning Center from 2014 to 2016.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <span class="w-1.5 h-1.5 rounded-full bg-purple-400 mt-2 shrink-0"></span>
+                      <span>Scientific collaborator of the <strong>“Ariadne” Program</strong> (NKUA) for child and adolescent internet safety.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <span class="w-1.5 h-1.5 rounded-full bg-purple-400 mt-2 shrink-0"></span>
+                      <span>Long-standing member of the Social Clinic of the <strong>Athens Medical Association (AMA)</strong>.</span>
+                    </li>
+                     <li class="flex items-start gap-3">
+                      <span class="w-1.5 h-1.5 rounded-full bg-purple-400 mt-2 shrink-0"></span>
+                      <span>Volunteer missions by boat to Aegean islands (<strong>“A Drop of Love in the Aegean”</strong>) supporting populations with limited access to healthcare services.</span>
+                    </li>
+                   </ul>
+                </div>
+
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <Footer />
+</Layout>
