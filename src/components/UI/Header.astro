@@ -120,17 +120,17 @@
         <div class="relative group py-6 ml-2">
           <button class="flex items-center gap-1.5 text-slate-600 hover:text-blue-700 font-bold text-sm bg-slate-50 px-2 py-1 rounded-md transition-all">
             <span class="text-lg leading-none">🌐</span>
-            <span class="uppercase">el</span>
+            <span class="uppercase">{Astro.currentLocale || 'el'}</span>
             <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
           </button>
           <div class="absolute top-full right-0 w-32 bg-white shadow-xl rounded-xl border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-right -translate-y-2 group-hover:translate-y-0 p-1.5 z-50">
-            <a href="/" class="flex items-center gap-2 px-3 py-2 text-xs font-bold text-blue-700 bg-blue-50 rounded-lg">
+            <a href="/" class={`flex items-center gap-2 px-3 py-2 text-xs font-bold rounded-lg ${Astro.currentLocale === 'el' || !Astro.currentLocale ? 'text-blue-700 bg-blue-50' : 'text-slate-600 hover:bg-slate-50 hover:text-blue-700'}`}>
               <span>🇬🇷</span> Ελληνικά
             </a>
-            <a href="/en" class="flex items-center gap-2 px-3 py-2 text-xs font-medium text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">
+            <a href="/en" class={`flex items-center gap-2 px-3 py-2 text-xs font-bold rounded-lg ${Astro.currentLocale === 'en' ? 'text-blue-700 bg-blue-50' : 'text-slate-600 hover:bg-slate-50 hover:text-blue-700'}`}>
               <span>🇺🇸</span> English
             </a>
-            <a href="/it" class="flex items-center gap-2 px-3 py-2 text-xs font-medium text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">
+            <a href="/it" class={`flex items-center gap-2 px-3 py-2 text-xs font-bold rounded-lg ${Astro.currentLocale === 'it' ? 'text-blue-700 bg-blue-50' : 'text-slate-600 hover:bg-slate-50 hover:text-blue-700'}`}>
               <span>🇮🇹</span> Italiano
             </a>
           </div>
@@ -196,10 +196,10 @@
           <a class="block px-3 py-2.5 text-base font-semibold text-slate-800 hover:bg-slate-50 hover:text-blue-700 rounded-lg" href="/arthra-blog">Blog</a>
           
           <div class="mt-4 pt-4 border-t border-slate-100 flex items-center gap-2">
-            <span class="text-xs font-bold text-slate-400 uppercase tracking-widest px-3">Γλώσσα:</span>
-            <a href="/" class="px-3 py-1.5 text-xs font-bold text-blue-700 bg-blue-50 rounded-lg">EL</a>
-            <a href="/en" class="px-3 py-1.5 text-xs font-medium text-slate-600 bg-slate-50 rounded-lg">EN</a>
-            <a href="/it" class="px-3 py-1.5 text-xs font-medium text-slate-600 bg-slate-50 rounded-lg">IT</a>
+            <span class="text-xs font-bold text-slate-400 uppercase tracking-widest px-3">Language / Lingua:</span>
+            <a href="/" class={`px-3 py-1.5 text-xs font-bold rounded-lg ${Astro.currentLocale === 'el' || !Astro.currentLocale ? 'text-blue-700 bg-blue-50' : 'text-slate-600 bg-slate-50'}`}>EL</a>
+            <a href="/en" class={`px-3 py-1.5 text-xs font-bold rounded-lg ${Astro.currentLocale === 'en' ? 'text-blue-700 bg-blue-50' : 'text-slate-600 bg-slate-50'}`}>EN</a>
+            <a href="/it" class={`px-3 py-1.5 text-xs font-bold rounded-lg ${Astro.currentLocale === 'it' ? 'text-blue-700 bg-blue-50' : 'text-slate-600 bg-slate-50'}`}>IT</a>
           </div>
         </div>
         

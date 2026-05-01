@@ -2,31 +2,338 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/UI/Header.astro';
 import Footer from '../../components/UI/Footer.astro';
+
+const schemaBundle = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Physician",
+      "@id": "https://drgkikas.com/it/#physician",
+      "name": "Paschalis Gkikas",
+      "medicalSpecialty": "Psychiatry",
+      "url": "https://drgkikas.com/it/",
+      "image": "https://drgkikas.com/images/iatros-profile.png",
+      "telephone": "+302118500016"
+    },
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://drgkikas.com/it/#clinic",
+      "name": "Smart CNS Center",
+      "image": "https://drgkikas.com/logo.jpg",
+      "url": "https://drgkikas.com/it/",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Via Xenofontos 15A",
+        "addressLocality": "Atene",
+        "postalCode": "105 57",
+        "addressCountry": "GR"
+      },
+      "telephone": "+302118500016"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://drgkikas.com/it/#website",
+      "url": "https://drgkikas.com/it/",
+      "name": "Dr. Paschalis Gkikas - Psichiatra"
+    }
+  ]
+});
 ---
 
-<Layout title="In Costruzione | Dr. Paschalis Gkikas" description="La versione italiana sarà disponibile a breve.">
+<Layout schema={schemaBundle} 
+  title="Paschalis Gkikas | Psichiatra ad Atene | rTMS e farmacogenomica" 
+  description="Paschalis Gkikas — Psichiatra ad Atene. Servizi specializzati in rTMS, farmacogenomica e psicoterapia presso lo Smart CNS Center."
+>
   <Header />
-  <main class="min-h-screen flex items-center justify-center bg-slate-50 pt-20">
-    <div class="max-w-xl mx-auto px-4 text-center">
-      <div class="w-20 h-20 bg-blue-100 text-blue-600 rounded-3xl flex items-center justify-center text-4xl mx-auto mb-8 animate-pulse">
-        🇮🇹
+
+  <main>
+    <!-- SECTION 1: HERO -->
+    <section class="relative bg-white pt-40 pb-24 overflow-hidden border-b border-slate-100">
+      <div class="absolute inset-0 bg-[radial-gradient(#f1f5f9_1px,transparent_1px)] [background-size:24px_24px] opacity-50"></div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center">
+        <div class="lg:w-4/5 mx-auto text-center">
+          
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-slate-500 font-medium text-sm mb-8">
+            <span class="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse"></span>
+            Psichiatra ad Atene • Smart CNS Center
+          </div>
+          
+          <h1 class="text-4xl md:text-5xl lg:text-7xl font-extrabold text-slate-900 leading-tight mb-10 tracking-tight">
+            Paschalis Gkikas, <br class="hidden md:block"/>
+            <span class="text-[#084a79]">Psichiatra ad Atene</span>
+          </h1>
+          
+          <p class="text-xl md:text-2xl text-slate-600 mb-12 leading-relaxed max-w-4xl mx-auto font-light">
+            Sono <strong>Paschalis Gkikas</strong>, Psichiatra–Psicoterapeuta e Direttore Medico dello Smart CNS Center di Atene. Per ogni paziente progetto un trattamento basato sulla sua biologia individuale — attraverso la <strong>farmacogenomica</strong> και <strong>rTMS</strong>. Scienza invece di tentativi casuali. Meno prove, più risposte.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+            <a href="/epikoinonia" class="w-full sm:w-auto px-10 py-5 bg-[#084a79] hover:bg-[#063557] text-white rounded-2xl font-black transition-all shadow-xl shadow-blue-900/10 text-lg">
+              Prenota un appuntamento
+            </a>
+            <a href="/ypiresies" class="w-full sm:w-auto px-10 py-5 bg-slate-50 border border-slate-200 text-slate-700 hover:bg-white rounded-2xl font-bold transition-all text-lg">
+              Scopri i servizi
+            </a>
+            <a href="/rtms" class="w-full sm:w-auto px-10 py-5 bg-white border-2 border-slate-100 text-[#084a79] hover:border-blue-200 rounded-2xl font-bold transition-all text-lg">
+              Scopri la rTMS
+            </a>
+          </div>
+
+          <div class="flex flex-wrap justify-center items-center gap-x-8 gap-y-4 pt-8 border-t border-slate-100">
+            <a href="/iatros" class="text-sm font-bold text-slate-400 hover:text-[#084a79] transition-colors">Biografia</a>
+            <span class="hidden sm:inline w-1 h-1 rounded-full bg-slate-200"></span>
+            <a href="/epikoinonia" class="text-sm font-bold text-slate-400 hover:text-[#084a79] transition-colors">Contatti</a>
+          </div>
+        </div>
       </div>
-      <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">Prossimamente</h1>
-      <p class="text-xl text-slate-600 mb-10 leading-relaxed">
-        Stiamo traducendo i nostri contenuti clinici e servizi in italiano per accogliere al meglio i nostri pazienti internazionali.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/" class="px-8 py-4 bg-[#084a79] text-white rounded-2xl font-bold hover:bg-[#063557] transition-all">
-          Torna alla versione greca
-        </a>
-        <a href="tel:+302118500016" class="px-8 py-4 bg-white border border-slate-200 text-slate-700 rounded-2xl font-bold hover:bg-slate-50 transition-all">
-          Chiamaci: +30 211 850 0016
-        </a>
+    </section>
+
+    <!-- SECTION 2: SERVICES -->
+    <section class="py-24 bg-[#f8fafc]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <span class="text-[#084a79] font-bold tracking-widest text-xs uppercase mb-2 block">Servizi</span>
+          <h2 class="text-3xl md:text-5xl font-bold text-slate-900">Tre pilastri terapeutici</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="flex flex-col p-10 rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-xl transition-all h-full">
+            <div class="w-14 h-14 bg-red-50 text-red-700 rounded-xl flex items-center justify-center text-2xl mb-8">🧲</div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-4">rTMS — neuromodulazione</h3>
+            <p class="text-slate-600 leading-relaxed mb-8 flex-grow">Trattamento approvato, non invasivo, per depressione resistente al trattamento, disturbo ossessivo-compulsivo e dipendenze. Stimolazione mirata dei circuiti neurali senza farmaci.</p>
+            <a href="/ypiresies/rtms" class="group flex items-center gap-2 text-[#084a79] font-black hover:gap-3 transition-all duration-300">
+              Maggiori informazioni sulla rTMS
+              <span>&rarr;</span>
+            </a>
+          </div>
+
+          <div class="flex flex-col p-10 rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-xl transition-all h-full">
+            <div class="w-14 h-14 bg-blue-50 text-blue-700 rounded-xl flex items-center justify-center text-2xl mb-8">🧬</div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-4">Farmacogenomica</h3>
+            <p class="text-slate-600 leading-relaxed mb-8 flex-grow">Analisi del DNA per contribuire alla scelta della terapia farmacologica più appropriata. Il farmaco giusto e la dose corretta fin dall’inizio.</p>
+            <a href="/ypiresies/pgx" class="group flex items-center gap-2 text-[#084a79] font-black hover:gap-3 transition-all duration-300">
+              Analisi PGx
+              <span>&rarr;</span>
+            </a>
+          </div>
+
+          <div class="flex flex-col p-10 rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-xl transition-all h-full">
+            <div class="w-14 h-14 bg-purple-50 text-purple-700 rounded-xl flex items-center justify-center text-2xl mb-8">🩺</div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-4">Psichiatria clinica</h3>
+            <p class="text-slate-600 leading-relaxed mb-8 flex-grow">Valutazione diagnostica completa, psicoterapia e sedute, in presenza oppure online, per un supporto completo della salute mentale.</p>
+            <a href="/ypiresies" class="group flex items-center gap-2 text-[#084a79] font-black hover:gap-3 transition-all duration-300">
+              Tutti i servizi
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
       </div>
-      <div class="mt-16 pt-8 border-t border-slate-200">
-        <p class="text-sm text-slate-400 uppercase tracking-widest font-bold">Smart CNS Center | Atene, Grecia</p>
+    </section>
+
+    <!-- SECTION 3: PERCHÉ NOI -->
+    <section class="py-24 bg-white overflow-hidden relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div>
+            <span class="text-[#084a79] font-bold tracking-widest text-xs uppercase mb-4 block">Perché noi</span>
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-8 leading-tight">Oltre il metodo “trial and error”</h2>
+            <div class="prose prose-lg text-slate-600 font-light leading-relaxed space-y-6">
+              <p>Ogni cervello è biologicamente unico. L’approccio tradizionale basato sui tentativi farmacologici può richiedere tempo e consumare risorse psicologiche.</p>
+              <p>Nella nostra pratica clinica partiamo da <strong>dati oggettivi</strong>. Combiniamo informazioni genetiche e psicometriche per progettare un piano terapeutico con un orientamento clinico più rapido.</p>
+              <ul class="list-none p-0 mt-8 space-y-4">
+                <li class="flex items-center gap-3 text-slate-900 font-bold">
+                  <span class="w-6 h-6 rounded-full bg-green-100 text-green-700 flex items-center justify-center text-xs">✓</span>
+                  Protezione da effetti collaterali non necessari
+                </li>
+                <li class="flex items-center gap-3 text-slate-900 font-bold">
+                  <span class="w-6 h-6 rounded-full bg-green-100 text-green-700 flex items-center justify-center text-xs">✓</span>
+                  Raggiungimento più rapido della remissione
+                </li>
+                <li class="flex items-center gap-3 text-slate-900 font-bold">
+                  <span class="w-6 h-6 rounded-full bg-green-100 text-green-700 flex items-center justify-center text-xs">✓</span>
+                  Monitoraggio quantitativo continuo dei progressi
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="absolute -inset-10 bg-blue-50 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
+            <div class="relative bg-slate-900 rounded-[3rem] p-12 text-white shadow-2xl">
+              <div class="text-4xl mb-6">🧬</div>
+              <h3 class="text-2xl font-bold mb-4">Psichiatria di precisione</h3>
+              <p class="text-slate-400 text-lg leading-relaxed mb-8">
+                Non ci basiamo solo sulla valutazione soggettiva. Investiamo nella tecnologia e nella biologia per rispondere al “perché” prima di proporre il “come”.
+              </p>
+              <div class="pt-8 border-t border-white/10 flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center font-bold">PGk</div>
+                <div>
+                  <div class="font-bold">Paschalis Gkikas</div>
+                  <div class="text-xs text-slate-500 uppercase">Direttore Medico</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
+
+    <!-- SECTION 4: INDICAZIONI -->
+    <section class="py-24 bg-slate-50 border-y border-slate-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <span class="text-[#084a79] font-bold tracking-widest text-xs uppercase mb-2 block">Indicazioni</span>
+          <h2 class="text-3xl md:text-5xl font-bold text-slate-900">Come possiamo aiutare</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
+          {[
+            { t: "Depressione resistente al trattamento", l: "/diataraxes/katathlipsi" },
+            { t: "Disturbo ossessivo-compulsivo (OCD)", l: "/diataraxes/ideopsychanagkastiki-diatarachi" },
+            { t: "Disturbo d’ansia generalizzato", l: "/diataraxes/agxodeis-diataraxes" },
+            { t: "Disturbo bipolare", l: "/diataraxes/dipoliki-diatarachi" },
+            { t: "Dipendenze: fumo, alcol", l: "/diataraxes/diatarachi-xrisis-alkool" },
+            { t: "Dolore cronico e fibromialgia", l: "/rtms/endixeis/ponos" }
+          ].map(item => (
+            <a href={item.l} class="flex items-center justify-between p-6 bg-white border border-slate-100 rounded-2xl hover:border-blue-300 hover:shadow-md transition-all group">
+              <span class="font-bold text-slate-800 text-lg">{item.t}</span>
+              <span class="text-slate-300 group-hover:text-blue-600 transition-colors">&rarr;</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: rTMS FEATURE -->
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="relative rounded-[3rem] bg-gradient-to-br from-[#084a79] to-[#042a46] p-12 md:p-20 overflow-hidden shadow-2xl">
+          <div class="absolute top-0 right-0 w-1/3 h-full bg-white/5 skew-x-12 transform translate-x-1/2"></div>
+          
+          <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <div class="inline-block px-4 py-1 rounded-full bg-red-600 text-white text-xs font-black uppercase mb-6">Expertise</div>
+              <h2 class="text-4xl md:text-6xl font-extrabold text-white mb-8 leading-tight">rTMS: una svolta nella neuromodulazione</h2>
+              <p class="text-blue-100 text-xl leading-relaxed mb-10 font-light">
+                Un metodo non invasivo che cambia il panorama terapeutico per chi non ha ottenuto risultati adeguati con la farmacoterapia. Nessun effetto collaterale sistemico da farmaco, nessuna anestesia.
+              </p>
+              <div class="flex flex-wrap gap-4">
+                <a href="/rtms" class="px-8 py-4 bg-white text-[#084a79] rounded-2xl font-black text-lg hover:bg-blue-50 transition-all">
+                  Guida completa alla rTMS
+                </a>
+                <a href="/rtms/core/ti-einai" class="px-8 py-4 bg-transparent border border-white/20 text-white rounded-2xl font-bold text-lg hover:bg-white/5 transition-all">
+                  Come funziona?
+                </a>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/10 text-white">
+                <div class="text-3xl mb-2">⚡</div>
+                <div class="text-white font-bold mb-1 uppercase tracking-wider text-[10px]">Procedura</div>
+                <div class="text-blue-100 text-sm">Seduta di 3–20 minuti</div>
+              </div>
+              <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/10 text-white">
+                <div class="text-3xl mb-2">📉</div>
+                <div class="text-white font-bold mb-1 uppercase tracking-wider text-[10px]">Sensazione</div>
+                <div class="text-blue-100 text-sm">Applicazione indolore</div>
+              </div>
+              <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/10 text-white col-span-2">
+                <div class="text-3xl mb-2">🏆</div>
+                <div class="text-white font-bold mb-1 uppercase tracking-wider text-[10px]">Esito</div>
+                <div class="text-blue-100 text-sm">Alti tassi di remissione nella depressione resistente</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: BIO -->
+    <section class="py-24 bg-[#f8fafc]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row gap-16 items-center">
+          <div class="w-full md:w-1/3">
+            <div class="aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl relative border-4 border-white bg-slate-100">
+              <img src="/images/dr-gkikas-portrait.jpg" alt="Paschalis Gkikas" width="800" height="1000" loading="lazy" decoding="async" class="w-full h-full object-cover object-top" />
+            </div>
+          </div>
+
+          <div class="w-full md:w-2/3">
+            <span class="text-[#084a79] font-bold tracking-widest text-xs uppercase mb-2 block">Paschalis Gkikas</span>
+            <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">Affidabilità medica e competenza</h2>
+            <div class="prose prose-lg text-slate-600 font-light mb-10">
+              <p>In qualità di Psichiatra e Direttore Medico dello Smart CNS Center, mi concentro sull’applicazione di strumenti moderni di neuromodulazione e psichiatria di precisione. Il mio approccio si basa sul costante aggiornamento scientifico e sul pieno rispetto della biologia del paziente.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-8 border-t border-slate-200">
+              <div class="bg-slate-50 p-4 rounded-xl border-l-4 border-l-[#d4af37] flex gap-3 items-center shadow-sm">
+                <span class="text-2xl">🎓</span>
+                <div class="flex flex-col gap-0.5"><span class="text-[10px] text-slate-400 uppercase font-bold tracking-widest">Certificazione</span><span class="text-sm font-bold text-slate-900">Harvard University</span></div>
+              </div>
+              <div class="bg-slate-50 p-4 rounded-xl border-l-4 border-l-[#d4af37] flex gap-3 items-center shadow-sm">
+                <span class="text-2xl">🌐</span>
+                <div class="flex flex-col gap-0.5"><span class="text-[10px] text-slate-400 uppercase font-bold tracking-widest">Formazione rTMS</span><span class="text-sm font-bold text-slate-900">Maastricht University Center</span></div>
+              </div>
+              <div class="bg-slate-50 p-4 rounded-xl border-l-4 border-l-[#d4af37] flex gap-3 items-center shadow-sm">
+                <span class="text-2xl">🏥</span>
+                <div class="flex flex-col gap-0.5"><span class="text-[10px] text-slate-400 uppercase font-bold tracking-widest">Direttore Medico</span><span class="text-sm font-bold text-slate-900 line-clamp-1">Smart CNS Center, Atene</span></div>
+              </div>
+            </div>
+            <a href="/iatros" class="inline-flex items-center gap-2 mt-12 font-black text-[#084a79] text-xl group">
+              Biografia completa
+              <span class="group-hover:translate-x-2 transition-transform duration-300">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: CONTACT -->
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden flex flex-col lg:flex-row">
+          <div class="lg:w-1/2 p-12 md:p-20">
+            <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mb-8">Il prossimo passo nel tuo percorso terapeutico inizia qui</h2>
+            <p class="text-lg text-slate-600 mb-12 font-light leading-relaxed">
+              Siamo qui per rispondere alle tue domande e progettare insieme il prossimo passo del tuo trattamento.
+            </p>
+            <div class="space-y-6 mb-12">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-blue-50 text-blue-700 rounded-xl flex items-center justify-center">📞</div>
+                <div>
+                  <div class="text-xs text-slate-400 uppercase font-bold tracking-widest">Telefono</div>
+                  <div class="text-lg font-black text-slate-900">+30 211 850 0016</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-blue-50 text-blue-700 rounded-xl flex items-center justify-center">📍</div>
+                <div>
+                  <div class="text-xs text-slate-400 uppercase font-bold tracking-widest">Indirizzo</div>
+                  <div class="text-lg font-black text-slate-900">Via Xenofontos 15A, Syntagma, Atene</div>
+                </div>
+              </div>
+            </div>
+            <a href="/epikoinonia" class="block text-center bg-[#084a79] text-white font-black py-5 rounded-2xl text-xl hover:bg-[#063557] transition-all">
+              Prenota un appuntamento
+            </a>
+            <div class="mt-8 pt-8 border-t border-slate-100 italic text-slate-500 text-sm">
+              In questo sito puoi trovare informazioni utili sulla salute mentale. Naviga liberamente e non esitare a contattarmi per qualsiasi chiarimento. Buona navigazione.
+            </div>
+          </div>
+          <div class="lg:w-1/2 bg-slate-100 min-h-[400px] relative">
+            <iframe 
+              src="https://maps.google.com/maps?q=%CE%A8%CF%85%CF%87%CE%AF%CE%B1%CF%84%CF%81%CE%BF%CF%82+-+%CE%A8%CF%85%CF%87%CE%BF%CE%B8%CE%B5%CF%81%CE%B1%CF%80%CE%B5%CF%85%CF%84%CE%AE%CF%82,+%CE%A0%CE%B1%CF%83%CF%87%CE%AC%CE%BB%CE%B7%CF%82+%CE%93%CE%BA%CE%AF%CE%BA%CE%B1%CF%82&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+              width="100%" 
+              height="100%" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              class="absolute inset-0 w-full h-full"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+  
   <Footer />
 </Layout>
