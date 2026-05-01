@@ -1,5 +1,6 @@
 ---
 const { currentLocale } = Astro;
+const langPrefix = currentLocale && currentLocale !== 'el' ? `/${currentLocale}` : '';
 
 const t = {
   el: {
@@ -81,63 +82,63 @@ const labels = t[currentLocale] || t.el;
       
       <!-- Brand Logo -->
       <div class="flex-shrink-0 flex items-center">
-        <a href="/" class="flex items-center group">
+        <a href={langPrefix + "/"} class="flex items-center group">
           <img src="/logo.jpg" alt={labels.doctor + " - " + labels.home} width="200" height="80" fetchpriority="high" decoding="sync" class="h-14 w-auto object-contain transition-transform group-hover:scale-105" />
         </a>
       </div>
 
       <!-- Desktop Nav -->
       <nav class="hidden md:flex space-x-3 lg:space-x-4 xl:space-x-6 items-center text-sm lg:text-base">
-        <a href="/" class="text-slate-600 hover:text-blue-700 font-medium transition-colors">{labels.home}</a>
+        <a href={langPrefix + "/"} class="text-slate-600 hover:text-blue-700 font-medium transition-colors">{labels.home}</a>
         
         <!-- Ιατρός Dropdown -->
         <div class="relative group py-6">
-          <a href="/iatros" class="text-slate-600 group-hover:text-blue-700 font-medium transition-colors flex items-center gap-1">
+          <a href={langPrefix + "/iatros"} class="text-slate-600 group-hover:text-blue-700 font-medium transition-colors flex items-center gap-1">
             {labels.doctor}
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
           </a>
           <div class="absolute top-full left-0 w-64 bg-white shadow-xl rounded-xl border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-left -translate-y-2 group-hover:translate-y-0 p-2 z-50">
-            <a href="/iatros#cv" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{labels.cv}</a>
-            <a href="/iatros#education" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{labels.edu}</a>
-            <a href="/iatros#media" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{labels.media}</a>
+            <a href={langPrefix + "/iatros#cv"} class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{labels.cv}</a>
+            <a href={langPrefix + "/iatros#education"} class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{labels.edu}</a>
+            <a href={langPrefix + "/iatros#media"} class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{labels.media}</a>
           </div>
         </div>
 
         <!-- Υπηρεσίες Dropdown -->
         <div class="relative group py-6">
-          <a href="/ypiresies" class="text-slate-600 group-hover:text-blue-700 font-medium transition-colors flex items-center gap-1">
+          <a href={langPrefix + "/ypiresies"} class="text-slate-600 group-hover:text-blue-700 font-medium transition-colors flex items-center gap-1">
             {labels.services}
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
           </a>
           <div class="absolute top-full left-0 w-64 bg-white shadow-xl rounded-xl border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-left -translate-y-2 group-hover:translate-y-0 p-2 z-50">
-            <a href="/ypiresies/psychiatriki-parakolouthisi" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{labels.psychiatry || "Ψυχιατρική Παρακολούθηση"}</a>
-            <a href="/ypiresies/psychotherapeia" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{labels.psychotherapy || "Ψυχοθεραπεία"}</a>
-            <a href="/ypiresies/pgx" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{labels.pgx_nav || "Φαρμακογονιδιωματική (PGx)"}</a>
-            <a href="/ypiresies/online-synedria" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{labels.online || "Online Συνεδρία"}</a>
-            <a href="/ypiresies/gnomateyseis" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{labels.certificates || "Γνωματεύσεις / Πιστοποιητικά"}</a>
-            <a href="/ypiresies/adhd-evaluation" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{labels.adhd_eval || "Αξιολόγηση ΔΕΠΥ Ενηλίκων"}</a>
+            <a href={langPrefix + "/ypiresies/psychiatriki-parakolouthisi"} class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{labels.psychiatry}</a>
+            <a href={langPrefix + "/ypiresies/psychotherapeia"} class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{labels.psychotherapy}</a>
+            <a href={langPrefix + "/ypiresies/pgx"} class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{labels.pgx_nav}</a>
+            <a href={langPrefix + "/ypiresies/online-synedria"} class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{labels.online}</a>
+            <a href={langPrefix + "/ypiresies/gnomateyseis"} class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{labels.certificates}</a>
+            <a href={langPrefix + "/ypiresies/adhd-evaluation"} class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{labels.adhd_eval}</a>
           </div>
         </div>
 
         <!-- Διαταραχές Dropdown -->
         <div class="relative group py-6">
-          <a href="/diataraxes" class="text-slate-600 group-hover:text-blue-700 font-medium transition-colors flex items-center gap-1">
+          <a href={langPrefix + "/diataraxes"} class="text-slate-600 group-hover:text-blue-700 font-medium transition-colors flex items-center gap-1">
             {labels.disorders}
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
           </a>
           <div class="absolute top-full left-0 w-72 bg-white shadow-xl rounded-xl border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-left -translate-y-2 group-hover:translate-y-0 p-2 z-50 max-h-[70vh] overflow-y-auto">
-            <a href="/diataraxes/agxodeis-diataraxes" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{currentLocale === 'el' ? 'Αγχώδεις Διαταραχές' : 'Anxiety Disorders'}</a>
-            <a href="/diataraxes/adhd-adult" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{currentLocale === 'el' ? 'ΔΕΠΥ Ενηλίκων' : 'Adult ADHD'}</a>
-            <a href="/diataraxes/dipoliki-diatarachi" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{currentLocale === 'el' ? 'Διπολική Διαταραχή' : 'Bipolar Disorder'}</a>
-            <a href="/diataraxes/katathlipsi" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{labels.depression}</a>
-            <a href="/diataraxes/ideopsychanagkastiki-diatarachi" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{labels.ocd}</a>
-            <a href="/diataraxes/body-dysmorphic" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{currentLocale === 'el' ? 'Σύμπλεγμα Θερσίτη (BDD)' : 'Body Dysmorphic (BDD)'}</a>
+            <a href={langPrefix + "/diataraxes/agxodeis-diataraxes"} class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{currentLocale === 'el' ? 'Αγχώδεις Διαταραχές' : 'Anxiety Disorders'}</a>
+            <a href={langPrefix + "/diataraxes/adhd-adult"} class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{currentLocale === 'el' ? 'ΔΕΠΥ Ενηλίκων' : 'Adult ADHD'}</a>
+            <a href={langPrefix + "/diataraxes/dipoliki-diatarachi"} class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{currentLocale === 'el' ? 'Διπολική Διαταραχή' : 'Bipolar Disorder'}</a>
+            <a href={langPrefix + "/diataraxes/katathlipsi"} class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{labels.depression}</a>
+            <a href={langPrefix + "/diataraxes/ideopsychanagkastiki-diatarachi"} class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{labels.ocd}</a>
+            <a href={langPrefix + "/diataraxes/body-dysmorphic"} class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{currentLocale === 'el' ? 'Σύμπλεγμα Θερσίτη (BDD)' : 'Body Dysmorphic (BDD)'}</a>
           </div>
         </div>
 
         <!-- rTMS Mega Dropdown -->
         <div class="relative group py-6">
-          <a href="/rtms" class="text-slate-600 group-hover:text-blue-700 font-medium transition-colors flex items-center gap-1">
+          <a href={langPrefix + "/rtms"} class="text-slate-600 group-hover:text-blue-700 font-medium transition-colors flex items-center gap-1">
             {labels.rtms}
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
           </a>
@@ -146,41 +147,41 @@ const labels = t[currentLocale] || t.el;
             
             <div class="flex-1">
               <p class="text-slate-900 font-bold mb-3 border-b pb-2 text-sm uppercase tracking-wider">{currentLocale === 'el' ? 'Βασικές Πληροφορίες' : 'Core Info'}</p>
-              <a href="/rtms/core/ti-einai" class="block py-2 text-sm text-slate-600 hover:text-blue-700">{labels.how_it_works}</a>
-              <a href="/rtms/core/kostos-kai-diadikasia" class="block py-2 text-sm text-slate-600 hover:text-blue-700">{labels.cost}</a>
-              <a href="/rtms/core/syxnes" class="block py-2 text-sm text-slate-600 hover:text-blue-700">{labels.faq}</a>
+              <a href={langPrefix + "/rtms/core/ti-einai"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{labels.how_it_works}</a>
+              <a href={langPrefix + "/rtms/core/kostos-kai-diadikasia"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{labels.cost}</a>
+              <a href={langPrefix + "/rtms/core/syxnes"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{labels.faq}</a>
             </div>
 
             <div class="flex-1 bg-slate-50 -my-6 p-6 border-l border-r border-slate-100">
               <p class="text-slate-900 font-bold mb-3 border-b pb-2 text-sm uppercase tracking-wider">{labels.indications}</p>
-              <a href="/rtms/endixeis/katathlipsi" class="block py-2 text-sm text-slate-600 hover:text-blue-700">{labels.depression}</a>
-              <a href="/rtms/endixeis/ponos" class="block py-2 text-sm text-slate-600 hover:text-blue-700">{labels.pain}</a>
-              <a href="/rtms/endixeis/ocd" class="block py-2 text-sm text-slate-600 hover:text-blue-700">{labels.ocd}</a>
-              <a href="/rtms/endixeis/kokaini" class="block py-2 text-sm text-slate-600 hover:text-blue-700">{labels.addiction}</a>
+              <a href={langPrefix + "/rtms/endixeis/katathlipsi"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{labels.depression}</a>
+              <a href={langPrefix + "/rtms/endixeis/ponos"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{labels.pain}</a>
+              <a href={langPrefix + "/rtms/endixeis/ocd"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{labels.ocd}</a>
+              <a href={langPrefix + "/rtms/endixeis/kokaini"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{labels.addiction}</a>
             </div>
 
             <div class="flex-1">
-              <p class="text-slate-900 font-bold mb-3 border-b pb-2 text-sm uppercase tracking-wider">Πώς Λειτουργεί</p>
-              <a href="/rtms/pos-leitourgei/neuroplasticity" class="block py-2 text-sm text-slate-600 hover:text-blue-700">Νευροπλαστικότητα</a>
-              <a href="/rtms/pos-leitourgei/neuromodulation" class="block py-2 text-sm text-slate-600 hover:text-blue-700">Neuromodulation</a>
-              <a href="/rtms/pos-leitourgei/dlpfc" class="block py-2 text-sm text-slate-600 hover:text-blue-700">Στόχευση DLPFC</a>
-              <a href="/rtms/pos-leitourgei/brain-connectivity" class="block py-2 text-sm text-slate-600 hover:text-blue-700">Brain Connectivity</a>
-              <a href="/rtms/pos-leitourgei/neural-oscillations" class="block py-2 text-sm text-slate-600 hover:text-blue-700">Neural Oscillations</a>
-              <a href="/rtms/pos-leitourgei/motor-threshold" class="block py-2 text-sm text-slate-600 hover:text-blue-700">Motor Threshold / rMT</a>
-              <a href="/rtms/pos-leitourgei/mep" class="block py-2 text-sm text-slate-600 hover:text-blue-700">MEP</a>
+              <p class="text-slate-900 font-bold mb-3 border-b pb-2 text-sm uppercase tracking-wider">{currentLocale === 'el' ? 'Πώς Λειτουργεί' : 'Mechanism'}</p>
+              <a href={langPrefix + "/rtms/pos-leitourgei/neuroplasticity"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">Νευροπλαστικότητα</a>
+              <a href={langPrefix + "/rtms/pos-leitourgei/neuromodulation"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">Neuromodulation</a>
+              <a href={langPrefix + "/rtms/pos-leitourgei/dlpfc"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">Στόχευση DLPFC</a>
+              <a href={langPrefix + "/rtms/pos-leitourgei/brain-connectivity"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">Brain Connectivity</a>
+              <a href={langPrefix + "/rtms/pos-leitourgei/neural-oscillations"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">Neural Oscillations</a>
+              <a href={langPrefix + "/rtms/pos-leitourgei/motor-threshold"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">Motor Threshold / rMT</a>
+              <a href={langPrefix + "/rtms/pos-leitourgei/mep"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">MEP</a>
             </div>
 
           </div>
         </div>
 
         { (currentLocale === 'el' || !currentLocale) && (
-          <a href="/psychometrika" class="text-blue-700 font-bold transition-colors bg-blue-50 px-3 py-1.5 rounded-lg hover:bg-blue-100">{labels.psychometrics}</a>
+          <a href={langPrefix + "/psychometrika"} class="text-blue-700 font-bold transition-colors bg-blue-50 px-3 py-1.5 rounded-lg hover:bg-blue-100">{labels.psychometrics}</a>
         )}
-        <a href="/KnowledgeBase-eBooks" class="text-slate-600 hover:text-blue-700 font-medium transition-colors flex flex-col items-center justify-center leading-tight">
+        <a href={langPrefix + "/KnowledgeBase-eBooks"} class="text-slate-600 hover:text-blue-700 font-medium transition-colors flex flex-col items-center justify-center leading-tight">
           <span>eBooks /</span>
           <span class="text-xs">Knowledge Base</span>
         </a>
-        <a href="/arthra-blog" class="text-slate-600 hover:text-blue-700 font-medium transition-colors">{labels.blog}</a>
+        <a href={langPrefix + "/arthra-blog"} class="text-slate-600 hover:text-blue-700 font-medium transition-colors">{labels.blog}</a>
 
         <!-- Language Switcher -->
         <div class="relative group py-6 ml-2">
@@ -222,32 +223,39 @@ const labels = t[currentLocale] || t.el;
     <!-- Mobile Menu Panel -->
     <div class="md:hidden hidden bg-white border-t border-slate-100 shadow-xl absolute left-0 w-full max-h-[80vh] overflow-y-auto" id="mobile-menu">
       <div class="px-4 py-4 space-y-1 bg-white">
-        <a class="block px-3 py-2.5 text-base font-semibold text-slate-800 hover:bg-slate-50 hover:text-blue-700 rounded-lg" href="/">{labels.home}</a>
+        <a class="block px-3 py-2.5 text-base font-semibold text-slate-800 hover:bg-slate-50 hover:text-blue-700 rounded-lg" href={langPrefix + "/"}>{labels.home}</a>
         
         <div class="py-2 border-t border-slate-100 mt-2 pt-2">
+          <div class="px-3 py-1 text-xs font-bold text-slate-400 uppercase tracking-widest">{labels.doctor}</div>
+          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/iatros"}>{labels.cv}</a>
+          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/iatros#education"}>{labels.edu}</a>
+          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/iatros#media"}>{labels.media}</a>
+        </div>
+
+        <div class="py-2 border-t border-slate-100 mt-2 pt-2">
           <div class="px-3 py-1 text-xs font-bold text-slate-400 uppercase tracking-widest">{labels.services}</div>
-          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href="/ypiresies/psychiatriki-parakolouthisi">{labels.psychiatry}</a>
-          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href="/ypiresies/psychotherapeia">{labels.psychotherapy}</a>
-          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href="/ypiresies/pgx">{labels.pgx_nav}</a>
-          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href="/ypiresies/online-synedria">{labels.online}</a>
-          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href="/ypiresies/gnomateyseis">{labels.certificates}</a>
-          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href="/ypiresies/adhd-evaluation">{labels.adhd_eval}</a>
+          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/ypiresies/psychiatriki-parakolouthisi"}>{labels.psychiatry}</a>
+          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/ypiresies/psychotherapeia"}>{labels.psychotherapy}</a>
+          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/ypiresies/pgx"}>{labels.pgx_nav}</a>
+          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/ypiresies/online-synedria"}>{labels.online}</a>
+          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/ypiresies/gnomateyseis"}>{labels.certificates}</a>
+          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/ypiresies/adhd-evaluation"}>{labels.adhd_eval}</a>
         </div>
         
         <div class="py-2 border-t border-slate-100 mt-2 pt-2">
           <div class="px-3 py-1 text-xs font-bold text-slate-400 uppercase tracking-widest">{labels.rtms}</div>
-          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href="/rtms/core/ti-einai">{labels.how_it_works}</a>
-          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href="/rtms/core/kostos-kai-diadikasia">{labels.cost}</a>
-          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href="/rtms/core/syxnes">{labels.faq}</a>
+          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/rtms/core/ti-einai"}>{labels.how_it_works}</a>
+          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/rtms/core/kostos-kai-diadikasia"}>{labels.cost}</a>
+          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/rtms/core/syxnes"}>{labels.faq}</a>
         </div>
         
         <div class="border-t border-slate-100 mt-2 pt-2">
-          <a class="block px-3 py-2.5 text-base font-semibold text-slate-800 hover:bg-slate-50 hover:text-blue-700 rounded-lg" href="/diataraxes">Διαταραχές</a>
-          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href="/diataraxes/agxodeis-diataraxes">Αγχώδεις Διαταραχές</a>
-          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href="/diataraxes/adhd-adult">ΔΕΠΥ Ενηλίκων</a>
-          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href="/diataraxes/anoies-diataraxes-mnimis">Άνοιες &amp; Διαταραχές Μνήμης</a>
-          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href="/diataraxes/diataraxes-proslipsis-trofis">Διαταραχές Πρόσληψης Τροφής</a>
-          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href="/diataraxes/diataraxes-ypnou">Διαταραχές Ύπνου</a>
+          <a class="block px-3 py-2.5 text-base font-semibold text-slate-800 hover:bg-slate-50 hover:text-blue-700 rounded-lg" href={langPrefix + "/diataraxes"}>{labels.disorders}</a>
+          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/diataraxes/agxodeis-diataraxes"}>{currentLocale === 'el' ? 'Αγχώδεις Διαταραχές' : 'Anxiety Disorders'}</a>
+          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/diataraxes/adhd-adult"}>{currentLocale === 'el' ? 'ΔΕΠΥ Ενηλίκων' : 'Adult ADHD'}</a>
+          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/diataraxes/anoies-diataraxes-mnimis"}>{currentLocale === 'el' ? 'Άνοιες & Διαταραχές Μνήμης' : 'Dementia & Memory'}</a>
+          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/diataraxes/diataraxes-proslipsis-trofis"}>{currentLocale === 'el' ? 'Διαταραχές Πρόσληψης Τροφής' : 'Eating Disorders'}</a>
+          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/diataraxes/diataraxes-ypnou"}>{currentLocale === 'el' ? 'Διαταραχές Ύπνου' : 'Sleep Disorders'}</a>
           <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href="/diataraxes/dipoliki-diatarachi">Διπολική Διαταραχή</a>
           <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href="/diataraxes/ideopsychanagkastiki-diatarachi">Ιδεοψυχαναγκαστική Διαταραχή (OCD)</a>
           <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href="/diataraxes/katathlipsi">Κατάθλιψη</a>
