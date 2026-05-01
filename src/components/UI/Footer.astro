@@ -1,9 +1,6 @@
 ---
 const { currentLocale } = Astro;
 
-const allDisorders = await getCollection('disorders');
-const allServices = await getCollection('services');
-
 const t = {
   el: {
     bio_title: "ΜΗΝΥΜΑ ΑΠΟ ΤΟΝ ΙΑΤΡΟ",
@@ -50,6 +47,12 @@ const t = {
 };
 
 const labels = t[currentLocale] || t.el;
+const isGreek = !currentLocale || currentLocale === 'el';
+
+import { getCollection } from 'astro:content';
+
+const allDisorders = await getCollection('disorders');
+const allServices = await getCollection('services');
 
 // Manual mapping for titles to match the image exactly
 const disorderTitles = {
@@ -116,12 +119,10 @@ const serviceTitles = {
 const currentDisorderTitles = disorderTitles[currentLocale] || disorderTitles.el;
 const currentServiceTitles = serviceTitles[currentLocale] || serviceTitles.el;
 
-// Map and Sort - Filter only translated if in EN/IT? 
-// For now, let's show all but use localized title if available, otherwise Greek fallback
+// Map and Sort
 const disorders = allDisorders
   .map(d => ({ ...d, displayTitle: currentDisorderTitles[d.id.toLowerCase()] || d.data.title }))
-  .sort((a, b) => a.displayTitle.localeCompare(b.displayTitle, currentLocale || 'el'))
-  .slice(0, 10); // Limit to top 10 for footer space
+  .sort((a, b) => a.displayTitle.localeCompare(b.displayTitle, currentLocale || 'el'));
 
 const services = allServices
   .map(s => ({ ...s, displayTitle: currentServiceTitles[s.id.toLowerCase()] || s.data.title }))
@@ -163,7 +164,7 @@ const services = allServices
       <div class="footer-col">
         <h3 class="footer-col-title uppercase">{labels.resources_title}</h3>
         <ul class="footer-links">
-          { (currentLocale === 'el' || !currentLocale) && (
+          { isGreek && (
             <li><a href="/psychometrika" class="footer-highlight-link">{labels.psychometrics} &rarr;</a></li>
           )}
           <li><a href="/KnowledgeBase-eBooks">{labels.library}</a></li>
