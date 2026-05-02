@@ -1,55 +1,55 @@
 ---
 title: "What are rTMS and iTBS?"
-description: "Learn what rTMS and iTBS are, what their main differences are, and how these approved non-invasive neuromodulation treatments are applied in practice without anaesthesia."
+description: "Learn what rTMS and iTBS are, their main differences, and how these approved non-invasive neuromodulation treatments are applied in practice without anaesthesia."
 order: 10
 ---
 
-Repetitive transcranial magnetic stimulation (rTMS) is an FDA-approved, non-invasive medical treatment that uses powerful magnetic fields to stimulate targeted nerve cells in the brain. **iTBS (intermittent theta burst stimulation)** is its technological evolution: a protocol that can deliver similarly strong therapeutic effects in only 3 minutes.
+Repetitive Transcranial Magnetic Stimulation (rTMS) is an FDA-approved, non-invasive medical treatment that uses powerful magnetic fields to selectively stimulate nerve cells in the brain. **iTBS (intermittent theta burst stimulation)** is its technological evolution, a protocol that delivers similarly strong therapeutic effects in only 3 minutes.
 
-Both methods are performed in the clinic, while the patient remains fully awake, **without any need for anaesthesia, systemic pharmacotherapy, or hospital admission**. They offer a highly safe alternative for treatment-resistant depression and obsessive-compulsive disorder (OCD).
+Both methods are performed in the clinic while the patient is fully awake, **without the need for anaesthesia, systemic pharmacotherapy, or hospitalization**. They offer a highly safe alternative for treatment-resistant depression and obsessive-compulsive disorder (OCD).
 
 ---
 
 ## Brief definition of rTMS
 
-rTMS works according to the principles of physics and electromagnetism. A special coil is placed on the patient’s scalp. This coil generates a brief, powerful, changing magnetic field, similar to that used in magnetic resonance imaging, approximately 1.5–2.5 Tesla.
+rTMS works according to the principles of physics and electromagnetism. A specialized coil is placed on the patient’s scalp. This coil generates an instantaneous and powerful changing magnetic field, similar to that used in magnetic resonance imaging, approximately 1.5–2.5 Tesla.
 
-The magnetic field passes through the skull unobstructed and creates a very small electrical current in the neurons of the underlying cortex. By repeating these pulses, the psychiatrist can directly influence specific brain regions — increasing or decreasing their excitability — such as the dorsolateral prefrontal cortex. In this way, **neuroplasticity** is activated and the normal function of neural networks involved in depression can be restored.
+The magnetic field passes through the skull without obstruction and induces a very small electrical current in the neurons of the underlying cortex. By repeating these pulses, the psychiatrist can directly influence — either increasing or decreasing — the excitability of specific brain regions, such as the dorsolateral prefrontal cortex. In this way, **neuroplasticity** is activated and the normal function of neural networks involved in depression is restored.
 
 ---
 
 ## What is the difference between rTMS and iTBS?
 
-The main difference lies in the duration and the pulse pattern:
+The main difference lies in treatment time and pulse pattern:
 
-- **Classical rTMS (10 Hz):** Delivers magnetic pulses at a fixed frequency of 10 pulses per second. A standard session for depression lasts from 19 to nearly 40 minutes.
-- **iTBS (theta burst):** Instead of fixed pulses, it delivers “bursts” of pulses in a specific rhythm, the theta rhythm at 5 Hz, which mimics one of the brain’s natural communication frequencies, the hippocampal theta rhythm. Because of this biological compatibility, iTBS can achieve the same enhancement of neuroplasticity in **only 3 minutes**.
+- **Classic rTMS (10 Hz):** Delivers magnetic pulses at a fixed frequency of 10 pulses per second. A classic depression-treatment session usually lasts from 19 to almost 40 minutes.
+- **iTBS (theta burst):** Instead of fixed pulses, it delivers “bursts” of pulses in a specific rhythm — theta rhythm, 5 Hz — which mimics the brain’s natural communication frequency, the hippocampal theta rhythm. Because of this biological “compatibility,” iTBS achieves the same enhancement of neuroplasticity in **only 3 minutes**.
 
-Both protocols have comparable efficacy, as shown in the large THREE-D clinical trial in 2018, but iTBS is considerably more patient-friendly because of the minimal time spent in the treatment chair.
+Both protocols have comparable effectiveness, as shown in the large THREE-D clinical trial in 2018, but iTBS is significantly more patient-friendly because it minimizes the time spent in the treatment chair.
 
 ---
 
-## What happens during a session?
+## How a session is performed in practice
 
-The procedure is designed to interfere as little as possible with your daily routine:
+The procedure is designed to cause the least possible disruption to your daily routine:
 
-1. **No preparation is required:** You may eat and drink normally before coming to the centre.
-2. **Comfort during treatment:** You sit in a dedicated, comfortable chair, similar to a dental chair, while remaining fully awake.
-3. **Application:** The physician accurately identifies the target area on your head. During pulse delivery, you will hear an intermittent sound, similar to the clicking sound of an MRI scanner, and feel a light tapping sensation on the scalp. It does not cause pain, apart from possible temporary discomfort during the first sessions.
-4. **Immediate return to activity:** Once the 3-minute iTBS session, or the corresponding protocol, is completed, you get up and can drive or return to work immediately. There is no effect on mental clarity.
+1. **No preparation is required:** You can eat and drink normally before coming to the centre.
+2. **Comfort during the session:** You sit in a special, comfortable chair, similar to a dental chair, while fully awake.
+3. **Application:** The physician precisely identifies the target area on your head. During pulse delivery, you will hear an intermittent sound, similar to the clicking of an MRI scanner, and feel a light “tapping” sensation on the scalp. It does not cause pain, although there may be temporary discomfort during the first sessions.
+4. **Immediate return to activities:** Once the 3-minute iTBS session, or the corresponding protocol, is completed, you can stand up, drive, and return to work immediately. There is no effect on your mental clarity.
 
 ---
 
 ## Who may be a candidate for treatment?
 
-Treatment, whether classical rTMS or iTBS, is mainly indicated for:
+Treatment, whether classic rTMS or iTBS, is mainly indicated for:
 
-- Patients with **treatment-resistant depression (TRD)**, meaning they have already tried at least two different antidepressant medications without satisfactory response.
-- Patients who cannot tolerate **medication side effects**, such as gastrointestinal problems, weight gain, or sexual dysfunction.
+- Patients with **treatment-resistant depression (TRD)**, meaning they have already tried at least two different antidepressant medications without satisfactory benefit.
+- Patients who cannot tolerate **medication side effects**, such as gastrointestinal symptoms, weight gain, or sexual dysfunction.
 - Patients with **obsessive-compulsive disorder (OCD)** who show resistance to pharmacotherapy.
-- Cases where medication use carries increased risk, such as **during pregnancy**.
+- Situations where medication use carries risks, such as **pregnancy**.
 
-> **Who cannot undergo rTMS:** People with non-removable metal objects in the head or neck, such as cochlear implants or aneurysm clips, or those with an active medical history of epilepsy or seizures.
+> **Who cannot receive rTMS:** people with non-removable metallic objects in the head or neck, such as cochlear implants or aneurysm clips, or those with an active medical history of epilepsy or seizures.
 
 ---
 
@@ -61,3 +61,34 @@ If you believe rTMS may be the next step in your treatment, learn more through o
 - [Safety and side effects](/en/rtms/core/asfaleia-parenergeies)
 - [Cost and procedure](/en/rtms/core/kostos-kai-diadikasia)
 - [Frequently asked questions](/en/rtms/core/syxnes)
+
+---
+
+## rTMS guide
+
+### Core concepts
+- [What are rTMS and iTBS?](/en/rtms/core/ti-einai)
+- [Safety & side effects — what to expect](/en/rtms/core/asfaleia-parenergeies)
+- [rTMS: cost and procedure](/en/rtms/core/kostos-kai-diadikasia)
+- [Frequently asked questions (FAQ) about rTMS](/en/rtms/core/syxnes)
+
+### Treatment indications
+- [rTMS for depression (MDD)](/en/rtms/endixeis/katathlipsi)
+- [Chronic pain](/en/rtms/endixeis/ponos)
+- [Obsessive-compulsive disorder (OCD)](/en/rtms/endixeis/ocd)
+- [Cocaine addiction](/en/rtms/endixeis/kokaini)
+- [Treatment-resistant depression (TRD)](/en/rtms/endixeis/trd)
+
+### How it works
+- [Neuroplasticity](/en/rtms/pos-leitourgei/neuroplasticity)
+- [The role of the DLPFC](/en/rtms/pos-leitourgei/dlpfc)
+- [Motor threshold](/en/rtms/pos-leitourgei/motor-threshold)
+- [Motor evoked potential (MEP)](/en/rtms/pos-leitourgei/mep)
+- [Neural oscillations](/en/rtms/pos-leitourgei/neural-oscillations)
+- [Brain connectivity](/en/rtms/pos-leitourgei/brain-connectivity)
+- [Neuromodulation](/en/rtms/pos-leitourgei/neuromodulation)
+
+### Book an appointment
+Find out whether this treatment is suitable for your condition.
+
+[Contact](/en/contact)
