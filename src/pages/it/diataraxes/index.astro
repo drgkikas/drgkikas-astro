@@ -1,0 +1,114 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/UI/Header.astro';
+import Footer from '../../../components/UI/Footer.astro';
+
+const disorders = await getCollection('disorders', ({ id }) => id.startsWith('it/'));
+
+// Fallback for missing translations in the collection
+const staticDisorders = [
+  {
+    id: "adhd-adult",
+    title: "ADHD negli adulti",
+    description: "L’ADHD negli adulti non è mancanza di volontà, ma una condizione del neurosviluppo. Μάθετε πώς επηρεάζει τις εκτελεστικές λειτουργίες."
+  },
+  {
+    id: "agxodeis-diataraxes",
+    title: "Disturbi d’ansia: sintomi e trattamento",
+    description: "Disturbi d’ansia: GAD, attacchi di panico, ansia sociale e agorafobia. Approccio neurobiologico, farmacogenomica e rTMS."
+  },
+  {
+    id: "anoies-diataraxes-mnimis",
+    title: "Demenza e disturbi della memoria — Alzheimer, MCI",
+    description: "Demenza, malattia di Alzheimer e decadimento cognitivo lieve (MCI): diagnosi, neurobiologia e opzioni terapeutiche moderne."
+  },
+  {
+    id: "body-dysmorphic",
+    title: "Complesso di Tersite — Disturbo da dismorfismo corporeo",
+    description: "Il disturbo da dismorfismo corporeo (BDD) è una preoccupazione intensa e compulsiva per “difetti” fisici immaginari."
+  },
+  {
+    id: "diatarachi-xrisis-alkool",
+    title: "Disturbo da uso di alcol: dipendenza e sospensione",
+    description: "Disturbo da uso di alcol, dipendenza e recupero. Neurobiologia, sindrome da astinenza e trattamento moderno."
+  },
+  {
+    id: "diatarachi-xrisis-kokainis",
+    title: "Disturbo da uso di cocaina e stimolanti",
+    description: "L’uso di cocaina rappresenta un grave disturbo psichiatrico con una base neurobiologica ad Atene."
+  },
+  {
+    id: "diataraxes-proslipsis-trofis",
+    title: "Disturbi del comportamento alimentare — anoressia, bulimia",
+    description: "Anoressia nervosa, bulimia nervosa e disturbo da alimentazione incontrollata. Base neurobiologica e opzioni terapeutiche."
+  },
+  {
+    id: "diataraxes-ypnou",
+    title: "Disturbi del sonno: insonnia e apnea",
+    description: "Insonnia, apnea del sonno, narcolessia e parasonnie. Diagnosi e trattamento specialistico dei disturbi del sonno."
+  },
+  {
+    id: "dipoliki-diatarachi",
+    title: "Disturbo bipolare: sintomi e trattamento",
+    description: "Disturbo bipolare di tipo I e II, ciclotimia. Approccio neurobiologico, stabilizzatori dell’umore και rTMS."
+  },
+  {
+    id: "ideopsychanagkastiki-diatarachi",
+    title: "Disturbo ossessivo-compulsivo (OCD)",
+    description: "Disturbo ossessivo-compulsivo (OCD). Ossessioni, compulsioni, neurobiologia e trattamento moderno."
+  },
+  {
+    id: "katathlipsi",
+    title: "Depressione (MDD)",
+    description: "Il disturbo depressivo maggiore è una condizione neurobiologica. Scopri le linee moderne di trattamento."
+  },
+  {
+    id: "pmdd",
+    title: "PMDD — Disturbo disforico premestruale",
+    description: "PMDD, disturbo disforico premestruale. Neurobiologia, diagnosi differenziale e trattamento personalizzato."
+  },
+  {
+    id: "psychosomatikes-ekdiloseis",
+    title: "Manifestazioni psicosomatiche",
+    description: "Sintomi fisici reali con una causa psicologica. Lo psichiatra Paschalis Gkikas valuta e tratta i disturbi psicosomatici."
+  },
+  {
+    id: "psychotikes-diataraxes",
+    title: "Disturbi psicotici: schizofrenia e psicosi",
+    description: "I disturbi psicotici, inclusa la schizofrenia, possono essere condizioni ben gestibili con una significativa impronta neurobiologica."
+  }
+];
+
+const displayDisorders = staticDisorders.map(sd => {
+  const collectionEntry = disorders.find(d => d.id === `it/${sd.id}`);
+  return collectionEntry ? { id: sd.id, data: collectionEntry.data } : sd;
+});
+---
+
+<Layout title="Disturbi psichiatrici | Paschalis Gkikas" description="Scopri i sintomi e i moderni approcci terapeutici per depressione, ansia, OCD e altre condizioni psichiatriche. Informazioni dal dott. Paschalis Gkikas.">
+  <Header />
+  <main class="py-24 bg-slate-50 min-h-screen">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+      <h1 class="text-4xl font-bold text-slate-900 mb-4">Disturbi psichiatrici</h1>
+      <p class="text-lg text-slate-600 mb-12">Riconoscere i sintomi è il primo passo. Scopri di più.</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {displayDisorders.map(dis => (
+          <a href={`/it/diataraxes/${dis.id}/`} class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md hover:border-blue-400 transition-all group block">
+            <h2 class="text-xl font-bold text-blue-900 mb-3 group-hover:text-blue-700">{dis.title || dis.data.title} &rarr;</h2>
+            <p class="text-slate-600 line-clamp-2">{dis.description || dis.data.description}</p>
+          </a>
+        ))}
+      </div>
+
+      <div class="mt-20 p-8 bg-blue-50 rounded-3xl border border-blue-100 text-center">
+        <h3 class="text-2xl font-bold text-blue-900 mb-4">Messaggio del medico</h3>
+        <p class="text-lg text-slate-700 max-w-3xl mx-auto italic">
+          In questo sito puoi trovare informazioni utili sulla salute mentale. Naviga liberamente e non esitare a contattarmi per qualsiasi chiarimento. Buona consultazione.
+        </p>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

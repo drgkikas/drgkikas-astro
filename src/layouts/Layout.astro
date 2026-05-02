@@ -23,7 +23,7 @@ const socialImageURL = new URL(image, 'https://drgkikas.com').href;
 ---
 
 <!doctype html>
-<html lang="el" class="scroll-smooth">
+<html lang={Astro.currentLocale || 'el'} class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -44,7 +44,7 @@ const socialImageURL = new URL(image, 'https://drgkikas.com').href;
     <meta property="og:url" content={canonical} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Πασχάλης Γκίκας | Ψυχίατρος Αθήνα" />
-    <meta property="og:locale" content="el_GR" />
+    <meta property="og:locale" content={Astro.currentLocale === 'en' ? 'en_US' : Astro.currentLocale === 'it' ? 'it_IT' : 'el_GR'} />
 
     <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image" />

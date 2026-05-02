@@ -1,0 +1,116 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/UI/Header.astro';
+import Footer from '../../../components/UI/Footer.astro';
+
+const disorders = await getCollection('disorders', ({ id }) => id.startsWith('en/'));
+
+// Fallback for missing translations in the collection (until they are all added)
+const staticDisorders = [
+  {
+    id: "adhd-adult",
+    title: "Adult ADHD",
+    description: "Adult ADHD is not a lack of willpower, but a neurodevelopmental condition. Learn how it affects executive functions and why accurate clinical diagnosis matters."
+  },
+  {
+    id: "agxodeis-diataraxes",
+    title: "Anxiety Disorders: Symptoms & Treatment",
+    description: "Anxiety disorders: GAD, panic attacks, social anxiety and agoraphobia. A neurobiological approach, pharmacogenomics and rTMS."
+  },
+  {
+    id: "anoies-diataraxes-mnimis",
+    title: "Dementia & Memory Disorders",
+    description: "Dementia, Alzheimer’s disease and Mild Cognitive Impairment (MCI): diagnosis, neurobiology and modern treatment options."
+  },
+  {
+    id: "body-dysmorphic",
+    title: "Body Dysmorphic Disorder (BDD)",
+    description: "Body Dysmorphic Disorder (BDD) is an intense, compulsive preoccupation with imagined or minimally visible physical “defects”."
+  },
+  {
+    id: "diatarachi-xrisis-alkool",
+    title: "Alcohol Use Disorder",
+    description: "Alcohol use disorder, dependence and recovery. Neurobiology, withdrawal syndrome and modern treatment."
+  },
+  {
+    id: "diatarachi-xrisis-kokainis",
+    title: "Cocaine and Stimulant Use Disorder",
+    description: "Cocaine use is a serious psychiatric disorder with a neurobiological basis. Specialized assessment and treatment."
+  },
+  {
+    id: "diataraxes-proslipsis-trofis",
+    title: "Eating Disorders — Anorexia, Bulimia",
+    description: "Anorexia nervosa, bulimia nervosa and binge eating disorder. Neurobiological basis and modern treatment options."
+  },
+  {
+    id: "diataraxes-ypnou",
+    title: "Sleep Disorders: Insomnia & Apnea",
+    description: "Insomnia, sleep apnea, narcolepsy and parasomnias. Specialized diagnosis and treatment of sleep disorders."
+  },
+  {
+    id: "dipoliki-diatarachi",
+    title: "Bipolar Disorder",
+    description: "Bipolar disorder type I and type II, cyclothymia. A neurobiological approach and modern mood stabilizers."
+  },
+  {
+    id: "ideopsychanagkastiki-diatarachi",
+    title: "Obsessive-Compulsive Disorder (OCD)",
+    description: "Obsessions, compulsions, neurobiology and modern treatment with ERP, SSRIs and rTMS."
+  },
+  {
+    id: "katathlipsi",
+    title: "Depression (MDD)",
+    description: "Major Depressive Disorder is a neurobiological condition. Discover modern lines of treatment."
+  },
+  {
+    id: "pmdd",
+    title: "PMDD — Premenstrual Dysphoric Disorder",
+    description: "Neurobiology, differential diagnosis and personalized treatment for Premenstrual Dysphoric Disorder."
+  },
+  {
+    id: "psychosomatikes-ekdiloseis",
+    title: "Psychosomatic Manifestations",
+    description: "Real physical symptoms with psychological causation. Assessment and treatment with an integrated approach."
+  },
+  {
+    id: "psychotikes-diataraxes",
+    title: "Psychotic Disorders: Schizophrenia",
+    description: "Psychotic disorders, including schizophrenia, can be well-managed conditions with specialized treatment."
+  }
+];
+
+// Merge collection data with static fallback
+const displayDisorders = staticDisorders.map(sd => {
+  const collectionEntry = disorders.find(d => d.id === `en/${sd.id}`);
+  return collectionEntry ? { id: sd.id, data: collectionEntry.data } : sd;
+});
+
+---
+
+<Layout title="Mental Health Disorders | Paschalis Gkikas" description="Learn about the symptoms and modern therapeutic approaches for depression, anxiety, OCD and other psychiatric conditions.">
+  <Header />
+  <main class="py-24 bg-slate-50 min-h-screen">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+      <h1 class="text-4xl font-bold text-slate-900 mb-4">Mental Health Disorders</h1>
+      <p class="text-lg text-slate-600 mb-12">Recognizing symptoms is the first step. Learn more.</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {displayDisorders.map(dis => (
+          <a href={`/en/diataraxes/${dis.id}/`} class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md hover:border-blue-400 transition-all group block">
+            <h2 class="text-xl font-bold text-blue-900 mb-3 group-hover:text-blue-700">{dis.title || dis.data.title} &rarr;</h2>
+            <p class="text-slate-600 line-clamp-2">{dis.description || dis.data.description}</p>
+          </a>
+        ))}
+      </div>
+
+      <div class="mt-20 p-8 bg-blue-50 rounded-3xl border border-blue-100 text-center">
+        <h3 class="text-2xl font-bold text-blue-900 mb-4">Message from the doctor</h3>
+        <p class="text-lg text-slate-700 max-w-3xl mx-auto italic">
+          On this website you can find useful information about mental health. Browse freely and do not hesitate to contact me for any clarification. Enjoy your visit.
+        </p>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
