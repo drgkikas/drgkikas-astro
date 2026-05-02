@@ -118,7 +118,7 @@ const labels = t[currentLocale] || t.el;
       </div>
 
       <!-- Desktop Nav -->
-      <nav class="hidden md:flex space-x-3 lg:space-x-4 xl:space-x-6 items-center text-sm lg:text-base">
+      <nav class="hidden md:flex space-x-2 lg:space-x-4 items-center text-xs lg:text-sm xl:text-base">
         <a href={langPrefix + "/"} class="text-slate-600 hover:text-blue-700 font-medium transition-colors">{labels.home}</a>
         
         <!-- Ιατρός Dropdown -->
@@ -217,12 +217,12 @@ const labels = t[currentLocale] || t.el;
         </div>
 
         { (currentLocale === 'el' || !currentLocale) && (
-          <a href={langPrefix + "/psychometrika"} class="text-blue-700 font-bold transition-colors bg-blue-50 px-3 py-1.5 rounded-lg hover:bg-blue-100">{labels.psychometrics}</a>
+          <a href={langPrefix + "/psychometrika"} class="text-blue-700 font-bold transition-colors bg-blue-50 px-2.5 py-1.5 rounded-lg hover:bg-blue-100 text-[13px] xl:text-sm">{labels.psychometrics}</a>
         )}
         <!-- Knowledge Base Special Item -->
-        <a href={langPrefix + "/KnowledgeBase-eBooks"} class="flex flex-col items-center justify-center group/kb px-3 py-1 rounded-xl hover:bg-slate-50 transition-all duration-300 relative mx-1">
-          <span class="text-[9px] font-black uppercase tracking-[0.15em] text-slate-400 group-hover/kb:text-blue-500 transition-colors leading-none mb-0.5">Knowledge Base</span>
-          <span class="text-[13px] font-extrabold text-slate-700 group-hover/kb:text-slate-900 transition-colors leading-none tracking-tight">
+        <a href={langPrefix + "/KnowledgeBase-eBooks"} class="flex flex-col items-center justify-center group/kb px-2 py-1 rounded-xl hover:bg-slate-50 transition-all duration-300 relative mx-0.5">
+          <span class="text-[8px] xl:text-[9px] font-black uppercase tracking-[0.1em] text-slate-400 group-hover/kb:text-blue-500 transition-colors leading-none mb-0.5 whitespace-nowrap">Knowledge Base</span>
+          <span class="text-[12px] xl:text-[13px] font-extrabold text-slate-700 group-hover/kb:text-slate-900 transition-colors leading-none tracking-tight whitespace-nowrap">
             <span class="text-blue-600 group-hover/kb:text-blue-700">&</span> eBooks
           </span>
           <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-blue-600 group-hover/kb:w-1/2 transition-all duration-500 rounded-full"></div>
@@ -251,8 +251,10 @@ const labels = t[currentLocale] || t.el;
       </nav>
 
       <!-- CTA Contact -->
-      <div class="hidden md:flex items-center">
-        <a href="https://appt.link/meet-with-paschalis-gkikas/therapy-session" target="_blank" rel="noopener noreferrer" class="btn-primary px-5 py-2.5 text-sm" aria-label={labels.contact_btn}>{labels.contact_btn}</a>
+      <div class="hidden md:flex items-center ml-2 xl:ml-4">
+        <a href="https://appt.link/meet-with-paschalis-gkikas/therapy-session" target="_blank" rel="noopener noreferrer" class="btn-primary px-4 py-2 text-[13px] xl:text-sm text-center leading-tight min-w-[150px] flex items-center justify-center" aria-label={labels.contact_btn}>
+          {labels.contact_btn}
+        </a>
       </div>
 
       <!-- Mobile Menu Button -->
