@@ -141,8 +141,6 @@ const labels = t[currentLocale] || t.el;
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
           </a>
           <div class="absolute top-full left-0 w-64 bg-white shadow-xl rounded-xl border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-left -translate-y-2 group-hover:translate-y-0 p-2 z-50">
-            <a href={langPrefix + "/rtms/core/ti-einai"} class="block px-4 py-2 text-sm text-blue-700 font-bold hover:bg-blue-50 rounded-lg">{labels.what_is_rtms}</a>
-            <div class="my-1 border-b border-slate-100"></div>
             <a href={langPrefix + "/ypiresies/psychiatriki-parakolouthisi"} class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{labels.psychiatry}</a>
             <a href={langPrefix + "/ypiresies/psychotherapeia"} class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{labels.psychotherapy}</a>
             <a href={langPrefix + "/ypiresies/pgx"} class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{labels.pgx_nav}</a>
@@ -284,7 +282,6 @@ const labels = t[currentLocale] || t.el;
 
         <div class="py-2 border-t border-slate-100 mt-2 pt-2">
           <div class="px-3 py-1 text-xs font-bold text-slate-400 uppercase tracking-widest">{labels.services}</div>
-          <a class="block pl-5 pr-3 py-2 text-sm text-blue-700 font-bold hover:bg-slate-50 rounded-lg" href={langPrefix + "/rtms/core/ti-einai"}>{labels.what_is_rtms}</a>
           <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/ypiresies/psychiatriki-parakolouthisi"}>{labels.psychiatry}</a>
           <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/ypiresies/psychotherapeia"}>{labels.psychotherapy}</a>
           <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/ypiresies/pgx"}>{labels.pgx_nav}</a>
