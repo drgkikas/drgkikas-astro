@@ -1,0 +1,265 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/UI/Header.astro';
+import Footer from '../../components/UI/Footer.astro';
+
+const schemaBundle = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Physician",
+      "@id": "https://drgkikas.com/en/#physician"
+    },
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://drgkikas.com/en/#clinic",
+      "name": "Paschalis Gkikas Private Practice",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "15A Xenofontos Street",
+        "addressLocality": "Athens",
+        "postalCode": "105 57",
+        "addressCountry": "GR"
+      },
+      "telephone": "+302118500016",
+      "email": "contact@drgkikas.com"
+    }
+  ]
+});
+
+// SSR Handle POST submission
+if (Astro.request.method === 'POST') {
+  try {
+    const body = await Astro.request.json();
+    const { firstname, lastname, email, phone, message } = body;
+
+    let resendKey: string | undefined;
+    try {
+      const cf = await import('cloudflare:workers' as any);
+      resendKey = cf.env?.RESEND_API_KEY;
+    } catch (e) {
+      resendKey = import.meta.env.RESEND_API_KEY;
+    }
+
+    if (!resendKey) throw new Error(`RESEND_API_KEY is missing.`);
+
+    const emailHtml = `<p><strong>From:</strong> ${firstname} ${lastname}</p><p><strong>Email:</strong> ${email}</p><p><strong>Tel:</strong> ${phone}</p><hr/><p>${message}</p>`;
+
+    const resendRes = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: { 'Authorization': `Bearer ${resendKey}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        from: 'CONTACT FORM <noreply@drgkikas.com>',
+        to: ['contact@drgkikas.com', 'paschalis.gkikas@gmail.com'],
+        subject: `Message from ${firstname} ${lastname} (EN)`,
+        html: emailHtml,
+        reply_to: email,
+      }),
+    });
+
+    if (!resendRes.ok) throw new Error('Submission failed.');
+
+    return new Response(JSON.stringify({ success: true }), { status: 200 });
+  } catch (err: any) {
+    return new Response(JSON.stringify({ error: err.message }), { status: 500 });
+  }
+}
+---
+
+<Layout schema={schemaBundle} 
+  title="Contact | Paschalis Gkikas | Psychiatrist Athens"
+  description="Contact psychiatrist Paschalis Gkikas to book your appointment. Clinic in the center of Athens (Syntagma)."
+>
+  <Header />
+
+  <main class="pt-32 pb-24 bg-slate-50 min-h-screen relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-900 rounded-full blur-[120px] opacity-10 pointer-events-none translate-x-1/2 -translate-y-1/2"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="text-center md:text-left mb-16">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">Contact & Appointments</h1>
+        <p class="text-xl text-slate-600 max-w-2xl leading-relaxed">
+          Schedule your appointment. You can contact us by phone, email, or by filling out the contact form.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <div class="lg:col-span-5 space-y-8">
+          <div class="bg-white rounded-3xl shadow-lg border border-slate-200 overflow-hidden">
+            <div class="bg-slate-900 text-white p-6">
+              <h3 class="text-xl font-bold uppercase tracking-widest text-[#d4af37]">Private Practice</h3>
+              <p class="text-slate-300 text-sm mt-1">Paschalis Gkikas, Psychiatrist - Psychotherapist</p>
+            </div>
+            
+            <div class="p-8 space-y-8">
+              <div class="flex items-start gap-4">
+                <div class="mt-1 w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-xl shrink-0 shadow-sm border border-slate-100">📍</div>
+                <div>
+                  <div class="text-xs font-bold text-slate-400 tracking-widest uppercase mb-1">Address</div>
+                  <div class="text-slate-900 font-bold text-lg">15A Xenofontos Street, 105 57</div>
+                  <div class="text-slate-500 font-medium mb-3">Syntagma, Athens, Greece</div>
+                  <a href="https://maps.app.goo.gl/ygEdMyCULtaLUGNCA" target="_blank" rel="noopener noreferrer" class="text-sm font-bold text-[#084a79] hover:text-blue-800 transition-colors inline-flex items-center gap-1 group">
+                    Google Maps Directions <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+              
+              <hr class="border-slate-100" />
+              
+              <div class="flex flex-col gap-5">
+                <div class="flex items-center gap-4">
+                  <div class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-xl shrink-0 shadow-sm border border-slate-100">📞</div>
+                  <div class="flex-1">
+                    <div class="text-xs font-bold text-slate-400 tracking-widest uppercase mb-0.5">Office</div>
+                    <a href="tel:+302118500016" class="text-slate-900 font-bold text-xl hover:text-[#084a79] transition-colors block">+30 211 850 0016</a>
+                  </div>
+                </div>
+                <div class="flex items-center gap-4">
+                  <div class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-xl shrink-0 shadow-sm border border-slate-100">📱</div>
+                  <div class="flex-1">
+                     <div class="text-xs font-bold text-slate-400 tracking-widest uppercase mb-0.5">Mobile</div>
+                     <a href="tel:+306940308700" class="text-slate-900 font-bold text-xl hover:text-[#084a79] transition-colors block">+30 6940 308 700</a>
+                  </div>
+                </div>
+              </div>
+
+              <hr class="border-slate-100" />
+
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-xl shrink-0 shadow-sm border border-slate-100">✉️</div>
+                <div class="flex-1">
+                  <div class="text-xs font-bold text-slate-400 tracking-widest uppercase mb-0.5">E-mail</div>
+                  <a href="mailto:contact@drgkikas.com" class="text-slate-900 font-bold text-lg hover:text-[#084a79] transition-colors">contact@drgkikas.com</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="h-[250px] w-full bg-slate-100 border-t border-slate-200">
+               <iframe src="https://maps.google.com/maps?q=%CE%A8%CF%85%CF%87%CE%AF%CE%B1%CF%84%CF%81%CE%BF%CF%82+-+%CE%A8%CF%85%CF%87%CE%BF%CE%B8%CE%B5%CF%81%CE%B1%CF%80%CE%B5%CF%85%CF%84%CE%AE%CF%82,+%CE%A0%CE%B1%CF%83%CF%87%CE%AC%CE%BB%CE%B7%CF%82+%CE%93%CE%BA%CE%AF%CE%BA%CE%B1%CF%82&t=&z=16&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" class="w-full h-full grayscale-[20%] contrast-[1.1]"></iframe>
+            </div>
+          </div>
+
+          <div class="bg-blue-50/70 p-6 rounded-2xl border border-blue-100 flex items-start gap-4">
+             <div class="mt-1 w-8 h-8 rounded-full bg-blue-100 text-blue-800 flex items-center justify-center text-sm shrink-0">ℹ</div>
+             <div>
+              <h4 class="text-slate-800 font-bold mb-1">rTMS & Smart CNS Center</h4>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Neuromodulation sessions are held exclusively at the specialized facilities of the Smart CNS Center. Contact us for scheduling and any questions.
+              </p>
+             </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7">
+          <div class="bg-white p-8 md:p-12 rounded-3xl shadow-lg border border-slate-100 h-full">
+            <h3 class="text-2xl font-bold text-slate-900 mb-2">Contact Form</h3>
+            <p class="text-slate-500 mb-10 text-sm" id="form-desc">Fields marked with an asterisk (*) are required.</p>
+
+            <div id="success-message" class="hidden">
+              <div class="flex flex-col items-center justify-center py-12 text-center">
+                <div class="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-3xl mb-6 shadow-sm border border-emerald-200">✓</div>
+                <h4 class="text-2xl font-bold text-slate-900 mb-4">Message Sent Successfully!</h4>
+                <p class="text-slate-600 mb-8 max-w-sm">
+                  Thank you for contacting us. Your message has been received and we will get back to you as soon as possible.
+                </p>
+                <button onclick="window.location.reload()" class="text-[#084a79] font-bold hover:underline">Back to form</button>
+              </div>
+            </div>
+
+            <div id="error-message" class="hidden mb-8 bg-red-50 border border-red-100 text-red-700 px-6 py-4 rounded-xl text-sm font-medium">
+               <span id="error-text">Something went wrong.</span> Please try again or call us at <a href="tel:+302118500016" class="underline">+30 211 850 0016</a>.
+            </div>
+
+            <form id="contact-form" class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="firstname" class="block text-sm font-medium text-slate-700 mb-2">First Name *</label>
+                  <input type="text" id="firstname" name="firstname" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-[#084a79] focus:border-[#084a79] outline-none transition-shadow" placeholder="e.g. John">
+                </div>
+                <div>
+                  <label for="lastname" class="block text-sm font-medium text-slate-700 mb-2">Last Name *</label>
+                  <input type="text" id="lastname" name="lastname" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-[#084a79] focus:border-[#084a79] outline-none transition-shadow" placeholder="e.g. Smith">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="email" class="block text-sm font-medium text-slate-700 mb-2">E-mail *</label>
+                  <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-[#084a79] focus:border-[#084a79] outline-none transition-shadow" placeholder="email@example.com">
+                </div>
+                <div>
+                  <label for="phone" class="block text-sm font-medium text-slate-700 mb-2">Phone *</label>
+                  <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-[#084a79] focus:border-[#084a79] outline-none transition-shadow" placeholder="e.g. +30 6900000000">
+                </div>
+              </div>
+
+              <div>
+                <label for="message" class="block text-sm font-medium text-slate-700 mb-2">Your Message *</label>
+                <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-[#084a79] focus:border-[#084a79] outline-none transition-shadow resize-none" placeholder="How can we help you?"></textarea>
+              </div>
+
+              <div class="flex items-start">
+                <div class="flex items-center h-5">
+                  <input id="privacy" name="privacy" type="checkbox" required class="w-4 h-4 border border-slate-300 rounded bg-white text-[#084a79] focus:ring-3 focus:ring-blue-300">
+                </div>
+                <label for="privacy" class="ml-3 text-sm text-slate-600">
+                  I accept the <a href="/en/privacy-policy" class="text-[#084a79] hover:underline font-bold">Terms of Use and Privacy Policy *</a>.
+                </label>
+              </div>
+
+              <button type="submit" class="w-full btn-primary bg-[#084a79] hover:bg-[#063354] text-white py-4 rounded-xl text-lg font-bold mt-4 shadow-lg shadow-[#084a79]/30 transition-all hover:-translate-y-1">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const successMsg = document.getElementById('success-message');
+  const errorMsg = document.getElementById('error-message');
+  const formDesc = document.getElementById('form-desc');
+  const submitBtn = form?.querySelector('button[type="submit"]') as HTMLButtonElement;
+
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      errorMsg?.classList.add('hidden');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `<svg class="animate-spin h-5 w-5 mr-3 inline-block" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Sending...`;
+      }
+      try {
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+        const response = await fetch('/en/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        const result = await response.json();
+        if (response.ok) {
+          form.classList.add('hidden');
+          formDesc?.classList.add('hidden');
+          successMsg?.classList.remove('hidden');
+          window.scrollTo({ top: form.offsetTop - 100, behavior: 'smooth' });
+        } else {
+          throw new Error(result.error || 'Submission failed');
+        }
+      } catch (err: any) {
+        const errorText = document.getElementById('error-text');
+        if (errorText) errorText.textContent = err.message + '. ';
+        errorMsg?.classList.remove('hidden');
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send Message';
+        }
+      }
+    });
+  }
+</script>
