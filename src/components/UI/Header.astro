@@ -227,7 +227,9 @@ const labels = t[currentLocale] || t.el;
           </span>
           <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-blue-600 group-hover/kb:w-1/2 transition-all duration-500 rounded-full"></div>
         </a>
-        <a href={langPrefix + "/arthra-blog"} class="text-slate-600 hover:text-blue-700 font-medium transition-colors">{labels.blog}</a>
+        { (currentLocale === 'el' || !currentLocale) && (
+          <a href={langPrefix + "/arthra-blog"} class="text-slate-600 hover:text-blue-700 font-medium transition-colors">{labels.blog}</a>
+        )}
 
         <!-- Language Switcher -->
         <div class="relative group py-6 ml-1">
