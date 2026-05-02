@@ -1,22 +1,22 @@
 ---
 import { getCollection } from 'astro:content';
-import Layout from '../../layouts/Layout.astro';
-import Header from '../../components/UI/Header.astro';
-import Footer from '../../components/UI/Footer.astro';
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/UI/Header.astro';
+import Footer from '../../../components/UI/Footer.astro';
 
 const allRtmsPages = await getCollection('rtms', ({ id }) => {
-  return !id.startsWith('en/') && !id.startsWith('it/');
+  return id.startsWith('en/');
 });
 
 // Categorize pages based on their directory/id
-const corePages = allRtmsPages.filter(p => p.id.startsWith('core/'));
-const endixeisPages = allRtmsPages.filter(p => p.id.startsWith('endixeis/'));
-const posLeitourgeiPages = allRtmsPages.filter(p => p.id.startsWith('pos-leitourgei/'));
+const corePages = allRtmsPages.filter(p => p.id.startsWith('en/core/')).sort((a,b)=> (a.data.order||0) - (b.data.order||0));
+const endixeisPages = allRtmsPages.filter(p => p.id.startsWith('en/endixeis/')).sort((a,b)=> (a.data.order||0) - (b.data.order||0));
+const posLeitourgeiPages = allRtmsPages.filter(p => p.id.startsWith('en/pos-leitourgei/')).sort((a,b)=> (a.data.order||0) - (b.data.order||0));
 ---
 
 <Layout 
-  title="rTMS Νευροτροποποίηση & Hub Θεραπείας" 
-  description="Ολοκληρωμένος οδηγός rTMS (Επαναληπτικός Διακρανιακός Μαγνητικός Ερεθισμός) στην Αθήνα. Ενδείξεις για κατάθλιψη, OCD και πώς λειτουργεί η μη επεμβατική νευροτροποποίηση."
+  title="rTMS Neuromodulation & Treatment Hub" 
+  description="Comprehensive guide to rTMS (Repetitive Transcranial Magnetic Stimulation) in Athens. Indications for depression, OCD, and how non-invasive neuromodulation works."
 >
   <Header />
 
@@ -30,13 +30,13 @@ const posLeitourgeiPages = allRtmsPages.filter(p => p.id.startsWith('pos-leitour
         <div class="max-w-4xl">
           <span class="text-red-700 font-bold tracking-widest text-xs uppercase mb-4 block">Topical Hub: rTMS / iTBS</span>
           <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mb-8 tracking-tight leading-tight">
-            rTMS Νευροτροποποίηση: <br class="hidden md:block"/>
-            Η Σύγχρονη Θεραπεία στην Αθήνα
+            rTMS Neuromodulation: <br class="hidden md:block"/>
+            Modern Treatment in Athens
           </h1>
           
           <div class="prose prose-xl prose-slate mb-10 text-slate-700 leading-relaxed font-light">
             <p>
-              Ο Επαναληπτικός Διακρανιακός Μαγνητικός Ερεθισμός (rTMS) είναι μια <strong>μη επεμβατική, ανώδυνη και εγκεκριμένη από τον FDA</strong> θεραπεία που χρησιμοποιεί μαγνητικά πεδία για να διεγείρει στοχευμένα νευρικά κύτταρα στον εγκέφαλο. Στο Smart CNS Center στην Αθήνα, εφαρμόζουμε εξατομικευμένα πρωτόκολλα νευροτροποποίησης για ασθενείς που δεν ανταποκρίνονται επαρκώς στη φαρμακευτική αγωγή.
+              Repetitive Transcranial Magnetic Stimulation (rTMS) is a <strong>non-invasive, painless, and FDA-approved</strong> treatment that uses magnetic fields to stimulate targeted nerve cells in the brain. At Smart CNS Center in Athens, we apply individualized neuromodulation protocols for patients who do not respond sufficiently to medication.
             </p>
           </div>
 
@@ -44,15 +44,15 @@ const posLeitourgeiPages = allRtmsPages.filter(p => p.id.startsWith('pos-leitour
           <div class="bg-red-50/80 border border-red-100 rounded-2xl p-6 md:p-8">
             <h2 class="text-lg font-bold text-red-900 mb-4 flex items-center gap-2">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-              rTMS σε 30 δευτερόλεπτα:
+              rTMS in 30 seconds:
             </h2>
             <ul class="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-8 text-slate-800 font-medium list-none p-0 m-0">
-              <li class="flex items-start gap-2"><span class="text-red-500">•</span> Χωρίς νάρκωση ή φάρμακα</li>
-              <li class="flex items-start gap-2"><span class="text-red-500">•</span> Διάρκεια συνεδρίας: 3 - 40 λεπτά</li>
-              <li class="flex items-start gap-2"><span class="text-red-500">•</span> Άμεση επιστροφή στις καθημερινές δραστηριότητες</li>
-              <li class="flex items-start gap-2"><span class="text-red-500">•</span> Εγκεκριμένο για Ανθεκτική Κατάθλιψη & OCD</li>
-              <li class="flex items-start gap-2"><span class="text-red-500">•</span> Υψηλά ποσοστά ύφεσης χωρίς συστηματικές παρενέργειες</li>
-              <li class="flex items-start gap-2"><span class="text-red-500">•</span> Εφαρμόζεται κλινικά εδώ και 20+ χρόνια</li>
+              <li class="flex items-start gap-2"><span class="text-red-500">•</span> No anesthesia or systemic drugs</li>
+              <li class="flex items-start gap-2"><span class="text-red-500">•</span> Session duration: 3 - 40 minutes</li>
+              <li class="flex items-start gap-2"><span class="text-red-500">•</span> Immediate return to daily activities</li>
+              <li class="flex items-start gap-2"><span class="text-red-500">•</span> Approved for Resistant Depression & OCD</li>
+              <li class="flex items-start gap-2"><span class="text-red-500">•</span> High remission rates without systemic side effects</li>
+              <li class="flex items-start gap-2"><span class="text-red-500">•</span> Clinically applied for 20+ years</li>
             </ul>
           </div>
         </div>
@@ -62,11 +62,11 @@ const posLeitourgeiPages = allRtmsPages.filter(p => p.id.startsWith('pos-leitour
       <section class="mb-20">
         <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-8 flex items-center gap-3">
           <span class="w-8 h-8 rounded-lg bg-red-100 text-red-700 flex items-center justify-center font-black">1</span>
-          Βασικές Πληροφορίες & Διαδικασία
+          Core Information & Procedure
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {corePages.map(page => (
-            <a href={`/rtms/${page.id}`} class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md hover:border-red-400 transition-all group block">
+            <a href={`/en/rtms/${page.id.replace('en/', '')}`} class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md hover:border-red-400 transition-all group block">
               <h3 class="text-lg font-bold text-red-900 mb-3 group-hover:text-red-600 leading-tight">{page.data.title}</h3>
               <p class="text-sm text-slate-500 line-clamp-2 leading-relaxed">{page.data.description}</p>
             </a>
@@ -79,13 +79,13 @@ const posLeitourgeiPages = allRtmsPages.filter(p => p.id.startsWith('pos-leitour
         <div class="flex items-baseline justify-between mb-8 border-b border-slate-200 pb-4">
           <h2 class="text-2xl md:text-3xl font-bold text-slate-900 flex items-center gap-3">
             <span class="w-8 h-8 rounded-lg bg-red-100 text-red-700 flex items-center justify-center font-black">2</span>
-            Κλινικές Ενδείξεις: Για ποιους;
+            Clinical Indications: For whom?
           </h2>
-          <span class="hidden md:block text-slate-400 text-sm font-medium">Εγκεκριμένες & Κλινικές Εφαρμογές</span>
+          <span class="hidden md:block text-slate-400 text-sm font-medium">Approved & Clinical Applications</span>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {endixeisPages.map(page => (
-            <a href={`/rtms/${page.id}`} class="relative group bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:shadow-red-900/5 transition-all block min-h-[160px]">
+            <a href={`/en/rtms/${page.id.replace('en/', '')}`} class="relative group bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:shadow-red-900/5 transition-all block min-h-[160px]">
               <div class="absolute top-6 right-8 text-red-100 group-hover:text-red-200 transition-colors">
                 <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
               </div>
@@ -100,12 +100,12 @@ const posLeitourgeiPages = allRtmsPages.filter(p => p.id.startsWith('pos-leitour
       <section class="mb-24">
         <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-8 flex items-center gap-3">
           <span class="w-8 h-8 rounded-lg bg-red-100 text-red-700 flex items-center justify-center font-black">3</span>
-          Επιστημονικό Υπόβαθρο: Πώς λειτουργεί;
+          Scientific Background: How it works?
         </h2>
         <div class="bg-white rounded-3xl p-4 md:p-8 border border-slate-100 shadow-sm">
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {posLeitourgeiPages.map(page => (
-              <a href={`/rtms/${page.id}`} class="flex items-center gap-4 p-4 rounded-xl hover:bg-red-50 transition-colors border border-transparent hover:border-red-100 group">
+              <a href={`/en/rtms/${page.id.replace('en/', '')}`} class="flex items-center gap-4 p-4 rounded-xl hover:bg-red-50 transition-colors border border-transparent hover:border-red-100 group">
                 <div class="w-2 h-2 rounded-full bg-red-400 group-hover:scale-150 transition-transform"></div>
                 <span class="text-slate-700 font-bold group-hover:text-red-800">{page.data.title}</span>
               </a>
@@ -119,33 +119,33 @@ const posLeitourgeiPages = allRtmsPages.filter(p => p.id.startsWith('pos-leitour
         <div class="absolute top-0 right-0 w-1/3 h-full bg-red-600/10 -skew-x-12 transform translate-x-1/2"></div>
         
         <div class="relative z-10 max-w-4xl">
-          <h2 class="text-3xl md:text-5xl font-extrabold mb-8 tracking-tight">rTMS στην Αθήνα: <br/>Από την Αξιολόγηση στην Ύφεση</h2>
+          <h2 class="text-3xl md:text-5xl font-extrabold mb-8 tracking-tight">rTMS in Athens: <br/>From Evaluation to Remission</h2>
           
           <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-slate-300">
             <div>
               <p class="text-lg leading-relaxed mb-6">
-                Στο <strong>Smart CNS Center</strong> (Σύνταγμα), η θεραπεία rTMS δεν είναι μια τυποποιημένη διαδικασία. Κάθε ασθενής ακολουθεί μια δομημένη πορεία:
+                At <strong>Smart CNS Center</strong> (Syntagma), rTMS therapy is not a standardized procedure. Every patient follows a structured path:
               </p>
               <ul class="space-y-4 list-none p-0">
                 <li class="flex items-center gap-3 text-sm font-bold bg-white/5 p-3 rounded-xl border border-white/10">
-                  <span class="text-red-400">01.</span> Διαγνωστική Αξιολόγηση & Ιστορικό
+                  <span class="text-red-400">01.</span> Diagnostic Evaluation & History
                 </li>
                 <li class="flex items-center gap-3 text-sm font-bold bg-white/5 p-3 rounded-xl border border-white/10">
-                  <span class="text-red-400">02.</span> Εξατομικευμένη Χαρτογράφηση (Mapping)
+                  <span class="text-red-400">02.</span> Individualized Mapping
                 </li>
                 <li class="flex items-center gap-3 text-sm font-bold bg-white/5 p-3 rounded-xl border border-white/10">
-                  <span class="text-red-400">03.</span> Επιλογή Πρωτοκόλλου (HF-rTMS, iTBS, κλπ.)
+                  <span class="text-red-400">03.</span> Protocol Selection (HF-rTMS, iTBS, etc.)
                 </li>
               </ul>
             </div>
             <div>
               <p class="text-lg leading-relaxed mb-6">
-                Ο ιατρικός εξοπλισμός τελευταίας γενιάς και η εμπειρία του <strong>Πασχάλη Γκίκα</strong> εξασφαλίζουν τη μέγιστη ασφάλεια και αποτελεσματικότητα στη θεραπεία.
+                Latest generation medical equipment and the expertise of <strong>Paschalis Gkikas</strong> ensure maximum safety and efficacy in treatment.
               </p>
-              <a href="/epikoinonia" class="inline-block bg-red-600 text-white font-black px-8 py-4 rounded-2xl hover:bg-red-700 transition-all shadow-lg shadow-red-900/20">
-                Κλείστε Ραντεβού Αξιολόγησης &rarr;
+              <a href="/en/contact" class="inline-block bg-red-600 text-white font-black px-8 py-4 rounded-2xl hover:bg-red-700 transition-all shadow-lg shadow-red-900/20">
+                Book Evaluation Appointment &rarr;
               </a>
-              <p class="mt-4 text-xs font-medium text-slate-500 uppercase tracking-widest text-center md:text-left">Ξενοφώντος 15Α, Σύνταγμα</p>
+              <p class="mt-4 text-xs font-medium text-slate-500 uppercase tracking-widest text-center md:text-left">15A Xenofontos Str, Syntagma</p>
             </div>
           </div>
         </div>

@@ -1,35 +1,37 @@
 ---
 import { getCollection, render } from 'astro:content';
-import Layout from '../../layouts/Layout.astro';
-import Header from '../../components/UI/Header.astro';
-import Footer from '../../components/UI/Footer.astro';
-
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/UI/Header.astro';
+import Footer from '../../../components/UI/Footer.astro';
 import { getEntry } from 'astro:content';
 
 export async function getStaticPaths() {
   const pages = await getCollection('rtms', ({ id }) => {
-    return !id.startsWith('en/') && !id.startsWith('it/');
+    return id.startsWith('en/');
   });
-  return pages.map(p => ({ params: { slug: p.id } }));
+  return pages.map(p => ({ 
+    params: { slug: p.id.replace('en/', '') },
+    props: { entry: p }
+  }));
 }
 
+const { entry } = Astro.props;
 const { slug } = Astro.params;
-const entry = await getEntry('rtms', slug);
-if (!entry) return Astro.redirect('/404');
-const allPages = await getCollection('rtms');
 const { Content } = await render(entry);
+
+const allPages = await getCollection('rtms', ({ id }) => id.startsWith('en/'));
 
 // Group pages by category (folder)
 const categories = {
-  core: allPages.filter(p => p.id.startsWith('core/')).sort((a,b)=> (a.data.order||0) - (b.data.order||0)),
-  endixeis: allPages.filter(p => p.id.startsWith('endixeis/')).sort((a,b)=> (a.data.order||0) - (b.data.order||0)),
-  mechanisms: allPages.filter(p => p.id.startsWith('pos-leitourgei/')).sort((a,b)=> (a.data.order||0) - (b.data.order||0)),
+  core: allPages.filter(p => p.id.startsWith('en/core/')).sort((a,b)=> (a.data.order||0) - (b.data.order||0)),
+  endixeis: allPages.filter(p => p.id.startsWith('en/endixeis/')).sort((a,b)=> (a.data.order||0) - (b.data.order||0)),
+  mechanisms: allPages.filter(p => p.id.startsWith('en/pos-leitourgei/')).sort((a,b)=> (a.data.order||0) - (b.data.order||0)),
 };
 
 const categoryNames = {
-  core: "Βασικές Έννοιες",
-  endixeis: "Ενδείξεις Θεραπείας",
-  mechanisms: "Πώς Λειτουργεί"
+  core: "Core Concepts",
+  endixeis: "Treatment Indications",
+  mechanisms: "How it works"
 };
 
 const schemaBundle = JSON.stringify({
@@ -43,16 +45,16 @@ const schemaBundle = JSON.stringify({
       "@type": ["MedicalTherapy", "MedicalProcedure"],
       "name": entry.data.title,
       "description": entry.data.description,
-      "howPerformed": "Διακρανιακός Μαγνητικός Ερεθισμός (rTMS)",
-      "bodyLocation": "DLPFC (Ραχιοπλάγιος Προμετωπιαίος Φλοιός)",
+      "howPerformed": "Repetitive Transcranial Magnetic Stimulation (rTMS)",
+      "bodyLocation": "DLPFC (Dorsolateral Prefrontal Cortex)",
       "provider": { "@id": "https://drgkikas.com/#physician" }
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Αρχική", "item": "https://drgkikas.com/" },
-        { "@type": "ListItem", "position": 2, "name": "rTMS", "item": "https://drgkikas.com/rtms" },
-        { "@type": "ListItem", "position": 3, "name": entry.data.title, "item": "https://drgkikas.com/rtms/" + slug }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://drgkikas.com/en/" },
+        { "@type": "ListItem", "position": 2, "name": "rTMS", "item": "https://drgkikas.com/en/rtms" },
+        { "@type": "ListItem", "position": 3, "name": entry.data.title, "item": "https://drgkikas.com/en/rtms/" + slug }
       ]
     }
   ]
@@ -68,8 +70,8 @@ const schemaBundle = JSON.stringify({
       <!-- Breadcrumbs -->
       <nav class="text-sm text-slate-500 mb-8 mt-4">
         <ol class="list-none p-0 inline-flex flex-wrap items-center">
-          <li class="flex items-center"><a href="/" class="hover:text-red-700 transition-colors">Αρχική</a><svg class="w-3 h-3 mx-2 opacity-50" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></li>
-          <li class="flex items-center"><a href="/rtms/" class="hover:text-red-700 transition-colors">rTMS</a><svg class="w-3 h-3 mx-2 opacity-50" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></li>
+          <li class="flex items-center"><a href="/en/" class="hover:text-red-700 transition-colors">Home</a><svg class="w-3 h-3 mx-2 opacity-50" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></li>
+          <li class="flex items-center"><a href="/en/rtms/" class="hover:text-red-700 transition-colors">rTMS</a><svg class="w-3 h-3 mx-2 opacity-50" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></li>
           <li class="flex items-center"><span class="text-slate-800 font-medium">{entry.data.title}</span></li>
         </ol>
       </nav>
@@ -108,7 +110,7 @@ const schemaBundle = JSON.stringify({
           <div class="sticky top-28 bg-white p-6 md:p-8 rounded-3xl border border-slate-100 shadow-sm">
             <h3 class="text-sm font-bold text-slate-900 mb-6 flex items-center gap-2">
               <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"></path></svg>
-              Οδηγός rTMS
+              rTMS Guide
             </h3>
             
             <div class="space-y-8">
@@ -119,10 +121,11 @@ const schemaBundle = JSON.stringify({
                     <ul class="space-y-2">
                       {pages.map(p => {
                         const isActive = entry.id === p.id;
+                        const pSlug = p.id.replace('en/', '');
                         return (
                           <li>
                             <a 
-                              href={`/rtms/${p.id}`} 
+                              href={`/en/rtms/${pSlug}`} 
                               class={`block text-sm transition-all py-1.5 px-3 rounded-lg ${isActive ? 'bg-red-50 text-red-700 font-semibold' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'}`}
                             >
                               {p.data.title}
@@ -139,9 +142,9 @@ const schemaBundle = JSON.stringify({
             <!-- CTA Widget in Sidebar -->
             <div class="mt-10 p-5 rounded-2xl bg-gradient-to-b from-red-50 to-white border border-red-100 text-center">
               <svg class="w-10 h-10 mx-auto text-red-600 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-              <h4 class="font-bold text-slate-900 mb-2">Κλείστε Ραντεβού</h4>
-              <p class="text-xs text-slate-600 mb-4">Ενημερωθείτε για την καταλληλότητα της θεραπείας στο πρόβλημά σας.</p>
-              <a href="/epikoinonia" class="block w-full text-center bg-red-700 text-white text-sm font-semibold py-2 rounded-xl hover:bg-red-800 transition-colors">Επικοινωνία</a>
+              <h4 class="font-bold text-slate-900 mb-2">Book Appointment</h4>
+              <p class="text-xs text-slate-600 mb-4">Find out if the treatment is suitable for your condition.</p>
+              <a href="/en/contact" class="block w-full text-center bg-red-700 text-white text-sm font-semibold py-2 rounded-xl hover:bg-red-800 transition-colors">Contact</a>
             </div>
 
           </div>
@@ -152,4 +155,3 @@ const schemaBundle = JSON.stringify({
   </div>
   <Footer />
 </Layout>
-<!-- update για το github desktop -->

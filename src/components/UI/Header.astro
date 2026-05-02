@@ -31,8 +31,10 @@ const t = {
     ocd: "Ιδεοψυχαναγκαστική (OCD)",
     addiction: "Εξαρτήσεις (Κοκαΐνη)",
     what_is_rtms: "Τι είναι το rTMS",
-    safety: "Ασφάλεια & Παρενέργειες",
-    trd: "Ανθεκτική Κατάθλιψη (TRD)"
+    safety: "Ασφάλεια & Παρενέργειες — Τι να Περιμένετε",
+    trd: "Ανθεκτική Κατάθλιψη (TRD)",
+    core_info: "Βασικές Πληροφορίες",
+    mechanism: "Πώς Λειτουργεί"
   },
   en: {
     home: "Home",
@@ -56,14 +58,16 @@ const t = {
     indications: "Indications",
     faq: "FAQ",
     how_it_works: "How it works",
-    cost: "Cost",
+    cost: "Cost & Procedure",
     depression: "Depression",
     pain: "Chronic Pain",
     ocd: "OCD",
     addiction: "Addiction (Cocaine)",
     what_is_rtms: "What is rTMS",
-    safety: "Safety & Side Effects",
-    trd: "Resistant Depression (TRD)"
+    safety: "Safety & Side Effects — What to Expect",
+    trd: "Resistant Depression (TRD)",
+    core_info: "Core Information",
+    mechanism: "How it works"
   },
   it: {
     home: "Home",
@@ -87,14 +91,16 @@ const t = {
     indications: "Indicazioni",
     faq: "FAQ",
     how_it_works: "Come funziona",
-    cost: "Costo",
+    cost: "Costi e Procedura",
     depression: "Depressione",
     pain: "Dolore Cronico",
     ocd: "DOC",
     addiction: "Dipendenza (Cocaina)",
     what_is_rtms: "Cos'è l'rTMS",
-    safety: "Sicurezza ed Effetti Collaterali",
-    trd: "Depressione Resistente (TRD)"
+    safety: "Sicurezza ed Effetti Collaterali — Cosa Aspettarsi",
+    trd: "Depressione Resistente (TRD)",
+    core_info: "Informazioni di Base",
+    mechanism: "Come funziona"
   }
 };
 
@@ -180,7 +186,7 @@ const labels = t[currentLocale] || t.el;
           <div class="absolute top-full -left-[300px] w-[800px] bg-white shadow-2xl rounded-xl border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top -translate-y-2 group-hover:translate-y-0 p-6 z-50 flex gap-8">
             
             <div class="flex-1">
-              <p class="text-slate-900 font-bold mb-3 border-b pb-2 text-sm uppercase tracking-wider">{currentLocale === 'el' ? 'Βασικές Πληροφορίες' : 'Core Info'}</p>
+              <p class="text-slate-900 font-bold mb-3 border-b pb-2 text-sm uppercase tracking-wider">{labels.core_info}</p>
               <a href={langPrefix + "/rtms/core/ti-einai"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{labels.what_is_rtms}</a>
               <a href={langPrefix + "/rtms/core/asfaleia-parenergeies"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{labels.safety}</a>
               <a href={langPrefix + "/rtms/core/kostos-kai-diadikasia"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{labels.cost}</a>
@@ -197,14 +203,14 @@ const labels = t[currentLocale] || t.el;
             </div>
 
             <div class="flex-1">
-              <p class="text-slate-900 font-bold mb-3 border-b pb-2 text-sm uppercase tracking-wider">{currentLocale === 'el' ? 'Πώς Λειτουργεί' : 'Mechanism'}</p>
-              <a href={langPrefix + "/rtms/pos-leitourgei/neuroplasticity"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{currentLocale === 'el' ? 'Νευροπλαστικότητα' : 'Neuroplasticity'}</a>
-              <a href={langPrefix + "/rtms/pos-leitourgei/neuromodulation"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{currentLocale === 'el' ? 'Νευροτροποποίηση' : 'Neuromodulation'}</a>
-              <a href={langPrefix + "/rtms/pos-leitourgei/dlpfc"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{currentLocale === 'el' ? 'Στόχευση DLPFC' : 'DLPFC Targeting'}</a>
-              <a href={langPrefix + "/rtms/pos-leitourgei/brain-connectivity"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{currentLocale === 'el' ? 'Εγκεφαλική Συνδεσιμότητα' : 'Brain Connectivity'}</a>
-              <a href={langPrefix + "/rtms/pos-leitourgei/neural-oscillations"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{currentLocale === 'el' ? 'Νευρωνικές Ταλαντώσεις' : 'Neural Oscillations'}</a>
-              <a href={langPrefix + "/rtms/pos-leitourgei/motor-threshold"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{currentLocale === 'el' ? 'Κινητικό Κατώφλι (rMT)' : 'Motor Threshold (rMT)'}</a>
-              <a href={langPrefix + "/rtms/pos-leitourgei/mep"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{currentLocale === 'el' ? 'Κινητικό Προκλητό Δυναμικό (MEP)' : 'Motor Evoked Potential (MEP)'}</a>
+              <p class="text-slate-900 font-bold mb-3 border-b pb-2 text-sm uppercase tracking-wider">{labels.mechanism}</p>
+              <a href={langPrefix + "/rtms/pos-leitourgei/neuroplasticity"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{currentLocale === 'it' ? 'Neuroplasticità' : (currentLocale === 'en' ? 'Neuroplasticity' : 'Νευροπλαστικότητα')}</a>
+              <a href={langPrefix + "/rtms/pos-leitourgei/neuromodulation"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{currentLocale === 'it' ? 'Neuromodulazione' : (currentLocale === 'en' ? 'Neuromodulation' : 'Νευροτροποποίηση')}</a>
+              <a href={langPrefix + "/rtms/pos-leitourgei/dlpfc"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{currentLocale === 'it' ? 'Ruolo della DLPFC' : (currentLocale === 'en' ? 'DLPFC Targeting' : 'Στόχευση DLPFC')}</a>
+              <a href={langPrefix + "/rtms/pos-leitourgei/brain-connectivity"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{currentLocale === 'it' ? 'Connettività cerebrale' : (currentLocale === 'en' ? 'Brain Connectivity' : 'Εγκεφαλική Συνδεσιμότητα')}</a>
+              <a href={langPrefix + "/rtms/pos-leitourgei/neural-oscillations"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{currentLocale === 'it' ? 'Oscillazioni neurali' : (currentLocale === 'en' ? 'Neural Oscillations' : 'Νευρωνικές Ταλαντώσεις')}</a>
+              <a href={langPrefix + "/rtms/pos-leitourgei/motor-threshold"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{currentLocale === 'it' ? 'Soglia Motoria (rMT)' : (currentLocale === 'en' ? 'Motor Threshold (rMT)' : 'Κινητικό Κατώφλι (rMT)')}</a>
+              <a href={langPrefix + "/rtms/pos-leitourgei/mep"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{currentLocale === 'it' ? 'Potenziale Evocato Motorio (MEP)' : (currentLocale === 'en' ? 'Motor Evoked Potential (MEP)' : 'Κινητικό Προκλητό Δυναμικό (MEP)')}</a>
             </div>
 
           </div>
