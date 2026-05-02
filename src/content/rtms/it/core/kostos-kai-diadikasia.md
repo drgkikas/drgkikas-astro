@@ -59,4 +59,4 @@ Durante la valutazione si chiarisce:
 - Quale sarà il costo stimato.
 - Se il trattamento può essere combinato con la terapia farmacologica o la psicoterapia già in corso.
 
-[Prenota una visita di valutazione](/it/contact) per discutere se la rTMS è adatta al tuo profilo clinico.
+[Prenota una visita di valutazione](/it/contatti) per discutere se la rTMS è adatta al tuo profilo clinico.

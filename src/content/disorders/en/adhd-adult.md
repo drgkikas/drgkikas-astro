@@ -73,4 +73,4 @@ Not necessarily. The decision is shared and is based on the degree of difficulty
 * Faraone SV, et al. (2015). Attention-deficit hyperactivity disorder. Nature Reviews Disease Primers.
 * Barkley RA. (2012). Executive Functions: What They Are, How They Work, and Why They Evolved.
 
-[Book an assessment appointment](/epikoinonia){.cta-button}
+[Book an assessment appointment](/en/contact){.cta-button}

@@ -3,10 +3,10 @@ title: "ADHD negli adulti"
 description: "L’ADHD negli adulti non è mancanza di volontà, ma una condizione del neurosviluppo. Scopri come influisce sulle funzioni esecutive e perché una diagnosi clinica accurata è importante."
 icd10: "F90.0"
 faqs:
-  - question: "L’ADHD μπορεί να κρύβεται πίσω από άλλα συμπτώματα;"
+  - question: "L’ADHD può nascondersi dietro altri sintomi?"
     answer: "Sì. Se è presente una storia di ansia o depressione “resistente al trattamento”, la causa può essere la base neurobiologica dell’ADHD. Una corretta diagnosi differenziale è fondamentale."
   - question: "Cosa comprende la valutazione?"
-    answer: "Non si tratta di una semplice checklist. Richiede un’anamnesi dettagliata, l’uso della DIVA-5 e la valutazione του funzionamento nel lavoro e nelle relazioni. Vedi il servizio di valutazione ADHD negli adulti."
+    answer: "Non si tratta di una semplice checklist. Richiede un’anamnesi dettagliata, l’uso della DIVA-5 e la valutazione del funzionamento nel lavoro e nelle relazioni. Vedi il servizio di valutazione ADHD negli adulti."
   - question: "I farmaci sono necessari?"
     answer: "Non necessariamente. La decisione è condivisa e si basa sul livello di difficoltà nella vita quotidiana."
 ---
@@ -40,7 +40,7 @@ Spesso irritabilità e reattività emotiva in disturbi d’ansia che non miglior
 
 Il trattamento dell’ADHD negli adulti presso Smart CNS Center è multilivello e personalizzato:
 
-1. Psicoeducazione: comprendere come funziona il cervello è il πρώτο passo per ridurre colpa e autocritica.
+1. Psicoeducazione: comprendere come funziona il cervello è il primo passo per ridurre colpa e autocritica.
 2. Terapia cognitivo-comportamentale (CBT): focus su capacità organizzative, gestione del tempo e regolazione emotiva.
 3. Farmacoterapia: quando la compromissione funzionale è significativa, una terapia specifica — con farmaci stimolanti o non stimolanti — può contribuire a ristabilire l’equilibrio chimico nel cervello.
 4. Psichiatria di precisione (PGx): uso della farmacogenomica per selezionare il trattamento più sicuro ed efficace.
@@ -73,4 +73,4 @@ Non necessariamente. La decisione è condivisa e si basa sul livello di difficol
 * Faraone SV, et al. (2015). Attention-deficit hyperactivity disorder. Nature Reviews Disease Primers.
 * Barkley RA. (2012). Executive Functions: What They Are, How They Work, and Why They Evolved.
 
-[Prenota un appuntamento di valutazione](/it/epikoinonia){.cta-button}
+[Prenota un appuntamento di valutazione](/it/contatti){.cta-button}
