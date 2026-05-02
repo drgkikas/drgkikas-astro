@@ -91,4 +91,4 @@ Se ritieni che la rTMS possa essere il prossimo passo del tuo trattamento, puoi 
 ### Prenota un appuntamento
 Informati sull’idoneità del trattamento per il tuo problema.
 
-[Contatto](/it/contact)
+[Contatto](/it/contatti)

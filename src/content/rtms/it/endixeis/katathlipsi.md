@@ -45,4 +45,4 @@ Se riconosci i tuoi sintomi e vuoi sapere se questo metodo è adatto alla tua st
 - [Scopri in dettaglio che cosa sono rTMS e iTBS](/it/rtms/core/ti-einai).
 - [Consulta la pagina su costi e procedura](/it/rtms/core/kostos-kai-diadikasia).
 - [Esplora la pagina sulla depressione resistente al trattamento (TRD)](/it/rtms/endixeis/trd).
-- [Prenota una visita di valutazione](/it/contact) per discutere di persona le tue opzioni.
+- [Prenota una visita di valutazione](/it/contatti) per discutere di persona le tue opzioni.

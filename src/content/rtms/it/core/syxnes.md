@@ -55,4 +55,4 @@ Sì. La rTMS può essere combinata in modo sicuro con la terapia farmacologica g
 ### Prenota un appuntamento
 Informati sull’idoneità del trattamento per il tuo problema.
 
-[Contatto](/it/contact)
+[Contatto](/it/contatti)
