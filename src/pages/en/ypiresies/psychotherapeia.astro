@@ -1,0 +1,106 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/UI/Header.astro';
+import Footer from '../../../components/UI/Footer.astro';
+
+const title = "Psychotherapy in Athens — CBT and systemic family therapy";
+const description = "Targeted psychotherapy integrated into the treatment plan — either alone or combined with pharmacotherapy and rTMS. Athens & online.";
+const canonicalURL = "https://drgkikas.com/en/ypiresies/psychotherapeia";
+
+const schemaBundle = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalProcedure",
+      "name": title,
+      "description": description,
+      "url": canonicalURL
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://drgkikas.com/en" },
+        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://drgkikas.com/en/ypiresies" },
+        { "@type": "ListItem", "position": 3, "name": title, "item": canonicalURL }
+      ]
+    }
+  ]
+});
+---
+
+<Layout title={title} description={description} schema={schemaBundle}>
+  <Header />
+  <main class="pt-24 pb-16 bg-slate-50 min-h-screen">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Breadcrumbs UI -->
+      <nav class="text-sm text-slate-500 mb-8 mt-4">
+        <ol class="list-none p-0 inline-flex flex-wrap items-center">
+          <li class="flex items-center"><a href="/en" class="hover:text-blue-700 transition-colors">Home</a><svg class="w-3 h-3 mx-2 opacity-50" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></li>
+          <li class="flex items-center"><a href="/en/ypiresies/" class="hover:text-blue-700 transition-colors">Services</a><svg class="w-3 h-3 mx-2 opacity-50" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></li>
+          <li class="flex items-center"><span class="text-slate-800 font-medium">Psychotherapy</span></li>
+        </ol>
+      </nav>
+
+      <div class="glass-card p-10 md:p-16">
+        <div class="text-center mb-16 border-b border-slate-200 pb-12">
+          <h1 class="text-4xl md:text-5xl font-bold text-blue-900 mb-8 leading-normal">Psychotherapy</h1>
+          <p class="text-xl md:text-2xl text-slate-600 leading-relaxed max-w-3xl mx-auto">Two evidence-based therapeutic approaches — selected according to your needs, not routine.</p>
+        </div>
+        
+        <div class="prose prose-lg md:prose-xl prose-blue max-w-none text-slate-700
+          prose-p:mb-10 prose-p:leading-[1.9]
+          prose-headings:text-blue-900 prose-headings:font-bold 
+          prose-h2:mt-20 prose-h2:mb-8 prose-h2:border-b prose-h2:border-slate-100 prose-h2:pb-4
+          prose-h3:mt-14 prose-h3:mb-6
+          prose-a:font-bold prose-a:text-blue-900 prose-a:bg-blue-100 prose-a:px-2 prose-a:py-0.5 prose-a:rounded-lg prose-a:no-underline hover:prose-a:bg-blue-700 hover:prose-a:text-white prose-a:transition-colors
+          prose-ul:my-10 prose-li:my-5 marker:text-blue-500">
+          
+          <h2>What is the psychotherapy I provide?</h2>
+          <p>The psychotherapy I provide is not detached from the rest of your clinical picture. It is integrated into the overall treatment plan and takes into account biology, pharmacological treatment and, where applicable, rTMS results. I work with two main methodologies: **Cognitive Behavioural Therapy — CBT — and Systemic Family Therapy.** The choice, or combination, depends on the nature of the problem, the structure of your life and what has or has not worked in the past.</p>
+
+          <h2>Cognitive Behavioural Therapy — CBT</h2>
+          <p>CBT is the therapeutic approach with the broadest research foundation in psychiatry. It focuses on the relationship between thoughts, emotions and behaviour, and on how these three levels maintain each other in vicious cycles. We do not simply talk about the problem. We actively work to change the thinking and response patterns that maintain it.</p>
+
+          <h3>Conditions for which CBT is indicated</h3>
+          <ul>
+            <li>Depression — MDD — alone or combined with pharmacotherapy</li>
+            <li>Anxiety disorders — generalized anxiety, panic, social phobia</li>
+            <li>Obsessive-compulsive disorder — OCD — with ERP protocols</li>
+            <li>Sleep disorders — with CBT-I</li>
+            <li>Psychosomatic manifestations and eating disorders</li>
+            <li>Burnout and work-related stress</li>
+          </ul>
+
+          <div class="mt-20 pt-12 border-t border-slate-200">
+            <h2 class="text-2xl font-bold text-blue-900 mb-8">FAQ</h2>
+            <div class="space-y-8">
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">How many sessions are needed?</h3>
+                <p class="text-slate-600">For CBT in anxiety or depression, typically 12–20 sessions. For Systemic Therapy in relational issues, the number varies — often fewer, but with longer intervals. We will define this together at the beginning.</p>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Can psychotherapy be done without medication?</h3>
+                <p class="text-slate-600">Yes, for many mild to moderate conditions. For more severe episodes, the combination of pharmacotherapy and psychotherapy has clearly better results than either method alone.</p>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Is an online session as effective as an in-person visit?</h3>
+                <p class="text-slate-600">For psychotherapy and medication follow-up, research data do not show a significant difference in effectiveness.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Internal Links for SEO -->
+        <div class="mt-20 pt-12 border-t border-slate-200">
+          <h2 class="text-2xl font-bold text-blue-900 mb-8">Related Services</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <a href="/en/ypiresies/psychiatriki-parakolouthisi/" class="p-6 bg-blue-50 rounded-2xl border border-blue-100 hover:border-blue-300 transition-all font-bold text-blue-900">Psychiatric follow-up &rarr;</a>
+            <a href="/en/ypiresies/rtms/" class="p-6 bg-blue-50 rounded-2xl border border-blue-100 hover:border-blue-300 transition-all font-bold text-blue-900">rTMS Neuromodulation &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

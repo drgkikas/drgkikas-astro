@@ -1,0 +1,132 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/UI/Header.astro';
+import Footer from '../../../components/UI/Footer.astro';
+
+const title = "Farmacogenomica (PGx) ad Atene";
+const description = "Analisi del DNA per supportare la scelta del farmaco psichiatrico più appropriato. Valutazione di CYP2D6, CYP2C19, FKBP5, DRD3 e altri marcatori — meno tentativi, meno attesa.";
+const canonicalURL = "https://drgkikas.com/it/ypiresies/pgx";
+
+const schemaBundle = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalProcedure",
+      "name": title,
+      "description": description,
+      "url": canonicalURL
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://drgkikas.com/it" },
+        { "@type": "ListItem", "position": 2, "name": "Servizi", "item": "https://drgkikas.com/it/ypiresies" },
+        { "@type": "ListItem", "position": 3, "name": title, "item": canonicalURL }
+      ]
+    }
+  ]
+});
+---
+
+<Layout title={title} description={description} schema={schemaBundle}>
+  <Header />
+  <main class="pt-24 pb-16 bg-slate-50 min-h-screen">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Breadcrumbs UI -->
+      <nav class="text-sm text-slate-500 mb-8 mt-4">
+        <ol class="list-none p-0 inline-flex flex-wrap items-center">
+          <li class="flex items-center"><a href="/it" class="hover:text-blue-700 transition-colors">Home</a><svg class="w-3 h-3 mx-2 opacity-50" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></li>
+          <li class="flex items-center"><a href="/it/ypiresies/" class="hover:text-blue-700 transition-colors">Servizi</a><svg class="w-3 h-3 mx-2 opacity-50" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></li>
+          <li class="flex items-center"><span class="text-slate-800 font-medium">{title}</span></li>
+        </ol>
+      </nav>
+
+      <div class="glass-card p-10 md:p-16">
+        <div class="text-center mb-16 border-b border-slate-200 pb-12">
+          <h1 class="text-4xl md:text-5xl font-bold text-blue-900 mb-8 leading-normal">{title}</h1>
+          <p class="text-xl md:text-2xl text-slate-600 leading-relaxed max-w-3xl mx-auto">{description}</p>
+        </div>
+        
+        <div class="prose prose-lg md:prose-xl prose-blue max-w-none text-slate-700
+          prose-p:mb-10 prose-p:leading-[1.9]
+          prose-headings:text-blue-900 prose-headings:font-bold 
+          prose-h2:mt-20 prose-h2:mb-8 prose-h2:border-b prose-h2:border-slate-100 prose-h2:pb-4
+          prose-h3:mt-14 prose-h3:mb-6
+          prose-a:font-bold prose-a:text-blue-900 prose-a:bg-blue-100 prose-a:px-2 prose-a:py-0.5 prose-a:rounded-lg prose-a:no-underline hover:prose-a:bg-blue-700 hover:prose-a:text-white prose-a:transition-colors
+          prose-ul:my-10 prose-li:my-5 marker:text-blue-500">
+          
+          <p class="font-bold">Il farmaco giusto, alla dose corretta, fin dall’inizio — sulla base del vostro profilo genetico.</p>
+
+          <h2>Che cos’è la farmacogenomica?</h2>
+          <p>La farmacogenomica — PGx — è la scienza che studia come i vostri geni influenzano il modo in cui l’organismo metabolizza i farmaci. Due persone con la stessa diagnosi possono reagire in modo completamente diverso allo stesso farmaco: una può rispondere molto bene, mentre l’altra può non percepire alcun beneficio o sviluppare effetti collaterali importanti. La causa spesso non è la diagnosi o la dose. È il profilo genetico.</p>
+
+          <h2>Quali geni vengono valutati?</h2>
+          <p>I principali geni analizzati nella PGx psichiatrica includono:</p>
+          <ul>
+            <li><strong>CYP2D6</strong>: Metabolismo di antidepressivi e antipsicotici. Il fenotipo — poor, intermediate, normal o ultra-rapid metabolizer — determina quanto farmaco raggiunge effettivamente il cervello.</li>
+            <li><strong>CYP2C19</strong>: Metabolismo degli SSRI e di alcune benzodiazepine. I poor metabolizers possono accumulare farmaco anche a dosi standard, con effetti collaterali spesso attribuiti erroneamente al farmaco stesso.</li>
+            <li><strong>FKBP5</strong>: Regola l’asse dello stress — asse HPA. Alcuni polimorfismi sono associati a maggiore sensibilità al trauma e a risposte diverse agli antidepressivi.</li>
+            <li><strong>DRD3</strong>: Recettore dopaminergico. Influenza la risposta agli antipsicotici ed è associato a predisposizione a comportamenti di dipendenza.</li>
+          </ul>
+
+          <h2>Quando è indicata l’analisi PGx?</h2>
+          <p>L’analisi genetica è particolarmente utile quando:</p>
+          <ul>
+            <li>Avete provato due o più farmaci senza risultato soddisfacente</li>
+            <li>Presentate effetti collaterali insolitamente intensi a dosi standard</li>
+            <li>State iniziando una nuova terapia e volete ridurre il tempo necessario per trovare il farmaco più adatto</li>
+            <li>Assumete più farmaci e vi è preoccupazione per interazioni</li>
+            <li>Avete depressione resistente al trattamento o un’altra condizione psichiatrica resistente</li>
+          </ul>
+
+          <h2>Come si esegue il test</h2>
+          <p>L’analisi PGx è semplice e indolore.</p>
+          <ol>
+            <li><strong>Passo 1</strong>: Raccolta del campione — di solito tampone buccale o esame del sangue. Non è necessario il digiuno.</li>
+            <li><strong>Passo 2</strong>: Invio al laboratorio specializzato.</li>
+            <li><strong>Passo 3</strong>: Ricezione dei risultati, di solito entro 7–14 giorni.</li>
+            <li><strong>Passo 4</strong>: Seduta di interpretazione — il passaggio più importante. I risultati genetici senza interpretazione clinica hanno valore limitato. In questa fase progettiamo il piano terapeutico sulla base dei risultati.</li>
+          </ol>
+
+          <div class="mt-20 pt-12 border-t border-slate-200">
+            <h2 class="text-2xl font-bold text-blue-900 mb-8">FAQ</h2>
+            <div class="space-y-8">
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">La PGx garantisce che il farmaco funzionerà?</h3>
+                <p class="text-slate-600">No. Nessun test può garantire il risultato. La PGx può ridurre significativamente il tempo e i tentativi necessari, ma il quadro clinico rimane sempre la guida principale.</p>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">È coperta dall’assicurazione?</h3>
+                <p class="text-slate-600">In Grecia, l’analisi PGx generalmente non è coperta dall’EOPYY, ma alcune assicurazioni private la rimborsano. Possiamo informarvi prima dell’esame.</p>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Il test deve essere ripetuto?</h3>
+                <p class="text-slate-600">No. Il profilo genetico non cambia. Il test si esegue una sola volta nella vita e i risultati valgono per future decisioni farmacologiche.</p>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">La PGx può essere utilizzata anche per farmaci non psichiatrici?</h3>
+                <p class="text-slate-600">Sì. Diversi marcatori genetici riguardano anche farmaci cardiologici, analgesici e antiaggreganti. Nel nostro percorso ci concentriamo sui farmaci psichiatrici, ma il risultato può essere condiviso anche con gli altri vostri medici.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-blue-50 border-l-4 border-blue-600 p-6 my-8 rounded-r-xl">
+            <h3 class="text-xl font-bold text-blue-900 mt-0 mb-4">Psichiatria di precisione — cosa significa per me</h3>
+            <p class="mb-0 text-blue-900">“Psichiatria di precisione” non è marketing. È la direzione già seguita dalla ricerca psichiatrica internazionale: passare dalla maggioranza statistica al singolo paziente. La PGx è uno degli strumenti più maturi in questa direzione.</p>
+          </div>
+        </div>
+
+        <!-- Internal Links for SEO -->
+        <div class="mt-20 pt-12 border-t border-slate-200">
+          <h2 class="text-2xl font-bold text-blue-900 mb-8">Tecnologie Correlate</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <a href="/it/ypiresies/rtms/" class="p-6 bg-blue-50 rounded-2xl border border-blue-100 hover:border-blue-300 transition-all font-bold text-blue-900">Neuromodulazione rTMS &rarr;</a>
+            <a href="/it/ypiresies/psychiatriki-parakolouthisi/" class="p-6 bg-blue-50 rounded-2xl border border-blue-100 hover:border-blue-300 transition-all font-bold text-blue-900">Monitoraggio psichiatrico &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

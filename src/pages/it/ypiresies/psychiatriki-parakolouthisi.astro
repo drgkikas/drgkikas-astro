@@ -1,0 +1,135 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/UI/Header.astro';
+import Footer from '../../../components/UI/Footer.astro';
+
+const title = "Monitoraggio psichiatrico ad Atene";
+const description = "Monitoraggio psichiatrico personalizzato nel centro di Atene. Diagnosi, farmacoterapia e valutazione continua basate sui vostri dati clinici e genetici.";
+const canonicalURL = "https://drgkikas.com/it/ypiresies/psychiatriki-parakolouthisi";
+
+const schemaBundle = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalProcedure",
+      "name": title,
+      "description": description,
+      "url": canonicalURL
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://drgkikas.com/it" },
+        { "@type": "ListItem", "position": 2, "name": "Servizi", "item": "https://drgkikas.com/it/ypiresies" },
+        { "@type": "ListItem", "position": 3, "name": title, "item": canonicalURL }
+      ]
+    }
+  ]
+});
+---
+
+<Layout title={title} description={description} schema={schemaBundle}>
+  <Header />
+  <main class="pt-24 pb-16 bg-slate-50 min-h-screen">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Breadcrumbs UI -->
+      <nav class="text-sm text-slate-500 mb-8 mt-4">
+        <ol class="list-none p-0 inline-flex flex-wrap items-center">
+          <li class="flex items-center"><a href="/it" class="hover:text-blue-700 transition-colors">Home</a><svg class="w-3 h-3 mx-2 opacity-50" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></li>
+          <li class="flex items-center"><a href="/it/ypiresies/" class="hover:text-blue-700 transition-colors">Servizi</a><svg class="w-3 h-3 mx-2 opacity-50" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></li>
+          <li class="flex items-center"><span class="text-slate-800 font-medium">{title}</span></li>
+        </ol>
+      </nav>
+
+      <div class="glass-card p-10 md:p-16">
+        <div class="text-center mb-16 border-b border-slate-200 pb-12">
+          <h1 class="text-4xl md:text-5xl font-bold text-blue-900 mb-8 leading-normal">{title}</h1>
+          <p class="text-xl md:text-2xl text-slate-600 leading-relaxed max-w-3xl mx-auto">{description}</p>
+        </div>
+        
+        <div class="prose prose-lg md:prose-xl prose-blue max-w-none text-slate-700
+          prose-p:mb-10 prose-p:leading-[1.9]
+          prose-headings:text-blue-900 prose-headings:font-bold 
+          prose-h2:mt-20 prose-h2:mb-8 prose-h2:border-b prose-h2:border-slate-100 prose-h2:pb-4
+          prose-h3:mt-14 prose-h3:mb-6
+          prose-a:font-bold prose-a:text-blue-900 prose-a:bg-blue-100 prose-a:px-2 prose-a:py-0.5 prose-a:rounded-lg prose-a:no-underline hover:prose-a:bg-blue-700 hover:prose-a:text-white prose-a:transition-colors
+          prose-ul:my-10 prose-li:my-5 marker:text-blue-500">
+          
+          <p class="font-bold">Diagnosi corretta, trattamento personalizzato, valutazione continua — non semplice rinnovo di prescrizione.</p>
+
+          <h2>Cosa comprende il monitoraggio psichiatrico</h2>
+          <p>Il monitoraggio psichiatrico non è una singola visita. È una relazione terapeutica continua che evolve con l’evoluzione della vostra condizione. In studio, ogni prima visita inizia con una valutazione clinica completa: anamnesi, sintomi, trattamenti precedenti e livello di funzionamento. Non si procede in fretta. Non si saltano passaggi.</p>
+
+          <h2>Cosa viene valutato nella prima visita?</h2>
+          <p>Durante la valutazione iniziale esaminiamo:</p>
+          <ul>
+            <li>Anamnesi psichiatrica e medica completa</li>
+            <li>Disturbi psichiatrici attuali e loro gravità</li>
+            <li>Farmaci assunti in passato e risposta ottenuta</li>
+            <li>Possibili cause genetiche di intolleranza o mancata risposta ai farmaci tramite PGx</li>
+            <li>Sonno, manifestazioni ansiose e sintomi fisici</li>
+          </ul>
+
+          <h2>Come funziona il monitoraggio regolare</h2>
+          <p>Monitoraggio non significa rinnovo automatico della prescrizione. Ogni seduta rivaluta:</p>
+          <ul>
+            <li>Efficacia del trattamento tramite strumenti psicometrici validati, come PHQ-9, GAD-7, HAM-D e altri</li>
+            <li>Eventuali effetti collaterali che richiedono adattamento</li>
+            <li>Necessità di integrare metodi terapeutici o di supporto, come rTMS, tDCS, psicoterapia, fototerapia o analisi PGx</li>
+          </ul>
+
+          <h2>Per chi è indicato?</h2>
+          <p>Il monitoraggio psichiatrico è rivolto a:</p>
+          <ul>
+            <li>Persone con nuova sintomatologia psichiatrica che cercano una diagnosi corretta fin dall’inizio</li>
+            <li>Pazienti con disturbi psichiatrici cronici, come depressione, disturbo bipolare, OCD o disturbi d’ansia, non stabilizzati con trattamenti precedenti</li>
+            <li>Persone con sintomi resistenti che vogliono capire se esiste una ragione genetica per la mancata risposta ai farmaci</li>
+            <li>Pazienti in trattamento rTMS che necessitano di monitoraggio psichiatrico integrato durante il protocollo</li>
+          </ul>
+
+          <div class="mt-20 pt-12 border-t border-slate-200">
+            <h2 class="text-2xl font-bold text-blue-900 mb-8">FAQ</h2>
+            <div class="space-y-8">
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Quanto dura la prima visita?</h3>
+                <p class="text-slate-600">La valutazione iniziale dura 40 minuti, oltre al tempo necessario per gli strumenti psicometrici. Una valutazione accurata richiede tempo.</p>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Serve un’impegnativa?</h3>
+                <p class="text-slate-600">No. È possibile prenotare direttamente senza invio da parte di un altro medico.</p>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Sono disponibili visite online di monitoraggio?</h3>
+                <p class="text-slate-600">Sì. Le visite di monitoraggio — non la prima valutazione — possono svolgersi anche a distanza tramite videochiamata sicura.</p>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Cosa succede se i farmaci non funzionano?</h3>
+                <p class="text-slate-600">Questo è esattamente lo scenario in cui la farmacogenomica e la rTMS hanno maggiore rilevanza. Non ci fermiamo alla prescrizione. Cerchiamo il perché.</p>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Con quale frequenza avviene il monitoraggio?</h3>
+                <p class="text-slate-600">Dipende dalla fase del trattamento. Nella fase acuta: ogni 2–4 settimane. Nella fase di stabilizzazione: ogni 1–3 mesi.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-slate-900 text-white p-8 md:p-12 rounded-3xl mt-16 shadow-xl">
+            <h3 class="text-2xl font-bold text-blue-300 mb-6">Il mio approccio</h3>
+            <p class="text-slate-300 leading-relaxed italic">“Non tratto diagnosi; tratto persone. Ogni paziente porta con sé un profilo biologico diverso, una storia diversa e bisogni diversi. La combinazione di valutazione clinica, misurazione psicometrica e — quando necessario — analisi genetica permette di progettare trattamenti non basati sulla maggioranza statistica, ma sui dati della persona specifica davanti a me.”</p>
+          </div>
+        </div>
+
+        <!-- Internal Links for SEO -->
+        <div class="mt-20 pt-12 border-t border-slate-200">
+          <h2 class="text-2xl font-bold text-blue-900 mb-8">Servizi Correlati</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <a href="/it/ypiresies/pgx/" class="p-6 bg-blue-50 rounded-2xl border border-blue-100 hover:border-blue-300 transition-all font-bold text-blue-900">Farmacogenomica (PGx) &rarr;</a>
+            <a href="/it/ypiresies/psychotherapeia/" class="p-6 bg-blue-50 rounded-2xl border border-blue-100 hover:border-blue-300 transition-all font-bold text-blue-900">Psicoterapia &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

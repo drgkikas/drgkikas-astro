@@ -1,0 +1,120 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/UI/Header.astro';
+import Footer from '../../../components/UI/Footer.astro';
+
+const title = "Test psicometrici e valutazione clinica";
+const description = "Strumenti psicometrici validati per misurare depressione, ansia, stress e altre condizioni — come parte della valutazione clinica. Atene e online.";
+const canonicalURL = "https://drgkikas.com/it/ypiresies/psychometrika-test";
+
+const schemaBundle = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalProcedure",
+      "name": title,
+      "description": description,
+      "url": canonicalURL
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://drgkikas.com/it" },
+        { "@type": "ListItem", "position": 2, "name": "Servizi", "item": "https://drgkikas.com/it/ypiresies" },
+        { "@type": "ListItem", "position": 3, "name": title, "item": canonicalURL }
+      ]
+    }
+  ]
+});
+---
+
+<Layout title={title} description={description} schema={schemaBundle}>
+  <Header />
+  <main class="pt-24 pb-16 bg-slate-50 min-h-screen">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Breadcrumbs UI -->
+      <nav class="text-sm text-slate-500 mb-8 mt-4">
+        <ol class="list-none p-0 inline-flex flex-wrap items-center">
+          <li class="flex items-center"><a href="/it" class="hover:text-blue-700 transition-colors">Home</a><svg class="w-3 h-3 mx-2 opacity-50" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></li>
+          <li class="flex items-center"><a href="/it/ypiresies/" class="hover:text-blue-700 transition-colors">Servizi</a><svg class="w-3 h-3 mx-2 opacity-50" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></li>
+          <li class="flex items-center"><span class="text-slate-800 font-medium">{title}</span></li>
+        </ol>
+      </nav>
+
+      <div class="glass-card p-10 md:p-16">
+        <div class="text-center mb-16 border-b border-slate-200 pb-12">
+          <h1 class="text-4xl md:text-5xl font-bold text-blue-900 mb-8 leading-normal">{title}</h1>
+          <p class="text-xl md:text-2xl text-slate-600 leading-relaxed max-w-3xl mx-auto">{description}</p>
+        </div>
+        
+        <div class="prose prose-lg md:prose-xl prose-blue max-w-none text-slate-700
+          prose-p:mb-10 prose-p:leading-[1.9]
+          prose-headings:text-blue-900 prose-headings:font-bold 
+          prose-h2:mt-20 prose-h2:mb-8 prose-h2:border-b prose-h2:border-slate-100 prose-h2:pb-4
+          prose-h3:mt-14 prose-h3:mb-6
+          prose-a:font-bold prose-a:text-blue-900 prose-a:bg-blue-100 prose-a:px-2 prose-a:py-0.5 prose-a:rounded-lg prose-a:no-underline hover:prose-a:bg-blue-700 hover:prose-a:text-white prose-a:transition-colors
+          prose-ul:my-10 prose-li:my-5 marker:text-blue-500">
+          
+          <p class="font-bold">La salute mentale può essere misurata. “Mi sento meglio” non basta — servono dati.</p>
+
+          <h2>Che cosa sono gli strumenti psicometrici?</h2>
+          <p>Gli strumenti psicometrici sono questionari validati e scientificamente testati che misurano quantitativamente i sintomi dei disturbi mentali. Sono utilizzati a livello internazionale sia per finalità diagnostiche sia per monitorare la risposta al trattamento. La differenza rispetto a una “normale conversazione” è che i risultati sono oggettivi, confrontabili e monitorabili nel tempo. Possiamo sapere quanto qualcosa è migliorato — o se è peggiorato.</p>
+
+          <h2>Strumenti psicometrici utilizzati in studio</h2>
+          <ul>
+            <li><strong>PHQ-9</strong> — screening e monitoraggio della depressione</li>
+            <li><strong>GAD-7</strong> — screening e misurazione dell’ansia generalizzata</li>
+            <li><strong>BAI</strong> — Beck Anxiety Inventory</li>
+            <li><strong>DASS-21</strong> — misurazione simultanea di depressione, ansia e stress</li>
+            <li><strong>PTSD Checklist</strong> — screening per stress post-traumatico</li>
+            <li><strong>EAT-26</strong> — screening per disturbi dell’alimentazione</li>
+            <li><strong>Adult ADHD Self-Report Scale</strong> — valutazione ADHD negli adulti</li>
+            <li><strong>WHOQOL-BREF</strong> — misurazione della qualità di vita</li>
+          </ul>
+          <p>Per OCD, disturbi psicotici, autismo e disturbi del sonno vengono utilizzate scale cliniche specialistiche somministrate dal medico, selezionate in base alla diagnosi e all’obiettivo della valutazione.</p>
+
+          <h2>Come vengono utilizzati nella pratica clinica</h2>
+          <p>Gli strumenti psicometrici non sostituiscono il giudizio clinico; lo integrano. In studio li utilizzo:</p>
+          <ul>
+            <li>Nella valutazione iniziale, per graduare la gravità dei sintomi e definire il baseline</li>
+            <li>Durante il trattamento, a intervalli regolari, per monitorare la risposta</li>
+            <li>Nel processo decisionale clinico, come modifica della terapia, integrazione di rTMS o psicoterapia, o conclusione del trattamento</li>
+            <li>Nel rilascio di relazioni mediche, come documentazione obiettiva del quadro clinico</li>
+          </ul>
+
+          <h2>Posso fare un test psicometrico online?</h2>
+          <p>Alcuni strumenti psicometrici possono essere compilati digitalmente prima della visita, risparmiando tempo e fornendo un primo quadro prima dell’incontro. Alcuni strumenti clinici richiedono somministrazione da parte di un clinico formato e non sono autosomministrati.</p>
+
+          <div class="mt-20 pt-12 border-t border-slate-200">
+            <h2 class="text-2xl font-bold text-blue-900 mb-8">FAQ</h2>
+            <div class="space-y-8">
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">I test psicometrici “stigmatizzano”?</h3>
+                <p class="text-slate-600">No. Sono strumenti medici di misurazione, paragonabili alla misurazione della pressione arteriosa o della glicemia. Il loro uso riflette serietà scientifica, non gravità della condizione.</p>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Posso richiedere una valutazione psicometrica senza essere paziente?</h3>
+                <p class="text-slate-600">Sì. È disponibile come valutazione autonoma per chi desidera un controllo obiettivo del proprio stato mentale, particolarmente utile in periodi di forte stress o cambiamento.</p>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Quanto dura una valutazione psicometrica?</h3>
+                <p class="text-slate-600">A seconda del numero di strumenti, 20–45 minuti. Di solito viene integrata nella seduta clinica.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Internal Links for SEO -->
+        <div class="mt-20 pt-12 border-t border-slate-200">
+          <h2 class="text-2xl font-bold text-blue-900 mb-8">Servizi Correlati</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <a href="/it/ypiresies/psychiatriki-parakolouthisi/" class="p-6 bg-blue-50 rounded-2xl border border-blue-100 hover:border-blue-300 transition-all font-bold text-blue-900">Monitoraggio psichiatrico &rarr;</a>
+            <a href="/it/ypiresies/adhd-evaluation/" class="p-6 bg-blue-50 rounded-2xl border border-blue-100 hover:border-blue-300 transition-all font-bold text-blue-900">Valutazione ADHD &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

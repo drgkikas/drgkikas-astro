@@ -1,0 +1,106 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/UI/Header.astro';
+import Footer from '../../../components/UI/Footer.astro';
+
+const title = "Psicoterapia ad Atene — CBT e terapia sistemico-familiare";
+const description = "Psicoterapia mirata integrata nel piano terapeutico — da sola o in combinazione con farmacoterapia e rTMS. Atene e online.";
+const canonicalURL = "https://drgkikas.com/it/ypiresies/psychotherapeia";
+
+const schemaBundle = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalProcedure",
+      "name": title,
+      "description": description,
+      "url": canonicalURL
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://drgkikas.com/it" },
+        { "@type": "ListItem", "position": 2, "name": "Servizi", "item": "https://drgkikas.com/it/ypiresies" },
+        { "@type": "ListItem", "position": 3, "name": title, "item": canonicalURL }
+      ]
+    }
+  ]
+});
+---
+
+<Layout title={title} description={description} schema={schemaBundle}>
+  <Header />
+  <main class="pt-24 pb-16 bg-slate-50 min-h-screen">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Breadcrumbs UI -->
+      <nav class="text-sm text-slate-500 mb-8 mt-4">
+        <ol class="list-none p-0 inline-flex flex-wrap items-center">
+          <li class="flex items-center"><a href="/it" class="hover:text-blue-700 transition-colors">Home</a><svg class="w-3 h-3 mx-2 opacity-50" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></li>
+          <li class="flex items-center"><a href="/it/ypiresies/" class="hover:text-blue-700 transition-colors">Servizi</a><svg class="w-3 h-3 mx-2 opacity-50" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></li>
+          <li class="flex items-center"><span class="text-slate-800 font-medium">Psicoterapia</span></li>
+        </ol>
+      </nav>
+
+      <div class="glass-card p-10 md:p-16">
+        <div class="text-center mb-16 border-b border-slate-200 pb-12">
+          <h1 class="text-4xl md:text-5xl font-bold text-blue-900 mb-8 leading-normal">Psicoterapia</h1>
+          <p class="text-xl md:text-2xl text-slate-600 leading-relaxed max-w-3xl mx-auto">Due approcci terapeutici basati sull’evidenza — selezionati in base al vostro bisogno, non per abitudine.</p>
+        </div>
+        
+        <div class="prose prose-lg md:prose-xl prose-blue max-w-none text-slate-700
+          prose-p:mb-10 prose-p:leading-[1.9]
+          prose-headings:text-blue-900 prose-headings:font-bold 
+          prose-h2:mt-20 prose-h2:mb-8 prose-h2:border-b prose-h2:border-slate-100 prose-h2:pb-4
+          prose-h3:mt-14 prose-h3:mb-6
+          prose-a:font-bold prose-a:text-blue-900 prose-a:bg-blue-100 prose-a:px-2 prose-a:py-0.5 prose-a:rounded-lg prose-a:no-underline hover:prose-a:bg-blue-700 hover:prose-a:text-white prose-a:transition-colors
+          prose-ul:my-10 prose-li:my-5 marker:text-blue-500">
+          
+          <h2>Che cos’è la psicoterapia che offro?</h2>
+          <p>La psicoterapia che offro non è separata dal resto del quadro clinico. È integrata nel piano terapeutico complessivo e tiene conto della biologia, della terapia farmacologica e, quando applicabile, dei risultati della rTMS. Lavoro con due metodologie principali: **Terapia Cognitivo-Comportamentale — CBT — e Terapia Sistemico-Familiare.** La scelta, o la combinazione, dipende dalla natura del problema, dalla struttura della vostra vita e da ciò che ha o non ha funzionato in passato.</p>
+
+          <h2>Terapia Cognitivo-Comportamentale — CBT</h2>
+          <p>La CBT è l’approccio terapeutico con il più ampio fondamento di ricerca in psichiatria. Si concentra sulla relazione tra pensieri, emozioni e comportamento, e su come questi tre livelli si alimentano reciprocamente in circoli viziosi. Non ci limitiamo a parlare del problema. Lavoriamo attivamente per modificare i modi di pensare e reagire che lo mantengono.</p>
+
+          <h3>Condizioni per cui la CBT è indicata</h3>
+          <ul>
+            <li>Depressione — MDD — da sola o in combinazione con farmacoterapia</li>
+            <li>Disturbi d’ansia — ansia generalizzata, panico, fobia sociale</li>
+            <li>Disturbo ossessivo-compulsivo — OCD — con protocolli ERP</li>
+            <li>Disturbi del sonno — con CBT-I</li>
+            <li>Manifestazioni psicosomatiche e disturbi dell’alimentazione</li>
+            <li>Burnout e stress lavorativo</li>
+          </ul>
+
+          <div class="mt-20 pt-12 border-t border-slate-200">
+            <h2 class="text-2xl font-bold text-blue-900 mb-8">FAQ</h2>
+            <div class="space-y-8">
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Quante sedute sono necessarie?</h3>
+                <p class="text-slate-600">Per la CBT in caso di ansia o depressione, solitamente 12–20 sedute. Per la Terapia Sistemica in questioni relazionali, il numero varia — spesso meno, ma con intervalli più lunghi. Lo definiremo insieme all'inizio.</p>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">La psicoterapia può essere fatta senza farmaci?</h3>
+                <p class="text-slate-600">Sì, per molte condizioni di entità lieve o moderata. Per episodi più gravi, la combinazione di farmacoterapia e psicoterapia ha risultati chiaramente migliori rispetto a ciascun metodo da solo.</p>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">La seduta online è efficace quanto quella in presenza?</h3>
+                <p class="text-slate-600">Per la psicoterapia e il monitoraggio farmacologico, i dati di ricerca non mostrano differenze significative di efficacia.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Internal Links for SEO -->
+        <div class="mt-20 pt-12 border-t border-slate-200">
+          <h2 class="text-2xl font-bold text-blue-900 mb-8">Servizi Correlati</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <a href="/it/ypiresies/psychiatriki-parakolouthisi/" class="p-6 bg-blue-50 rounded-2xl border border-blue-100 hover:border-blue-300 transition-all font-bold text-blue-900">Monitoraggio psichiatrico &rarr;</a>
+            <a href="/it/ypiresies/rtms/" class="p-6 bg-blue-50 rounded-2xl border border-blue-100 hover:border-blue-300 transition-all font-bold text-blue-900">Neuromodulazione rTMS &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

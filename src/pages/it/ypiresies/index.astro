@@ -1,0 +1,73 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/UI/Header.astro';
+import Footer from '../../../components/UI/Footer.astro';
+
+const services = [
+  {
+    id: "psychiatriki-parakolouthisi",
+    title: "Monitoraggio psichiatrico ad Atene",
+    description: "Monitoraggio psichiatrico personalizzato nel centro di Atene. Diagnosi, farmacoterapia e valutazione continua basate sui dati clinici e genetici."
+  },
+  {
+    id: "psychotherapeia",
+    title: "Psicoterapia ad Atene",
+    description: "Psicoterapia mirata integrata nel piano terapeutico — da sola o in combinazione con farmacoterapia e rTMS. Atene e online."
+  },
+  {
+    id: "rtms",
+    title: "rTMS e neuromodulazione",
+    description: "Trattamenti avanzati di neuromodulazione — rTMS e iTBS — senza farmaci, con protocolli di prima, seconda e terza linea."
+  },
+  {
+    id: "pgx",
+    title: "Farmacogenomica (PGx) ad Atene",
+    description: "Analisi del DNA per supportare la scelta del farmaco psichiatrico più appropriato. Valutazione di CYP2D6, CYP2C19, FKBP5, DRD3 e altri marcatori — meno tentativi, meno attesa."
+  },
+  {
+    id: "adhd-evaluation",
+    title: "Valutazione ADHD negli adulti",
+    description: "Una valutazione clinica valida è il primo passo per la gestione dell’ADHD. Utilizzo della DIVA-5, diagnosi differenziale e progettazione di un piano terapeutico personalizzato."
+  },
+  {
+    id: "online-synedria",
+    title: "Seduta psichiatrica online | Telepsichiatria",
+    description: "Seduta psichiatrica online con Paschalis Gkikas — videochiamata sicura e riservata per monitoraggio psichiatrico e psicoterapia. Senza spostamenti."
+  },
+  {
+    id: "gnomateyseis",
+    title: "Relazioni psichiatriche e certificati",
+    description: "Rilascio di relazioni psichiatriche e certificati per lavoro, uso legale, valutazione di invalidità, licenza per armi e altri usi amministrativi. Atene."
+  },
+  {
+    id: "psychometrika-test",
+    title: "Test psicometrici e valutazione",
+    description: "Strumenti psicometrici validati per misurare depressione, ansia, stress e altre condizioni — come parte della valutazione clinica. Atene e online."
+  },
+  {
+    id: "psychotherapy",
+    title: "Psicoterapia mirata: CBT e terapia familiare",
+    description: "Intervento cognitivo e comportamentale complementare, integrato nei protocolli di neuromodulazione."
+  }
+];
+---
+
+<Layout title="Servizi Psichiatrici ad Atene | Paschalis Gkikas" description="Scoprite la nostra gamma di servizi psichiatrici specializzati ad Atene: dalla neuromodulazione rTMS alla farmacogenomica PGx, fino alla psicoterapia CBT e alla valutazione ADHD.">
+  <Header />
+  <main class="py-24 bg-slate-50 min-h-screen">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+      <h1 class="text-4xl font-bold text-slate-900 mb-4">Servizi</h1>
+      <p class="text-lg text-slate-600 mb-12">Direzione terapeutica chiara, personalizzata per ogni problema.</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.map(service => (
+          <a href={`/it/ypiresies/${service.id}/`} class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md hover:border-blue-400 transition-all group block">
+            <h2 class="text-xl font-bold text-blue-900 mb-3 group-hover:text-blue-700">{service.title} &rarr;</h2>
+            <p class="text-slate-600 line-clamp-3">{service.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

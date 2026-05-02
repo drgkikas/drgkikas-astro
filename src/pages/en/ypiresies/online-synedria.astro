@@ -1,0 +1,131 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/UI/Header.astro';
+import Footer from '../../../components/UI/Footer.astro';
+
+const title = "Online psychiatric session | Telepsychiatry";
+const description = "Online psychiatric session with Paschalis Gkikas — secure, confidential video consultation for psychiatric follow-up and psychotherapy. No travel required.";
+const canonicalURL = "https://drgkikas.com/en/ypiresies/online-synedria";
+
+const schemaBundle = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalProcedure",
+      "name": title,
+      "description": description,
+      "url": canonicalURL
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://drgkikas.com/en" },
+        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://drgkikas.com/en/ypiresies" },
+        { "@type": "ListItem", "position": 3, "name": title, "item": canonicalURL }
+      ]
+    }
+  ]
+});
+---
+
+<Layout title={title} description={description} schema={schemaBundle}>
+  <Header />
+  <main class="pt-24 pb-16 bg-slate-50 min-h-screen">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Breadcrumbs UI -->
+      <nav class="text-sm text-slate-500 mb-8 mt-4">
+        <ol class="list-none p-0 inline-flex flex-wrap items-center">
+          <li class="flex items-center"><a href="/en" class="hover:text-blue-700 transition-colors">Home</a><svg class="w-3 h-3 mx-2 opacity-50" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></li>
+          <li class="flex items-center"><a href="/en/ypiresies/" class="hover:text-blue-700 transition-colors">Services</a><svg class="w-3 h-3 mx-2 opacity-50" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></li>
+          <li class="flex items-center"><span class="text-slate-800 font-medium">{title}</span></li>
+        </ol>
+      </nav>
+
+      <div class="glass-card p-10 md:p-16">
+        <div class="text-center mb-16 border-b border-slate-200 pb-12">
+          <h1 class="text-4xl md:text-5xl font-bold text-blue-900 mb-8 leading-normal">{title}</h1>
+          <p class="text-xl md:text-2xl text-slate-600 leading-relaxed max-w-3xl mx-auto">{description}</p>
+        </div>
+        
+        <div class="prose prose-lg md:prose-xl prose-blue max-w-none text-slate-700
+          prose-p:mb-10 prose-p:leading-[1.9]
+          prose-headings:text-blue-900 prose-headings:font-bold 
+          prose-h2:mt-20 prose-h2:mb-8 prose-h2:border-b prose-h2:border-slate-100 prose-h2:pb-4
+          prose-h3:mt-14 prose-h3:mb-6
+          prose-a:font-bold prose-a:text-blue-900 prose-a:bg-blue-100 prose-a:px-2 prose-a:py-0.5 prose-a:rounded-lg prose-a:no-underline hover:prose-a:bg-blue-700 hover:prose-a:text-white prose-a:transition-colors
+          prose-ul:my-10 prose-li:my-5 marker:text-blue-500">
+          
+          <p class="font-bold">The same specialized care — from your own space, at your own time.</p>
+
+          <h2>What is telepsychiatry?</h2>
+          <p>Telepsychiatry is not a “substitute” for an in-person visit. It is a different and equally effective form of care for many patient groups and conditions. Through a secure, encrypted video call, you can have:</p>
+          <ul>
+            <li><strong>Psychiatric follow-up visits</strong>, including medication review, symptom assessment and treatment adjustment</li>
+            <li><strong>Psychotherapy sessions</strong>, including CBT, relaxation techniques and coping skills</li>
+            <li><strong>A second opinion</strong> regarding diagnosis or current treatment</li>
+          </ul>
+
+          <h2>Who is an online session suitable for?</h2>
+          <p>Online sessions are particularly suitable for:</p>
+          <ul>
+            <li>Patients outside Athens who cannot travel for every follow-up visit</li>
+            <li>People with demanding schedules who struggle to find time during working hours</li>
+            <li>Patients with agoraphobia or social anxiety, for whom leaving home is itself a therapeutic obstacle</li>
+            <li>People in a stabilization phase who no longer need frequent in-person visits but want continuity of care</li>
+          </ul>
+
+          <h2>Which cases require an in-person visit?</h2>
+          <p>Some situations require physical presence during initial assessment or certain phases of treatment:</p>
+          <ul>
+            <li>First psychiatric assessment, for the most complete clinical picture possible</li>
+            <li>PGx sample collection, such as buccal swab or blood test</li>
+            <li>rTMS sessions, which require presence at the center</li>
+            <li>Acute conditions or crises requiring immediate clinical assessment</li>
+          </ul>
+
+          <h2>How the online session works</h2>
+          <ol>
+            <li><strong>Step 1</strong>: Book an appointment online or by phone.</li>
+            <li><strong>Step 2</strong>: You receive a secure video-call link.</li>
+            <li><strong>Step 3</strong>: You connect from a computer or mobile phone. No special software installation is required.</li>
+            <li><strong>Step 4</strong>: The session lasts 40 minutes, depending on type.</li>
+            <li><strong>Step 5</strong>: You receive an e-prescription or assessment notes, if needed.</li>
+          </ol>
+
+          <div class="mt-20 pt-12 border-t border-slate-200">
+            <h2 class="text-2xl font-bold text-blue-900 mb-8">FAQ</h2>
+            <div class="space-y-8">
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Is telepsychiatry legal in Greece?</h3>
+                <p class="text-slate-600">Yes. Telepsychiatry and telemedicine are governed by a specific legal framework in Greece and are fully legal for psychiatric services.</p>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Can I receive an e-prescription after an online session?</h3>
+                <p class="text-slate-600">Yes. E-prescribing is available after clinical assessment.</p>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Is an online session as effective as an in-person visit?</h3>
+                <p class="text-slate-600">For psychotherapy and medication follow-up, research data do not show a significant difference in effectiveness. For initial assessments or specialized examinations, an in-person visit remains preferable.</p>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">What equipment do I need?</h3>
+                <p class="text-slate-600">A computer or smartphone with camera and microphone, a good internet connection and a quiet private space. Nothing else.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Internal Links for SEO -->
+        <div class="mt-20 pt-12 border-t border-slate-200">
+          <h2 class="text-2xl font-bold text-blue-900 mb-8">Related Services</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <a href="/en/ypiresies/psychiatriki-parakolouthisi/" class="p-6 bg-blue-50 rounded-2xl border border-blue-100 hover:border-blue-300 transition-all font-bold text-blue-900">Psychiatric follow-up &rarr;</a>
+            <a href="/en/ypiresies/psychotherapeia/" class="p-6 bg-blue-50 rounded-2xl border border-blue-100 hover:border-blue-300 transition-all font-bold text-blue-900">Psychotherapy &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

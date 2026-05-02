@@ -178,8 +178,8 @@ const labels = t[currentLocale] || t.el;
           <a href={langPrefix + "/psychometrika"} class="text-blue-700 font-bold transition-colors bg-blue-50 px-3 py-1.5 rounded-lg hover:bg-blue-100">{labels.psychometrics}</a>
         )}
         <a href={langPrefix + "/KnowledgeBase-eBooks"} class="text-slate-600 hover:text-blue-700 font-medium transition-colors flex flex-col items-center justify-center leading-tight">
-          <span>eBooks /</span>
-          <span class="text-xs">Knowledge Base</span>
+          <span>Knowledge Base</span>
+          <span class="text-xs">& eBooks</span>
         </a>
         <a href={langPrefix + "/arthra-blog"} class="text-slate-600 hover:text-blue-700 font-medium transition-colors">{labels.blog}</a>
 
@@ -256,18 +256,18 @@ const labels = t[currentLocale] || t.el;
           <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/diataraxes/anoies-diataraxes-mnimis"}>{currentLocale === 'el' ? 'Άνοιες & Διαταραχές Μνήμης' : 'Dementia & Memory'}</a>
           <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/diataraxes/diataraxes-proslipsis-trofis"}>{currentLocale === 'el' ? 'Διαταραχές Πρόσληψης Τροφής' : 'Eating Disorders'}</a>
           <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/diataraxes/diataraxes-ypnou"}>{currentLocale === 'el' ? 'Διαταραχές Ύπνου' : 'Sleep Disorders'}</a>
-          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href="/diataraxes/dipoliki-diatarachi">Διπολική Διαταραχή</a>
-          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href="/diataraxes/ideopsychanagkastiki-diatarachi">Ιδεοψυχαναγκαστική Διαταραχή (OCD)</a>
-          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href="/diataraxes/katathlipsi">Κατάθλιψη</a>
-          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href="/diataraxes/pmdd">PMDD</a>
-          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href="/diataraxes/body-dysmorphic">Σύμπλεγμα Θερσίτη (BDD)</a>
-          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href="/diataraxes/diatarachi-xrisis-alkool">Διαταραχή Χρήσης Αλκοόλ</a>
-          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href="/diataraxes/diatarachi-xrisis-kokainis">Διαταραχή Χρήσης Κοκαΐνης</a>
-          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href="/diataraxes/psychosomatikes-ekdiloseis">Ψυχοσωματικές Εκδηλώσεις</a>
-          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href="/diataraxes/psychotikes-diataraxes">Ψυχωτικές Διαταραχές</a>
-          <a class="block px-3 py-2.5 text-base font-semibold text-slate-800 hover:bg-slate-50 hover:text-blue-700 rounded-lg" href="/iatros">Ιατρός</a>
-          <a class="block px-3 py-2.5 text-base font-bold text-blue-700 bg-blue-50 hover:bg-blue-100 rounded-lg" href="/psychometrika">Ψυχομετρικά Τεστ &rarr;</a>
-          <a class="block px-3 py-2.5 text-base font-semibold text-slate-800 hover:bg-slate-50 hover:text-blue-700 rounded-lg" href="/arthra-blog">Blog</a>
+          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/diataraxes/dipoliki-diatarachi"}>{currentLocale === 'el' ? 'Διπολική Διαταραχή' : 'Bipolar Disorder'}</a>
+          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/diataraxes/ideopsychanagkastiki-diatarachi"}>{currentLocale === 'el' ? 'Ιδεοψυχαναγκαστική Διαταραχή (OCD)' : 'Obsessive-Compulsive Disorder (OCD)'}</a>
+          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/diataraxes/katathlipsi"}>{currentLocale === 'el' ? 'Κατάθλιψη' : 'Depression'}</a>
+          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/diataraxes/pmdd"}>PMDD</a>
+          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/diataraxes/body-dysmorphic"}>{currentLocale === 'el' ? 'Σύμπλεγμα Θερσίτη (BDD)' : 'Body Dysmorphic (BDD)'}</a>
+          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/diataraxes/diatarachi-xrisis-alkool"}>{currentLocale === 'el' ? 'Διαταραχή Χρήσης Αλκοόλ' : 'Alcohol Use Disorder'}</a>
+          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/diataraxes/diatarachi-xrisis-kokainis"}>{currentLocale === 'el' ? 'Διαταραχή Χρήσης Κοκαΐνης' : 'Cocaine Use Disorder'}</a>
+          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/diataraxes/psychosomatikes-ekdiloseis"}>{currentLocale === 'el' ? 'Ψυχοσωματικές Εκδηλώσεις' : 'Psychosomatic Manifestations'}</a>
+          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/diataraxes/psychotikes-diataraxes"}>{currentLocale === 'el' ? 'Ψυχωτικές Διαταραχές' : 'Psychotic Disorders'}</a>
+          <a class="block px-3 py-2.5 text-base font-semibold text-slate-800 hover:bg-slate-50 hover:text-blue-700 rounded-lg" href={langPrefix + "/iatros"}>{labels.doctor}</a>
+          <a class="block px-3 py-2.5 text-base font-bold text-blue-700 bg-blue-50 hover:bg-blue-100 rounded-lg" href={langPrefix + "/psychometrika"}>{labels.psychometrics}</a>
+          <a class="block px-3 py-2.5 text-base font-semibold text-slate-800 hover:bg-slate-50 hover:text-blue-700 rounded-lg" href={langPrefix + "/arthra-blog"}>{labels.blog}</a>
           
           <div class="mt-4 pt-4 border-t border-slate-100 flex items-center gap-2">
             <span class="text-xs font-bold text-slate-400 uppercase tracking-widest px-3">Language / Lingua:</span>

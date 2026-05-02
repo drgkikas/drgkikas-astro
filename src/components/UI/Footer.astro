@@ -1,5 +1,6 @@
 ---
 const { currentLocale } = Astro;
+const langPrefix = currentLocale && currentLocale !== 'el' ? `/${currentLocale}` : '';
 
 const t = {
   el: {
@@ -168,20 +169,20 @@ const services = allServices
 
       <!-- Στήλη 2: Διαταραχές -->
       <div class="footer-col">
-        <h3 class="footer-col-title"><a href="/diataraxes">{labels.disorders_title}</a></h3>
+        <h3 class="footer-col-title"><a href={langPrefix + "/diataraxes"}>{labels.disorders_title}</a></h3>
         <ul class="footer-links">
           {disorders.map(dis => (
-            <li><a href={`/diataraxes/${dis.id.toLowerCase()}/`}>{dis.displayTitle}</a></li>
+            <li><a href={langPrefix + `/diataraxes/${dis.id.toLowerCase()}/`}>{dis.displayTitle}</a></li>
           ))}
         </ul>
       </div>
 
       <!-- Στήλη 3: Υπηρεσίες -->
       <div class="footer-col">
-        <h3 class="footer-col-title"><a href="/ypiresies">{labels.services_title}</a></h3>
+        <h3 class="footer-col-title"><a href={langPrefix + "/ypiresies"}>{labels.services_title}</a></h3>
         <ul class="footer-links">
           {services.map(service => (
-            <li><a href={`/ypiresies/${service.id.toLowerCase()}/`}>{service.displayTitle}</a></li>
+            <li><a href={langPrefix + `/ypiresies/${service.id.toLowerCase()}/`}>{service.displayTitle}</a></li>
           ))}
         </ul>
       </div>
@@ -191,11 +192,11 @@ const services = allServices
         <h3 class="footer-col-title uppercase">{labels.resources_title}</h3>
         <ul class="footer-links">
           { isGreek && (
-            <li><a href="/psychometrika" class="footer-highlight-link">{labels.psychometrics} &rarr;</a></li>
+            <li><a href={langPrefix + "/psychometrika"} class="footer-highlight-link">{labels.psychometrics} &rarr;</a></li>
           )}
-          <li><a href="/KnowledgeBase-eBooks">{labels.library}</a></li>
-          <li><a href="/epikoinonia">{labels.contact_link}</a></li>
-          <li><a href="/privacy-policy">{labels.privacy}</a></li>
+          <li><a href={langPrefix + "/KnowledgeBase-eBooks"}>{labels.library}</a></li>
+          <li><a href={langPrefix + "/epikoinonia"}>{labels.contact_link}</a></li>
+          <li><a href={langPrefix + "/privacy-policy"}>{labels.privacy}</a></li>
         </ul>
       </div>
 

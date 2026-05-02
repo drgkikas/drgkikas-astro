@@ -1,0 +1,73 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/UI/Header.astro';
+import Footer from '../../../components/UI/Footer.astro';
+
+const services = [
+  {
+    id: "psychiatriki-parakolouthisi",
+    title: "Psychiatric follow-up in Athens",
+    description: "Personalized psychiatric follow-up in central Athens. Diagnosis, pharmacotherapy and continuous assessment based on your clinical and genetic data."
+  },
+  {
+    id: "psychotherapeia",
+    title: "Psychotherapy in Athens",
+    description: "Targeted psychotherapy integrated into the treatment plan — either as a standalone intervention or combined with pharmacotherapy and rTMS. Athens & online."
+  },
+  {
+    id: "rtms",
+    title: "rTMS & neuromodulation",
+    description: "Advanced neuromodulation treatments — rTMS and iTBS — without medication, using first-, second- and third-line protocols."
+  },
+  {
+    id: "pgx",
+    title: "Pharmacogenomics (PGx) in Athens",
+    description: "DNA analysis to support the selection of the most appropriate psychiatric medication. Assessment of CYP2D6, CYP2C19, FKBP5, DRD3 and other markers — fewer trials, less waiting."
+  },
+  {
+    id: "adhd-evaluation",
+    title: "Adult ADHD assessment",
+    description: "A valid clinical assessment is the first step in managing ADHD. Use of DIVA-5, differential diagnosis and design of an individualized treatment plan."
+  },
+  {
+    id: "online-synedria",
+    title: "Online psychiatric session | Telepsychiatry",
+    description: "Online psychiatric session with Paschalis Gkikas — secure, confidential video consultation for psychiatric follow-up and psychotherapy. No travel required."
+  },
+  {
+    id: "gnomateyseis",
+    title: "Psychiatric medical reports & certificates",
+    description: "Issuing psychiatric medical reports and certificates for work, legal use, disability assessment, firearm licensing and other administrative purposes. Athens."
+  },
+  {
+    id: "psychometrika-test",
+    title: "Psychometric tests & assessment",
+    description: "Validated psychometric tools for measuring depression, anxiety, stress and other conditions — as part of clinical assessment. Athens & online."
+  },
+  {
+    id: "psychotherapy",
+    title: "Targeted psychotherapy: CBT & family therapy",
+    description: "Complementary cognitive and behavioural intervention, integrated into neuromodulation protocols."
+  }
+];
+---
+
+<Layout title="Psychiatric Services in Athens | Paschalis Gkikas" description="Discover our range of specialized psychiatric services in Athens: From rTMS neuromodulation and PGx pharmacogenomics to CBT psychotherapy and ADHD assessment.">
+  <Header />
+  <main class="py-24 bg-slate-50 min-h-screen">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+      <h1 class="text-4xl font-bold text-slate-900 mb-4">Services</h1>
+      <p class="text-lg text-slate-600 mb-12">Clear therapeutic direction, personalized for each problem.</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.map(service => (
+          <a href={`/en/ypiresies/${service.id}/`} class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md hover:border-blue-400 transition-all group block">
+            <h2 class="text-xl font-bold text-blue-900 mb-3 group-hover:text-blue-700">{service.title} &rarr;</h2>
+            <p class="text-slate-600 line-clamp-3">{service.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
