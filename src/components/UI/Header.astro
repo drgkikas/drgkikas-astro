@@ -14,7 +14,22 @@ const t = {
     contact_btn: "Κλείστε Online Συνεδρία",
     cv: "Βιογραφικό (CV)",
     edu: "Εκπαίδευση & Πιστοποιήσεις",
-    media: "Συνεργασίες & Media"
+    media: "Συνεργασίες & Media",
+    psychiatry: "Ψυχιατρική Παρακολούθηση",
+    psychotherapy: "Ψυχοθεραπεία",
+    pgx_nav: "Φαρμακογονιδιωματική (PGx)",
+    online: "Online Συνεδρία",
+    certificates: "Γνωματεύσεις / Πιστοποιητικά",
+    adhd_eval: "Αξιολόγηση ΔΕΠΥ (ADHD)",
+    all_services: "Όλες οι Υπηρεσίες",
+    indications: "Ενδείξεις",
+    faq: "Συχνές Ερωτήσεις",
+    how_it_works: "Πώς Λειτουργεί",
+    cost: "Κόστος & Διαδικασία",
+    depression: "Κατάθλιψη",
+    pain: "Χρόνιος Πόνος",
+    ocd: "Ιδεοψυχαναγκαστική (OCD)",
+    addiction: "Εξαρτήσεις (Κοκαΐνη)"
   },
   en: {
     home: "Home",
@@ -48,7 +63,7 @@ const t = {
     home: "Home",
     doctor: "Medico",
     services: "Servizi",
-    disorders: "Disturbi",
+    disorders: "Disturbi psichiatrici",
     rtms: "rTMS",
     psychometrics: "Psicometria",
     blog: "Blog",
@@ -129,10 +144,18 @@ const labels = t[currentLocale] || t.el;
           <div class="absolute top-full left-0 w-72 bg-white shadow-xl rounded-xl border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-left -translate-y-2 group-hover:translate-y-0 p-2 z-50 max-h-[70vh] overflow-y-auto">
             <a href={langPrefix + "/diataraxes/agxodeis-diataraxes"} class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{currentLocale === 'el' ? 'Αγχώδεις Διαταραχές' : 'Anxiety Disorders'}</a>
             <a href={langPrefix + "/diataraxes/adhd-adult"} class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{currentLocale === 'el' ? 'ΔΕΠΥ Ενηλίκων' : 'Adult ADHD'}</a>
+            <a href={langPrefix + "/diataraxes/anoies-diataraxes-mnimis"} class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{currentLocale === 'el' ? 'Άνοιες & Διαταραχές Μνήμης' : 'Dementia & Memory'}</a>
             <a href={langPrefix + "/diataraxes/dipoliki-diatarachi"} class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{currentLocale === 'el' ? 'Διπολική Διαταραχή' : 'Bipolar Disorder'}</a>
             <a href={langPrefix + "/diataraxes/katathlipsi"} class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{labels.depression}</a>
             <a href={langPrefix + "/diataraxes/ideopsychanagkastiki-diatarachi"} class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{labels.ocd}</a>
+            <a href={langPrefix + "/diataraxes/diataraxes-proslipsis-trofis"} class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{currentLocale === 'el' ? 'Διαταραχές Πρόσληψης Τροφής' : 'Eating Disorders'}</a>
+            <a href={langPrefix + "/diataraxes/diataraxes-ypnou"} class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{currentLocale === 'el' ? 'Διαταραχές Ύπνου' : 'Sleep Disorders'}</a>
+            <a href={langPrefix + "/diataraxes/pmdd"} class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">PMDD</a>
             <a href={langPrefix + "/diataraxes/body-dysmorphic"} class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{currentLocale === 'el' ? 'Σύμπλεγμα Θερσίτη (BDD)' : 'Body Dysmorphic (BDD)'}</a>
+            <a href={langPrefix + "/diataraxes/diatarachi-xrisis-alkool"} class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{currentLocale === 'el' ? 'Διαταραχή Χρήσης Αλκοόλ' : 'Alcohol Use Disorder'}</a>
+            <a href={langPrefix + "/diataraxes/diatarachi-xrisis-kokainis"} class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{currentLocale === 'el' ? 'Διαταραχή Χρήσης Κοκαΐνης' : 'Cocaine Use Disorder'}</a>
+            <a href={langPrefix + "/diataraxes/psychosomatikes-ekdiloseis"} class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{currentLocale === 'el' ? 'Ψυχοσωματικές Εκδηλώσεις' : 'Psychosomatic Manifestations'}</a>
+            <a href={langPrefix + "/diataraxes/psychotikes-diataraxes"} class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-700 rounded-lg">{currentLocale === 'el' ? 'Ψυχωτικές Διαταραχές' : 'Psychotic Disorders'}</a>
           </div>
         </div>
 
