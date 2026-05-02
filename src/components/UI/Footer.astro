@@ -207,8 +207,8 @@ const services = allServices
           { isGreek && (
             <li><a href={langPrefix + "/psychometrika"} class="footer-highlight-link">{labels.psychometrics} &rarr;</a></li>
           )}
-          <li><a href={langPrefix + "/KnowledgeBase-eBooks"}>{labels.library}</a></li>
-          <li><a href={langPrefix + "/epikoinonia"}>{labels.contact_link}</a></li>
+          <li><a href="/KnowledgeBase-eBooks">{labels.library}</a></li>
+          <li><a href={langPrefix + (currentLocale === 'it' ? "/contatti" : (currentLocale === 'en' ? "/contact" : "/epikoinonia"))}>{labels.contact_link}</a></li>
           <li><a href={langPrefix + "/privacy-policy"}>{labels.privacy}</a></li>
         </ul>
       </div>

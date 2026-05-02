@@ -220,7 +220,7 @@ const labels = t[currentLocale] || t.el;
           <a href={langPrefix + "/psychometrika"} class="text-blue-700 font-bold transition-colors bg-blue-50 px-2.5 py-1.5 rounded-lg hover:bg-blue-100 text-[13px] xl:text-sm">{labels.psychometrics}</a>
         )}
         <!-- Knowledge Base Special Item -->
-        <a href={langPrefix + "/KnowledgeBase-eBooks"} class="flex flex-col items-center justify-center group/kb px-1.5 py-1 rounded-xl hover:bg-slate-50 transition-all duration-300 relative mx-0.5">
+        <a href="/KnowledgeBase-eBooks" class="flex flex-col items-center justify-center group/kb px-1.5 py-1 rounded-xl hover:bg-slate-50 transition-all duration-300 relative mx-0.5">
           <span class="text-[7px] xl:text-[8px] font-black uppercase tracking-[0.05em] text-slate-400 group-hover/kb:text-blue-500 transition-colors leading-none mb-0.5 whitespace-nowrap">Knowledge Base</span>
           <span class="text-[11px] xl:text-[12px] font-extrabold text-slate-700 group-hover/kb:text-slate-900 transition-colors leading-none tracking-tight whitespace-nowrap">
             <span class="text-blue-600 group-hover/kb:text-blue-700">&</span> eBooks
@@ -319,9 +319,13 @@ const labels = t[currentLocale] || t.el;
           <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/diataraxes/psychosomatikes-ekdiloseis"}>{currentLocale === 'el' ? 'Ψυχοσωματικές Εκδηλώσεις' : 'Psychosomatic Manifestations'}</a>
           <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/diataraxes/psychotikes-diataraxes"}>{currentLocale === 'el' ? 'Ψυχωτικές Διαταραχές' : 'Psychotic Disorders'}</a>
           <a class="block px-3 py-2.5 text-base font-semibold text-slate-800 hover:bg-slate-50 hover:text-blue-700 rounded-lg" href={langPrefix + "/iatros"}>{labels.doctor}</a>
-          <a class="block px-3 py-2.5 text-base font-bold text-blue-700 bg-blue-50 hover:bg-blue-100 rounded-lg" href={langPrefix + "/psychometrika"}>{labels.psychometrics}</a>
-          <a class="block px-3 py-2.5 text-base font-semibold text-slate-800 hover:bg-slate-50 hover:text-blue-700 rounded-lg" href={langPrefix + "/KnowledgeBase-eBooks"}>Knowledge Base & eBooks</a>
-          <a class="block px-3 py-2.5 text-base font-semibold text-slate-800 hover:bg-slate-50 hover:text-blue-700 rounded-lg" href={langPrefix + "/arthra-blog"}>{labels.blog}</a>
+          { (currentLocale === 'el' || !currentLocale) && (
+            <>
+              <a class="block px-3 py-2.5 text-base font-bold text-blue-700 bg-blue-50 hover:bg-blue-100 rounded-lg" href={langPrefix + "/psychometrika"}>{labels.psychometrics}</a>
+              <a class="block px-3 py-2.5 text-base font-semibold text-slate-800 hover:bg-slate-50 hover:text-blue-700 rounded-lg" href={langPrefix + "/arthra-blog"}>{labels.blog}</a>
+            </>
+          )}
+          <a class="block px-3 py-2.5 text-base font-semibold text-slate-800 hover:bg-slate-50 hover:text-blue-700 rounded-lg" href="/KnowledgeBase-eBooks">Knowledge Base & eBooks</a>
           
           <div class="mt-4 pt-4 border-t border-slate-100 flex items-center gap-2">
             <span class="text-xs font-bold text-slate-400 uppercase tracking-widest px-3">Language / Lingua:</span>
