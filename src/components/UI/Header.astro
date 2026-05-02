@@ -185,13 +185,13 @@ const labels = t[currentLocale] || t.el;
 
             <div class="flex-1">
               <p class="text-slate-900 font-bold mb-3 border-b pb-2 text-sm uppercase tracking-wider">{currentLocale === 'el' ? 'Πώς Λειτουργεί' : 'Mechanism'}</p>
-              <a href={langPrefix + "/rtms/pos-leitourgei/neuroplasticity"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">Νευροπλαστικότητα</a>
-              <a href={langPrefix + "/rtms/pos-leitourgei/neuromodulation"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">Neuromodulation</a>
-              <a href={langPrefix + "/rtms/pos-leitourgei/dlpfc"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">Στόχευση DLPFC</a>
-              <a href={langPrefix + "/rtms/pos-leitourgei/brain-connectivity"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">Brain Connectivity</a>
-              <a href={langPrefix + "/rtms/pos-leitourgei/neural-oscillations"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">Neural Oscillations</a>
-              <a href={langPrefix + "/rtms/pos-leitourgei/motor-threshold"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">Motor Threshold / rMT</a>
-              <a href={langPrefix + "/rtms/pos-leitourgei/mep"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">MEP</a>
+              <a href={langPrefix + "/rtms/pos-leitourgei/neuroplasticity"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{currentLocale === 'el' ? 'Νευροπλαστικότητα' : 'Neuroplasticity'}</a>
+              <a href={langPrefix + "/rtms/pos-leitourgei/neuromodulation"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{currentLocale === 'el' ? 'Νευροτροποποίηση' : 'Neuromodulation'}</a>
+              <a href={langPrefix + "/rtms/pos-leitourgei/dlpfc"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{currentLocale === 'el' ? 'Στόχευση DLPFC' : 'DLPFC Targeting'}</a>
+              <a href={langPrefix + "/rtms/pos-leitourgei/brain-connectivity"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{currentLocale === 'el' ? 'Εγκεφαλική Συνδεσιμότητα' : 'Brain Connectivity'}</a>
+              <a href={langPrefix + "/rtms/pos-leitourgei/neural-oscillations"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{currentLocale === 'el' ? 'Νευρωνικές Ταλαντώσεις' : 'Neural Oscillations'}</a>
+              <a href={langPrefix + "/rtms/pos-leitourgei/motor-threshold"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{currentLocale === 'el' ? 'Κινητικό Κατώφλι (rMT)' : 'Motor Threshold (rMT)'}</a>
+              <a href={langPrefix + "/rtms/pos-leitourgei/mep"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{currentLocale === 'el' ? 'Κινητικό Προκλητό Δυναμικό (MEP)' : 'Motor Evoked Potential (MEP)'}</a>
             </div>
 
           </div>
@@ -200,9 +200,13 @@ const labels = t[currentLocale] || t.el;
         { (currentLocale === 'el' || !currentLocale) && (
           <a href={langPrefix + "/psychometrika"} class="text-blue-700 font-bold transition-colors bg-blue-50 px-3 py-1.5 rounded-lg hover:bg-blue-100">{labels.psychometrics}</a>
         )}
-        <a href={langPrefix + "/KnowledgeBase-eBooks"} class="text-slate-600 hover:text-blue-700 font-medium transition-colors flex flex-col items-center justify-center leading-tight">
-          <span>Knowledge Base</span>
-          <span class="text-xs">& eBooks</span>
+        <!-- Knowledge Base Special Item -->
+        <a href={langPrefix + "/KnowledgeBase-eBooks"} class="flex flex-col items-center justify-center group/kb px-3 py-1 rounded-xl hover:bg-slate-50 transition-all duration-300 relative">
+          <span class="text-[9px] font-black uppercase tracking-[0.15em] text-slate-400 group-hover/kb:text-blue-500 transition-colors leading-none mb-1">Knowledge Base</span>
+          <span class="text-[14px] font-extrabold text-slate-700 group-hover/kb:text-slate-900 transition-colors leading-none tracking-tight">
+            <span class="text-blue-600 group-hover/kb:text-blue-700">&</span> eBooks
+          </span>
+          <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-blue-600 group-hover/kb:w-1/2 transition-all duration-500 rounded-full"></div>
         </a>
         <a href={langPrefix + "/arthra-blog"} class="text-slate-600 hover:text-blue-700 font-medium transition-colors">{labels.blog}</a>
 
