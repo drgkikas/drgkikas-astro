@@ -6,17 +6,14 @@ import Footer from '../../components/UI/Footer.astro';
 
 import { getEntry } from 'astro:content';
 
-export async function getStaticPaths() {
-  const pages = await getCollection('rtms', ({ id }) => {
-    return !id.startsWith('en/') && !id.startsWith('it/');
-  });
-  return pages.map(p => ({ params: { slug: p.id } }));
-}
+const { slug = '' } = Astro.params;
+const cleanSlug = slug.replace(/\/$/, '');
+const allPages = await getCollection('rtms', ({ id }) => {
+  return !id.startsWith('en/') && !id.startsWith('it/');
+});
+const entry = allPages.find(p => p.id === cleanSlug);
 
-const { slug } = Astro.params;
-const entry = await getEntry('rtms', slug);
 if (!entry) return Astro.redirect('/404');
-const allPages = await getCollection('rtms');
 const { Content } = await render(entry);
 
 // Group pages by category (folder)

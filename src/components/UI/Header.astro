@@ -220,9 +220,9 @@ const labels = t[currentLocale] || t.el;
           <a href={langPrefix + "/psychometrika"} class="text-blue-700 font-bold transition-colors bg-blue-50 px-2.5 py-1.5 rounded-lg hover:bg-blue-100 text-[13px] xl:text-sm">{labels.psychometrics}</a>
         )}
         <!-- Knowledge Base Special Item -->
-        <a href={langPrefix + "/KnowledgeBase-eBooks"} class="flex flex-col items-center justify-center group/kb px-2 py-1 rounded-xl hover:bg-slate-50 transition-all duration-300 relative mx-0.5">
-          <span class="text-[8px] xl:text-[9px] font-black uppercase tracking-[0.1em] text-slate-400 group-hover/kb:text-blue-500 transition-colors leading-none mb-0.5 whitespace-nowrap">Knowledge Base</span>
-          <span class="text-[12px] xl:text-[13px] font-extrabold text-slate-700 group-hover/kb:text-slate-900 transition-colors leading-none tracking-tight whitespace-nowrap">
+        <a href={langPrefix + "/KnowledgeBase-eBooks"} class="flex flex-col items-center justify-center group/kb px-1.5 py-1 rounded-xl hover:bg-slate-50 transition-all duration-300 relative mx-0.5">
+          <span class="text-[7px] xl:text-[8px] font-black uppercase tracking-[0.05em] text-slate-400 group-hover/kb:text-blue-500 transition-colors leading-none mb-0.5 whitespace-nowrap">Knowledge Base</span>
+          <span class="text-[11px] xl:text-[12px] font-extrabold text-slate-700 group-hover/kb:text-slate-900 transition-colors leading-none tracking-tight whitespace-nowrap">
             <span class="text-blue-600 group-hover/kb:text-blue-700">&</span> eBooks
           </span>
           <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-blue-600 group-hover/kb:w-1/2 transition-all duration-500 rounded-full"></div>
@@ -230,9 +230,9 @@ const labels = t[currentLocale] || t.el;
         <a href={langPrefix + "/arthra-blog"} class="text-slate-600 hover:text-blue-700 font-medium transition-colors">{labels.blog}</a>
 
         <!-- Language Switcher -->
-        <div class="relative group py-6 ml-2">
-          <button class="flex items-center gap-1.5 text-slate-600 hover:text-blue-700 font-bold text-sm bg-slate-50 px-2 py-1 rounded-md transition-all">
-            <span class="text-lg leading-none">🌐</span>
+        <div class="relative group py-6 ml-1">
+          <button class="flex items-center gap-1 text-slate-600 hover:text-blue-700 font-bold text-[10px] bg-slate-50 px-1.5 py-1 rounded-md transition-all">
+            <span class="text-base leading-none">🌐</span>
             <span class="uppercase">{Astro.currentLocale || 'el'}</span>
             <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
           </button>
@@ -251,8 +251,8 @@ const labels = t[currentLocale] || t.el;
       </nav>
 
       <!-- CTA Contact -->
-      <div class="hidden md:flex items-center ml-2 xl:ml-4">
-        <a href="https://appt.link/meet-with-paschalis-gkikas/therapy-session" target="_blank" rel="noopener noreferrer" class="btn-primary px-4 py-2 text-[13px] xl:text-sm text-center leading-tight min-w-[150px] flex items-center justify-center" aria-label={labels.contact_btn}>
+      <div class="hidden md:flex items-center ml-1 xl:ml-2">
+        <a href="https://appt.link/meet-with-paschalis-gkikas/therapy-session" target="_blank" rel="noopener noreferrer" class="btn-primary px-3 py-2 text-[12px] xl:text-[13px] text-center leading-tight min-w-[130px] flex items-center justify-center" aria-label={labels.contact_btn}>
           {labels.contact_btn}
         </a>
       </div>
