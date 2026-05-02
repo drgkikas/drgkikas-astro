@@ -30,7 +30,9 @@ const t = {
     pain: "Χρόνιος Πόνος",
     ocd: "Ιδεοψυχαναγκαστική (OCD)",
     addiction: "Εξαρτήσεις (Κοκαΐνη)",
-    what_is_rtms: "Τι είναι το rTMS"
+    what_is_rtms: "Τι είναι το rTMS",
+    safety: "Ασφάλεια & Παρενέργειες",
+    trd: "Ανθεκτική Κατάθλιψη (TRD)"
   },
   en: {
     home: "Home",
@@ -59,7 +61,9 @@ const t = {
     pain: "Chronic Pain",
     ocd: "OCD",
     addiction: "Addiction (Cocaine)",
-    what_is_rtms: "What is rTMS"
+    what_is_rtms: "What is rTMS",
+    safety: "Safety & Side Effects",
+    trd: "Resistant Depression (TRD)"
   },
   it: {
     home: "Home",
@@ -88,7 +92,9 @@ const t = {
     pain: "Dolore Cronico",
     ocd: "DOC",
     addiction: "Dipendenza (Cocaina)",
-    what_is_rtms: "Cos'è l'rTMS"
+    what_is_rtms: "Cos'è l'rTMS",
+    safety: "Sicurezza ed Effetti Collaterali",
+    trd: "Depressione Resistente (TRD)"
   }
 };
 
@@ -176,6 +182,7 @@ const labels = t[currentLocale] || t.el;
             <div class="flex-1">
               <p class="text-slate-900 font-bold mb-3 border-b pb-2 text-sm uppercase tracking-wider">{currentLocale === 'el' ? 'Βασικές Πληροφορίες' : 'Core Info'}</p>
               <a href={langPrefix + "/rtms/core/ti-einai"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{labels.what_is_rtms}</a>
+              <a href={langPrefix + "/rtms/core/asfaleia-parenergeies"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{labels.safety}</a>
               <a href={langPrefix + "/rtms/core/kostos-kai-diadikasia"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{labels.cost}</a>
               <a href={langPrefix + "/rtms/core/syxnes"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{labels.faq}</a>
             </div>
@@ -183,6 +190,7 @@ const labels = t[currentLocale] || t.el;
             <div class="flex-1 bg-slate-50 -my-6 p-6 border-l border-r border-slate-100">
               <p class="text-slate-900 font-bold mb-3 border-b pb-2 text-sm uppercase tracking-wider">{labels.indications}</p>
               <a href={langPrefix + "/rtms/endixeis/katathlipsi"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{labels.depression}</a>
+              <a href={langPrefix + "/rtms/endixeis/trd"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{labels.trd}</a>
               <a href={langPrefix + "/rtms/endixeis/ponos"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{labels.pain}</a>
               <a href={langPrefix + "/rtms/endixeis/ocd"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{labels.ocd}</a>
               <a href={langPrefix + "/rtms/endixeis/kokaini"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{labels.addiction}</a>
@@ -278,6 +286,8 @@ const labels = t[currentLocale] || t.el;
         <div class="py-2 border-t border-slate-100 mt-2 pt-2">
           <div class="px-3 py-1 text-xs font-bold text-slate-400 uppercase tracking-widest">{labels.rtms}</div>
           <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/rtms/core/ti-einai"}>{labels.what_is_rtms}</a>
+          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/rtms/core/asfaleia-parenergeies"}>{labels.safety}</a>
+          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/rtms/endixeis/trd"}>{labels.trd}</a>
           <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/rtms/core/kostos-kai-diadikasia"} >{labels.cost}</a>
           <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/rtms/core/syxnes"}>{labels.faq}</a>
         </div>
