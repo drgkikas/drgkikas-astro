@@ -147,12 +147,24 @@ const currentDisorderTitles = disorderTitles[currentLocale] || disorderTitles.el
 const currentServiceTitles = serviceTitles[currentLocale] || serviceTitles.el;
 
 // Map and Sort
+// Filter and Map
 const disorders = allDisorders
-  .map(d => ({ ...d, displayTitle: currentDisorderTitles[d.id.toLowerCase()] || d.data.title }))
+  .filter(d => {
+    if (currentLocale === 'en') return d.id.startsWith('en/');
+    if (currentLocale === 'it') return d.id.startsWith('it/');
+    return !d.id.includes('/'); // Greek baseline
+  })
+  .map(d => {
+    const baseId = d.id.split('/').pop().toLowerCase();
+    return { ...d, displayTitle: currentDisorderTitles[baseId] || d.data.title };
+  })
   .sort((a, b) => a.displayTitle.localeCompare(b.displayTitle, currentLocale || 'el'));
 
 const services = allServices
-  .map(s => ({ ...s, displayTitle: currentServiceTitles[s.id.toLowerCase()] || s.data.title }))
+  .map(s => {
+    const baseId = s.id.split('/').pop().toLowerCase();
+    return { ...s, displayTitle: currentServiceTitles[baseId] || s.data.title };
+  })
   .sort((a, b) => a.displayTitle.localeCompare(b.displayTitle, currentLocale || 'el'));
 ---
 <footer class="site-footer">
