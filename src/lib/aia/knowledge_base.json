@@ -1,0 +1,122 @@
+[
+  {
+    "id": "rtms-intro-el",
+    "title": "rTMS & iTBS - Τι είναι",
+    "url": "/rtms/core/ti-einai",
+    "section_heading": "Ορισμός και Λειτουργία",
+    "text": "Ο Επαναληπτικός Διακρανιακός Μαγνητικός Ερεθισμός (rTMS) είναι μια εγκεκριμένη, μη επεμβατική θεραπεία που χρησιμοποιεί μαγνητικά πεδία για τη διέγερση νευρικών κυττάρων. Το iTBS (Theta Burst) είναι η εξέλιξή του, προσφέροντας τα ίδια αποτελέσματα σε μόλις 3 λεπτά αντί για 40. Εφαρμόζεται χωρίς νάρκωση και ο ασθενής επιστρέφει άμεσα στις δραστηριότητές του.",
+    "language": "el",
+    "content_type": "service",
+    "last_updated": "2026-05-10"
+  },
+  {
+    "id": "rtms-safety-el",
+    "title": "Ασφάλεια & Παρενέργειες rTMS",
+    "url": "/rtms/core/asfaleia-parenergeies",
+    "section_heading": "Είναι ασφαλές το rTMS;",
+    "text": "Το rTMS είναι εξαιρετικά ασφαλές χωρίς τις συστηματικές παρενέργειες των φαρμάκων (βάρος, σεξουαλική δυσλειτουργία). Συνηθέστερες παρενέργειες είναι ήπιος πονοκέφαλος ή τοπική ενόχληση που υποχωρούν γρήγορα. Αντενδείκνυται μόνο σε άτομα με μεταλλικά εμφυτεύματα στο κράνιο ή ιστορικό επιληψίας.",
+    "language": "el",
+    "content_type": "service",
+    "last_updated": "2026-05-10"
+  },
+  {
+    "id": "rtms-process-el",
+    "title": "Διαδικασία & Κόστος rTMS",
+    "url": "/rtms/core/kostos-kai-diadikasia",
+    "section_heading": "Πώς γίνεται η θεραπεία;",
+    "text": "Η διαδικασία ξεκινά με μια αρχική ψυχιατρική αξιολόγηση (60'). Ακολουθεί ο προσδιορισμός του Motor Threshold για εξατομίκευση της έντασης. Ένας πλήρης κύκλος περιλαμβάνει συνήθως 15-30 συνεδρίες. Το κόστος καθορίζεται μετά την αξιολόγηση βάσει του πρωτοκόλλου που απαιτείται.",
+    "language": "el",
+    "content_type": "service",
+    "last_updated": "2026-05-10"
+  },
+  {
+    "id": "rtms-mep-threshold-el",
+    "title": "Τεχνική Ανάλυση: MEP & Motor Threshold",
+    "url": "/rtms/pos-leitourgei/motor-threshold",
+    "section_heading": "Βαθμονόμηση και MEP",
+    "text": "Το Motor Evoked Potential (MEP) μετρά την πραγματική εγκεφαλική απόκριση μέσω EMG. Το Motor Threshold (MT) είναι η ελάχιστη ένταση για αυτή την απόκριση και αποτελεί τον κεντρικό δείκτη εξατομίκευσης της θεραπείας για κάθε ασθενή.",
+    "language": "el",
+    "content_type": "service",
+    "last_updated": "2026-05-10"
+  },
+  {
+    "id": "rtms-oscillations-el",
+    "title": "Νευρωνικές Ταλαντώσεις (Alpha, Beta, Theta)",
+    "url": "/rtms/pos-leitourgei/neural-oscillations",
+    "section_heading": "Η γλώσσα του εγκεφάλου",
+    "text": "Το rTMS αξιοποιεί τον συντονισμό (entrainment) των εγκεφαλικών ρυθμών. Ο ρυθμός Theta (4-8Hz) είναι η βάση του iTBS για την κατάθλιψη, ο Alpha (8-13Hz) για τον πόνο, ενώ ο Beta (13-30Hz) σχετίζεται με το άγχος και το OCD.",
+    "language": "el",
+    "content_type": "service",
+    "last_updated": "2026-05-10"
+  },
+  {
+    "id": "rtms-mdd-trd-el",
+    "title": "rTMS για Κατάθλιψη & TRD",
+    "url": "/rtms/endixeis/trd",
+    "section_heading": "Ανθεκτική Κατάθλιψη",
+    "text": "Το rTMS ενδείκνυται για την Ανθεκτική Κατάθλιψη (TRD), όπου τα φάρμακα έχουν αποτύχει. Επιτυγχάνει ποσοστά ανταπόκρισης ~55% και ύφεσης ~35% παρακάμπτοντας τους φαρμακολογικούς μηχανισμούς ανθεκτικότητας μέσω νευροπλαστικότητας.",
+    "language": "el",
+    "content_type": "disorder",
+    "last_updated": "2026-05-10"
+  },
+  {
+    "id": "rtms-ocd-el",
+    "title": "rTMS για Ιδεοψυχαναγκαστική Διαταραχή (OCD)",
+    "url": "/rtms/endixeis/ocd",
+    "section_heading": "Θεραπεία OCD",
+    "text": "Εγκεκριμένο από τον FDA (2018), το rTMS στοχεύει στη ρύθμιση του ραβδωτοθαλαμοφλοιϊκού κυκλώματος. Η χρήση 'symptom provocation' (πρόκληση συμπτώματος) πριν τη συνεδρία ενισχύει σημαντικά την αποτελεσματικότητα της θεραπείας.",
+    "language": "el",
+    "content_type": "disorder",
+    "last_updated": "2026-05-10"
+  },
+  {
+    "id": "rtms-cocaine-el",
+    "title": "rTMS για Εθισμό (Κοκαΐνη)",
+    "url": "/rtms/endixeis/kokaini",
+    "section_heading": "Απεξάρτηση & Craving",
+    "text": "Το rTMS βοηθά στην απεξάρτηση από κοκαΐνη ενισχύοντας τον εκτελεστικό έλεγχο του προμετωπιαίου φλοιού και μειώνοντας δραστικά την έντονη επιθυμία (craving) για χρήση. Αποτελεί μια από τις ελάχιστες αποτελεσματικές βιολογικές παρεμβάσεις για τον εθισμό.",
+    "language": "el",
+    "content_type": "disorder",
+    "last_updated": "2026-05-10"
+  },
+  {
+    "id": "rtms-pain-el",
+    "title": "rTMS για Χρόνιο Πόνο & Ινομυαλγία",
+    "url": "/rtms/endixeis/ponos",
+    "section_heading": "Νευροπαθητικός Πόνος",
+    "text": "Το rTMS στοχεύει τον κινητικό φλοιό (M1) για να ενεργοποιήσει ενδογενή αναλγητικά μονοπάτια. Έχει ισχυρές ενδείξεις (Level A) για νευροπαθητικό πόνο και ινομυαλγία, μειώνοντας την ένταση του πόνου κατά 30-50%.",
+    "language": "el",
+    "content_type": "disorder",
+    "last_updated": "2026-05-10"
+  },
+  {
+    "id": "pgx-detailed-el",
+    "title": "Φαρμακογονιδιωματική (PGx)",
+    "url": "/ypiresies/pgx",
+    "section_heading": "Εξατομικευμένη Φαρμακολογία",
+    "text": "Η PGx αναλύει το γενετικό προφίλ (CYP2D6, CYP2C19) για να ορίσει το σωστό φάρμακο και τη σωστή δόση εξατομικευμένα. Βοηθά στην πρόβλεψη παρενεργειών και στην αποφυγή άσκοπων φαρμακευτικών δοκιμών.",
+    "language": "el",
+    "content_type": "service",
+    "last_updated": "2026-05-10"
+  },
+  {
+    "id": "online-sessions-el",
+    "title": "Online Ψυχιατρική Συνεδρία",
+    "url": "/ypiresies/online-synedria",
+    "section_heading": "Τηλεψυχιατρική",
+    "text": "Παρέχουμε online συνεδρίες μέσω ασφαλούς βιντεοκλήσης. Ιδανικό για ασθενείς εκτός Αθήνας. Κλείστε το online ραντεβού σας απευθείας εδώ: [Online Ραντεβού](https://appt.link/meet-with-paschalis-gkikas/therapy-session).",
+    "language": "el",
+    "content_type": "service",
+    "last_updated": "2026-05-10"
+  },
+  {
+    "id": "knowledge-base-ebooks-el",
+    "title": "Knowledge Base & eBooks",
+    "url": "/KnowledgeBase-eBooks",
+    "section_heading": "Ψηφιακή Βιβλιοθήκη",
+    "text": "Κατεβάστε δωρεάν οδηγούς για τη Διπολική Διαταραχή, το Στρες, τον Ύπνο και το 'Τσιπάκι του Μυαλού'. Επισκεφθείτε τη σελίδα: [Knowledge Base](/KnowledgeBase-eBooks).",
+    "language": "el",
+    "content_type": "page",
+    "last_updated": "2026-05-10"
+  }
+]

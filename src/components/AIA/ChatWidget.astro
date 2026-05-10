@@ -1,0 +1,217 @@
+---
+---
+<div id="aia-chat-container" class="fixed bottom-6 right-6 z-50 font-sans pointer-events-none">
+  <!-- Floating Button -->
+  <button 
+    id="aia-toggle" 
+    class="pointer-events-auto w-16 h-16 bg-blue-700 hover:bg-blue-800 text-white rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 group overflow-hidden border-2 border-blue-400"
+    aria-label="Open AIA Assistant"
+  >
+    <div class="absolute -top-12 right-0 bg-white text-blue-700 px-3 py-1 rounded-lg shadow-md text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity">
+      AIA
+    </div>
+    <img src="/images/aia-avatar.png" alt="AIA Avatar" class="w-full h-full object-cover" />
+  </button>
+
+  <!-- Chat Window -->
+  <div 
+    id="aia-window" 
+    class="pointer-events-auto hidden absolute bottom-20 right-0 w-[360px] md:w-[420px] h-[600px] max-h-[80vh] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-slate-200 transition-all duration-300"
+  >
+    <!-- Header -->
+    <div class="bg-blue-700 p-4 text-white flex justify-between items-center shadow-md">
+      <div>
+        <h3 class="font-bold text-lg leading-none">AIA — AI Information Assistant</h3>
+        <span class="text-[11px] opacity-90 leading-tight block mt-1">Ρωτήστε για τις υπηρεσίες, το rTMS, την ψυχοθεραπεία ή την επικοινωνία με το ιατρείο.</span>
+      </div>
+      <button id="aia-close" class="hover:bg-blue-600 p-1 rounded-full transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Privacy Note -->
+    <div class="bg-slate-50 p-2 text-[10px] text-slate-500 border-b border-slate-200 text-center px-6 leading-tight italic">
+      Μην εισάγετε επείγοντα ή ιδιαίτερα ευαίσθητα προσωπικά δεδομένα. Η AIA παρέχει μόνο γενικές πληροφορίες.
+    </div>
+
+    <!-- Messages Area -->
+    <div id="aia-messages" class="flex-1 overflow-y-auto p-4 space-y-4 bg-white scroll-smooth">
+      <div class="flex items-end gap-2">
+        <img src="/images/aia-avatar.png" alt="AIA Avatar" class="w-6 h-6 rounded-full border border-blue-200 shadow-sm" />
+        <div class="bg-slate-100 text-slate-800 p-3 rounded-2xl rounded-tl-none text-sm max-w-[85%] shadow-sm border border-slate-200">
+          Γεια σας. Είμαι η <strong>AIA</strong>, η βοηθός πληροφοριών του drgkikas.com. Μπορώ να σας βοηθήσω να βρείτε πληροφορίες για τις υπηρεσίες, το rTMS, την ψυχοθεραπεία, την ψυχιατρική αξιολόγηση και την επικοινωνία με το ιατρείο.
+        </div>
+      </div>
+      
+      <!-- Quick Buttons -->
+      <div id="aia-quick-buttons" class="flex flex-wrap gap-2 pt-2">
+        <button class="aia-quick-btn text-[11px] bg-blue-50 text-blue-700 px-3 py-1.5 rounded-full border border-blue-100 hover:bg-blue-100 transition-colors">Τι είναι το rTMS;</button>
+        <button class="aia-quick-btn text-[11px] bg-blue-50 text-blue-700 px-3 py-1.5 rounded-full border border-blue-100 hover:bg-blue-100 transition-colors">Πώς κλείνω ραντεβού;</button>
+        <button class="aia-quick-btn text-[11px] bg-blue-50 text-blue-700 px-3 py-1.5 rounded-full border border-blue-100 hover:bg-blue-100 transition-colors">Ποιες υπηρεσίες παρέχονται;</button>
+        <button class="aia-quick-btn text-[11px] bg-blue-50 text-blue-700 px-3 py-1.5 rounded-full border border-blue-100 hover:bg-blue-100 transition-colors">Τι είναι η φαρμακογονιδιωματική;</button>
+        <button class="aia-quick-btn text-[11px] bg-blue-50 text-blue-700 px-3 py-1.5 rounded-full border border-blue-100 hover:bg-blue-100 transition-colors">Πού βρίσκεται το ιατρείο;</button>
+      </div>
+    </div>
+
+    <!-- Loading Indicator -->
+    <div id="aia-loading" class="hidden px-4 py-2 flex items-center gap-2">
+      <div class="flex space-x-1">
+        <div class="w-1.5 h-1.5 bg-blue-400 rounded-full animate-bounce"></div>
+        <div class="w-1.5 h-1.5 bg-blue-400 rounded-full animate-bounce [animation-delay:0.2s]"></div>
+        <div class="w-1.5 h-1.5 bg-blue-400 rounded-full animate-bounce [animation-delay:0.4s]"></div>
+      </div>
+      <span class="text-[10px] text-slate-400 font-medium">Η AIA σκέφτεται...</span>
+    </div>
+
+    <!-- Input Area -->
+    <form id="aia-form" class="p-4 bg-white border-t border-slate-100 flex gap-2 items-center">
+      <input 
+        type="text" 
+        id="aia-input" 
+        placeholder="Πώς λειτουργεί το rTMS;" 
+        class="flex-1 px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all"
+        required
+      />
+      <button 
+        type="submit" 
+        class="bg-blue-700 text-white p-2.5 rounded-xl hover:bg-blue-800 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-md shadow-blue-200"
+        id="aia-send"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+        </svg>
+      </button>
+    </form>
+    
+    <!-- Footer Disclaimer -->
+    <div class="bg-amber-50/50 p-2 text-[9px] text-amber-700 text-center px-4 leading-tight border-t border-amber-100/50">
+      Σε περίπτωση κρίσης καλέστε το <strong>10306</strong>.
+    </div>
+  </div>
+</div>
+
+<script>
+  const toggleBtn = document.getElementById('aia-toggle');
+  const closeBtn = document.getElementById('aia-close');
+  const windowEl = document.getElementById('aia-window');
+  const form = document.getElementById('aia-form') as HTMLFormElement;
+  const input = document.getElementById('aia-input') as HTMLInputElement;
+  const messagesContainer = document.getElementById('aia-messages');
+  const sendBtn = document.getElementById('aia-send') as HTMLButtonElement;
+  const loadingIndicator = document.getElementById('aia-loading');
+  const quickButtons = document.querySelectorAll('.aia-quick-btn');
+
+  let chatHistory = [];
+
+  toggleBtn.addEventListener('click', () => {
+    windowEl.classList.toggle('hidden');
+    if (!windowEl.classList.contains('hidden')) {
+      input.focus();
+    }
+  });
+
+  closeBtn.addEventListener('click', () => {
+    windowEl.classList.add('hidden');
+  });
+
+  function addMessage(content, role) {
+    const div = document.createElement('div');
+    div.className = `flex ${role === 'user' ? 'justify-end' : 'justify-start'} items-end gap-2 animate-in fade-in slide-in-from-bottom-2 duration-300`;
+    
+    if (role === 'assistant') {
+      const avatar = document.createElement('img');
+      avatar.src = '/images/aia-avatar.png';
+      avatar.className = 'w-6 h-6 rounded-full border border-blue-200 shadow-sm';
+      div.appendChild(avatar);
+    }
+
+    const innerDiv = document.createElement('div');
+    innerDiv.className = role === 'user' 
+      ? 'bg-blue-700 text-white p-3 rounded-2xl rounded-tr-none text-sm max-w-[85%] shadow-md'
+      : 'bg-slate-50 border border-slate-200 text-slate-800 p-3 rounded-2xl rounded-tl-none text-sm max-w-[85%] shadow-sm prose prose-sm prose-slate';
+    
+    // Markdown-like formatting for links and newlines
+    const formattedContent = content
+      .replace(/\n/g, '<br>')
+      .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="text-blue-700 font-bold underline">$1</a>');
+    
+    innerDiv.innerHTML = formattedContent;
+    
+    div.appendChild(innerDiv);
+    messagesContainer.appendChild(div);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+  }
+
+  async function handleSubmission(message: string) {
+    if (!message) return;
+
+    // Hide quick buttons after first interaction
+    const qbContainer = document.getElementById('aia-quick-buttons');
+    if (qbContainer) qbContainer.style.display = 'none';
+
+    addMessage(message, 'user');
+    input.value = '';
+    input.disabled = true;
+    sendBtn.disabled = true;
+    loadingIndicator.classList.remove('hidden');
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+    chatHistory.push({ role: 'user', content: message });
+
+    try {
+      const res = await fetch('/api/aia/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          messages: chatHistory,
+          lang: document.documentElement.lang || 'el'
+        })
+      });
+      
+      const data = await res.json();
+      
+      if (data.error) throw new Error(data.error);
+      
+      addMessage(data.content, 'assistant');
+      chatHistory.push({ role: 'assistant', content: data.content });
+      
+    } catch (err) {
+      addMessage('Δεν μπόρεσα να ολοκληρώσω την απάντηση. Μπορείτε να δοκιμάσετε ξανά ή να επικοινωνήσετε με το ιατρείο.', 'assistant');
+    } finally {
+      loadingIndicator.classList.add('hidden');
+      input.disabled = false;
+      sendBtn.disabled = false;
+      input.focus();
+    }
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    handleSubmission(input.value.trim());
+  });
+
+  quickButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      handleSubmission(btn.textContent || '');
+    });
+  });
+</script>
+
+<style>
+  /* Scrollbar styling */
+  #aia-messages::-webkit-scrollbar {
+    width: 4px;
+  }
+  #aia-messages::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  #aia-messages::-webkit-scrollbar-thumb {
+    background: #e2e8f0;
+    border-radius: 10px;
+  }
+  #aia-messages::-webkit-scrollbar-thumb:hover {
+    background: #cbd5e1;
+  }
+</style>
