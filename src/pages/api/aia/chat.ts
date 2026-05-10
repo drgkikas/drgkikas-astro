@@ -73,6 +73,8 @@ REQUIRED REFUSALS:
     // 4. API Call
     const apiKey = import.meta.env.OPENAI_API_KEY || process.env.OPENAI_API_KEY;
     
+    console.log('AIA API Key loaded:', apiKey ? `Yes (${apiKey.substring(0, 7)}...)` : 'No');
+
     if (!apiKey) {
       console.error('AIA API Error: OPENAI_API_KEY is missing.');
       throw new Error('API Key configuration error');
@@ -110,8 +112,13 @@ REQUIRED REFUSALS:
 
   } catch (error) {
     console.error('AIA API Error:', error);
+    if (error instanceof Error) {
+      console.error('Error message:', error.message);
+      console.error('Error stack:', error.stack);
+    }
     return new Response(JSON.stringify({ 
-      error: 'Δεν μπόρεσα να ολοκληρώσω την απάντηση. Μπορείτε να δοκιμάσετε ξανά ή να επικοινωνήσετε με το ιατρείο.' 
+      error: 'Δεν μπόρεσα να ολοκληρώσω την απάντηση. Μπορείτε να δοκιμάσετε ξανά ή να επικοινωνήσετε με το ιατρείο.',
+      debug: error instanceof Error ? error.message : String(error)
     }), { status: 500 });
   }
 };
