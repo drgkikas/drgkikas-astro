@@ -10,12 +10,13 @@
     <div class="absolute -top-12 right-0 bg-white text-blue-700 px-3 py-1 rounded-lg shadow-md text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity">
       AIA
     </div>
-    <div class="w-full h-full flex items-center justify-center bg-blue-600 text-white font-bold text-xl">
+    <div class="w-full h-full flex items-center justify-center bg-blue-600 text-white font-bold text-xl overflow-hidden">
+      <span id="aia-avatar-fallback" class="absolute">AIA</span>
       <img 
         src="/images/aia-avatar.png" 
         alt="AIA Avatar" 
-        class="w-full h-full object-cover" 
-        onerror="this.style.display='none'; this.parentElement.innerHTML='AIA'"
+        class="w-full h-full object-cover z-10 relative" 
+        onload="document.getElementById('aia-avatar-fallback').style.display='none'"
       />
     </div>
   </button>
@@ -46,8 +47,9 @@
     <!-- Messages Area -->
     <div id="aia-messages" class="flex-1 overflow-y-auto p-4 space-y-4 bg-white scroll-smooth">
       <div class="flex items-end gap-2">
-      <div class="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center text-[8px] font-bold overflow-hidden shrink-0">
-        <img src="/images/aia-avatar.png" alt="AIA" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentElement.innerHTML='AIA'" />
+      <div class="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center text-[8px] font-bold overflow-hidden shrink-0 relative">
+        <span class="absolute">AIA</span>
+        <img src="/images/aia-avatar.png" alt="AIA" class="w-full h-full object-cover z-10 relative" />
       </div>
         <div class="bg-slate-100 text-slate-800 p-3 rounded-2xl rounded-tl-none text-sm max-w-[85%] shadow-sm border border-slate-200">
           Γεια σας. Είμαι η <strong>AIA</strong>, η βοηθός πληροφοριών του drgkikas.com. Μπορώ να σας βοηθήσω να βρείτε πληροφορίες για τις υπηρεσίες, το rTMS, την ψυχοθεραπεία, την ψυχιατρική αξιολόγηση και την επικοινωνία με το ιατρείο.
