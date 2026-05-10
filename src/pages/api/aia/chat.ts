@@ -1,4 +1,5 @@
 import type { APIRoute } from 'astro';
+import { env } from 'cloudflare:workers';
 import { retrieveContext } from '../../../lib/aia/engine';
 
 export const POST: APIRoute = async ({ request, locals }) => {
@@ -70,9 +71,8 @@ REQUIRED REFUSALS:
 - Diagnosis: "Δεν μπορώ να κάνω διάγνωση. Μπορώ όμως να σας εξηγήσω ποια συμπτώματα συχνά οδηγούν σε αξιολόγηση και να σας παραπέμψω στη σχετική σελίδα."
 `;
 
-    // 4. API Call (Robust environment variable access for Cloudflare/Astro)
-    const context = (locals as any);
-    const apiKey = context?.runtime?.env?.OPENAI_API_KEY || import.meta.env.OPENAI_API_KEY || process.env.OPENAI_API_KEY;
+    // 4. API Call (Updated for Astro v6 + Cloudflare Workers)
+    const apiKey = (env as any).OPENAI_API_KEY || import.meta.env.OPENAI_API_KEY || process.env.OPENAI_API_KEY;
     
     console.log('AIA API Key loaded:', apiKey ? `Yes (${apiKey.substring(0, 7)}...)` : 'No');
 
