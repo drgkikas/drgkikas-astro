@@ -77,8 +77,9 @@ REQUIRED REFUSALS:
     console.log('AIA API Key loaded:', apiKey ? `Yes (${apiKey.substring(0, 7)}...)` : 'No');
 
     if (!apiKey) {
-      console.error('AIA API Error: OPENAI_API_KEY is missing.');
-      throw new Error('API Key configuration error');
+      const availableKeys = context?.runtime?.env ? Object.keys(context.runtime.env) : 'env_missing';
+      console.error('AIA API Error: OPENAI_API_KEY is missing. Available keys:', availableKeys);
+      throw new Error(`API Key configuration error. Available env keys: ${JSON.stringify(availableKeys)}`);
     }
 
     const response = await fetch('https://api.openai.com/v1/chat/completions', {

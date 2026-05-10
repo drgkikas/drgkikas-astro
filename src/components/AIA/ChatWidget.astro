@@ -182,6 +182,7 @@
       chatHistory.push({ role: 'assistant', content: data.content });
       
     } catch (err) {
+      console.error('AIA Frontend Error:', err);
       addMessage('Δεν μπόρεσα να ολοκληρώσω την απάντηση. Μπορείτε να δοκιμάσετε ξανά ή να επικοινωνήσετε με το ιατρείο.', 'assistant');
     } finally {
       loadingIndicator.classList.add('hidden');
