@@ -176,7 +176,10 @@
       
       const data = await res.json();
       
-      if (data.error) throw new Error(data.error);
+      if (data.error) {
+        addMessage(`Σφάλμα: ${data.error}${data.debug ? ` (${data.debug})` : ''}`, 'assistant');
+        return;
+      }
       
       addMessage(data.content, 'assistant');
       chatHistory.push({ role: 'assistant', content: data.content });
