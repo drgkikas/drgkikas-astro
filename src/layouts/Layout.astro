@@ -1,6 +1,5 @@
 ---
 import '../styles/global.css';
-import Footer from '../components/UI/Footer.astro';
 import ChatWidget from '../components/AIA/ChatWidget.astro';
 
 /* Layout: Added meta tags and SEO optimization */
@@ -63,7 +62,6 @@ const socialImageURL = new URL(image, 'https://drgkikas.com').href;
   </head>
   <body class="flex flex-col min-h-screen">
     <slot />
-    <Footer />
     <ChatWidget />
   </body>
 </html>
