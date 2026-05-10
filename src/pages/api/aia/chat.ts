@@ -64,7 +64,7 @@ RESPONSE FORMAT:
 - Avoid repeating "Contact us" at the end of every message.
 
 KNOWLEDGE CONTEXT:
-\${contextText}
+${contextText}
 
 REQUIRED REFUSALS:
 - Medication: "Δεν μπορώ να σας πω να διακόψετε ή να αλλάξετε φαρμακευτική αγωγή. Αυτό πρέπει να το συζητήσετε με τον γιατρό σας."
@@ -86,7 +86,7 @@ REQUIRED REFUSALS:
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer \${apiKey}`
+        'Authorization': `Bearer ${apiKey}`
       },
       body: JSON.stringify({
         model: 'gpt-4o-mini',
@@ -101,7 +101,7 @@ REQUIRED REFUSALS:
     if (!response.ok) {
       const errorData = await response.json();
       console.error('OpenAI API Error Details:', JSON.stringify(errorData, null, 2));
-      throw new Error(`OpenAI API responded with status \${response.status}`);
+      throw new Error(`OpenAI API responded with status ${response.status}: ${JSON.stringify(errorData)}`);
     }
 
     const data = await response.json();
