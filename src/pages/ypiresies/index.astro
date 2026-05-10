@@ -4,7 +4,7 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/UI/Header.astro';
 import Footer from '../../components/UI/Footer.astro';
 
-const services = await getCollection('services');
+const services = await getCollection('services', ({ id }) => !id.startsWith('en/') && !id.startsWith('it/'));
 
 // Custom mapping so PGx is shown distinctly or we can just map all
 ---

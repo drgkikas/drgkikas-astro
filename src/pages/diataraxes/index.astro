@@ -4,7 +4,7 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/UI/Header.astro';
 import Footer from '../../components/UI/Footer.astro';
 
-const disorders = await getCollection('disorders');
+const disorders = await getCollection('disorders', ({ id }) => !id.startsWith('en/') && !id.startsWith('it/'));
 ---
 
 <Layout title="Ψυχιατρικές Διαταραχές" description="Μάθετε για τα συμπτώματα και τις σύγχρονες θεραπευτικές προσεγγίσεις για την κατάθλιψη, το άγχος, την OCD και άλλες ψυχιατρικές παθήσεις. Έγκυρη ενημέρωση από τον ψυχίατρο Πασχάλη Γκίκα.">

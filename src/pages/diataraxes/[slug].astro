@@ -8,7 +8,7 @@ import Footer from '../../components/UI/Footer.astro';
 import { getEntry } from 'astro:content';
 
 export async function getStaticPaths() {
-  const disorders = await getCollection('disorders');
+  const disorders = await getCollection('disorders', ({ id }) => !id.startsWith('en/') && !id.startsWith('it/'));
   return disorders.map(d => ({ params: { slug: d.id.toLowerCase() } }));
 }
 
