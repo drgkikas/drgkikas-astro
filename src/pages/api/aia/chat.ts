@@ -72,12 +72,12 @@ REQUIRED REFUSALS:
 `;
 
     // 4. API Call (Updated for Astro v6 + Cloudflare Workers)
-    const apiKey = (env as any).OPENAI_API_KEY || import.meta.env.OPENAI_API_KEY || process.env.OPENAI_API_KEY;
+    const apiKey = (locals.runtime?.env as any)?.OPENAI_API_KEY || (env as any)?.OPENAI_API_KEY || import.meta.env.OPENAI_API_KEY;
     
-    console.log('AIA API Key loaded:', apiKey ? `Yes (${apiKey.substring(0, 7)}...)` : 'No');
+    console.log('AIA API Key loading attempt...');
 
     if (!apiKey) {
-      const availableKeys = context?.runtime?.env ? Object.keys(context.runtime.env) : 'env_missing';
+      const availableKeys = locals.runtime?.env ? Object.keys(locals.runtime.env) : 'env_missing';
       console.error('AIA API Error: OPENAI_API_KEY is missing. Available keys:', availableKeys);
       throw new Error(`API Key configuration error. Available env keys: ${JSON.stringify(availableKeys)}`);
     }
