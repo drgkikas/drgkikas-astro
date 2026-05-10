@@ -34,7 +34,8 @@ const t = {
     safety: "Ασφάλεια & Παρενέργειες — Τι να Περιμένετε",
     trd: "Ανθεκτική Κατάθλιψη (TRD)",
     core_info: "Βασικές Πληροφορίες",
-    mechanism: "Πώς Λειτουργεί"
+    mechanism: "Πώς Λειτουργεί",
+    mpns: "mPNS (Πόνος)"
   },
   en: {
     home: "Home",
@@ -67,7 +68,8 @@ const t = {
     safety: "Safety & Side Effects — What to Expect",
     trd: "Resistant Depression (TRD)",
     core_info: "Core Information",
-    mechanism: "How it works"
+    mechanism: "How it works",
+    mpns: "mPNS (Pain)"
   },
   it: {
     home: "Home",
@@ -100,7 +102,8 @@ const t = {
     safety: "Sicurezza ed Effetti Collaterali — Cosa Aspettarsi",
     trd: "Depressione Resistente (TRD)",
     core_info: "Informazioni di Base",
-    mechanism: "Come funziona"
+    mechanism: "Come funziona",
+    mpns: "mPNS (Dolore)"
   }
 };
 
@@ -196,6 +199,7 @@ const labels = t[currentLocale] || t.el;
               <a href={langPrefix + "/rtms/endixeis/katathlipsi"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{labels.depression}</a>
               <a href={langPrefix + "/rtms/endixeis/trd"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{labels.trd}</a>
               <a href={langPrefix + "/rtms/endixeis/ponos"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{labels.pain}</a>
+              <a href={langPrefix + "/rtms/endixeis/mpns"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{labels.mpns}</a>
               <a href={langPrefix + "/rtms/endixeis/ocd"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{labels.ocd}</a>
               <a href={langPrefix + "/rtms/endixeis/kokaini"} class="block py-2 text-sm text-slate-600 hover:text-blue-700">{labels.addiction}</a>
             </div>
@@ -294,7 +298,8 @@ const labels = t[currentLocale] || t.el;
           <div class="px-3 py-1 text-xs font-bold text-slate-400 uppercase tracking-widest">{labels.rtms}</div>
           <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/rtms/core/ti-einai"}>{labels.what_is_rtms}</a>
           <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/rtms/core/asfaleia-parenergeies"}>{labels.safety}</a>
-          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/rtms/endixeis/trd"}>{labels.trd}</a>
+          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/rtms/endixeis/ponos"}>{labels.pain}</a>
+          <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/rtms/endixeis/mpns"}>{labels.mpns}</a>
           <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/rtms/core/kostos-kai-diadikasia"} >{labels.cost}</a>
           <a class="block pl-5 pr-3 py-2 text-sm text-slate-600 hover:text-blue-700 hover:bg-slate-50 rounded-lg" href={langPrefix + "/rtms/core/syxnes"}>{labels.faq}</a>
         </div>
