@@ -104,16 +104,26 @@ ${contextText}
 REQUIRED REFUSALS:
 - Medication: "Δεν μπορώ να σας πω να διακόψετε ή να αλλάξετε φαρμακευτική αγωγή. Αυτό πρέπει να το συζητήσετε με τον γιατρό σας."
 - Diagnosis: "Δεν μπορώ να κάνω διάγνωση. Μπορώ όμως να σας εξηγήσω ποια συμπτώματα συχνά οδηγούν σε αξιολόγηση και να σας παραπέμψω στη σχετική σελίδα."
-\`;
+`;
 
     // 4. API Call (Updated for Astro v6 + Cloudflare Workers)
-    const apiKey = (env as any).OPENAI_API_KEY || import.meta.env.OPENAI_API_KEY || process.env.OPENAI_API_KEY;
-    const resendKey = (env as any).RESEND_API_KEY || import.meta.env.RESEND_API_KEY || process.env.RESEND_API_KEY;
+    let apiKey = '';
+    let resendKey = '';
+    try {
+      const cf = await import('cloudflare:workers' as any);
+      apiKey = cf.env?.OPENAI_API_KEY;
+      resendKey = cf.env?.RESEND_API_KEY;
+    } catch (e) {
+      // Fallback for local development
+    }
+
+    if (!apiKey) apiKey = (import.meta as any).env?.OPENAI_API_KEY || (typeof process !== 'undefined' ? process.env.OPENAI_API_KEY : '');
+    if (!resendKey) resendKey = (import.meta as any).env?.RESEND_API_KEY || (typeof process !== 'undefined' ? process.env.RESEND_API_KEY : '');
     
     console.log('[AIA DEBUG] API Key loaded:', !!apiKey, '| Resend Key loaded:', !!resendKey);
 
     if (!apiKey) {
-      throw new Error(\`API Key configuration error.\`);
+      throw new Error(`API Key configuration error.`);
     }
 
     // Define Tools
