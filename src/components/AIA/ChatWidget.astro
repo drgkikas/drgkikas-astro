@@ -170,7 +170,7 @@
       : lang === 'it' ? 'Vorrei lasciare un messaggio con AIA'
       : 'Θέλω να κρατήσετε εσείς το μήνυμα';
 
-    card.innerHTML = \`<p class="font-medium mb-3">\${question}</p>\`;
+    card.innerHTML = `<p class="font-medium mb-3">${question}</p>`;
 
     const btn1 = document.createElement('button');
     btn1.className = 'w-full text-left px-3 py-2 mb-2 bg-blue-700 text-white rounded-xl text-xs font-semibold hover:bg-blue-800 transition-colors';
@@ -221,7 +221,7 @@
       const data = await res.json();
       
       if (data.error) {
-        addMessage(\`Σφάλμα: \${data.error}\${data.debug ? \` (\${data.debug})\` : ''}\`, 'assistant');
+        addMessage(`Σφάλμα: ${data.error}${data.debug ? ` (${data.debug})` : ''}`, 'assistant');
         return;
       }
       
