@@ -141,7 +141,7 @@ REQUIRED REFUSALS:
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': \`Bearer \${apiKey}\`
+        'Authorization': `Bearer ${apiKey}`
       },
       body: JSON.stringify({
         model: 'gpt-4o-mini',
@@ -157,7 +157,7 @@ REQUIRED REFUSALS:
 
     if (!openAiResponse.ok) {
       const errorData = await openAiResponse.json();
-      throw new Error(\`OpenAI API responded with status \${openAiResponse.status}: \${JSON.stringify(errorData)}\`);
+      throw new Error(`OpenAI API responded with status ${openAiResponse.status}: ${JSON.stringify(errorData)}`);
     }
 
     const data = await openAiResponse.json();
@@ -171,27 +171,27 @@ REQUIRED REFUSALS:
           
           if (resendKey) {
             try {
-              const emailHtml = \`
+              const emailHtml = `
                 <div style="font-family: sans-serif; line-height: 1.6; color: #333;">
                   <h2 style="color: #084a79;">Νέο Μήνυμα από AIA Chatbot</h2>
-                  <p><strong>Ονοματεπώνυμο:</strong> \${args.name}</p>
-                  <p><strong>Επικοινωνία:</strong> \${args.contact_info}</p>
+                  <p><strong>Ονοματεπώνυμο:</strong> ${args.name}</p>
+                  <p><strong>Επικοινωνία:</strong> ${args.contact_info}</p>
                   <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;" />
                   <p><strong>Μήνυμα:</strong></p>
-                  <p style="background: #f9f9f9; padding: 15px; border-radius: 8px;">\${args.message}</p>
+                  <p style="background: #f9f9f9; padding: 15px; border-radius: 8px;">${args.message}</p>
                 </div>
-              \`;
+              `;
 
               const resendResponse = await fetch('https://api.resend.com/emails', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
-                  'Authorization': \`Bearer \${resendKey}\`
+                  'Authorization': `Bearer ${resendKey}`
                 },
                 body: JSON.stringify({
                   from: 'AIA Assistant <notifications@drgkikas.com>',
                   to: ['contact@drgkikas.com'],
-                  subject: \`Lead από AIA: \${args.name}\`,
+                  subject: `Lead από AIA: ${args.name}`,
                   html: emailHtml
                 })
               });
@@ -210,10 +210,10 @@ REQUIRED REFUSALS:
           // Return a second call to OpenAI to get the final response or just synthesize it
           // For simplicity and speed in a worker, we'll synthesize the confirmation response
           const confirmationText = lang === 'en' 
-            ? \`Thank you! Your details and message have been sent to the clinic. We will contact you soon.\`
+            ? `Thank you! Your details and message have been sent to the clinic. We will contact you soon.`
             : lang === 'it'
-            ? \`Grazie! I tuoi dati e il tuo messaggio sono stati inviati alla clinica. Ti contatteremo al più presto.\`
-            : \`Ευχαριστώ! Τα στοιχεία σας και το μήνυμά σας στάλθηκαν στο ιατρείο. Θα επικοινωνήσουμε μαζί σας σύντομα.\`;
+            ? `Grazie! I tuoi dati e il tuo messaggio sono stati inviati alla clinica. Ti contatteremo al più presto.`
+            : `Ευχαριστώ! Τα στοιχεία σας και το μήνυμά σας στάλθηκαν στο ιατρείο. Θα επικοινωνήσουμε μαζί σας σύντομα.`;
           
           return new Response(JSON.stringify({
             content: confirmationText,
