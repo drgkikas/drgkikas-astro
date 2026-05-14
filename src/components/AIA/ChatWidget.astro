@@ -148,6 +148,50 @@
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
   }
 
+  function addBookingChoiceCard(lang) {
+    const div = document.createElement('div');
+    div.className = 'flex justify-start items-end gap-2 animate-in fade-in slide-in-from-bottom-2 duration-300';
+
+    const avatar = document.createElement('img');
+    avatar.src = '/images/aia-avatar.png';
+    avatar.className = 'w-6 h-6 rounded-full border border-blue-200 shadow-sm self-start mt-1';
+    div.appendChild(avatar);
+
+    const card = document.createElement('div');
+    card.className = 'bg-slate-50 border border-slate-200 text-slate-800 p-3 rounded-2xl rounded-tl-none text-sm max-w-[85%] shadow-sm';
+
+    const question = lang === 'en' ? 'How would you like to proceed?'
+      : lang === 'it' ? 'Come preferisci procedere?'
+      : 'Πώς θα θέλατε να προχωρήσουμε;';
+    const btn1Label = lang === 'en' ? '💬 AIA takes a message for me' : lang === 'it' ? '💬 AIA prende un messaggio per me' : '💬 Να κρατήσει μήνυμα η AIA';
+    const btn2Label = lang === 'en' ? '🌐 Visit Contact Page' : lang === 'it' ? '🌐 Pagina Contatti' : '🌐 Σελίδα Επικοινωνίας';
+    const contactUrl = lang === 'en' ? '/en/contact' : lang === 'it' ? '/it/contatti' : '/epikoinonia';
+    const aiaMsg = lang === 'en' ? 'I would like to leave a message with AIA'
+      : lang === 'it' ? 'Vorrei lasciare un messaggio con AIA'
+      : 'Θέλω να κρατήσετε εσείς το μήνυμα';
+
+    card.innerHTML = \`<p class="font-medium mb-3">\${question}</p>\`;
+
+    const btn1 = document.createElement('button');
+    btn1.className = 'w-full text-left px-3 py-2 mb-2 bg-blue-700 text-white rounded-xl text-xs font-semibold hover:bg-blue-800 transition-colors';
+    btn1.textContent = btn1Label;
+    btn1.addEventListener('click', () => {
+      div.remove();
+      handleSubmission(aiaMsg);
+    });
+
+    const btn2 = document.createElement('a');
+    btn2.href = contactUrl;
+    btn2.className = 'block w-full text-center px-3 py-2 bg-slate-200 text-slate-700 rounded-xl text-xs font-semibold hover:bg-slate-300 transition-colors';
+    btn2.textContent = btn2Label;
+
+    card.appendChild(btn1);
+    card.appendChild(btn2);
+    div.appendChild(card);
+    messagesContainer.appendChild(div);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+  }
+
   async function handleSubmission(message: string) {
     if (!message) return;
 
@@ -177,12 +221,17 @@
       const data = await res.json();
       
       if (data.error) {
-        addMessage(`Σφάλμα: ${data.error}${data.debug ? ` (${data.debug})` : ''}`, 'assistant');
+        addMessage(\`Σφάλμα: \${data.error}\${data.debug ? \` (\${data.debug})\` : ''}\`, 'assistant');
         return;
       }
       
-      addMessage(data.content, 'assistant');
-      chatHistory.push({ role: 'assistant', content: data.content });
+      if (data.isBookingChoice) {
+        addBookingChoiceCard(data.lang || document.documentElement.lang || 'el');
+        // Don't add to chatHistory so the AI doesn't see this as a regular message
+      } else {
+        addMessage(data.content, 'assistant');
+        chatHistory.push({ role: 'assistant', content: data.content });
+      }
       
     } catch (err) {
       console.error('AIA Frontend Error:', err);
