@@ -89,12 +89,17 @@
       </button>
     </form>
     
+    <!-- Turnstile Invisible Widget -->
+    <div id="cf-turnstile-widget" class="cf-turnstile" data-sitekey={import.meta.env.PUBLIC_TURNSTILE_SITE_KEY} data-size="invisible" data-theme="light"></div>
+
     <!-- Footer Disclaimer -->
     <div class="bg-amber-50/50 p-2 text-[9px] text-amber-700 text-center px-4 leading-tight border-t border-amber-100/50">
       Σε περίπτωση κρίσης καλέστε το <strong>10306</strong>.
     </div>
   </div>
 </div>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
 <script>
   const toggleBtn = document.getElementById('aia-toggle');
@@ -209,12 +214,16 @@
     chatHistory.push({ role: 'user', content: message });
 
     try {
+      const turnstileInput = document.querySelector('[name="cf-turnstile-response"]') as HTMLInputElement;
+      const turnstileToken = turnstileInput ? turnstileInput.value : '';
+
       const res = await fetch('/api/aia/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
           messages: chatHistory,
-          lang: document.documentElement.lang || 'el'
+          lang: document.documentElement.lang || 'el',
+          turnstileToken
         })
       });
       
@@ -241,6 +250,10 @@
       input.disabled = false;
       sendBtn.disabled = false;
       input.focus();
+      
+      if (typeof turnstile !== 'undefined') {
+        turnstile.reset();
+      }
     }
   }
 

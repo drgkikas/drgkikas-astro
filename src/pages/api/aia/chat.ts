@@ -4,9 +4,41 @@ import { retrieveContext } from '../../../lib/aia/engine';
 
 export const POST: APIRoute = async ({ request, locals }) => {
   try {
-    const { messages, lang } = await request.json();
+    const { messages, lang, turnstileToken } = await request.json();
     const userMessage = messages[messages.length - 1].content;
     console.log('[AIA DEBUG] userMessage:', userMessage, '| lang:', lang);
+
+    // 0. Cloudflare Turnstile Verification
+    let turnstileSecret = '';
+    try {
+      const cf = await import('cloudflare:workers' as any);
+      turnstileSecret = cf.env?.TURNSTILE_SECRET_KEY;
+    } catch (e) {
+      // Fallback
+    }
+    if (!turnstileSecret) turnstileSecret = (import.meta as any).env?.TURNSTILE_SECRET_KEY || (typeof process !== 'undefined' ? process.env.TURNSTILE_SECRET_KEY : '');
+
+    if (turnstileSecret) {
+      if (!turnstileToken) {
+        return new Response(JSON.stringify({ error: 'Turnstile token missing.' }), { status: 400 });
+      }
+      
+      const formData = new FormData();
+      formData.append('secret', turnstileSecret);
+      formData.append('response', turnstileToken);
+      const ip = request.headers.get('CF-Connecting-IP') || '';
+      if (ip) formData.append('remoteip', ip);
+
+      const turnstileRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+        method: 'POST',
+        body: formData
+      });
+      const turnstileOutcome = await turnstileRes.json();
+      if (!turnstileOutcome.success) {
+        console.error('[AIA DEBUG] Turnstile failed:', turnstileOutcome);
+        return new Response(JSON.stringify({ error: 'Failed security check (bot detection).' }), { status: 403 });
+      }
+    }
 
     // 1. Crisis Detection (Strict Protocol)
     const crisisKeywords = [
