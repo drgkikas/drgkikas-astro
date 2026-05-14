@@ -23,7 +23,7 @@ Nel nostro approccio non esistono “pacchetti predefiniti”. Il costo finale v
 
 1. **La diagnosi esatta:** depressione, disturbo ossessivo-compulsivo, dolore cronico e dipendenze richiedono diverse aree cerebrali bersaglio e diversa intensità o durata delle sedute.
 2. **Il protocollo scelto:** utilizziamo apparecchiature di ultima generazione che permettono una scelta personalizzata del protocollo. La iTBS theta burst di 3 minuti o la deep TMS comportano una diversa struttura del tempo per il paziente.
-3. **La risposta del paziente:** molti pazienti mostrano una remissione significativa alla 15ª seduta e il trattamento si conclude. Altri possono richiedere un’estensione fino a 30 sedute, oppure 1–2 sedute di mantenimento al mese per aiutare a prevenire le ricadute.
+3. **Risposta del paziente:** Molti pazienti mostrano un'eccellente remissione entro la 15ª sessione, mentre altri potrebbero dover arrivare a 30. In ogni caso, il protocollo deve essere completato correttamente.
 
 > **Nota:** attualmente la rTMS non è coperta dall’EOPYY. Tuttavia, alcune polizze assicurative private possono prevedere una copertura parziale. Si consiglia di verificare il proprio contratto.
 
@@ -37,6 +37,8 @@ La valutazione medica iniziale è il passaggio più importante prima dell’iniz
 - Essere in grado di riferire brevemente quali trattamenti farmacologici hai provato in passato e se hanno causato effetti collaterali che ti hanno costretto a interromperli.
 - Informarci immediatamente se hai oggetti metallici non rimovibili nella testa o nel collo, come clip vascolari o pompe, un pacemaker o una storia medica di crisi epilettiche.
 - Eventuali risonanze magnetiche (MRI) o elettroencefalogrammi (EEG) recenti devono essere consegnati al medico.
+
+Dopo la raccolta dell'anamnesi, dedichiamo del tempo a misurare la tua **Soglia Motoria (Motor Threshold / rMT)**. Questo è il test assolutamente necessario e indolore che “calibra” l'intensità dell'impulso magnetico al tuo cervello, garantendo condizioni di applicazione sicure. Il costo della prima sessione (100€) viene detratto dal costo totale del trattamento quando si procede con la terapia.
 
 ---
 

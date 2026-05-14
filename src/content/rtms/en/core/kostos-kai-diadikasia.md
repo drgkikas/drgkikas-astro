@@ -23,7 +23,7 @@ In our approach, there are no “ready-made packages”. The final cost is deter
 
 1. **The exact diagnosis:** Depression, obsessive-compulsive disorder, chronic pain, and addictions require different brain-targeting areas and different stimulation intensity or session duration.
 2. **The selected protocol:** We use latest-generation equipment that allows protocol selection. The 3-minute iTBS theta burst protocol or deep TMS will determine a different structure for the patient’s time.
-3. **The patient’s response:** Many patients show marked remission by session 15 and treatment stops there. Others may need extension up to 30 sessions, or 1–2 maintenance sessions per month to help prevent relapse.
+3. **Patient Response:** Many patients show excellent remission by the 15th session, while others may need to reach 30. In any case, the protocol must be completed correctly.
 
 > **Note:** rTMS is currently not covered by EOPYY. However, some private insurance contracts may provide partial coverage. We recommend checking your policy.
 
@@ -37,6 +37,8 @@ The initial medical assessment is the most important step before starting rTMS. 
 - Be able to briefly report which pharmacological treatments you have tried in the past and whether they caused side effects that led you to stop them.
 - Inform us immediately if you have non-removable metallic objects in the head or neck, such as vascular clips or pumps, a pacemaker, or a medical history of seizures.
 - Any recent MRI scans or electroencephalograms (EEG) should be submitted to the physician.
+
+After taking the history, we dedicate time to measure your **Motor Threshold (rMT)**. This is the absolutely necessary, painless test that “calibrates” the intensity of the magnetic pulse to your own brain, ensuring safe application conditions. The cost of the first session (100€) is deducted from the total treatment cost when one proceeds with the therapy.
 
 ---
 
