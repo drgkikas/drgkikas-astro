@@ -88,8 +88,8 @@ order: 6
   "@graph": [
     {
       "@type": "MedicalWebPage",
-      "@id": "https://www.drgkikas.com/rtms/endixeis/mpns/#webpage",
-      "url": "https://www.drgkikas.com/rtms/endixeis/mpns/",
+      "@id": "https://drgkikas.com/rtms/endixeis/mpns/#webpage",
+      "url": "https://drgkikas.com/rtms/endixeis/mpns/",
       "name": "mPNS: Μαγνητική Περιφερική Νευρική Διέγερση",
       "description": "Τι είναι το mPNS, πώς βοηθά στη ρύθμιση των νευρικών κυκλωμάτων και πότε μπορεί να έχει θέση σε χρόνιο νευροπαθητικό, μετατραυματικό ή μετεγχειρητικό πόνο.",
       "inLanguage": "el-GR"

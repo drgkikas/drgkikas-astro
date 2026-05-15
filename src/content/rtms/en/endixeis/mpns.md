@@ -88,8 +88,8 @@ mPNS and rTMS belong to the broader family of neuromodulation but are applied at
   "@graph": [
     {
       "@type": "MedicalWebPage",
-      "@id": "https://www.drgkikas.com/en/rtms/endixeis/mpns/#webpage",
-      "url": "https://www.drgkikas.com/en/rtms/endixeis/mpns/",
+      "@id": "https://drgkikas.com/en/rtms/endixeis/mpns/#webpage",
+      "url": "https://drgkikas.com/en/rtms/endixeis/mpns/",
       "name": "mPNS: Magnetic Peripheral Nerve Stimulation",
       "description": "What is mPNS, how it helps regulate nerve circuits, and its role in chronic neuropathic, post-traumatic, or post-surgical pain.",
       "inLanguage": "en-US"
