@@ -50,7 +50,7 @@ It is not a treatment for every type of pain. If there is severe mechanical dama
 
 ## Contraindications and points of attention
 
-Treatment with mPNS should only be performed after [medical evaluation](/en/epikoinonia). Particular care is needed in patients with:
+Treatment with mPNS should only be performed after [medical evaluation](/en/contact). Particular care is needed in patients with:
 - Pacemaker or implantable defibrillator.
 - Implanted electronic devices, such as drug pumps, neurostimulators, or cochlear implants.
 - Metal or electromagnetically sensitive implants near the application area.

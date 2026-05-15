@@ -50,7 +50,7 @@ Non è un trattamento per ogni tipo di dolore. Se sono presenti gravi danni mecc
 
 ## Controindicazioni e punti di attenzione
 
-Il trattamento con mPNS deve essere eseguito solo dopo [valutazione medica](/it/epikoinonia). Particolare attenzione è necessaria nei pazienti con:
+Il trattamento con mPNS deve essere eseguito solo dopo [valutazione medica](/it/contatti). Particolare attenzione è necessaria nei pazienti con:
 - Pacemaker o defibrillatore impiantabile.
 - Dispositivi elettronici impiantati, come pompe per farmaci, neurostimolatori o impianti cocleari.
 - Impianti metallici o sensibili ai campi elettromagnetici vicino all'area di applicazione.
