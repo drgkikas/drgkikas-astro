@@ -90,7 +90,7 @@
     </form>
     
     <!-- Turnstile Invisible Widget -->
-    <div id="cf-turnstile-widget" class="cf-turnstile" data-sitekey={import.meta.env.PUBLIC_TURNSTILE_SITE_KEY} data-size="invisible" data-theme="light" data-callback="onAiaTurnstileSuccess" data-error-callback="onAiaTurnstileError"></div>
+    <div id="cf-turnstile-widget" data-sitekey={import.meta.env.PUBLIC_TURNSTILE_SITE_KEY}></div>
 
     <!-- Footer Disclaimer -->
     <div class="bg-amber-50/50 p-2 text-[9px] text-amber-700 text-center px-4 leading-tight border-t border-amber-100/50">
@@ -99,7 +99,7 @@
   </div>
 </div>
 
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=initTurnstile" async defer></script>
 
 <script>
   const toggleBtn = document.getElementById('aia-toggle');
@@ -114,38 +114,50 @@
 
   let chatHistory = [];
 
+  let turnstileWidgetId = null;
   let turnstileResolver = null;
-  let turnstileRejecter = null;
 
-  window.onAiaTurnstileSuccess = function(token) {
-    if (turnstileResolver) {
-      turnstileResolver(token);
-      turnstileResolver = null;
-      turnstileRejecter = null;
-    }
-  };
-
-  window.onAiaTurnstileError = function() {
-    if (turnstileRejecter) {
-      turnstileRejecter(new Error('Turnstile failed'));
-      turnstileResolver = null;
-      turnstileRejecter = null;
+  window.initTurnstile = function() {
+    const el = document.getElementById('cf-turnstile-widget');
+    if (el && typeof turnstile !== 'undefined') {
+      try {
+        turnstileWidgetId = turnstile.render(el, {
+          sitekey: el.getAttribute('data-sitekey'),
+          size: 'invisible',
+          callback: function(token) {
+            if (turnstileResolver) {
+              turnstileResolver(token);
+              turnstileResolver = null;
+            }
+          },
+          'error-callback': function() {
+            if (turnstileResolver) {
+              turnstileResolver('');
+              turnstileResolver = null;
+            }
+          }
+        });
+      } catch (e) {
+        console.error('Turnstile render error', e);
+      }
     }
   };
 
   async function getTurnstileToken() {
-    if (typeof turnstile === 'undefined') return '';
+    if (typeof turnstile === 'undefined' || turnstileWidgetId === null) return '';
     return new Promise((resolve) => {
       turnstileResolver = resolve;
-      turnstileRejecter = resolve; // Resolve with empty string on error so we don't crash
       try {
-        turnstile.reset('#cf-turnstile-widget');
-        turnstile.execute('#cf-turnstile-widget');
+        turnstile.reset(turnstileWidgetId);
+        turnstile.execute(turnstileWidgetId);
       } catch (e) {
         resolve('');
       }
       setTimeout(() => {
-        if (turnstileResolver) resolve('');
+        if (turnstileResolver) {
+          turnstileResolver('');
+          turnstileResolver = null;
+        }
       }, 5000);
     });
   }
