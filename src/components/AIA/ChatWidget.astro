@@ -99,6 +99,58 @@
   </div>
 </div>
 
+<script is:inline>
+  window.turnstileWidgetId = null;
+  window.turnstileResolver = null;
+
+  window.initTurnstile = function() {
+    var el = document.getElementById('cf-turnstile-widget');
+    if (el && typeof turnstile !== 'undefined') {
+      try {
+        window.turnstileWidgetId = turnstile.render(el, {
+          sitekey: el.getAttribute('data-sitekey'),
+          size: 'invisible',
+          callback: function(token) {
+            if (window.turnstileResolver) {
+              window.turnstileResolver(token);
+              window.turnstileResolver = null;
+            }
+          },
+          'error-callback': function() {
+            if (window.turnstileResolver) {
+              window.turnstileResolver('');
+              window.turnstileResolver = null;
+            }
+          }
+        });
+      } catch (e) {
+        console.error('Turnstile render error', e);
+      }
+    }
+  };
+
+  window.getTurnstileToken = async function() {
+    if (typeof turnstile === 'undefined' || window.turnstileWidgetId === null) {
+      return '';
+    }
+    return new Promise(function(resolve) {
+      window.turnstileResolver = resolve;
+      try {
+        turnstile.reset(window.turnstileWidgetId);
+        turnstile.execute(window.turnstileWidgetId);
+      } catch (e) {
+        resolve('');
+      }
+      setTimeout(function() {
+        if (window.turnstileResolver) {
+          window.turnstileResolver('');
+          window.turnstileResolver = null;
+        }
+      }, 5000);
+    });
+  };
+</script>
+
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=initTurnstile" async defer></script>
 
 <script>
@@ -113,54 +165,6 @@
   const quickButtons = document.querySelectorAll('.aia-quick-btn');
 
   let chatHistory = [];
-
-  let turnstileWidgetId = null;
-  let turnstileResolver = null;
-
-  window.initTurnstile = function() {
-    const el = document.getElementById('cf-turnstile-widget');
-    if (el && typeof turnstile !== 'undefined') {
-      try {
-        turnstileWidgetId = turnstile.render(el, {
-          sitekey: el.getAttribute('data-sitekey'),
-          size: 'invisible',
-          callback: function(token) {
-            if (turnstileResolver) {
-              turnstileResolver(token);
-              turnstileResolver = null;
-            }
-          },
-          'error-callback': function() {
-            if (turnstileResolver) {
-              turnstileResolver('');
-              turnstileResolver = null;
-            }
-          }
-        });
-      } catch (e) {
-        console.error('Turnstile render error', e);
-      }
-    }
-  };
-
-  async function getTurnstileToken() {
-    if (typeof turnstile === 'undefined' || turnstileWidgetId === null) return '';
-    return new Promise((resolve) => {
-      turnstileResolver = resolve;
-      try {
-        turnstile.reset(turnstileWidgetId);
-        turnstile.execute(turnstileWidgetId);
-      } catch (e) {
-        resolve('');
-      }
-      setTimeout(() => {
-        if (turnstileResolver) {
-          turnstileResolver('');
-          turnstileResolver = null;
-        }
-      }, 5000);
-    });
-  }
 
   toggleBtn.addEventListener('click', () => {
     windowEl.classList.toggle('hidden');
@@ -262,7 +266,7 @@
     chatHistory.push({ role: 'user', content: message });
 
     try {
-      const turnstileToken = await getTurnstileToken();
+      const turnstileToken = await window.getTurnstileToken();
 
       const res = await fetch('/api/aia/chat', {
         method: 'POST',
