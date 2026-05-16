@@ -18,11 +18,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
     }
     if (!turnstileSecret) turnstileSecret = (import.meta as any).env?.TURNSTILE_SECRET_KEY || (typeof process !== 'undefined' ? process.env.TURNSTILE_SECRET_KEY : '');
 
-    if (turnstileSecret) {
-      if (!turnstileToken) {
-        return new Response(JSON.stringify({ error: 'Turnstile token missing.' }), { status: 400 });
-      }
-      
+    if (turnstileSecret && turnstileToken) {
       const formData = new FormData();
       formData.append('secret', turnstileSecret);
       formData.append('response', turnstileToken);
