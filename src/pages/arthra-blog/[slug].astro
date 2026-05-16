@@ -20,7 +20,13 @@ const { Content } = await render(entry);
 <Layout title={entry.data.title} description={entry.data.description} schema={entry.data.schema}>
   <Header />
   <main class="pt-24 pb-16 bg-white min-h-screen">
-    <article class="max-w-3xl mx-auto px-4 sm:px-6 mt-12 prose prose-lg prose-blue">
+    <article class="max-w-3xl mx-auto px-4 sm:px-6 mt-12 prose prose-lg prose-blue
+      prose-p:mb-8 prose-p:leading-[1.9]
+      prose-headings:font-bold prose-headings:tracking-tight
+      prose-h2:mt-16 prose-h2:mb-6 prose-h2:border-b prose-h2:border-slate-100 prose-h2:pb-3
+      prose-h3:mt-12 prose-h3:mb-5
+      prose-ul:my-8 prose-li:my-3
+      prose-blockquote:border-l-4 prose-blockquote:border-blue-400 prose-blockquote:bg-blue-50/50 prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:rounded-r-xl prose-blockquote:not-italic">
       {entry.data.image && (
         <div class="mb-10 rounded-2xl overflow-hidden shadow-lg border border-slate-100 bg-slate-50 flex justify-center">
           <img src={entry.data.image} alt={entry.data.title} class="w-full max-h-[500px] object-contain" />
