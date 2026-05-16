@@ -19,7 +19,10 @@ const {
   image = "/images/dr-gkikas-portrait.jpg",
   schema
 } = Astro.props;
-const canonical = canonicalURL ?? new URL(Astro.url.pathname, 'https://drgkikas.com').href;
+const rawCanonical = canonicalURL ?? new URL(Astro.url.pathname, 'https://drgkikas.com').href;
+const canonical = (rawCanonical.endsWith('/') && rawCanonical !== 'https://drgkikas.com/') 
+  ? rawCanonical.slice(0, -1) 
+  : rawCanonical;
 const socialImageURL = new URL(image, 'https://drgkikas.com').href;
 ---
 
