@@ -231,6 +231,22 @@ const services = allServices
 
   <div class="footer-bottom">
     <p>&copy; {new Date().getFullYear()} drGkikas.com - All rights reserved.</p>
+    <!-- Cross-language internal links — SEO crawlability (do not remove) -->
+    <nav class="footer-lang-links" aria-label="Language versions">
+      <a href="/iatros">Ιατρός</a>
+      <a href="/en/iatros">Doctor (EN)</a>
+      <a href="/it/iatros">Medico (IT)</a>
+      <span class="footer-lang-sep">·</span>
+      <a href="/epikoinonia">Επικοινωνία</a>
+      <a href="/en/contact">Contact (EN)</a>
+      <a href="/it/contatti">Contatti (IT)</a>
+      <span class="footer-lang-sep">·</span>
+      <a href="/privacy-policy">Απόρρητο</a>
+      <a href="/en/privacy-policy">Privacy (EN)</a>
+      <a href="/it/privacy-policy">Privacy (IT)</a>
+      <span class="footer-lang-sep">·</span>
+      <a href="/KnowledgeBase-eBooks">Knowledge Base</a>
+    </nav>
   </div>
 </footer>
 
@@ -339,7 +355,27 @@ const services = allServices
   .footer-bottom p {
     font-size: 0.75rem;
     color: #94a3b8;
-    margin: 0;
+    margin: 0 0 0.75rem 0;
+  }
+  .footer-lang-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem 0.75rem;
+    margin-top: 0.5rem;
+  }
+  .footer-lang-links a {
+    font-size: 0.65rem;
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-lang-links a:hover {
+    color: #84a9c8;
+  }
+  .footer-lang-sep {
+    font-size: 0.65rem;
+    color: #e2e8f0;
   }
 
   @media (max-width: 1200px) {
