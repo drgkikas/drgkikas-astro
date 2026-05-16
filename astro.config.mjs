@@ -17,7 +17,9 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-  integrations: [react(), sitemap()],
+  integrations: [react(), sitemap({
+    filter: (page) => !page.includes('/pgx/') || page.includes('/ypiresies/pgx')
+  })],
   i18n: {
     defaultLocale: 'el',
     locales: ['el', 'en', 'it'],
