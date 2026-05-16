@@ -90,7 +90,7 @@
     </form>
     
     <!-- Turnstile Invisible Widget -->
-    <div id="cf-turnstile-widget" class="cf-turnstile" data-sitekey={import.meta.env.PUBLIC_TURNSTILE_SITE_KEY} data-size="invisible" data-theme="light"></div>
+    <div id="cf-turnstile-widget" class="cf-turnstile" data-sitekey={import.meta.env.PUBLIC_TURNSTILE_SITE_KEY} data-size="invisible" data-theme="light" data-callback="onAiaTurnstileSuccess" data-error-callback="onAiaTurnstileError"></div>
 
     <!-- Footer Disclaimer -->
     <div class="bg-amber-50/50 p-2 text-[9px] text-amber-700 text-center px-4 leading-tight border-t border-amber-100/50">
@@ -113,6 +113,42 @@
   const quickButtons = document.querySelectorAll('.aia-quick-btn');
 
   let chatHistory = [];
+
+  let turnstileResolver = null;
+  let turnstileRejecter = null;
+
+  window.onAiaTurnstileSuccess = function(token) {
+    if (turnstileResolver) {
+      turnstileResolver(token);
+      turnstileResolver = null;
+      turnstileRejecter = null;
+    }
+  };
+
+  window.onAiaTurnstileError = function() {
+    if (turnstileRejecter) {
+      turnstileRejecter(new Error('Turnstile failed'));
+      turnstileResolver = null;
+      turnstileRejecter = null;
+    }
+  };
+
+  async function getTurnstileToken() {
+    if (typeof turnstile === 'undefined') return '';
+    return new Promise((resolve) => {
+      turnstileResolver = resolve;
+      turnstileRejecter = resolve; // Resolve with empty string on error so we don't crash
+      try {
+        turnstile.reset('#cf-turnstile-widget');
+        turnstile.execute('#cf-turnstile-widget');
+      } catch (e) {
+        resolve('');
+      }
+      setTimeout(() => {
+        if (turnstileResolver) resolve('');
+      }, 5000);
+    });
+  }
 
   toggleBtn.addEventListener('click', () => {
     windowEl.classList.toggle('hidden');
@@ -214,8 +250,7 @@
     chatHistory.push({ role: 'user', content: message });
 
     try {
-      const turnstileInput = document.querySelector('[name="cf-turnstile-response"]') as HTMLInputElement;
-      const turnstileToken = turnstileInput ? turnstileInput.value : '';
+      const turnstileToken = await getTurnstileToken();
 
       const res = await fetch('/api/aia/chat', {
         method: 'POST',
@@ -250,10 +285,6 @@
       input.disabled = false;
       sendBtn.disabled = false;
       input.focus();
-      
-      if (typeof turnstile !== 'undefined') {
-        turnstile.reset();
-      }
     }
   }
 
