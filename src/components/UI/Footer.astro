@@ -185,7 +185,7 @@ const services = allServices
         <h3 class="footer-col-title"><a href={langPrefix + "/diataraxes"}>{labels.disorders_title}</a></h3>
         <ul class="footer-links">
           {disorders.map(dis => (
-            <li><a href={langPrefix + `/diataraxes/${dis.baseId}/`}>{dis.displayTitle}</a></li>
+            <li><a href={langPrefix + `/diataraxes/${dis.baseId}`}>{dis.displayTitle}</a></li>
           ))}
         </ul>
       </div>
@@ -195,7 +195,7 @@ const services = allServices
         <h3 class="footer-col-title"><a href={langPrefix + "/ypiresies"}>{labels.services_title}</a></h3>
         <ul class="footer-links">
           {services.map(service => (
-            <li><a href={langPrefix + `/ypiresies/${service.baseId}/`}>{service.displayTitle}</a></li>
+            <li><a href={langPrefix + `/ypiresies/${service.baseId}`}>{service.displayTitle}</a></li>
           ))}
         </ul>
       </div>
