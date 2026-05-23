@@ -2,8 +2,8 @@
 title: "Νικώντας τον Πόνο: Η Σύγχρονη Λύση της Μαγνητικής Διέγερσης"
 seoTitle: "Νικώντας τον Πόνο: Η Σύγχρονη Λύση της Μαγνητικής Διέγερσης | Dr. Πασχάλης Γκίκας"
 description: "Η μαγνητική διέγερση (rTMS, mPNS) ως θεραπεία χρόνιου πόνου — νευροπαθητικού, ινομυαλγίας, ημικρανίας και μυοσκελετικού. Κλινικά δεδομένα, πρωτόκολλα και απαντήσεις σε συχνές ερωτήσεις από τον Δρ. Παschalis Γκίκα, Smart CNS Center Αθήνα."
-date: 2025-05-23
-pubDate: 2025-05-23
+date: 2026-05-23
+pubDate: 2026-05-23
 author: "Πασχάλης Γκίκας"
 kategoria: "rTMS"
 keywords: "rTMS, χρόνιος πόνος, νευροπαθητικός πόνος, ινομυαλγία, ημικρανία, μαγνητική διέγερση, mPNS, Smart CNS Center"
@@ -39,8 +39,8 @@ schema: |
         "alternateName": "rTMS",
         "relevantSpecialty": "Neurology"
       },
-      "datePublished": "2025-05-23",
-      "dateModified": "2025-05-23",
+      "datePublished": "2026-05-23",
+      "dateModified": "2026-05-23",
       "inLanguage": "el",
       "publisher": {
         "@type": "MedicalClinic",
