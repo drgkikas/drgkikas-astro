@@ -1,0 +1,139 @@
+<svg width="1360" height="800" viewBox="0 0 680 400" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>rTMS και Χρόνιος Πόνος — Hero εικόνα άρθρου</title>
+<desc>Εικονογράφηση που δείχνει μαγνητική διέγερση εγκεφάλου με κύματα πόνου και αναλγητικές τροχιές</desc>
+<defs>
+  <style>
+    .bg-main { fill: #f0f4fa; }
+    .brain-fill { fill: #dde6f5; stroke: #b0c4de; }
+    .brain-inner { fill: #c8d8ee; }
+    .fold { stroke: #9db5d4; }
+    .label-main { fill: #1a2e4a; }
+    .label-sub { fill: #4a6285; }
+    .panel-bg { fill: #ffffff; stroke: #dde6f5; }
+    .divider { stroke: #dde6f5; }
+  </style>
+  <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+    <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+  <filter id="blur-sm">
+    <feGaussianBlur stdDeviation="2"/>
+  </filter>
+</defs>
+
+<!-- Background -->
+<rect width="680" height="400" class="bg-main"/>
+
+<!-- Subtle grid lines -->
+<line x1="0" y1="133" x2="680" y2="133" class="divider" stroke-width="0.3" opacity="0.5"/>
+<line x1="0" y1="266" x2="680" y2="266" class="divider" stroke-width="0.3" opacity="0.5"/>
+<line x1="226" y1="0" x2="226" y2="400" class="divider" stroke-width="0.3" opacity="0.5"/>
+<line x1="452" y1="0" x2="452" y2="400" class="divider" stroke-width="0.3" opacity="0.5"/>
+
+<!-- ===== BRAIN (center) ===== -->
+<g transform="translate(340,195)">
+  <ellipse cx="0" cy="8" rx="85" ry="75" fill="#1d5fa0" opacity="0.12" filter="url(#blur-sm)"/>
+  <path class="brain-fill" stroke-width="1.2"
+    d="M-18,-78 C10,-88 52,-82 72,-55 C92,-28 88,10 80,38 C72,65 55,82 28,86 C4,90 -20,82 -38,68 C-56,54 -70,32 -74,5 C-78,-22 -68,-52 -50,-66 C-40,-74 -28,-68 -18,-78 Z"/>
+  <path class="fold" fill="none" stroke-width="1" d="M-18,-78 C-10,-20 -8,30 -18,86" opacity="0.6"/>
+  <path class="brain-fill" stroke-width="1"
+    d="M-18,-78 C-40,-86 -70,-74 -82,-48 C-92,-24 -86,12 -74,40 C-62,66 -40,84 -18,86 C-10,-20 -8,30 -18,86 Z"
+    opacity="0.7"/>
+  <path class="fold" fill="none" stroke-width="0.8" d="M10,-60 Q40,-50 65,-30" opacity="0.5"/>
+  <path class="fold" fill="none" stroke-width="0.8" d="M20,-30 Q55,-18 75,8" opacity="0.5"/>
+  <path class="fold" fill="none" stroke-width="0.8" d="M12,15 Q45,22 72,40" opacity="0.5"/>
+  <path class="fold" fill="none" stroke-width="0.8" d="M5,50 Q32,58 50,70" opacity="0.5"/>
+  <path class="fold" fill="none" stroke-width="0.8" d="M-22,-55 Q-48,-42 -68,-22" opacity="0.4"/>
+  <path class="fold" fill="none" stroke-width="0.8" d="M-28,-20 Q-58,-8 -72,18" opacity="0.4"/>
+  <path class="fold" fill="none" stroke-width="0.8" d="M-25,20 Q-50,34 -65,55" opacity="0.4"/>
+
+  <!-- M1 TARGET ZONE -->
+  <ellipse cx="36" cy="-40" rx="22" ry="18" fill="#1d8cf8" opacity="0.25"/>
+  <ellipse cx="36" cy="-40" rx="14" ry="11" fill="#1d8cf8" opacity="0.35"/>
+  <ellipse cx="36" cy="-40" rx="7" ry="5" fill="#1d8cf8" opacity="0.7"/>
+
+  <!-- TMS coil -->
+  <rect x="16" y="-108" width="42" height="14" rx="4" fill="#1d8cf8" opacity="0.85"/>
+  <rect x="20" y="-112" width="34" height="6" rx="3" fill="#1d8cf8" opacity="0.5"/>
+  <line x1="22" y1="-105" x2="54" y2="-105" stroke="#ffffff" stroke-width="0.8" opacity="0.6"/>
+  <line x1="22" y1="-101" x2="54" y2="-101" stroke="#ffffff" stroke-width="0.8" opacity="0.4"/>
+
+  <!-- Magnetic pulse waves -->
+  <path d="M24,-94 Q37,-88 50,-94" fill="none" stroke="#1d8cf8" stroke-width="1.2" opacity="0.9"/>
+  <path d="M20,-88 Q37,-78 54,-88" fill="none" stroke="#1d8cf8" stroke-width="1" opacity="0.65"/>
+  <path d="M16,-80 Q37,-66 58,-80" fill="none" stroke="#1d8cf8" stroke-width="0.8" opacity="0.4"/>
+  <path d="M12,-70 Q37,-52 62,-70" fill="none" stroke="#1d8cf8" stroke-width="0.6" opacity="0.2"/>
+
+  <!-- Arrow coil to M1 -->
+  <line x1="37" y1="-94" x2="37" y2="-52" stroke="#1d8cf8" stroke-width="1.2" stroke-dasharray="3 2" marker-end="url(#arr)" opacity="0.8"/>
+</g>
+
+<!-- ===== LEFT PANEL: Pain Types ===== -->
+<g transform="translate(36,30)">
+  <text font-size="11" font-weight="500" class="label-sub" font-family="Arial, sans-serif" letter-spacing="1.5">ΤΥΠΟΙ ΠΟΝΟΥ</text>
+  <rect x="0" y="18" width="155" height="42" rx="6" fill="#E8593C" opacity="0.15"/>
+  <rect x="0" y="18" width="4" height="42" rx="2" fill="#E8593C" opacity="0.8"/>
+  <text x="12" y="36" font-size="12" font-weight="500" fill="#C0401A" font-family="Arial, sans-serif">Αλγαισθητικός</text>
+  <text x="12" y="52" font-size="10" fill="#b05030" font-family="Arial, sans-serif">Βλάβη ιστού / φλεγμονή</text>
+  <rect x="0" y="68" width="155" height="42" rx="6" fill="#7f77dd" opacity="0.15"/>
+  <rect x="0" y="68" width="4" height="42" rx="2" fill="#7f77dd" opacity="0.8"/>
+  <text x="12" y="86" font-size="12" font-weight="500" fill="#534AB7" font-family="Arial, sans-serif">Νευροπαθητικός</text>
+  <text x="12" y="102" font-size="10" fill="#6458a0" font-family="Arial, sans-serif">Βλάβη νευρικού συστήματος</text>
+  <rect x="0" y="118" width="155" height="42" rx="6" fill="#1d9e75" opacity="0.15"/>
+  <rect x="0" y="118" width="4" height="42" rx="2" fill="#1d9e75" opacity="0.8"/>
+  <text x="12" y="136" font-size="12" font-weight="500" fill="#0F6E56" font-family="Arial, sans-serif">Μη Αλγαισθητικός</text>
+  <text x="12" y="152" font-size="10" fill="#1a7a60" font-family="Arial, sans-serif">Διαταραγμένη επεξεργασία</text>
+</g>
+
+<!-- Arrows left to brain -->
+<line x1="195" y1="71" x2="256" y2="140" stroke="#E8593C" stroke-width="0.8" stroke-dasharray="4 3" marker-end="url(#arr)" opacity="0.5"/>
+<line x1="195" y1="113" x2="255" y2="175" stroke="#7f77dd" stroke-width="0.8" stroke-dasharray="4 3" marker-end="url(#arr)" opacity="0.5"/>
+<line x1="195" y1="155" x2="255" y2="210" stroke="#1d9e75" stroke-width="0.8" stroke-dasharray="4 3" marker-end="url(#arr)" opacity="0.5"/>
+
+<!-- ===== RIGHT PANEL: Methods ===== -->
+<g transform="translate(474,30)">
+  <text font-size="11" font-weight="500" class="label-sub" font-family="Arial, sans-serif" letter-spacing="1.5">ΜΕΘΟΔΟΙ rTMS</text>
+  <rect x="0" y="18" width="170" height="44" rx="6" fill="#1d8cf8" opacity="0.12"/>
+  <rect x="0" y="18" width="4" height="44" rx="2" fill="#1d8cf8" opacity="0.85"/>
+  <text x="12" y="37" font-size="12" font-weight="500" fill="#185FA5" font-family="Arial, sans-serif">M1 rTMS (HF)</text>
+  <text x="12" y="52" font-size="10" fill="#2268a0" font-family="Arial, sans-serif">Κινητικός φλοιός → 3η γραμμή</text>
+  <rect x="0" y="70" width="170" height="44" rx="6" fill="#ef9f27" opacity="0.12"/>
+  <rect x="0" y="70" width="4" height="44" rx="2" fill="#ef9f27" opacity="0.85"/>
+  <text x="12" y="89" font-size="12" font-weight="500" fill="#854F0B" font-family="Arial, sans-serif">mPNS</text>
+  <text x="12" y="105" font-size="10" fill="#8a5510" font-family="Arial, sans-serif">Περιφερική διέγερση σε trigger</text>
+  <rect x="0" y="122" width="170" height="44" rx="6" fill="#E85D24" opacity="0.10"/>
+  <rect x="0" y="122" width="4" height="44" rx="2" fill="#E85D24" opacity="0.85"/>
+  <text x="12" y="141" font-size="13" font-weight="500" fill="#993C1D" font-family="Arial, sans-serif">71% ανταπόκριση</text>
+  <text x="12" y="157" font-size="10" fill="#a04020" font-family="Arial, sans-serif">CMM + mPNS (Kapural 2024)</text>
+</g>
+
+<!-- Arrows brain to right -->
+<line x1="424" y1="140" x2="472" y2="71" stroke="#1d8cf8" stroke-width="0.8" stroke-dasharray="4 3" marker-end="url(#arr)" opacity="0.5"/>
+<line x1="424" y1="185" x2="472" y2="113" stroke="#ef9f27" stroke-width="0.8" stroke-dasharray="4 3" marker-end="url(#arr)" opacity="0.5"/>
+
+<!-- ===== BOTTOM STATS BAR ===== -->
+<rect x="36" y="295" width="608" height="80" rx="8" fill="#ffffff" stroke="#dde6f5" stroke-width="0.5"/>
+
+<text x="100" y="325" font-size="26" font-weight="500" fill="#1d8cf8" font-family="Arial, sans-serif" text-anchor="middle">30–50%</text>
+<text x="100" y="345" font-size="10" fill="#4a6285" font-family="Arial, sans-serif" text-anchor="middle">ασθενείς ανταποκρίνονται</text>
+<text x="100" y="358" font-size="10" fill="#4a6285" font-family="Arial, sans-serif" text-anchor="middle">στη φαρμακοθεραπεία</text>
+
+<line x1="200" y1="305" x2="200" y2="365" stroke="#dde6f5" stroke-width="0.5"/>
+
+<text x="300" y="325" font-size="26" font-weight="500" fill="#E8593C" font-family="Arial, sans-serif" text-anchor="middle">54%</text>
+<text x="300" y="345" font-size="10" fill="#4a6285" font-family="Arial, sans-serif" text-anchor="middle">μείωση πόνου &gt;30%</text>
+<text x="300" y="358" font-size="10" fill="#4a6285" font-family="Arial, sans-serif" text-anchor="middle">με HF-rTMS M1 (Quesada 2022)</text>
+
+<line x1="400" y1="305" x2="400" y2="365" stroke="#dde6f5" stroke-width="0.5"/>
+
+<text x="500" y="325" font-size="26" font-weight="500" fill="#1d9e75" font-family="Arial, sans-serif" text-anchor="middle">84%</text>
+<text x="500" y="345" font-size="10" fill="#4a6285" font-family="Arial, sans-serif" text-anchor="middle">μέση μείωση πόνου</text>
+<text x="500" y="358" font-size="10" fill="#4a6285" font-family="Arial, sans-serif" text-anchor="middle">mPNS μετατραυματικός (Leung 2014)</text>
+
+<line x1="600" y1="305" x2="600" y2="365" stroke="#dde6f5" stroke-width="0.5"/>
+
+<text x="620" y="335" font-size="9" fill="#4a6285" font-family="Arial, sans-serif" text-anchor="middle">Smart</text>
+<text x="620" y="348" font-size="9" fill="#4a6285" font-family="Arial, sans-serif" text-anchor="middle">CNS</text>
+<text x="620" y="361" font-size="9" fill="#4a6285" font-family="Arial, sans-serif" text-anchor="middle">Center</text>
+
+<text x="340" y="390" font-size="10" fill="#4a6285" font-family="Arial, sans-serif" text-anchor="middle" opacity="0.7">drgkikas.com — Μαγνητική Διέγερση &amp; Πόνος</text>
+</svg>
