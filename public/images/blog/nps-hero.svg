@@ -1,0 +1,83 @@
+<svg width="1360" height="840" viewBox="0 0 680 420" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Νέες Ψυχοδραστικές Ουσίες — κατηγορίες, μηχανισμοί και κίνδυνοι</title>
+<desc>Διάγραμμα που απεικονίζει τις 4 κατηγορίες NPS με μηχανισμούς δράσης και stats κινδύνου</desc>
+<rect width="680" height="420" fill="#f0f4fa"/>
+<text x="340" y="32" font-size="15" font-weight="500" fill="#1a2e4a" font-family="Arial,sans-serif" text-anchor="middle">Νέες Ψυχοδραστικές Ουσίες (NPS)</text>
+<text x="340" y="50" font-size="11" fill="#4a6285" font-family="Arial,sans-serif" text-anchor="middle" letter-spacing="0.8">ΚΑΤΗΓΟΡΙΕΣ · ΜΗΧΑΝΙΣΜΟΙ · ΚΙΝΔΥΝΟΙ</text>
+<line x1="40" y1="60" x2="640" y2="60" stroke="#e0e8f4" stroke-width="0.4" opacity="0.6"/>
+
+<rect x="32" y="72" width="142" height="110" rx="8" fill="#ffffff" stroke="#dde6f5" stroke-width="0.5"/>
+<rect x="32" y="72" width="142" height="7" rx="4" fill="#534AB7" opacity="0.9"/>
+<text x="103" y="98" font-size="12" font-weight="500" fill="#534AB7" font-family="Arial,sans-serif" text-anchor="middle">Συνθετικές</text>
+<text x="103" y="112" font-size="12" font-weight="500" fill="#534AB7" font-family="Arial,sans-serif" text-anchor="middle">Καθινόνες</text>
+<text x="103" y="128" font-size="10" fill="#4a6285" font-family="Arial,sans-serif" text-anchor="middle">α-PHP · Mephedrone</text>
+<text x="103" y="142" font-size="10" fill="#4a6285" font-family="Arial,sans-serif" text-anchor="middle">β-κέτο-αμφεταμίνη</text>
+<text x="103" y="158" font-size="10" fill="#4a6285" font-family="Arial,sans-serif" text-anchor="middle">DAT / NET / SERT</text>
+<rect x="42" y="168" width="122" height="7" rx="3" fill="#534AB7" opacity="0.18"/>
+<rect x="42" y="168" width="98" height="7" rx="3" fill="#534AB7" opacity="0.85"/>
+
+<rect x="186" y="72" width="142" height="110" rx="8" fill="#ffffff" stroke="#dde6f5" stroke-width="0.5"/>
+<rect x="186" y="72" width="142" height="7" rx="4" fill="#0F6E56" opacity="0.9"/>
+<text x="257" y="98" font-size="12" font-weight="500" fill="#0F6E56" font-family="Arial,sans-serif" text-anchor="middle">Συνθετικά</text>
+<text x="257" y="112" font-size="12" font-weight="500" fill="#0F6E56" font-family="Arial,sans-serif" text-anchor="middle">Κανναβινοειδή</text>
+<text x="257" y="128" font-size="10" fill="#4a6285" font-family="Arial,sans-serif" text-anchor="middle">HHC · BOOM · Spice</text>
+<text x="257" y="142" font-size="10" fill="#4a6285" font-family="Arial,sans-serif" text-anchor="middle">CB1 έως ×100 THC</text>
+<text x="257" y="158" font-size="10" fill="#4a6285" font-family="Arial,sans-serif" text-anchor="middle">ψύχωση · επιληψία</text>
+<rect x="196" y="168" width="122" height="7" rx="3" fill="#0F6E56" opacity="0.18"/>
+<rect x="196" y="168" width="108" height="7" rx="3" fill="#0F6E56" opacity="0.85"/>
+
+<rect x="340" y="72" width="142" height="110" rx="8" fill="#ffffff" stroke="#dde6f5" stroke-width="0.5"/>
+<rect x="340" y="72" width="142" height="7" rx="4" fill="#993C1D" opacity="0.9"/>
+<text x="411" y="98" font-size="12" font-weight="500" fill="#993C1D" font-family="Arial,sans-serif" text-anchor="middle">Συνθετικά</text>
+<text x="411" y="112" font-size="12" font-weight="500" fill="#993C1D" font-family="Arial,sans-serif" text-anchor="middle">Οπιοειδή</text>
+<text x="411" y="128" font-size="10" fill="#4a6285" font-family="Arial,sans-serif" text-anchor="middle">Fentanyl · Nitazenes</text>
+<text x="411" y="142" font-size="10" fill="#4a6285" font-family="Arial,sans-serif" text-anchor="middle">ισχυρός δεσμός MOR</text>
+<text x="411" y="158" font-size="10" fill="#4a6285" font-family="Arial,sans-serif" text-anchor="middle">ναλοξόνη ανθεκτικό</text>
+<rect x="350" y="168" width="122" height="7" rx="3" fill="#993C1D" opacity="0.18"/>
+<rect x="350" y="168" width="120" height="7" rx="3" fill="#993C1D" opacity="0.9"/>
+
+<rect x="494" y="72" width="154" height="110" rx="8" fill="#ffffff" stroke="#dde6f5" stroke-width="0.5"/>
+<rect x="494" y="72" width="154" height="7" rx="4" fill="#854F0B" opacity="0.9"/>
+<text x="571" y="98" font-size="12" font-weight="500" fill="#854F0B" font-family="Arial,sans-serif" text-anchor="middle">Παραισθησιογόνα</text>
+<text x="571" y="112" font-size="12" font-weight="500" fill="#854F0B" font-family="Arial,sans-serif" text-anchor="middle">+ Κατασταλτικά</text>
+<text x="571" y="128" font-size="10" fill="#4a6285" font-family="Arial,sans-serif" text-anchor="middle">Salvia · GHB/GBL</text>
+<text x="571" y="142" font-size="10" fill="#4a6285" font-family="Arial,sans-serif" text-anchor="middle">KOR · GABA-B</text>
+<text x="571" y="158" font-size="10" fill="#4a6285" font-family="Arial,sans-serif" text-anchor="middle">συνέργεια αλκοόλ !</text>
+<rect x="504" y="168" width="134" height="7" rx="3" fill="#854F0B" opacity="0.18"/>
+<rect x="504" y="168" width="80" height="7" rx="3" fill="#854F0B" opacity="0.85"/>
+
+<line x1="40" y1="210" x2="640" y2="210" stroke="#e0e8f4" stroke-width="0.4" opacity="0.4"/>
+<text x="340" y="225" font-size="10" fill="#4a6285" font-family="Arial,sans-serif" text-anchor="middle" letter-spacing="1">ΜΗΧΑΝΙΣΜΟΣ ΔΡΑΣΗΣ ΑΝΑ ΚΑΤΗΓΟΡΙΑ</text>
+
+<rect x="32" y="234" width="142" height="28" rx="14" fill="#534AB7" opacity="0.12"/>
+<rect x="32" y="234" width="142" height="28" rx="14" fill="none" stroke="#534AB7" stroke-width="0.8" opacity="0.5"/>
+<text x="103" y="252" font-size="10" fill="#534AB7" font-family="Arial,sans-serif" text-anchor="middle">Αναστολή επαναπρόσληψης ΝΤ</text>
+<rect x="186" y="234" width="142" height="28" rx="14" fill="#0F6E56" opacity="0.12"/>
+<rect x="186" y="234" width="142" height="28" rx="14" fill="none" stroke="#0F6E56" stroke-width="0.8" opacity="0.5"/>
+<text x="257" y="252" font-size="10" fill="#0F6E56" font-family="Arial,sans-serif" text-anchor="middle">Αγωνισμός CB1/CB2</text>
+<rect x="340" y="234" width="142" height="28" rx="14" fill="#993C1D" opacity="0.12"/>
+<rect x="340" y="234" width="142" height="28" rx="14" fill="none" stroke="#993C1D" stroke-width="0.8" opacity="0.5"/>
+<text x="411" y="252" font-size="10" fill="#993C1D" font-family="Arial,sans-serif" text-anchor="middle">Αγωνισμός μ-οπιοειδών (MOR)</text>
+<rect x="494" y="234" width="154" height="28" rx="14" fill="#854F0B" opacity="0.12"/>
+<rect x="494" y="234" width="154" height="28" rx="14" fill="none" stroke="#854F0B" stroke-width="0.8" opacity="0.5"/>
+<text x="571" y="252" font-size="10" fill="#854F0B" font-family="Arial,sans-serif" text-anchor="middle">KOR / GABA-B αγωνισμός</text>
+
+<line x1="40" y1="278" x2="640" y2="278" stroke="#e0e8f4" stroke-width="0.4" opacity="0.4"/>
+<rect x="32" y="288" width="188" height="98" rx="8" fill="#ffffff" stroke="#dde6f5" stroke-width="0.5"/>
+<text x="126" y="318" font-size="28" font-weight="500" fill="#993C1D" font-family="Arial,sans-serif" text-anchor="middle">×100</text>
+<text x="126" y="338" font-size="10" fill="#4a6285" font-family="Arial,sans-serif" text-anchor="middle">ισχυρότερη δράση</text>
+<text x="126" y="352" font-size="10" fill="#4a6285" font-family="Arial,sans-serif" text-anchor="middle">vs THC (HU-210)</text>
+<text x="126" y="372" font-size="9" fill="#993C1D" font-family="Arial,sans-serif" text-anchor="middle">Castaneto et al. 2014</text>
+<rect x="246" y="288" width="188" height="98" rx="8" fill="#ffffff" stroke="#dde6f5" stroke-width="0.5"/>
+<text x="340" y="316" font-size="22" font-weight="500" fill="#534AB7" font-family="Arial,sans-serif" text-anchor="middle">polydrug</text>
+<text x="340" y="336" font-size="10" fill="#4a6285" font-family="Arial,sans-serif" text-anchor="middle">νέο προφίλ χρήστη</text>
+<text x="340" y="352" font-size="10" fill="#4a6285" font-family="Arial,sans-serif" text-anchor="middle">uppers + downers</text>
+<text x="340" y="372" font-size="9" fill="#534AB7" font-family="Arial,sans-serif" text-anchor="middle">performance culture</text>
+<rect x="460" y="288" width="188" height="98" rx="8" fill="#ffffff" stroke="#dde6f5" stroke-width="0.5"/>
+<text x="554" y="318" font-size="22" font-weight="500" fill="#0F6E56" font-family="Arial,sans-serif" text-anchor="middle">dark web</text>
+<text x="554" y="338" font-size="10" fill="#4a6285" font-family="Arial,sans-serif" text-anchor="middle">κύρια οδός διάθεσης</text>
+<text x="554" y="352" font-size="10" fill="#4a6285" font-family="Arial,sans-serif" text-anchor="middle">courier / drop boxes</text>
+<text x="554" y="372" font-size="9" fill="#0F6E56" font-family="Arial,sans-serif" text-anchor="middle">ανεξέλεγκτη σύνθεση</text>
+
+<text x="340" y="406" font-size="9" fill="#4a6285" font-family="Arial,sans-serif" text-anchor="middle" opacity="0.7">drgkikas.com — Smart CNS Center Αθήνα</text>
+</svg>
