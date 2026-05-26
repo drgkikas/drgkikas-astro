@@ -190,20 +190,34 @@ Uppers (καθινόνες, αμφεταμίνες) για απόδοση και
 
 ## Βιβλιογραφία
 
-1. Baumann MH, et al. (2018). Pharmacology of synthetic cathinones. Handbook of Experimental Pharmacology. doi: 10.1007/164_2018_178 <a id="ref1"></a>
-2. Bonano JS, et al. (2015). α-PHP pharmacology. British Journal of Pharmacology. doi: 10.1111/bph.13030 <a id="ref2"></a>
-3. Brito-da-Costa AM, et al. (2021). Salvia divinorum toxicology. Pharmaceuticals, 14(2). doi: 10.3390/ph14020116 <a id="ref3"></a>
-4. Castaneto MS, et al. (2014). Synthetic cannabinoids. Drug and Alcohol Dependence. doi: 10.1016/j.drugalcdep.2014.08.005 <a id="ref4"></a>
-5. Durydivka O, et al. (2024). HHC psychosis risk. Scientific Reports. doi: 10.1038/s41598-024-58845-7 <a id="ref5"></a>
-6. Felmlee MA, et al. (2021). GHB pharmacokinetics. AAPS Journal. doi: 10.1208/s12248-020-00543-z <a id="ref6"></a>
-7. Giraudon I, et al. (2024). Nitazenes in Europe. Lancet Public Health. doi: 10.1016/S2468-2667(24)00024-0 <a id="ref7"></a>
-8. Hill SL, et al. (2020). Salvinorin A synthesis. Natural Product Reports. doi: 10.1039/d0np00028k <a id="ref8"></a>
-9. Holland A, et al. (2024). Nitazene diffusion. Lancet Public Health. doi: 10.1016/S2468-2667(24)00001-X <a id="ref9"></a>
-10. Jung J, et al. (2023). GHB-ethanol interaction. Metabolites. doi: 10.3390/metabo13020180 <a id="ref10"></a>
-11. Mayer FP, et al. (2023). Mephedrone DAT/SERT profile. Neuropharmacology. doi: 10.1016/j.neuropharm.2023.109704 <a id="ref11"></a>
-12. Moss RB, et al. (2020). Fentanyl naloxone reversal. PLOS ONE. doi: 10.1371/journal.pone.0240148 <a id="ref12"></a>
-13. O'Mahony B, et al. (2024). HHC clinical risk. Irish Journal of Psychological Medicine. doi: 10.1017/ipm.2024.3 <a id="ref13"></a>
-14. Roth BL, et al. (2002). Salvinorin KOR agonism. PNAS. doi: 10.1073/pnas.182234399 <a id="ref14"></a>
-15. Vandeppute MM, et al. (2025). Nitazene pharmacology. Neuropharmacology. doi: 10.1016/j.neuropharm.2025.110470 <a id="ref15"></a>
+**1.** <a id="ref1"></a> Baumann MH, et al. (2018). Pharmacology of synthetic cathinones. Handbook of Experimental Pharmacology. doi: 10.1007/164_2018_178
+
+**2.** <a id="ref2"></a> Bonano JS, et al. (2015). α-PHP pharmacology. British Journal of Pharmacology. doi: 10.1111/bph.13030
+
+**3.** <a id="ref3"></a> Brito-da-Costa AM, et al. (2021). Salvia divinorum toxicology. Pharmaceuticals, 14(2). doi: 10.3390/ph14020116
+
+**4.** <a id="ref4"></a> Castaneto MS, et al. (2014). Synthetic cannabinoids. Drug and Alcohol Dependence. doi: 10.1016/j.drugalcdep.2014.08.005
+
+**5.** <a id="ref5"></a> Durydivka O, et al. (2024). HHC psychosis risk. Scientific Reports. doi: 10.1038/s41598-024-58845-7
+
+**6.** <a id="ref6"></a> Felmlee MA, et al. (2021). GHB pharmacokinetics. AAPS Journal. doi: 10.1208/s12248-020-00543-z
+
+**7.** <a id="ref7"></a> Giraudon I, et al. (2024). Nitazenes in Europe. Lancet Public Health. doi: 10.1016/S2468-2667(24)00024-0
+
+**8.** <a id="ref8"></a> Hill SL, et al. (2020). Salvinorin A synthesis. Natural Product Reports. doi: 10.1039/d0np00028k
+
+**9.** <a id="ref9"></a> Holland A, et al. (2024). Nitazene diffusion. Lancet Public Health. doi: 10.1016/S2468-2667(24)00001-X
+
+**10.** <a id="ref10"></a> Jung J, et al. (2023). GHB-ethanol interaction. Metabolites. doi: 10.3390/metabo13020180
+
+**11.** <a id="ref11"></a> Mayer FP, et al. (2023). Mephedrone DAT/SERT profile. Neuropharmacology. doi: 10.1016/j.neuropharm.2023.109704
+
+**12.** <a id="ref12"></a> Moss RB, et al. (2020). Fentanyl naloxone reversal. PLOS ONE. doi: 10.1371/journal.pone.0240148
+
+**13.** <a id="ref13"></a> O'Mahony B, et al. (2024). HHC clinical risk. Irish Journal of Psychological Medicine. doi: 10.1017/ipm.2024.3
+
+**14.** <a id="ref14"></a> Roth BL, et al. (2002). Salvinorin KOR agonism. PNAS. doi: 10.1073/pnas.182234399
+
+**15.** <a id="ref15"></a> Vandeppute MM, et al. (2025). Nitazene pharmacology. Neuropharmacology. doi: 10.1016/j.neuropharm.2025.110470
 
 *Ο Πασχάλης Γκίκας είναι Ψυχίατρος-Ψυχοθεραπευτής και Ιατρικός Διευθυντής του Smart CNS Center (Ξενοφώντος 15Α, Σύνταγμα, Αθήνα). Ειδικεύεται στη διάγνωση και αντιμετώπιση διαταραχών χρήσης ουσιών, κατάθλιψης και αγχωδών διαταραχών, καθώς και στην εφαρμογή rTMS.*
