@@ -204,8 +204,6 @@ Uppers (καθινόνες, αμφεταμίνες) για απόδοση και
   <li id="ref11">Brito-da-Costa AM, et al. (2021). Salvia divinorum toxicology. <em>Pharmaceuticals,</em> 14(2). doi: 10.3390/ph14020116</li>
   <li id="ref12">Felmlee MA, et al. (2021). GHB pharmacokinetics. <em>AAPS Journal.</em> doi: 10.1208/s12248-020-00543-z</li>
   <li id="ref13">Jung J, et al. (2023). GHB-ethanol interaction. <em>Metabolites.</em> doi: 10.3390/metabo13020180</li>
-  <li id="ref14">Hill SL, et al. (2020). Salvinorin A synthesis. <em>Natural Product Reports.</em> doi: 10.1039/d0np00028k</li>
-  <li id="ref15">Vandeppute MM, et al. (2025). Nitazene pharmacology. <em>Neuropharmacology.</em> doi: 10.1016/j.neuropharm.2025.110470</li>
 </ol>
 
 *Ο Πασχάλης Γκίκας είναι Ψυχίατρος-Ψυχοθεραπευτής και Ιατρικός Διευθυντής του Smart CNS Center (Ξενοφώντος 15Α, Σύνταγμα, Αθήνα). Ειδικεύεται στη διάγνωση και αντιμετώπιση διαταραχών χρήσης ουσιών, κατάθλιψης και αγχωδών διαταραχών, καθώς και στην εφαρμογή rTMS.*
