@@ -7,7 +7,7 @@ date: 2026-05-26
 author: "drGkikas"
 kategoria: "Νευροδιέγερση"
 keywords: "rTMS, TMS, accelerated TMS, aTMS, iTBS, κατάθλιψη, ανθεκτική κατάθλιψη, θεραπευτικά ανθεκτική κατάθλιψη, FDA clearance, MagVenture, rTMS Αθήνα"
-image: "/images/blog/atms_hero.png"
+image: "/images/blog/atms_hero.webp"
 schema: |
   [
     {
@@ -308,10 +308,10 @@ FDA clearance σημαίνει ότι ο FDA επέτρεψε τη διάθεσ�
 
 ---
 
-## Πηγές
+## Βιβλιογραφία
 
-1. <a id="ref1"></a>MagVenture. “MagVenture Receives FDA Clearance for Accelerated TMS Protocols, Expanding Flexibility for Clinics and Patients.” May 26, 2026. [magventure.com](https://magventure.com/magventure-receives-fda-clearance-for-accelerated-tms-protocols-expanding-flexibility-for-clinics-and-patients/)
-2. <a id="ref2"></a>MagVenture US. “FDA clearances.” [magventure.com](https://magventure.com/us/fda-clearances/)
-3. <a id="ref3"></a>FDA. “Device Approvals and Clearances.” [fda.gov](https://www.fda.gov/medical-devices/products-and-medical-procedures/device-approvals-and-clearances)
-4. <a id="ref4"></a>FDA. “510(k) Premarket Notification.” [accessdata.fda.gov](https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm)
-5. <a id="ref5"></a>FDA 510(k) K251125. MagVenture TMS Therapy System. [accessdata.fda.gov](https://www.accessdata.fda.gov/cdrh_docs/pdf25/K251125.pdf)
+1. MagVenture. “MagVenture Receives FDA Clearance for Accelerated TMS Protocols, Expanding Flexibility for Clinics and Patients.” May 26, 2026. [magventure.com](https://magventure.com/magventure-receives-fda-clearance-for-accelerated-tms-protocols-expanding-flexibility-for-clinics-and-patients/)
+2. MagVenture US. “FDA clearances.” [magventure.com](https://magventure.com/us/fda-clearances/)
+3. FDA. “Device Approvals and Clearances.” [fda.gov](https://www.fda.gov/medical-devices/products-and-medical-procedures/device-approvals-and-clearances)
+4. FDA. “510(k) Premarket Notification.” [accessdata.fda.gov](https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm)
+5. FDA 510(k) K251125. MagVenture TMS Therapy System. [accessdata.fda.gov](https://www.accessdata.fda.gov/cdrh_docs/pdf25/K251125.pdf)
