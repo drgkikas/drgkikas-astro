@@ -10,6 +10,9 @@ interface Props {
   canonicalURL?: string;
   image?: string;
   schema?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogType?: string;
 }
 
 const { 
@@ -17,7 +20,10 @@ const {
   description = "Πασχάλης Γκίκας — Ψυχίατρος στην Αθήνα. Εξειδικευμένες υπηρεσίες rTMS, Φαρμακογονιδιωματικής και Ψυχοθεραπείας στο Smart CNS Center.", 
   canonicalURL,
   image = "/images/dr-gkikas-portrait.jpg",
-  schema
+  schema,
+  ogTitle,
+  ogDescription,
+  ogType = "website"
 } = Astro.props;
 const rawCanonical = canonicalURL ?? new URL(Astro.url.pathname, 'https://drgkikas.com').href;
 const canonical = (rawCanonical.endsWith('/') && rawCanonical !== 'https://drgkikas.com/') 
@@ -42,11 +48,11 @@ const socialImageURL = new URL(image, 'https://drgkikas.com').href;
     <meta name="description" content={description} />
     
     <!-- OpenGraph Tags -->
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <meta property="og:title" content={ogTitle || title} />
+    <meta property="og:description" content={ogDescription || description} />
     <meta property="og:image" content={socialImageURL} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content="Πασχάλης Γκίκας | Ψυχίατρος Αθήνα" />
     <meta property="og:locale" content={Astro.currentLocale === 'en' ? 'en_US' : Astro.currentLocale === 'it' ? 'it_IT' : 'el_GR'} />
 
