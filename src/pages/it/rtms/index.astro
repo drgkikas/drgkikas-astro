@@ -12,11 +12,101 @@ const allRtmsPages = await getCollection('rtms', ({ id }) => {
 const corePages = allRtmsPages.filter(p => p.id.startsWith('it/core/')).sort((a,b)=> (a.data.order||0) - (b.data.order||0));
 const endixeisPages = allRtmsPages.filter(p => p.id.startsWith('it/endixeis/')).sort((a,b)=> (a.data.order||0) - (b.data.order||0));
 const posLeitourgeiPages = allRtmsPages.filter(p => p.id.startsWith('it/pos-leitourgei/')).sort((a,b)=> (a.data.order||0) - (b.data.order||0));
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://drgkikas.com/it/rtms/#webpage",
+      "url": "https://drgkikas.com/it/rtms",
+      "name": "rTMS Atene | Depressione, DOC e Dipendenza da Cocaina | drGkikas",
+      "description": "La terapia rTMS è non invasiva, senza anestesia ed è utilizzata per la depressione resistente, il DOC e la dipendenza da cocaina. Scopri come viene applicata ad Atene, la durata, la sicurezza, gli effetti collaterali e il processo di valutazione.",
+      "inLanguage": "it"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://drgkikas.com/it/rtms/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://drgkikas.com/it/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "rTMS",
+          "item": "https://drgkikas.com/it/rtms"
+        }
+      ]
+    },
+    {
+      "@type": "Physician",
+      "@id": "https://drgkikas.com/#physician",
+      "name": "Paschalis Gkikas",
+      "alternateName": "drGkikas",
+      "medicalSpecialty": "Psychiatry",
+      "image": "https://drgkikas.com/images/dr-gkikas-portrait.jpg",
+      "logo": "https://drgkikas.com/images/dr-gkikas-portrait.jpg",
+      "url": "https://drgkikas.com/it/",
+      "availableLanguage": ["Greek", "English", "Italian"]
+    },
+    {
+      "@type": "MedicalBusiness",
+      "@id": "https://drgkikas.com/#clinic",
+      "name": "Smart CNS Center",
+      "url": "https://drgkikas.com/it/",
+      "image": "https://drgkikas.com/images/dr-gkikas-portrait.jpg",
+      "logo": "https://drgkikas.com/images/dr-gkikas-portrait.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Via Xenofontos 15A",
+        "addressLocality": "Atene",
+        "addressRegion": "Attica",
+        "postalCode": "10557",
+        "addressCountry": "GR"
+      },
+      "areaServed": "Athens, Greece"
+    },
+    {
+      "@type": "MedicalTherapy",
+      "@id": "https://drgkikas.com/it/rtms/#medicaltherapy",
+      "name": "rTMS treatment",
+      "alternateName": "Repetitive Transcranial Magnetic Stimulation",
+      "url": "https://drgkikas.com/it/rtms",
+      "provider": {
+        "@id": "https://drgkikas.com/#physician"
+      },
+      "description": "Terapia di neuromodulazione non invasiva.",
+      "clinicalPharmacology": "Transcranial magnetic stimulation",
+      "indication": [
+        {
+          "@type": "MedicalIndication",
+          "name": "Treatment-resistant depression"
+        },
+        {
+          "@type": "MedicalIndication",
+          "name": "Obsessive-compulsive disorder"
+        },
+        {
+          "@type": "MedicalIndication",
+          "name": "Cocaine addiction / Cocaine use disorder"
+        }
+      ]
+    }
+  ]
+});
 ---
 
 <Layout 
-  title="rTMS Neuromodulazione & Hub Terapeutico" 
-  description="Guida completa alla rTMS (Stimolazione Magnetica Transcranica Ripetitiva) ad Atene. Indicazioni per depressione, DOC e come funziona la neuromodulazione non invasiva."
+  title="rTMS Atene | Depressione, DOC e Dipendenza da Cocaina | drGkikas" 
+  description="La terapia rTMS è non invasiva, senza anestesia ed è utilizzata per la depressione resistente, il DOC e la dipendenza da cocaina. Scopri come viene applicata ad Atene, la durata, la sicurezza, gli effetti collaterali e il processo di valutazione."
+  canonicalURL="https://drgkikas.com/it/rtms"
+  ogTitle="rTMS Atene | Depressione, DOC e Dipendenza da Cocaina"
+  ogDescription="Terapia di neuromodulazione non invasiva ad Atene per depressione resistente, DOC e dipendenza da cocaina."
+  ogType="website"
+  schema={schema}
 >
   <Header />
 
