@@ -21,7 +21,10 @@ const schema = JSON.stringify({
       "url": "https://drgkikas.com/it/rtms",
       "name": "rTMS Atene | Depressione, DOC e Dipendenza da Cocaina | drGkikas",
       "description": "La terapia rTMS è non invasiva, senza anestesia ed è utilizzata per la depressione resistente, il DOC e la dipendenza da cocaina. Scopri come viene applicata ad Atene, la durata, la sicurezza, gli effetti collaterali e il processo di valutazione.",
-      "inLanguage": "it"
+      "inLanguage": "it",
+      "mainEntity": {
+        "@id": "https://drgkikas.com/it/rtms/#service"
+      }
     },
     {
       "@type": "BreadcrumbList",
@@ -68,6 +71,22 @@ const schema = JSON.stringify({
         "addressCountry": "GR"
       },
       "areaServed": "Athens, Greece"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://drgkikas.com/it/rtms/#service",
+      "name": "rTMS ad Atene",
+      "alternateName": "Stimolazione Magnetica Transcranica Ripetitiva",
+      "provider": {
+        "@id": "https://drgkikas.com/#physician"
+      },
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Athens, Greece"
+      },
+      "serviceType": "rTMS, iTBS, neuromodulation",
+      "url": "https://drgkikas.com/it/rtms",
+      "description": "Terapia di neuromodulazione non invasiva ad Atene per depressione, depressione resistente, disturbo ossessivo-compulsivo (DOC) e trattamento della dipendenza da cocaina."
     },
     {
       "@type": "MedicalTherapy",
@@ -298,7 +317,7 @@ const schema = JSON.stringify({
       </section>
 
       <!-- FAQ Section -->
-      <section class="mb-20 bg-white rounded-3xl p-8 md:p-14 shadow-sm border border-slate-100">
+      <section class="mb-8 bg-white rounded-3xl p-8 md:p-14 shadow-sm border border-slate-100">
         <h2 class="text-3xl font-extrabold text-slate-900 mb-8 tracking-tight">
           Domande Frequenti sulla rTMS
         </h2>
