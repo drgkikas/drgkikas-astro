@@ -94,6 +94,76 @@ const schema = JSON.stringify({
           "name": "Cocaine addiction / Cocaine use disorder"
         }
       ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://drgkikas.com/it/rtms/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Cos'è la rTMS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La rTMS è una terapia di neuromodulazione non invasiva che utilizza impulsi magnetici per stimolare in modo mirato aree specifiche del cervello. Non richiede anestesia e il paziente rimane cosciente durante la sessione."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qual è la differenza tra rTMS ed ECT?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La rTMS non è l'elettroshock (terapia elettroconvulsivante). Non provoca convulsioni, non richiede anestesia generale e non è associata alla stessa procedura o al profilo di effetti collaterali cognitivi che l'ECT può presentare."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qual è la differenza tra rTMS e iTBS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "L'iTBS è un protocollo di stimolazione magnetica specifico e più breve, appartenente alla famiglia delle terapie TMS. La scelta tra rTMS e iTBS viene effettuata in base all'indicazione, all'anamnesi, alla tollerabilità e alla valutazione clinica."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quando si consiglia la rTMS per la depressione?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La rTMS viene presa in considerazione principalmente quando la depressione non ha risposto adeguatamente ai precedenti tentativi di trattamento o quando la terapia farmacologica causa problemi di tollerabilità. L'indicazione viene stabilita a seguito di una valutazione psichiatrica e di un esame dell'anamnesi clinica."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "La rTMS è sicura?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La rTMS è generalmente ben tollerata se applicata seguendo gli opportuni protocolli di sicurezza. I fastidi più comuni sono un temporaneo disagio locale a livello dello scalpo nel sito di applicazione o mal di testa, mentre gli eventi avversi gravi sono rari."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quante sedute di rTMS sono necessarie?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Il numero di sedute dipende dall'indicazione, dal protocollo e dalla risposta del paziente. Di solito è necessaria una serie di sessioni ripetute, con una durata stabilita su base individuale."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quando si vedono i risultati della rTMS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "I tempi di risposta variano da paziente a paziente. Alcuni notano miglioramenti già nelle prime settimane, mentre in altri casi la risposta viene valutata dopo aver completato la maggior parte del protocollo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "La rTMS può essere combinata con la terapia farmacologica?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In molti casi, la rTMS può essere applicata in parallelo alla terapia farmacologica. La decisione viene presa individualmente dallo psichiatra, in base alla diagnosi, all'anamnesi, alla tollerabilità e agli obiettivi terapeutici."
+          }
+        }
+      ]
     }
   ]
 });
@@ -224,6 +294,202 @@ const schema = JSON.stringify({
               </a>
             ))}
           </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="mb-20 bg-white rounded-3xl p-8 md:p-14 shadow-sm border border-slate-100">
+        <h2 class="text-3xl font-extrabold text-slate-900 mb-8 tracking-tight">
+          Domande Frequenti sulla rTMS
+        </h2>
+        
+        <div class="space-y-4 max-w-4xl">
+          <details class="group border border-slate-100 rounded-2xl bg-slate-50/50 p-6 [&_summary::-webkit-details-marker]:hidden transition-all duration-300">
+            <summary class="flex items-center justify-between cursor-pointer focus:outline-none">
+              <h3 class="text-lg font-bold text-slate-900 group-hover:text-red-700 transition-colors">
+                Cos'è la rTMS?
+              </h3>
+              <span class="ml-1.5 flex-shrink-0 rounded-full bg-white p-1.5 text-slate-900 shadow-sm transition-transform duration-300 group-open:-rotate-180">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </summary>
+            <div class="mt-4 leading-relaxed text-slate-700 font-light">
+              <p>
+                La rTMS è una terapia di neuromodulazione non invasiva che utilizza impulsi magnetici per stimolare in modo mirato aree specifiche del cervello. Non richiede anestesia e il paziente rimane cosciente durante la sessione.
+              </p>
+              <p class="mt-3">
+                <a href="/it/rtms/core/ti-einai" class="inline-flex items-center text-sm font-semibold text-red-600 hover:text-red-700 gap-1">
+                  Scopri di più: Cos'è la rTMS e l'iTBS &rarr;
+                </a>
+              </p>
+            </div>
+          </details>
+
+          <details class="group border border-slate-100 rounded-2xl bg-slate-50/50 p-6 [&_summary::-webkit-details-marker]:hidden transition-all duration-300">
+            <summary class="flex items-center justify-between cursor-pointer focus:outline-none">
+              <h3 class="text-lg font-bold text-slate-900 group-hover:text-red-700 transition-colors">
+                Qual è la differenza tra rTMS ed ECT?
+              </h3>
+              <span class="ml-1.5 flex-shrink-0 rounded-full bg-white p-1.5 text-slate-900 shadow-sm transition-transform duration-300 group-open:-rotate-180">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </summary>
+            <div class="mt-4 leading-relaxed text-slate-700 font-light">
+              <p>
+                La rTMS non è l'elettroshock (terapia elettroconvulsivante). Non provoca convulsioni, non richiede anestesia generale e non è associata alla stessa procedura o al profilo di effetti collaterali cognitivi che l'ECT può presentare.
+              </p>
+              <p class="mt-3">
+                <a href="/it/rtms/core/asfaleia-parenergeies" class="inline-flex items-center text-sm font-semibold text-red-600 hover:text-red-700 gap-1">
+                  Scopri di più: Sicurezza ed effetti collaterali &rarr;
+                </a>
+              </p>
+            </div>
+          </details>
+
+          <details class="group border border-slate-100 rounded-2xl bg-slate-50/50 p-6 [&_summary::-webkit-details-marker]:hidden transition-all duration-300">
+            <summary class="flex items-center justify-between cursor-pointer focus:outline-none">
+              <h3 class="text-lg font-bold text-slate-900 group-hover:text-red-700 transition-colors">
+                Qual è la differenza tra rTMS e iTBS?
+              </h3>
+              <span class="ml-1.5 flex-shrink-0 rounded-full bg-white p-1.5 text-slate-900 shadow-sm transition-transform duration-300 group-open:-rotate-180">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </summary>
+            <div class="mt-4 leading-relaxed text-slate-700 font-light">
+              <p>
+                L'iTBS è un protocollo di stimolazione magnetica specifico e più breve, appartenente alla famiglia delle terapie TMS. La scelta tra rTMS e iTBS viene effettuata in base all'indicazione, all'anamnesi, alla tollerabilità e alla valutazione clinica.
+              </p>
+              <p class="mt-3">
+                <a href="/it/rtms/core/ti-einai" class="inline-flex items-center text-sm font-semibold text-red-600 hover:text-red-700 gap-1">
+                  Scopri di più: Cos'è la rTMS e l'iTBS &rarr;
+                </a>
+              </p>
+            </div>
+          </details>
+
+          <details class="group border border-slate-100 rounded-2xl bg-slate-50/50 p-6 [&_summary::-webkit-details-marker]:hidden transition-all duration-300">
+            <summary class="flex items-center justify-between cursor-pointer focus:outline-none">
+              <h3 class="text-lg font-bold text-slate-900 group-hover:text-red-700 transition-colors">
+                Quando si consiglia la rTMS per la depressione?
+              </h3>
+              <span class="ml-1.5 flex-shrink-0 rounded-full bg-white p-1.5 text-slate-900 shadow-sm transition-transform duration-300 group-open:-rotate-180">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </summary>
+            <div class="mt-4 leading-relaxed text-slate-700 font-light">
+              <p>
+                La rTMS viene presa in considerazione principalmente quando la depressione non ha risposto adeguatamente ai precedenti tentativi di trattamento o quando la terapia farmacologica causa problemi di tollerabilità. L'indicazione viene stabilita a seguito di una valutazione psichiatrica e di un esame dell'anamnesi clinica.
+              </p>
+              <p class="mt-3">
+                <a href="/it/rtms/endixeis/trd" class="inline-flex items-center text-sm font-semibold text-red-600 hover:text-red-700 gap-1">
+                  Scopri di più: rTMS per depressione resistente &rarr;
+                </a>
+              </p>
+            </div>
+          </details>
+
+          <details class="group border border-slate-100 rounded-2xl bg-slate-50/50 p-6 [&_summary::-webkit-details-marker]:hidden transition-all duration-300">
+            <summary class="flex items-center justify-between cursor-pointer focus:outline-none">
+              <h3 class="text-lg font-bold text-slate-900 group-hover:text-red-700 transition-colors">
+                La rTMS è sicura?
+              </h3>
+              <span class="ml-1.5 flex-shrink-0 rounded-full bg-white p-1.5 text-slate-900 shadow-sm transition-transform duration-300 group-open:-rotate-180">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </summary>
+            <div class="mt-4 leading-relaxed text-slate-700 font-light">
+              <p>
+                La rTMS è generalmente ben tollerata se applicata seguendo gli opportuni protocolli di sicurezza. I fastidi più comuni sono un temporaneo disagio locale a livello dello scalpo nel sito di applicazione o mal di testa, mentre gli eventi avversi gravi sono rari.
+              </p>
+              <p class="mt-3">
+                <a href="/it/rtms/core/asfaleia-parenergeies" class="inline-flex items-center text-sm font-semibold text-red-600 hover:text-red-700 gap-1">
+                  Scopri di più: Sicurezza ed effetti collaterali &rarr;
+                </a>
+              </p>
+            </div>
+          </details>
+
+          <details class="group border border-slate-100 rounded-2xl bg-slate-50/50 p-6 [&_summary::-webkit-details-marker]:hidden transition-all duration-300">
+            <summary class="flex items-center justify-between cursor-pointer focus:outline-none">
+              <h3 class="text-lg font-bold text-slate-900 group-hover:text-red-700 transition-colors">
+                Quante sedute di rTMS sono necessarie?
+              </h3>
+              <span class="ml-1.5 flex-shrink-0 rounded-full bg-white p-1.5 text-slate-900 shadow-sm transition-transform duration-300 group-open:-rotate-180">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </summary>
+            <div class="mt-4 leading-relaxed text-slate-700 font-light">
+              <p>
+                Il numero di sedute dipende dall'indicazione, dal protocollo e dalla risposta del paziente. Di solito è necessaria una serie di sessioni ripetute, con una durata stabilita su base individuale.
+              </p>
+              <p class="mt-3">
+                <a href="/it/rtms/core/kostos-kai-diadikasia" class="inline-flex items-center text-sm font-semibold text-red-600 hover:text-red-700 gap-1">
+                  Scopri di più: Costi e procedura &rarr;
+                </a>
+              </p>
+            </div>
+          </details>
+
+          <details class="group border border-slate-100 rounded-2xl bg-slate-50/50 p-6 [&_summary::-webkit-details-marker]:hidden transition-all duration-300">
+            <summary class="flex items-center justify-between cursor-pointer focus:outline-none">
+              <h3 class="text-lg font-bold text-slate-900 group-hover:text-red-700 transition-colors">
+                Quando si vedono i risultati della rTMS?
+              </h3>
+              <span class="ml-1.5 flex-shrink-0 rounded-full bg-white p-1.5 text-slate-900 shadow-sm transition-transform duration-300 group-open:-rotate-180">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </summary>
+            <div class="mt-4 leading-relaxed text-slate-700 font-light">
+              <p>
+                I tempi di risposta variano da paziente a paziente. Alcuni notano miglioramenti già nelle prime settimane, mentre in altri casi la risposta viene valutata dopo aver completato la maggior parte del protocollo.
+              </p>
+              <p class="mt-3">
+                <a href="/it/rtms/core/kostos-kai-diadikasia" class="inline-flex items-center text-sm font-semibold text-red-600 hover:text-red-700 gap-1">
+                  Scopri di più: Costi e procedura &rarr;
+                </a>
+              </p>
+            </div>
+          </details>
+
+          <details class="group border border-slate-100 rounded-2xl bg-slate-50/50 p-6 [&_summary::-webkit-details-marker]:hidden transition-all duration-300">
+            <summary class="flex items-center justify-between cursor-pointer focus:outline-none">
+              <h3 class="text-lg font-bold text-slate-900 group-hover:text-red-700 transition-colors">
+                La rTMS può essere combinata con la terapia farmacologica?
+              </h3>
+              <span class="ml-1.5 flex-shrink-0 rounded-full bg-white p-1.5 text-slate-900 shadow-sm transition-transform duration-300 group-open:-rotate-180">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </summary>
+            <div class="mt-4 leading-relaxed text-slate-700 font-light">
+              <p>
+                In molti casi, la rTMS può essere applicata in parallelo alla terapia farmacologica. La decisione viene presa individualmente dallo psichiatra, in base alla diagnosi, all'anamnesi, alla tollerabilità e agli obiettivi terapeutici.
+              </p>
+              <p class="mt-3 flex flex-wrap gap-x-4 gap-y-1">
+                <a href="/it/ypiresies/pgx" class="inline-flex items-center text-sm font-semibold text-red-600 hover:text-red-700 gap-1">
+                  Farmacogenomica &rarr;
+                </a>
+                <a href="/it/ypiresies/psychiatriki-parakolouthisi" class="inline-flex items-center text-sm font-semibold text-red-600 hover:text-red-700 gap-1">
+                  Monitoraggio Psichiatrico &rarr;
+                </a>
+              </p>
+            </div>
+          </details>
         </div>
       </section>
 
