@@ -52,7 +52,7 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
   integrations: [react(), sitemap({
-    filter: (page) => !page.includes('/pgx/') || page.includes('/ypiresies/pgx'),
+    filter: (page) => (!page.includes('/pgx/') || page.includes('/ypiresies/pgx')) && !page.includes('/ypiresies/rtms'),
     customPages: getRtmsUrls(),
     serialize(item) {
       // Strip trailing slash so sitemap URLs match canonical link tags
