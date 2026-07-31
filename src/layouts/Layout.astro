@@ -30,6 +30,60 @@ const canonical = (rawCanonical.endsWith('/') && rawCanonical !== 'https://drgki
   ? rawCanonical.slice(0, -1) 
   : rawCanonical;
 const socialImageURL = new URL(image, 'https://drgkikas.com').href;
+
+// Dynamic Hreflang Logic
+const pathname = Astro.url.pathname;
+let basePath = pathname;
+if (basePath.startsWith('/en/')) {
+  basePath = basePath.slice(3);
+} else if (basePath === '/en') {
+  basePath = '/';
+} else if (basePath.startsWith('/it/')) {
+  basePath = basePath.slice(3);
+} else if (basePath === '/it') {
+  basePath = '/';
+}
+
+// Ensure basePath starts with /
+if (!basePath.startsWith('/')) {
+  basePath = '/' + basePath;
+}
+// Strip trailing slash
+if (basePath.endsWith('/') && basePath !== '/') {
+  basePath = basePath.slice(0, -1);
+}
+
+// Determine localized equivalents
+let elHref = `https://drgkikas.com${basePath}`;
+let enHref = `https://drgkikas.com/en${basePath}`;
+let itHref = `https://drgkikas.com/it${basePath}`;
+
+if (basePath === '/') {
+  elHref = 'https://drgkikas.com';
+  enHref = 'https://drgkikas.com/en';
+  itHref = 'https://drgkikas.com/it';
+}
+
+if (basePath === '/epikoinonia' || basePath === '/contact' || basePath === '/contatti') {
+  elHref = 'https://drgkikas.com/epikoinonia';
+  enHref = 'https://drgkikas.com/en/contact';
+  itHref = 'https://drgkikas.com/it/contatti';
+}
+
+// Strip trailing slashes on final equivalents just in case
+if (elHref.endsWith('/') && elHref !== 'https://drgkikas.com') elHref = elHref.slice(0, -1);
+if (enHref.endsWith('/') && enHref !== 'https://drgkikas.com/en') enHref = enHref.slice(0, -1);
+if (itHref.endsWith('/') && itHref !== 'https://drgkikas.com/it') itHref = itHref.slice(0, -1);
+
+// Limit hreflang tags only to multilingual pages
+const isMultilingual = 
+  basePath === '/' || 
+  basePath.startsWith('/rtms') || 
+  basePath.startsWith('/diataraxes') || 
+  basePath.startsWith('/ypiresies') || 
+  basePath === '/iatros' || 
+  basePath === '/epikoinonia' || basePath === '/contact' || basePath === '/contatti' ||
+  basePath === '/privacy-policy';
 ---
 
 <!doctype html>
@@ -46,6 +100,15 @@ const socialImageURL = new URL(image, 'https://drgkikas.com').href;
     <title>{title}</title>
     <link rel="canonical" href={canonical} />
     <meta name="description" content={description} />
+    
+    {isMultilingual && (
+      <>
+        <link rel="alternate" hreflang="el" href={elHref} />
+        <link rel="alternate" hreflang="en" href={enHref} />
+        <link rel="alternate" hreflang="it" href={itHref} />
+        <link rel="alternate" hreflang="x-default" href={elHref} />
+      </>
+    )}
     
     <!-- OpenGraph Tags -->
     <meta property="og:title" content={ogTitle || title} />
