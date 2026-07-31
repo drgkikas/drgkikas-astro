@@ -62,7 +62,7 @@ La depressione può essere ricorrente (ICD-10 F33). Un follow-up adeguato e l’
 * **Depressione (MDD)** → sintomo principale → **Anedonia**
 * **MDD** → base biologica → **ipofunzione DLPFC / iperattività dell’amigdala**
 * **MDD** → trattamento di prima linea → **farmacoterapia / PGx / CBT**
-* **MDD** → trattamento dei casi resistenti → **rTMS / iTBS**
+* **MDD** → trattamento dei casi resistenti → **[rTMS per la Depressione](/it/rtms/endixeis/katathlipsi) / [iTBS](/it/rtms/core/ti-einai)**
 * **MDD** → strumento di valutazione → **PHQ-9 / HAM-D**
 * **MDD** → condizione correlata → **depressione resistente al trattamento (TRD)**
 

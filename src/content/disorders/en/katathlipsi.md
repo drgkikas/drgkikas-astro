@@ -62,7 +62,7 @@ Depression can be recurrent (ICD-10 F33). Proper follow-up and preventive use of
 * **Depression (MDD)** → main symptom → **Anhedonia**
 * **MDD** → biological basis → **DLPFC underactivity / amygdala hyperactivity**
 * **MDD** → first-line treatment → **pharmacotherapy / PGx / CBT**
-* **MDD** → resistant-case treatment → **rTMS / iTBS**
+* **MDD** → resistant-case treatment → **[rTMS for Depression](/en/rtms/endixeis/katathlipsi) / [iTBS](/en/rtms/core/ti-einai)**
 * **MDD** → assessment tool → **PHQ-9 / HAM-D**
 * **MDD** → related condition → **Treatment-Resistant Depression (TRD)**
 

@@ -66,7 +66,7 @@ faqs:
 - **Κατάθλιψη (MDD)** → κύριο σύμπτωμα → Ανηδονία
 - **MDD** → βιολογική βάση → υπολειτουργία [DLPFC](/rtms/pos-leitourgei/dlpfc) / υπερδραστηριότητα αμυγδαλής
 - **MDD** → θεραπεία 1ης γραμμής → [Φαρμακοθεραπεία](/ypiresies/psychiatriki-parakolouthisi) / [PGx](/ypiresies/pgx) / CBT
-- **MDD** → θεραπεία ανθεκτικών περιπτώσεων → [rTMS](/rtms) / [iTBS](/rtms/core/ti-einai)
+- **MDD** → θεραπεία ανθεκτικών περιπτώσεων → [rTMS για Κατάθλιψη](/rtms/endixeis/katathlipsi) / [iTBS](/rtms/core/ti-einai)
 - **MDD** → εργαλείο αξιολόγησης → [PHQ-9](/psychometrika/phq9) / [HAM-D](/psychometrika)
 - **MDD** → σχετική κατάσταση → [Ανθεκτική Κατάθλιψη (TRD)](/rtms/endixeis/trd)
 

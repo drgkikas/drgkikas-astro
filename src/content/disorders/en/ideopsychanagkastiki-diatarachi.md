@@ -67,7 +67,7 @@ OCD is treated — not merely managed. The combined approach of ERP and pharmaco
 2. **ERP (Exposure and Response Prevention):** The specialized psychotherapeutic technique with the strongest evidence base for OCD. The patient is gradually exposed to obsessions without performing compulsions — dismantling the anxiety cycle.
 
 ### Second-line and resistant cases
-* **rTMS:** An approved treatment for OCD, targeting the prefrontal cortex or the supplementary motor area (SMA). It is used in patients who have not achieved adequate response with SSRIs and ERP — reorganizing dysfunctional activity in the CSTC circuit.
+* **[rTMS for OCD](/en/rtms/endixeis/ocd):** An approved treatment for OCD, targeting the prefrontal cortex or the supplementary motor area (SMA). It is used in patients who have not achieved adequate response with SSRIs and ERP — reorganizing dysfunctional activity in the CSTC circuit.
 * **Clomipramine:** A tricyclic antidepressant with strong anti-obsessional action — an option in SSRI-resistant cases.
 * **Augmentation with antipsychotics:** Low-dose atypical antipsychotics as adjunctive treatment.
 * **Deep TMS (Cool D-B80 Coil):** A specially designed FDA-approved protocol for OCD — targeting deeper structures of the CSTC circuit.
@@ -84,9 +84,10 @@ At least 1–2 years after remission is achieved, to minimize relapse risk. Many
 Yes, although typical onset is in childhood or adolescence. In adults, it is often triggered by a stressful event, such as childbirth, loss or trauma. Perinatal OCD is particularly common and underdiagnosed.
 
 ### Is rTMS effective for OCD?
-Clinical data are positive, particularly for resistant cases. Deep TMS has received FDA approval for OCD. Paschalis Gkikas assesses individually whether it is an appropriate next clinical step for each patient.
+Clinical data are positive, particularly for resistant cases. Learn more about [rTMS for OCD](/en/rtms/endixeis/ocd). Paschalis Gkikas assesses individually whether it is an appropriate next clinical step for each patient.
 
 ## Related services & treatments
 
+* [rTMS for OCD](/en/rtms/endixeis/ocd)
 * [Psychiatric follow-up](/en/ypiresies/psychiatriki-parakolouthisi/)
 * [Online psychiatric session](/en/ypiresies/online-synedria/)

@@ -67,7 +67,7 @@ L’OCD si tratta — non si gestisce soltanto. L’approccio combinato di ERP e
 2. **ERP (Esposizione con Prevenzione della Risposta):** La tecnica psicoterapeutica specialistica con la più solida base di evidenza per l’OCD. Il paziente viene esposto gradualmente alle ossessioni senza eseguire le compulsioni — smontando il ciclo dell’ansia.
 
 ### Seconda linea e casi resistenti
-* **rTMS:** Trattamento approvato per l’OCD, con targeting della corteccia prefrontale o dell’area motoria supplementare (SMA). Viene utilizzata nei pazienti che non hanno ottenuto una risposta adeguata con SSRI ed ERP — riorganizzando l’attività disfunzionale del circuito CSTC.
+* **[rTMS per l'OCD](/it/rtms/endixeis/ocd):** Trattamento approvato per l’OCD, con targeting della corteccia prefrontale o dell’area motoria supplementare (SMA). Viene utilizzata nei pazienti che non hanno ottenuto una risposta adeguata con SSRI ed ERP — riorganizzando l’attività disfunzionale del circuito CSTC.
 * **Clomipramina:** Antidepressivo triciclico con forte azione anti-ossessiva — opzione nei casi resistenti agli SSRI.
 * **Augmentation con antipsicotici:** Basse dosi di antipsicotici atipici come trattamento aggiuntivo.
 * **Deep TMS (Cool D-B80 Coil):** Protocollo specificamente progettato e approvato dalla FDA per OCD — mira a strutture più profonde del circuito CSTC.
@@ -84,9 +84,10 @@ Almeno 1–2 anni dopo il raggiungimento della remissione, per minimizzare il ri
 Sì, anche se l’esordio tipico è nell’infanzia o nell’adolescenza. In alcuni casi negli adulti viene innescato da un evento stressante, come parto, perdita o trauma. L’OCD perinatale è particolarmente frequente e sottodiagnosticato.
 
 ### La rTMS è efficace per l’OCD?
-I dati clinici sono positivi, soprattutto nei casi resistenti. La Deep TMS ha ricevuto approvazione FDA per l’OCD. Paschalis Gkikas valuta individualmente se rappresenta il passo clinico successivo più appropriato per ciascun paziente.
+I dati clinici sono positivi, soprattutto nei casi resistenti. Scopri di più sulla [rTMS per l'OCD](/it/rtms/endixeis/ocd). Paschalis Gkikas valuta individualmente se rappresenta il passo clinico successivo più appropriato per ciascun paziente.
 
 ## Servizi e trattamenti correlati
 
+* [rTMS per l'OCD](/it/rtms/endixeis/ocd)
 * [Monitoraggio psichiatrico](/it/ypiresies/psychiatriki-parakolouthisi/)
 * [Seduta psichiatrica online](/it/ypiresies/online-synedria/)

@@ -91,7 +91,7 @@ L’analisi farmacogenomica (PGx) consente un disegno terapeutico individualizza
 La terapia cognitivo-comportamentale (CBT) è il gold standard — identificazione dei trigger, sviluppo di abilità di coping e gestione del craving. Il colloquio motivazionale rafforza l’alleanza terapeutica, soprattutto nei pazienti con motivazione ambivalente.
 
 ### rTMS nel disturbo da uso di cocaina
-La stimolazione magnetica transcranica ripetitiva (rTMS) είναι una delle più efficaci strategie non farmacologiche studiate in questo ambito. È stato studiato il targeting del DLPFC sinistro, che rafforza il controllo esecutivo e riduce il craving.
+La stimolazione magnetica transcranica ripetitiva ([rTMS per la dipendenza da cocaina](/it/rtms/endixeis/kokaini)) è una delle più efficaci strategie non farmacologiche studiate in questo ambito. È stato studiato il targeting del DLPFC sinistro, che rafforza il controllo esecutivo e riduce il craving.
 
 Le ricerche mostrano una riduzione significativa della gravità del craving per cocaina con rTMS ad alta frequenza (10 Hz) sul DLPFC. Il metodo può essere integrato in un protocollo terapeutico completo come intervento aggiuntivo.
 
@@ -113,5 +113,6 @@ La coesistenza di disturbo bipolare, ADHD o depressione è frequente. Il trattam
 
 ## Servizi e trattamenti correlati
 
+* [rTMS per la dipendenza da cocaina](/it/rtms/endixeis/kokaini)
 * [Monitoraggio psichiatrico](/it/ypiresies/psychiatriki-parakolouthisi/)
 * [Seduta psichiatrica online](/it/ypiresies/online-synedria/)

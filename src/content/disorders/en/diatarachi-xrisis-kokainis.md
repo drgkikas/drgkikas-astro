@@ -91,7 +91,7 @@ Pharmacogenomic analysis (PGx) allows individualized treatment design, avoiding 
 Cognitive Behavioral Therapy (CBT) is the gold standard — identification of triggers, development of coping skills and craving management. Motivational Interviewing strengthens the therapeutic alliance, especially in patients with ambivalent motivation.
 
 ### rTMS in Cocaine Use Disorder
-Repetitive transcranial magnetic stimulation (rTMS) is one of the most effective non-pharmacological interventions studied in this field. Left DLPFC targeting has been studied to strengthen executive control and reduce craving.
+Repetitive transcranial magnetic stimulation ([rTMS for cocaine addiction](/en/rtms/endixeis/kokaini)) is one of the most effective non-pharmacological interventions studied in this field. Left DLPFC targeting has been studied to strengthen executive control and reduce craving.
 
 Research shows a significant reduction in cocaine craving severity with high-frequency rTMS (10 Hz) over the DLPFC. The method can be integrated into a comprehensive treatment protocol as an adjunctive intervention.
 
@@ -113,5 +113,6 @@ Coexisting bipolar disorder, ADHD or depression is common. Treatment must addres
 
 ## Related services & treatments
 
+* [rTMS for Cocaine Addiction](/en/rtms/endixeis/kokaini)
 * [Psychiatric follow-up](/en/ypiresies/psychiatriki-parakolouthisi/)
 * [Online psychiatric session](/en/ypiresies/online-synedria/)
