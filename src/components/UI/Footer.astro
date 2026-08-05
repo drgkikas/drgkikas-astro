@@ -195,7 +195,7 @@ const services = allServices
         <h3 class="footer-col-title"><a href={langPrefix + "/ypiresies"}>{labels.services_title}</a></h3>
         <ul class="footer-links">
           {services.map(service => (
-            <li><a href={langPrefix + `/ypiresies/${service.baseId}`}>{service.displayTitle}</a></li>
+            <li><a href={service.baseId === 'rtms' ? (langPrefix + '/rtms') : (langPrefix + `/ypiresies/${service.baseId}`)}>{service.displayTitle}</a></li>
           ))}
         </ul>
       </div>

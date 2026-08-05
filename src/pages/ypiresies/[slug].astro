@@ -13,6 +13,7 @@ export async function getStaticPaths() {
 }
 
 const { slug } = Astro.params;
+if (slug === 'rtms') return Astro.redirect('/rtms', 301);
 const entry = await getEntry('services', slug) || (await getCollection('services')).find(s => s.id.toLowerCase() === slug);
 if (!entry) return Astro.redirect('/404');
 const { Content } = await render(entry);
