@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import ChatWidget from '../components/AIA/ChatWidget.astro';
+import WhatsAppCta from '../components/UI/WhatsAppCta.astro';
 
 /* Layout: Added meta tags and SEO optimization */
 
@@ -132,6 +133,7 @@ const isMultilingual =
     <!-- [/Ahrefs Analytics Script] -->
   </head>
   <body class="flex flex-col min-h-screen">
+    <WhatsAppCta />
     <slot />
     <ChatWidget />
   </body>
