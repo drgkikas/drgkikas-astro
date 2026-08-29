@@ -7,7 +7,7 @@ pubDate: 2026-08-29
 author: "Πασχάλης Γκίκας"
 kategoria: "Απαντήσεις ψυχικής υγείας"
 keywords: "εκτελεστική δυσλειτουργία, executive dysfunction, προμετωπιαίος φλοιός, ΔΕΠΥ, rTMS, γνωσιακή συμπεριφορική θεραπεία, φαρμακογονιδιωματική, ψυχίατρος Αθήνα"
-image: "/images/blog/ektelestiki-dysleitourgia.jpg"
+image: "/images/blog/ektelestiki-dysleitourgia.webp"
 schema: |
   {
     "@context": "https://schema.org",
