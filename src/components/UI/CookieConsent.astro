@@ -3,17 +3,17 @@ const { currentLocale } = Astro;
 
 const t = {
   el: {
-    message: "Χρησιμοποιούμε cookies για τη συλλογή ανώνυμων στατιστικών επισκεψιμότητας (Google Analytics). Δεν συλλέγουμε ευαίσθητα προσωπικά δεδομένα.",
+    message: "Χρησιμοποιούμε cookies και την ετικέτα Google για στατιστικά επισκεψιμότητας και μέτρηση της απόδοσης διαφημιστικών καμπανιών. Πριν από την αποδοχή δεν αποθηκεύονται cookies Analytics ή διαφήμισης· αποστέλλονται μόνο περιορισμένα σήματα μέτρησης χωρίς cookies.",
     accept: "Αποδοχή",
     decline: "Απόρριψη"
   },
   en: {
-    message: "We use cookies to collect anonymous traffic statistics (Google Analytics). No sensitive personal data is collected.",
+    message: "We use cookies and the Google tag for traffic statistics and measuring ad campaign performance. Prior to acceptance, no Analytics or advertising cookies are stored; only limited measurement signals without cookies are sent.",
     accept: "Accept",
     decline: "Decline"
   },
   it: {
-    message: "Utilizziamo i cookie per raccogliere statistiche anonime sul traffico (Google Analytics). Non raccogliamo dati personali sensibili.",
+    message: "Utilizziamo i cookie e il tag Google per le statistiche sul traffico e la misurazione delle prestazioni delle campagne pubblicitarie. Prima dell'accettazione, non vengono memorizzati cookie analitici o pubblicitari; vengono inviati solo segnali di misurazione limitati senza cookie.",
     accept: "Accetta",
     decline: "Rifiuta"
   }
@@ -74,16 +74,38 @@ const labels = t[currentLocale] || t.el;
       }
     }
 
-    function loadGA4() {
+    // 1. Synchronous initialization of dataLayer and gtag
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function () {
+      window.dataLayer.push(arguments);
+    };
+
+    // 2. Default consent configuration for Advanced Consent Mode v2
+    window.gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      wait_for_update: 500
+    });
+
+    window.gtag('set', 'ads_data_redaction', true);
+
+    // 3. Saved consent state check before gtag('config')
+    var savedConsent = localStorage.getItem('ga_cookie_consent');
+    if (savedConsent === 'granted') {
+      window.gtag('consent', 'update', {
+        analytics_storage: 'granted',
+        ad_storage: 'granted',
+        ad_user_data: 'granted',
+        ad_personalization: 'denied'
+      });
+    }
+
+    // 4. GA4 configuration & gtag.js loading (Advanced Consent Mode v2)
+    function initGA4() {
       if (window.__ga_loaded) return;
       window.__ga_loaded = true;
-
-      window.dataLayer = window.dataLayer || [];
-      if (typeof window.gtag !== 'function') {
-        window.gtag = function() {
-          window.dataLayer.push(arguments);
-        };
-      }
 
       window.gtag('js', new Date());
 
@@ -109,12 +131,9 @@ const labels = t[currentLocale] || t.el;
       document.head.appendChild(script);
     }
 
-    // Check consent IMMEDIATELY on script parsing (instant execution if already granted)
-    var consent = localStorage.getItem('ga_cookie_consent');
-    if (consent === 'granted') {
-      loadGA4();
-    }
+    initGA4();
 
+    // 5. Banner UI handlers
     function initBannerUI() {
       var banner = document.getElementById('cookie-consent-banner');
       var acceptBtn = document.getElementById('cookie-consent-accept');
@@ -129,7 +148,12 @@ const labels = t[currentLocale] || t.el;
         acceptBtn.addEventListener('click', function() {
           localStorage.setItem('ga_cookie_consent', 'granted');
           if (banner) banner.style.display = 'none';
-          loadGA4();
+          window.gtag('consent', 'update', {
+            analytics_storage: 'granted',
+            ad_storage: 'granted',
+            ad_user_data: 'granted',
+            ad_personalization: 'denied'
+          });
         });
       }
 
@@ -137,6 +161,12 @@ const labels = t[currentLocale] || t.el;
         declineBtn.addEventListener('click', function() {
           localStorage.setItem('ga_cookie_consent', 'denied');
           if (banner) banner.style.display = 'none';
+          window.gtag('consent', 'update', {
+            analytics_storage: 'denied',
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied'
+          });
         });
       }
     }
