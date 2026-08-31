@@ -1,0 +1,113 @@
+---
+const { currentLocale } = Astro;
+
+const t = {
+  el: {
+    message: "Χρησιμοποιούμε cookies για τη συλλογή ανώνυμων στατιστικών επισκεψιμότητας (Google Analytics). Δεν συλλέγουμε ευαίσθητα προσωπικά δεδομένα.",
+    accept: "Αποδοχή",
+    decline: "Απόρριψη"
+  },
+  en: {
+    message: "We use cookies to collect anonymous traffic statistics (Google Analytics). No sensitive personal data is collected.",
+    accept: "Accept",
+    decline: "Decline"
+  },
+  it: {
+    message: "Utilizziamo i cookie per raccogliere statistiche anonime sul traffico (Google Analytics). Non raccogliamo dati personali sensibili.",
+    accept: "Accetta",
+    decline: "Rifiuta"
+  }
+};
+
+const labels = t[currentLocale] || t.el;
+---
+
+<div 
+  id="cookie-consent-banner" 
+  class="fixed bottom-0 left-0 right-0 z-50 p-4 bg-slate-900/95 backdrop-blur-md text-white border-t border-slate-800 shadow-xl transition-all duration-300"
+  style="display: none;"
+  aria-label="Cookie Consent Banner"
+>
+  <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+    <p class="text-xs sm:text-sm text-slate-200 text-center sm:text-left leading-relaxed">
+      {labels.message}
+    </p>
+    <div class="flex items-center gap-3 shrink-0">
+      <button 
+        id="cookie-consent-decline" 
+        type="button"
+        class="px-4 py-2 text-xs sm:text-sm font-medium text-slate-300 bg-slate-800 hover:bg-slate-700 hover:text-white rounded-lg transition-colors cursor-pointer"
+      >
+        {labels.decline}
+      </button>
+      <button 
+        id="cookie-consent-accept" 
+        type="button"
+        class="px-4 py-2 text-xs sm:text-sm font-medium text-white bg-blue-600 hover:bg-blue-500 rounded-lg transition-colors shadow-sm cursor-pointer"
+      >
+        {labels.accept}
+      </button>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (function() {
+    var GA_ID = 'G-7E6N24PFYT';
+
+    function loadGA4() {
+      if (window.__ga_loaded) return;
+      window.__ga_loaded = true;
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ window.dataLayer.push(arguments); }
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', GA_ID, {
+        page_location: window.location.origin + window.location.pathname,
+        allow_google_signals: false,
+        allow_ad_personalization_signals: false,
+        anonymize_ip: true
+      });
+
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+      document.head.appendChild(script);
+    }
+
+    function initConsent() {
+      var banner = document.getElementById('cookie-consent-banner');
+      var acceptBtn = document.getElementById('cookie-consent-accept');
+      var declineBtn = document.getElementById('cookie-consent-decline');
+      var consent = localStorage.getItem('ga_cookie_consent');
+
+      if (consent === 'granted') {
+        loadGA4();
+      } else if (consent !== 'denied') {
+        if (banner) banner.style.display = 'block';
+      }
+
+      if (acceptBtn) {
+        acceptBtn.addEventListener('click', function() {
+          localStorage.setItem('ga_cookie_consent', 'granted');
+          if (banner) banner.style.display = 'none';
+          loadGA4();
+        });
+      }
+
+      if (declineBtn) {
+        declineBtn.addEventListener('click', function() {
+          localStorage.setItem('ga_cookie_consent', 'denied');
+          if (banner) banner.style.display = 'none';
+        });
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initConsent);
+    } else {
+      initConsent();
+    }
+  })();
+</script>

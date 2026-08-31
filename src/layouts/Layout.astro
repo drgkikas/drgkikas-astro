@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import ChatWidget from '../components/AIA/ChatWidget.astro';
 import WhatsAppCta from '../components/UI/WhatsAppCta.astro';
+import CookieConsent from '../components/UI/CookieConsent.astro';
 
 /* Layout: Added meta tags and SEO optimization */
 
@@ -136,6 +137,7 @@ const isMultilingual =
     <WhatsAppCta />
     <slot />
     <ChatWidget />
+    <CookieConsent />
   </body>
 </html>
 <!-- AIA Deployment: 2026-05-10T09:16 -->
