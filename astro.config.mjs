@@ -44,6 +44,10 @@ function getRtmsUrls() {
 export default defineConfig({
   output: 'server',
   site: 'https://drgkikas.com',
+  redirects: {
+    '/diataraxes/dipoliki-diataraxi': '/diataraxes/dipoliki-diatarachi',
+    '/ypiresies/rtms': '/rtms',
+  },
   adapter: cloudflare({
     imageService: 'passthrough',
     platformProxy: { enabled: false }
