@@ -113,7 +113,7 @@ const iatrosBundle = `const schemaBundle = JSON.stringify({
       "worksFor": {
         "@id": "${CLINIC_ID}"
       },
-      "alumniOf": "Harvard Medical School (Cert), Maastricht University",
+      "alumniOf": "Harvard Medical School (Cert), Academy of Brain Stimulation",
       "medicalSpecialty": "Psychiatry",
       "url": "https://drgkikas.gr/iatros"
     }
