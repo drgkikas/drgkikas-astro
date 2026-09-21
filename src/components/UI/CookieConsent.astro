@@ -118,8 +118,8 @@ const labels = t[currentLocale] || t.el;
 
       try {
         var searchParams = new URLSearchParams(window.location.search);
-        if (searchParams.has('_dbg')) {
-          configParams._dbg = searchParams.get('_dbg') || true;
+        if (searchParams.has('_dbg') || searchParams.has('gtm_debug')) {
+          configParams.debug_mode = true;
         }
       } catch(e) {}
 
@@ -153,6 +153,14 @@ const labels = t[currentLocale] || t.el;
             ad_storage: 'granted',
             ad_user_data: 'granted',
             ad_personalization: 'denied'
+          });
+
+          // The initial page_view is sent while consent is denied. Send one
+          // explicit page_view after the visitor grants Analytics consent.
+          window.gtag('event', 'page_view', {
+            page_title: document.title,
+            page_location: getCleanPageLocation(),
+            page_path: window.location.pathname
           });
         });
       }
