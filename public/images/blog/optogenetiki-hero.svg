@@ -1,0 +1,106 @@
+<svg width="1360" height="840" viewBox="0 0 680 420" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Νόμπελ Ιατρικής 2026: Οπτογενετική και Ψυχιατρική</title>
+<desc>Hero εικόνα για το άρθρο Νόμπελ Ιατρικής 2026: Οπτογενετική, μηχανισμός φωτοελεγχόμενων ιοντικών καναλιών, στάδια εφαρμογής και ευρήματα σε πειραματικά μοντέλα</desc>
+<rect width="680" height="420" fill="#f4f6fb"/>
+<text x="340" y="30" font-size="15" font-weight="500" fill="#1a2e4a" font-family="Arial,sans-serif" text-anchor="middle">Νόμπελ Φυσιολογίας ή Ιατρικής 2026: Οπτογενετική</text>
+<text x="340" y="48" font-size="10" fill="#4a6285" font-family="Arial,sans-serif" text-anchor="middle" letter-spacing="1.2">KARL DEISSEROTH · PETER HEGEMANN · GEORG NAGEL</text>
+<line x1="40" y1="58" x2="640" y2="58" stroke="#e0e8f4" stroke-width="0.4" opacity="0.5"/>
+
+<!-- LEFT MECHANISM -->
+<rect x="32" y="66" width="190" height="168" rx="8" fill="#ffffff" stroke="#dde6f5" stroke-width="0.5"/>
+<text x="127" y="85" font-size="11" font-weight="500" fill="#185FA5" font-family="Arial,sans-serif" text-anchor="middle">Μηχανισμός Δράσης</text>
+<text x="127" y="98" font-size="10" fill="#4a6285" font-family="Arial,sans-serif" text-anchor="middle">Φωτοελεγχόμενα Ιοντικά Κανάλια</text>
+
+<!-- Light Beam Illustration -->
+<polygon points="127,110 112,142 142,142" fill="#38bdf8" opacity="0.4"/>
+<line x1="127" y1="108" x2="127" y2="142" stroke="#0284c7" stroke-width="1.5" stroke-dasharray="2,2"/>
+<text x="127" y="106" font-size="8" fill="#0284c7" font-family="Arial,sans-serif" text-anchor="middle" font-weight="bold">ΦΩΣ (ChR2)</text>
+
+<!-- Channel Protein -->
+<rect x="102" y="142" width="50" height="18" rx="4" fill="#084a79" opacity="0.9"/>
+<text x="127" y="154" font-size="8" fill="#ffffff" font-family="Arial,sans-serif" text-anchor="middle" font-weight="bold">ChR2 Κανάλι</text>
+
+<!-- Cell Membrane -->
+<line x1="42" y1="151" x2="212" y2="151" stroke="#94a3b8" stroke-width="2"/>
+<text x="50" y="146" font-size="7" fill="#64748b" font-family="Arial,sans-serif">Μεμβράνη</text>
+
+<!-- Ion Flow -->
+<path d="M 127 160 L 127 180" stroke="#10b981" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="127" y="174" font-size="9" fill="#059669" font-family="Arial,sans-serif" text-anchor="middle" font-weight="bold">Na⁺ / Ca²⁺</text>
+
+<text x="127" y="200" font-size="9" fill="#4a6285" font-family="Arial,sans-serif" text-anchor="middle">Έλεγχος ηλεκτρικού σήματος</text>
+<text x="127" y="214" font-size="9" fill="#4a6285" font-family="Arial,sans-serif" text-anchor="middle">Ακρίβεια millisecond (ms)</text>
+
+<!-- CENTER PROCESS -->
+<rect x="234" y="66" width="212" height="168" rx="8" fill="#ffffff" stroke="#dde6f5" stroke-width="0.5"/>
+<text x="340" y="85" font-size="11" font-weight="500" fill="#185FA5" font-family="Arial,sans-serif" text-anchor="middle">Τα 3 Στάδια Εφαρμογής</text>
+
+<rect x="244" y="94" width="192" height="34" rx="5" fill="#0284c7" opacity="0.1"/>
+<rect x="244" y="94" width="4" height="34" rx="2" fill="#0284c7" opacity="0.85"/>
+<text x="254" y="108" font-size="10" font-weight="500" fill="#0284c7" font-family="Arial,sans-serif">1. Στόχευση</text>
+<text x="254" y="122" font-size="9" fill="#0369a1" font-family="Arial,sans-serif">Εισαγωγή γονιδίου οψίνης με ιικό φορέα</text>
+
+<rect x="244" y="133" width="192" height="34" rx="5" fill="#534AB7" opacity="0.1"/>
+<rect x="244" y="133" width="4" height="34" rx="2" fill="#534AB7" opacity="0.85"/>
+<text x="254" y="147" font-size="10" font-weight="500" fill="#534AB7" font-family="Arial,sans-serif">2. Φωτισμός</text>
+<text x="254" y="161" font-size="9" fill="#4338ca" font-family="Arial,sans-serif">Παροχή φωτός μέσω εμφυτευμένης ίνας</text>
+
+<rect x="244" y="172" width="192" height="34" rx="5" fill="#0F6E56" opacity="0.1"/>
+<rect x="244" y="172" width="4" height="34" rx="2" fill="#0F6E56" opacity="0.85"/>
+<text x="254" y="186" font-size="10" font-weight="500" fill="#0F6E56" font-family="Arial,sans-serif">3. Παρατήρηση</text>
+<text x="254" y="200" font-size="9" fill="#0f766e" font-family="Arial,sans-serif">Καταγραφή συμπεριφοράς &amp; κυκλωμάτων</text>
+
+<text x="340" y="222" font-size="9" fill="#4a6285" font-family="Arial,sans-serif" text-anchor="middle">Διακρίβωση Αιτιότητας (Cause vs Correlation)</text>
+
+<!-- RIGHT FINDINGS -->
+<rect x="458" y="66" width="190" height="168" rx="8" fill="#ffffff" stroke="#dde6f5" stroke-width="0.5"/>
+<text x="553" y="85" font-size="11" font-weight="500" fill="#084a79" font-family="Arial,sans-serif" text-anchor="middle">Πειραματικά Δεδομένα</text>
+
+<rect x="466" y="94" width="174" height="24" rx="4" fill="#0284c7" opacity="0.1"/>
+<text x="476" y="110" font-size="10" fill="#0369a1" font-family="Arial,sans-serif">Κατάθλιψη: φλοιός &amp; κίνητρο</text>
+
+<rect x="466" y="122" width="174" height="24" rx="4" fill="#534AB7" opacity="0.1"/>
+<text x="476" y="138" font-size="10" fill="#4338ca" font-family="Arial,sans-serif">Σχιζοφρένεια: PV διάμεσοι</text>
+
+<rect x="466" y="150" width="174" height="24" rx="4" fill="#854F0B" opacity="0.1"/>
+<text x="476" y="166" font-size="10" fill="#854F0B" font-family="Arial,sans-serif">OCD: φλοιός - ραβδωτό</text>
+
+<rect x="466" y="178" width="174" height="24" rx="4" fill="#993C1D" opacity="0.1"/>
+<text x="476" y="194" font-size="10" fill="#993C1D" font-family="Arial,sans-serif">Οφθαλμός: 1η κλινική δοκιμή</text>
+
+<text x="553" y="218" font-size="9" fill="#4a6285" font-family="Arial,sans-serif" text-anchor="middle">Μελέτες σε ζώα / ερευνητικό στάδιο</text>
+<text x="553" y="229" font-size="9" fill="#4a6285" font-family="Arial,sans-serif" text-anchor="middle">Έμμεση καθοδήγηση rTMS &amp; DBS</text>
+
+<!-- DIVIDER -->
+<line x1="40" y1="246" x2="640" y2="246" stroke="#e0e8f4" stroke-width="0.4" opacity="0.4"/>
+
+<!-- STATS ROW -->
+<rect x="32" y="256" width="143" height="92" rx="8" fill="#ffffff" stroke="#dde6f5" stroke-width="0.5"/>
+<text x="103" y="282" font-size="24" font-weight="500" fill="#084a79" font-family="Arial,sans-serif" text-anchor="middle">2026</text>
+<text x="103" y="300" font-size="10" fill="#4a6285" font-family="Arial,sans-serif" text-anchor="middle">Νόμπελ Ιατρικής</text>
+<text x="103" y="314" font-size="10" fill="#4a6285" font-family="Arial,sans-serif" text-anchor="middle">Συνέλευση Karolinska</text>
+<text x="103" y="336" font-size="8" fill="#084a79" font-family="Arial,sans-serif" text-anchor="middle">Deisseroth, Hegemann, Nagel</text>
+
+<rect x="185" y="256" width="143" height="92" rx="8" fill="#ffffff" stroke="#dde6f5" stroke-width="0.5"/>
+<text x="256" y="282" font-size="24" font-weight="500" fill="#0284c7" font-family="Arial,sans-serif" text-anchor="middle">1 ms</text>
+<text x="256" y="300" font-size="10" fill="#4a6285" font-family="Arial,sans-serif" text-anchor="middle">χρονική ακρίβεια</text>
+<text x="256" y="314" font-size="10" fill="#4a6285" font-family="Arial,sans-serif" text-anchor="middle">ελέγχου νευρώνων</text>
+<text x="256" y="336" font-size="8" fill="#0284c7" font-family="Arial,sans-serif" text-anchor="middle">Boyden &amp; Deisseroth 2005</text>
+
+<rect x="338" y="256" width="155" height="92" rx="8" fill="#ffffff" stroke="#dde6f5" stroke-width="0.5"/>
+<text x="415" y="282" font-size="20" font-weight="500" fill="#534AB7" font-family="Arial,sans-serif" text-anchor="middle">Ερευνητικό</text>
+<text x="415" y="300" font-size="10" fill="#4a6285" font-family="Arial,sans-serif" text-anchor="middle">εργαλείο χαρτογράφησης</text>
+<text x="415" y="314" font-size="10" fill="#4a6285" font-family="Arial,sans-serif" text-anchor="middle">όχι άμεση θεραπεία</text>
+<text x="415" y="336" font-size="8" fill="#534AB7" font-family="Arial,sans-serif" text-anchor="middle">Lüscher et al. 2025</text>
+
+<rect x="503" y="256" width="145" height="92" rx="8" fill="#ffffff" stroke="#dde6f5" stroke-width="0.5"/>
+<text x="575" y="282" font-size="20" font-weight="500" fill="#0F6E56" font-family="Arial,sans-serif" text-anchor="middle">rTMS &amp; DBS</text>
+<text x="575" y="300" font-size="10" fill="#4a6285" font-family="Arial,sans-serif" text-anchor="middle">έμμεση αξιοποίηση</text>
+<text x="575" y="314" font-size="10" fill="#4a6285" font-family="Arial,sans-serif" text-anchor="middle">στη βελτίωση στόχων</text>
+<text x="575" y="336" font-size="8" fill="#0F6E56" font-family="Arial,sans-serif" text-anchor="middle">Fox 2012 / Weigand 2018</text>
+
+<!-- FOOTER -->
+<line x1="40" y1="358" x2="640" y2="358" stroke="#e0e8f4" stroke-width="0.4" opacity="0.3"/>
+<text x="340" y="374" font-size="10" fill="#4a6285" font-family="Arial,sans-serif" text-anchor="middle">Οπτογενετική: Φωτοελεγχόμενοι διακόπτες για τη μελέτη των εγκεφαλικών κυκλωμάτων</text>
+<text x="340" y="390" font-size="9" fill="#4a6285" font-family="Arial,sans-serif" text-anchor="middle" opacity="0.7">drgkikas.com — Smart CNS Center Αθήνα</text>
+</svg>
