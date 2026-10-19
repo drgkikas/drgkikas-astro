@@ -29,7 +29,115 @@ const schemaBundle = JSON.stringify({
         "addressLocality": "Αθήνα",
         "postalCode": "105 57",
         "addressCountry": "GR"
+      },
+      "hasCredential": [
+        {
+          "@id": "https://drgkikas.com/#cred-harvard-neuroscience"
+        },
+        {
+          "@id": "https://drgkikas.com/#cred-abs-tms"
+        },
+        {
+          "@id": "https://drgkikas.com/#cred-sf-tms-master-course"
+        }
+      ]
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "@id": "https://drgkikas.com/#cred-harvard-neuroscience",
+      "name": "MicroBachelors® «Fundamentals of Neuroscience»",
+      "credentialCategory": "certificate",
+      "description": "Πιστοποίηση στις βασικές αρχές των νευροεπιστημών, κατόπιν επιτυχούς ολοκλήρωσης με εξετάσεις του προγράμματος MicroBachelors® «Fundamentals of Neuroscience» από το Harvard University μέσω του HarvardX.",
+      "recognizedBy": {
+        "@type": "CollegeOrUniversity",
+        "name": "Harvard University"
+      },
+      "provider": {
+        "@type": "Organization",
+        "name": "HarvardX"
       }
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "@id": "https://drgkikas.com/#cred-abs-tms",
+      "name": "Πιστοποίηση στην κλινική εφαρμογή του TMS/rTMS",
+      "credentialCategory": "certificate",
+      "description": "Πιστοποίηση εκπαίδευσης στην κλινική εφαρμογή του TMS/rTMS από την Academy of Brain Stimulation.",
+      "about": {
+        "@id": "https://drgkikas.com/#course-abs-clinical-tms"
+      },
+      "recognizedBy": {
+        "@id": "https://drgkikas.com/#academy-of-brain-stimulation"
+      }
+    },
+    {
+      "@type": "Course",
+      "@id": "https://drgkikas.com/#course-abs-clinical-tms",
+      "name": "Clinical TMS Certification Course",
+      "description": "Εκπαιδευτικό πρόγραμμα κλινικής εφαρμογής TMS/rTMS. Η Academy of Brain Stimulation διοργανώνει εκπαιδευτικές δραστηριότητες με διαπίστευση UEMS–EACCME® για συνεχιζόμενη ιατρική εκπαίδευση. Η European Society for Brain Stimulation (ESBS) αναγνωρίζει το πρόγραμμα ως εκπλήρωση της απαίτησης ολοκλήρωσης εκπαιδευτικού προγράμματος στη δική της διαδικασία επαγγελματικής πιστοποίησης, ενώ το Dutch-Flemish Brain Stimulation Foundation το αναγνωρίζει στο πλαίσιο επαγγελματικής διαπίστευσης TMS (τεκμηρίωση: https://brainstimulation-academy.com/accreditation-cme/ και https://brainstimulation-academy.com/about/).",
+      "provider": {
+        "@id": "https://drgkikas.com/#academy-of-brain-stimulation"
+      },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "onsite",
+        "location": {
+          "@type": "Place",
+          "name": "Ηνωμένο Βασίλειο",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "GB"
+          }
+        }
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://drgkikas.com/#academy-of-brain-stimulation",
+      "name": "Academy of Brain Stimulation",
+      "url": "https://brainstimulation-academy.com/",
+      "description": "Διεθνής φορέας εκπαίδευσης και πιστοποίησης στον διακρανιακό μαγνητικό ερεθισμό και συναφείς μεθόδους εγκεφαλικής διέγερσης."
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "@id": "https://drgkikas.com/#cred-sf-tms-master-course",
+      "name": "Master Course «Transcranial Magnetic Stimulation: Clinical Applications for Psychiatric Practice»",
+      "credentialCategory": "course completion",
+      "description": "Ολοκλήρωση μαθήματος Master Course «Transcranial Magnetic Stimulation: Clinical Applications for Psychiatric Practice» στο San Francisco των ΗΠΑ το 2019.",
+      "about": {
+        "@id": "https://drgkikas.com/#course-m8045"
+      }
+    },
+    {
+      "@type": "Course",
+      "@id": "https://drgkikas.com/#course-m8045",
+      "name": "Transcranial Magnetic Stimulation: Clinical Applications for Psychiatric Practice",
+      "courseCode": "M8045",
+      "description": "Κλινικές εφαρμογές του διακρανιακού μαγνητικού ερεθισμού στην ψυχιατρική πράξη.",
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "onsite",
+        "location": {
+          "@type": "Place",
+          "name": "San Francisco, US",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "San Francisco",
+            "addressCountry": "US"
+          }
+        },
+        "description": "Εκπαιδευτική διοργάνωση που πραγματοποιήθηκε το 2019 στο San Francisco υπό τη διεύθυνση (Course Director) του Richard A. Bermudes.",
+        "contributor": {
+          "@id": "https://drgkikas.com/#person-richard-a-bermudes"
+        }
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://drgkikas.com/#person-richard-a-bermudes",
+      "name": "Richard A. Bermudes",
+      "jobTitle": "Course Director",
+      "description": "Course Director του εκπαιδευτικού προγράμματος Master Course Transcranial Magnetic Stimulation: Clinical Applications for Psychiatric Practice (M8045) το 2019."
     }
   ]
 });
@@ -105,7 +213,7 @@ const schemaBundle = JSON.stringify({
             <div class="prose prose-lg max-w-none text-slate-600 leading-relaxed">
               <p>Γεννήθηκα και μεγάλωσα στην Αθήνα. Σπούδασα Ιατρική στο <strong>Πανεπιστήμιο της Μπολόνια</strong> στην Ιταλία και ολοκλήρωσα την ειδικότητα της Ψυχιατρικής στο Ψυχιατρικό Νοσοκομείο Αττικής «Δαφνί», όπου εκπαιδεύτηκα στο Τμήμα Επειγόντων, στη <strong>Μονάδα Απεξάρτησης 18 ΑΝΩ</strong> και στο Κέντρο Ψυχικής Υγείας Περιστερίου.</p>
               
-              <p>Παράλληλα με την ειδικότητα, εκπαιδεύτηκα στη Γνωσιακή-Συμπεριφορική Ψυχοθεραπεία (CBT) και στην Οικογενειακή Συστημική Ψυχοθεραπεία. Διαθέτω πιστοποίηση στις βασικές αρχές των νευροεπιστημών από το <strong>Harvard University</strong> και εξειδίκευση στον Διακρανιακό Μαγνητικό Ερεθισμό (<strong>rTMS</strong>) μέσα από εντατικά προγράμματα εκπαίδευσης της <strong>Academy of Brain Stimulation</strong>, στο Ηνωμένο Βασίλειο (Λονδίνο) και στις ΗΠΑ (San Francisco).</p>
+              <p>Παράλληλα με την ειδικότητα, εκπαιδεύτηκα στη Γνωσιακή-Συμπεριφορική Ψυχοθεραπεία (CBT) και στην Οικογενειακή Συστημική Ψυχοθεραπεία. Διαθέτω πιστοποίηση στις βασικές αρχές των νευροεπιστημών από το Harvard University, έχοντας ολοκληρώσει επιτυχώς, κατόπιν εξετάσεων, το πρόγραμμα MicroBachelors® «Fundamentals of Neuroscience». Έχω εκπαιδευτεί και πιστοποιηθεί στην κλινική εφαρμογή του <a href="/rtms">TMS/rTMS</a> από την Academy of Brain Stimulation στο Ηνωμένο Βασίλειο (UEMS–EACCME® accredited· ESBS & Dutch-Flemish Brain Stimulation Foundation recognised). Επιπλέον, έχω ολοκληρώσει στο San Francisco των ΗΠΑ το Master Course «Transcranial Magnetic Stimulation: Clinical Applications for Psychiatric Practice», με αντικείμενο τις κλινικές εφαρμογές του διακρανιακού μαγνητικού ερεθισμού στην ψυχιατρική πράξη.</p>
               
               <h3 class="text-xl font-bold text-slate-900 mt-8 mb-4">Κλινικές Εξειδικεύσεις</h3>
               <p>Μεγάλο μέρος της κλινικής μου εμπειρίας αφορά τις <strong>διαταραχές διάθεσης</strong> — ιδιαίτερα τη Διπολική Διαταραχή και την Ανθεκτική Κατάθλιψη (TRD) — καθώς και αγχώδεις διαταραχές, διαταραχές ύπνου και ψυχοσωματικές εκδηλώσεις. Ασχολούμαι επίσης εκτενώς με τη θεραπευτική αντιμετώπιση διαταραχών χρήσης ουσιών, με ιδιαίτερη έμφαση στην απεξάρτηση από την κοκαΐνη.</p>

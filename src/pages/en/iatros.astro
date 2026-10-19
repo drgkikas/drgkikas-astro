@@ -31,7 +31,115 @@ const schemaBundle = JSON.stringify({
         "addressLocality": "Athens",
         "postalCode": "105 57",
         "addressCountry": "GR"
+      },
+      "hasCredential": [
+        {
+          "@id": "https://drgkikas.com/#cred-harvard-neuroscience"
+        },
+        {
+          "@id": "https://drgkikas.com/#cred-abs-tms"
+        },
+        {
+          "@id": "https://drgkikas.com/#cred-sf-tms-master-course"
+        }
+      ]
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "@id": "https://drgkikas.com/#cred-harvard-neuroscience",
+      "name": "MicroBachelors® “Fundamentals of Neuroscience”",
+      "credentialCategory": "certificate",
+      "description": "Certification in the fundamentals of neuroscience, awarded upon successful completion following examinations of the MicroBachelors® program “Fundamentals of Neuroscience” from Harvard University via HarvardX.",
+      "recognizedBy": {
+        "@type": "CollegeOrUniversity",
+        "name": "Harvard University"
+      },
+      "provider": {
+        "@type": "Organization",
+        "name": "HarvardX"
       }
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "@id": "https://drgkikas.com/#cred-abs-tms",
+      "name": "Certification in the Clinical Application of TMS/rTMS",
+      "credentialCategory": "certificate",
+      "description": "Training certification in the clinical application of TMS/rTMS by the Academy of Brain Stimulation.",
+      "about": {
+        "@id": "https://drgkikas.com/#course-abs-clinical-tms"
+      },
+      "recognizedBy": {
+        "@id": "https://drgkikas.com/#academy-of-brain-stimulation"
+      }
+    },
+    {
+      "@type": "Course",
+      "@id": "https://drgkikas.com/#course-abs-clinical-tms",
+      "name": "Clinical TMS Certification Course",
+      "description": "Training course in the clinical application of TMS/rTMS. The Academy of Brain Stimulation organizes educational activities accredited by UEMS–EACCME® for continuing medical education. The European Society for Brain Stimulation (ESBS) recognizes the course as fulfilling the educational course completion requirement in its professional certification process, and the Dutch-Flemish Brain Stimulation Foundation recognizes it within the framework of professional TMS accreditation (documentation: https://brainstimulation-academy.com/accreditation-cme/ and https://brainstimulation-academy.com/about/).",
+      "provider": {
+        "@id": "https://drgkikas.com/#academy-of-brain-stimulation"
+      },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "onsite",
+        "location": {
+          "@type": "Place",
+          "name": "United Kingdom",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "GB"
+          }
+        }
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://drgkikas.com/#academy-of-brain-stimulation",
+      "name": "Academy of Brain Stimulation",
+      "url": "https://brainstimulation-academy.com/",
+      "description": "International training and certification body in transcranial magnetic stimulation and related brain stimulation modalities."
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "@id": "https://drgkikas.com/#cred-sf-tms-master-course",
+      "name": "Master Course “Transcranial Magnetic Stimulation: Clinical Applications for Psychiatric Practice”",
+      "credentialCategory": "course completion",
+      "description": "Course completion of the Master Course “Transcranial Magnetic Stimulation: Clinical Applications for Psychiatric Practice” in San Francisco, USA in 2019.",
+      "about": {
+        "@id": "https://drgkikas.com/#course-m8045"
+      }
+    },
+    {
+      "@type": "Course",
+      "@id": "https://drgkikas.com/#course-m8045",
+      "name": "Transcranial Magnetic Stimulation: Clinical Applications for Psychiatric Practice",
+      "courseCode": "M8045",
+      "description": "Clinical applications of transcranial magnetic stimulation in psychiatric practice.",
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "onsite",
+        "location": {
+          "@type": "Place",
+          "name": "San Francisco, US",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "San Francisco",
+            "addressCountry": "US"
+          }
+        },
+        "description": "Educational course instance held in 2019 in San Francisco under the direction (Course Director) of Richard A. Bermudes.",
+        "contributor": {
+          "@id": "https://drgkikas.com/#person-richard-a-bermudes"
+        }
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://drgkikas.com/#person-richard-a-bermudes",
+      "name": "Richard A. Bermudes",
+      "jobTitle": "Course Director",
+      "description": "Course Director of the educational program Master Course Transcranial Magnetic Stimulation: Clinical Applications for Psychiatric Practice (M8045) in 2019."
     }
   ]
 });
@@ -104,7 +212,7 @@ const schemaBundle = JSON.stringify({
             <div class="prose prose-lg max-w-none text-slate-600 leading-relaxed">
               <p>I was born and raised in Athens. I studied Medicine at the University of Bologna in Italy and completed my Psychiatry specialty training at the Psychiatric Hospital of Attica “Dafni”, where I trained in the Emergency Department, the 18 ANO Addiction Treatment Unit and the Peristeri Mental Health Center.</p>
               
-              <p>Alongside my psychiatric specialty training, I trained in Cognitive Behavioural Therapy (CBT) and Family Systemic Psychotherapy. I hold certification in the fundamentals of neuroscience from <strong>Harvard University</strong> and specialized training in Transcranial Magnetic Stimulation (<strong>rTMS</strong>) through intensive training programs at <strong>Academy of Brain Stimulation</strong>, in the United Kingdom (London) and in the United States (San Francisco).</p>
+              <p>Alongside my psychiatric specialty training, I trained in Cognitive Behavioural Therapy (CBT) and Family Systemic Psychotherapy. I hold a certification in the fundamentals of neuroscience from Harvard University, having successfully completed, following examinations, the MicroBachelors® program “Fundamentals of Neuroscience”. I have been trained and certified in the clinical application of <a href="/en/rtms">TMS/rTMS</a> by the Academy of Brain Stimulation in the United Kingdom (UEMS–EACCME® accredited; recognised by the ESBS and the Dutch-Flemish Brain Stimulation Foundation). In addition, I completed the Master Course “Transcranial Magnetic Stimulation: Clinical Applications for Psychiatric Practice” in San Francisco, USA, focusing on the clinical applications of transcranial magnetic stimulation in psychiatric practice.</p>
               
               <h3 class="text-xl font-bold text-slate-900 mt-8 mb-4">Clinical specializations</h3>
               <p>A significant part of my clinical experience concerns <strong>mood disorders</strong> — especially Bipolar Disorder and Treatment-Resistant Depression (TRD) — as well as anxiety disorders, sleep disorders and psychosomatic manifestations. I also work extensively in the therapeutic management of substance use disorders, with a particular focus on cocaine addiction.</p>
