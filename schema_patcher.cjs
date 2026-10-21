@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const PHYSICIAN_ID = "https://drgkikas.gr/#physician";
-const CLINIC_ID = "https://drgkikas.gr/#clinic";
+const PHYSICIAN_ID = "https://drgkikas.com/#physician";
+const CLINIC_ID = "https://drgkikas.com/#clinic";
 
 function patchLayout() {
   const file = 'src/layouts/Layout.astro';
@@ -47,7 +47,7 @@ const indexBundle = `const schemaBundle = JSON.stringify({
       "@id": "${PHYSICIAN_ID}",
       "name": "Πασχάλης Γκίκας",
       "medicalSpecialty": "Psychiatry",
-      "url": "https://drgkikas.gr"
+      "url": "https://drgkikas.com"
     },
     {
       "@type": "MedicalClinic",
@@ -64,8 +64,8 @@ const indexBundle = `const schemaBundle = JSON.stringify({
     },
     {
       "@type": "WebSite",
-      "@id": "https://drgkikas.gr/#website",
-      "url": "https://drgkikas.gr",
+      "@id": "https://drgkikas.com/#website",
+      "url": "https://drgkikas.com",
       "name": "Δρ. Πασχάλης Γκίκας - Ψυχίατρος"
     }
   ]
@@ -115,7 +115,7 @@ const iatrosBundle = `const schemaBundle = JSON.stringify({
       },
       "alumniOf": "Harvard Medical School (Cert), Academy of Brain Stimulation",
       "medicalSpecialty": "Psychiatry",
-      "url": "https://drgkikas.gr/iatros"
+      "url": "https://drgkikas.com/iatros"
     }
   ]
 });`;
@@ -137,9 +137,9 @@ const rtmsBundle = `const schemaBundle = JSON.stringify({
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Αρχική", "item": "https://drgkikas.gr/" },
-        { "@type": "ListItem", "position": 2, "name": "rTMS", "item": "https://drgkikas.gr/rtms" },
-        { "@type": "ListItem", "position": 3, "name": entry.data.title, "item": "https://drgkikas.gr/rtms/" + slug }
+        { "@type": "ListItem", "position": 1, "name": "Αρχική", "item": "https://drgkikas.com/" },
+        { "@type": "ListItem", "position": 2, "name": "rTMS", "item": "https://drgkikas.com/rtms" },
+        { "@type": "ListItem", "position": 3, "name": entry.data.title, "item": "https://drgkikas.com/rtms/" + slug }
       ]
     }
   ]
@@ -159,9 +159,9 @@ const combinedSchemaGraph = [
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Αρχική", "item": "https://drgkikas.gr/" },
-        { "@type": "ListItem", "position": 2, "name": "Διαταραχές", "item": "https://drgkikas.gr/diataraxes" },
-        { "@type": "ListItem", "position": 3, "name": entry.data.title, "item": "https://drgkikas.gr/diataraxes/" + slug }
+        { "@type": "ListItem", "position": 1, "name": "Αρχική", "item": "https://drgkikas.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Διαταραχές", "item": "https://drgkikas.com/diataraxes" },
+        { "@type": "ListItem", "position": 3, "name": entry.data.title, "item": "https://drgkikas.com/diataraxes/" + slug }
       ]
     }
 ];

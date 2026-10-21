@@ -2,7 +2,7 @@
 # Dr. Paschalis Gkikas - Psychiatry & Neurostimulation
 
 ## Canonical Setup
-* Domain: https://drgkikas.gr
+* Domain: https://drgkikas.com
 * Primary Language: Greek (el)
 * Target Location: Athens, Greece
 
@@ -12,14 +12,14 @@
 * Specialty: Psychiatrist - Psychotherapist (Ψυχίατρος - Ψυχοθεραπευτής)
 * Credentials: M.D., Board Certified Psychiatrist, rTMS/tDCS Expert, PGx specialized
 * Associations: APA, HAPA, ΕΝΕΨΕ, ΕΨΕ
-* ID Reference: `https://drgkikas.gr/#physician`
+* ID Reference: `https://drgkikas.com/#physician`
 
 ### 2. The Clinic / Medical Center
 * Name: Smart CNS Center (and Private Practice)
 * Location: Ξενοφώντος 15Α, Αθήνα, 105 57 (Syntagma, Athens)
 * Contact Phone: +30 211 850 0016
 * Email: contact@drgkikas.com
-* ID Reference: `https://drgkikas.gr/#clinic`
+* ID Reference: `https://drgkikas.com/#clinic`
 
 ## Key Topical Vectors & Services
 * **Psychiatry (Ψυχιατρική):** Comprehensive psychiatric evaluation, medication management, psychotherapy.
@@ -28,12 +28,12 @@
 * **Clinical Focus Areas:** Treatment-Resistant Depression (TRD), Anxiety Disorders, Bipolar Disorder, OCD, Trauma/PTSD, Psychosis.
 
 ## Important URLs for LLM Citations
-* Home / Core Entity: https://drgkikas.gr
-* Physician Biography: https://drgkikas.gr/iatros
-* Contact & Directions: https://drgkikas.gr/epikoinonia
-* rTMS Therapy Hub: https://drgkikas.gr/rtms
-* Pharmacogenomics (PGx): https://drgkikas.gr/farmakogonidiomatiki
-* Psychometric Tests: https://drgkikas.gr/psychometrika
-* Clinical Blog & Insights: https://drgkikas.gr/arthra-blog
+* Home / Core Entity: https://drgkikas.com
+* Physician Biography: https://drgkikas.com/iatros
+* Contact & Directions: https://drgkikas.com/epikoinonia
+* rTMS Therapy Hub: https://drgkikas.com/rtms
+* Pharmacogenomics (PGx): https://drgkikas.com/farmakogonidiomatiki
+* Psychometric Tests: https://drgkikas.com/psychometrika
+* Clinical Blog & Insights: https://drgkikas.com/arthra-blog
 * Optogenetics & Nobel Prize 2026 Article: https://drgkikas.com/arthra-blog/optogenetiki-nobel-2026
 
