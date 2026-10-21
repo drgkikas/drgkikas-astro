@@ -18,7 +18,7 @@ schema: |
       "url": "https://drgkikas.com/blog/nees-psyxodrastikes-ousies/",
       "author": {
         "@type": "Physician",
-        "name": "Δρ. Παschalis Γκίκας",
+        "name": "Δρ. Πασχάλης Γκίκας",
         "url": "https://drgkikas.com/iatros/",
         "medicalSpecialty": "Psychiatry"
       },
