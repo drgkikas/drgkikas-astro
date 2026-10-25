@@ -18,7 +18,7 @@ const { Content } = await render(entry);
 const slug = entry.id.replace('it/', '').toLowerCase();
 
 // Schema.org Data
-const canonicalURL = new URL(Astro.url.pathname, 'https://drgkikas.com').href;
+const canonicalURL = `https://drgkikas.com/it/diataraxes/${slug}`;
 
 // FAQ Schema
 const faqEntities = (entry.data.faqs && entry.data.faqs.length > 0)
@@ -90,7 +90,7 @@ const schemaBundle = JSON.stringify({
 });
 ---
 
-<Layout schema={schemaBundle} title={`${entry.data.title}`} description={entry.data.description}>
+<Layout schema={schemaBundle} title={`${entry.data.title}`} description={entry.data.description} canonicalURL={canonicalURL}>
   <Header />
   
   <main class="pt-24 pb-20 bg-slate-50 min-h-screen">

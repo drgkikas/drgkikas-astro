@@ -18,7 +18,7 @@ const entry = await getEntry('services', slug) || (await getCollection('services
 if (!entry) return Astro.redirect('/404');
 const { Content } = await render(entry);
 
-const canonicalURL = new URL(Astro.url.pathname, 'https://drgkikas.com').href;
+const canonicalURL = `https://drgkikas.com/ypiresies/${slug}`;
 const schemaBundle = JSON.stringify({
   "@context": "https://schema.org",
   "@graph": [
@@ -44,7 +44,7 @@ const schemaBundle = JSON.stringify({
       "@type": "BreadcrumbList",
       "@id": `${canonicalURL}#breadcrumb`,
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Αρχική", "item": "https://drgkikas.com/" },
+        { "@type": "ListItem", "position": 1, "name": "Αρχική", "item": "https://drgkikas.com" },
         { "@type": "ListItem", "position": 2, "name": "Υπηρεσίες", "item": "https://drgkikas.com/ypiresies" },
         { "@type": "ListItem", "position": 3, "name": entry.data.title, "item": canonicalURL }
       ]
