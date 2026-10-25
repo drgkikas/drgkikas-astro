@@ -36,8 +36,8 @@ if (entry.data.schema) {
     } else if (parsed["@type"]) {
       existingSchemaGraph = [parsed];
     }
-  } catch (_) {
-    // malformed frontmatter schema — skip
+  } catch (err: any) {
+    console.error(`[Structured Data Error] Malformed JSON-LD in /arthra-blog/${slug}:`, err.message);
   }
 }
 
@@ -82,7 +82,7 @@ const blogPostingEntity: any = {
   "inLanguage": "el"
 };
 
-// Only add dates if present in frontmatter and are valid
+// Only add datePublished if present in frontmatter and valid
 const pubDate = entry.data.pubDate ?? entry.data.date;
 if (pubDate) {
   const dateStr = typeof pubDate === "string"
@@ -92,8 +92,29 @@ if (pubDate) {
       : null;
   if (dateStr) {
     blogPostingEntity.datePublished = dateStr;
-    blogPostingEntity.dateModified = dateStr;
   }
+}
+
+// Only add dateModified if explicitly documented in frontmatter or existing schema
+let explicitModDate: string | null = null;
+const rawMod = (entry.data as any).dateModified ?? (entry.data as any).updatedDate;
+if (rawMod) {
+  explicitModDate = typeof rawMod === "string"
+    ? rawMod
+    : rawMod instanceof Date
+      ? rawMod.toISOString().slice(0, 10)
+      : null;
+}
+if (!explicitModDate && existingSchemaGraph.length > 0) {
+  for (const item of existingSchemaGraph) {
+    if (item.dateModified && typeof item.dateModified === "string") {
+      explicitModDate = item.dateModified;
+      break;
+    }
+  }
+}
+if (explicitModDate) {
+  blogPostingEntity.dateModified = explicitModDate;
 }
 
 // Add image only if a real asset is defined
