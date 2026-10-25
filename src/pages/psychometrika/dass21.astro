@@ -4,12 +4,41 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/UI/Header.astro';
 import Footer from '../../components/UI/Footer.astro';
 import Dass21 from '../../components/Tests/Dass21';
+
+const schemaBundle = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalWebPage",
+      "@id": "https://drgkikas.com/psychometrika/dass21#webpage",
+      "name": "DASS-21 — Κλίμακα Κατάθλιψης, Άγχους & Stress",
+      "description": "Διαδραστικό ερωτηματολόγιο αυτοαναφοράς για την αξιολόγηση συμπτωμάτων κατάθλιψης, άγχους και stress. Δεν υποκαθιστά την κλινική αξιολόγηση.",
+      "url": "https://drgkikas.com/psychometrika/dass21",
+      "inLanguage": "el",
+      "mainEntity": {
+        "@id": "https://drgkikas.com/psychometrika/dass21#application"
+      }
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://drgkikas.com/psychometrika/dass21#application",
+      "name": "DASS-21",
+      "url": "https://drgkikas.com/psychometrika/dass21",
+      "description": "Διαδραστικό ερωτηματολόγιο 21 ερωτήσεων για συμπτώματα κατάθλιψης, άγχους και stress.",
+      "inLanguage": "el",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript"
+    }
+  ]
+});
 ---
 
 <Layout
   title="DASS-21 — Κλίμακα Κατάθλιψης, Άγχους, Stress Τεστ"
   description="Αξιολογήστε τα επίπεδα κατάθλιψης, άγχους και stress με την κλίμακα DASS-21. Άμεσα αποτελέσματα και ερμηνεία στο email σας."
   canonicalURL="https://drgkikas.com/psychometrika/dass21"
+  schema={schemaBundle}
 >
   <Header />
   <main class="min-h-screen bg-slate-50 py-24">
