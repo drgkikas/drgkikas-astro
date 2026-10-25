@@ -86,9 +86,32 @@ const displayDisorders = staticDisorders.map(sd => {
   return collectionEntry ? { id: sd.id, data: collectionEntry.data } : sd;
 });
 
+const canonicalURL = "https://drgkikas.com/en/diataraxes";
+const schemaBundle = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": `${canonicalURL}#webpage`,
+      "url": canonicalURL,
+      "name": "Mental Health Disorders",
+      "description": "Learn about the symptoms and modern therapeutic approaches for depression, anxiety, OCD and other psychiatric conditions.",
+      "inLanguage": "en",
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": displayDisorders.map((dis, idx) => ({
+          "@type": "ListItem",
+          "position": idx + 1,
+          "name": (dis as any).data?.title || (dis as any).title,
+          "url": `https://drgkikas.com/en/diataraxes/${dis.id}`
+        }))
+      }
+    }
+  ]
+});
 ---
 
-<Layout title="Mental Health Disorders | Paschalis Gkikas" description="Learn about the symptoms and modern therapeutic approaches for depression, anxiety, OCD and other psychiatric conditions.">
+<Layout title="Mental Health Disorders | Paschalis Gkikas" description="Learn about the symptoms and modern therapeutic approaches for depression, anxiety, OCD and other psychiatric conditions." canonicalURL={canonicalURL} schema={schemaBundle}>
   <Header />
   <main class="py-24 bg-slate-50 min-h-screen">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">

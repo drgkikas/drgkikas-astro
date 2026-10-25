@@ -5,9 +5,33 @@ import Header from '../../components/UI/Header.astro';
 import Footer from '../../components/UI/Footer.astro';
 
 const disorders = await getCollection('disorders', ({ id }) => !id.startsWith('en/') && !id.startsWith('it/'));
+
+const canonicalURL = "https://drgkikas.com/diataraxes";
+const schemaBundle = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": `${canonicalURL}#webpage`,
+      "url": canonicalURL,
+      "name": "Ψυχιατρικές Διαταραχές",
+      "description": "Μάθετε για τα συμπτώματα και τις σύγχρονες θεραπευτικές προσεγγίσεις για την κατάθλιψη, το άγχος, την OCD και άλλες ψυχιατρικές παθήσεις.",
+      "inLanguage": "el",
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": disorders.map((dis, idx) => ({
+          "@type": "ListItem",
+          "position": idx + 1,
+          "name": dis.data.title,
+          "url": `https://drgkikas.com/diataraxes/${dis.id.toLowerCase()}`
+        }))
+      }
+    }
+  ]
+});
 ---
 
-<Layout title="Ψυχιατρικές Διαταραχές" description="Μάθετε για τα συμπτώματα και τις σύγχρονες θεραπευτικές προσεγγίσεις για την κατάθλιψη, το άγχος, την OCD και άλλες ψυχιατρικές παθήσεις. Έγκυρη ενημέρωση από τον ψυχίατρο Πασχάλη Γκίκα.">
+<Layout title="Ψυχιατρικές Διαταραχές" description="Μάθετε για τα συμπτώματα και τις σύγχρονες θεραπευτικές προσεγγίσεις για την κατάθλιψη, το άγχος, την OCD και άλλες ψυχιατρικές παθήσεις. Έγκυρη ενημέρωση από τον ψυχίατρο Πασχάλη Γκίκα." canonicalURL={canonicalURL} schema={schemaBundle}>
   <Header />
   <main class="py-24 bg-slate-50 min-h-screen">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">

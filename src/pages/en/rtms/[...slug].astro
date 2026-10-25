@@ -26,34 +26,62 @@ const categoryNames = {
   mechanisms: "How it works"
 };
 
+const canonicalURL = `https://drgkikas.com/en/rtms/${cleanSlug}`;
+const isServicePage = cleanSlug === 'core/kostos-kai-diadikasia';
+
+const rtmsGraph: any[] = [
+  {
+    "@type": "MedicalWebPage",
+    "@id": `${canonicalURL}#webpage`,
+    "name": entry.data.title,
+    "description": entry.data.description,
+    "url": canonicalURL,
+    "inLanguage": "en",
+    "mainEntity": { "@id": isServicePage ? `${canonicalURL}#procedure` : `${canonicalURL}#article` },
+    "breadcrumb": { "@id": `${canonicalURL}#breadcrumb` }
+  },
+  {
+    "@type": ["MedicalTherapy", "MedicalProcedure"],
+    "@id": `${canonicalURL}#procedure`,
+    "name": entry.data.title,
+    "description": entry.data.description,
+    "howPerformed": "Repetitive Transcranial Magnetic Stimulation (rTMS)",
+    "bodyLocation": "DLPFC (Dorsolateral Prefrontal Cortex)",
+    "provider": { "@id": "https://drgkikas.com/#physician" }
+  },
+  {
+    "@type": "BreadcrumbList",
+    "@id": `${canonicalURL}#breadcrumb`,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://drgkikas.com/en" },
+      { "@type": "ListItem", "position": 2, "name": "rTMS", "item": "https://drgkikas.com/en/rtms" },
+      { "@type": "ListItem", "position": 3, "name": entry.data.title, "item": canonicalURL }
+    ]
+  }
+];
+
+if (!isServicePage) {
+  rtmsGraph.push({
+    "@type": "Article",
+    "@id": `${canonicalURL}#article`,
+    "headline": entry.data.title,
+    "description": entry.data.description,
+    "url": canonicalURL,
+    "inLanguage": "en",
+    "mainEntityOfPage": { "@id": `${canonicalURL}#webpage` },
+    "author": { "@id": "https://drgkikas.com/#physician" },
+    "publisher": { "@id": "https://drgkikas.com/#clinic" },
+    "about": { "@id": `${canonicalURL}#procedure` }
+  });
+}
+
 const schemaBundle = JSON.stringify({
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "MedicalClinic",
-      "@id": "https://drgkikas.com/#clinic"
-    },
-    {
-      "@type": ["MedicalTherapy", "MedicalProcedure"],
-      "name": entry.data.title,
-      "description": entry.data.description,
-      "howPerformed": "Repetitive Transcranial Magnetic Stimulation (rTMS)",
-      "bodyLocation": "DLPFC (Dorsolateral Prefrontal Cortex)",
-      "provider": { "@id": "https://drgkikas.com/#physician" }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://drgkikas.com/en/" },
-        { "@type": "ListItem", "position": 2, "name": "rTMS", "item": "https://drgkikas.com/en/rtms" },
-        { "@type": "ListItem", "position": 3, "name": entry.data.title, "item": "https://drgkikas.com/en/rtms/" + slug }
-      ]
-    }
-  ]
+  "@graph": rtmsGraph
 });
 ---
 
-<Layout schema={schemaBundle} title={`${entry.data.title} | rTMS`} description={entry.data.description}>
+<Layout schema={schemaBundle} title={`${entry.data.title} | rTMS`} description={entry.data.description} canonicalURL={canonicalURL}>
   <Header />
   
   <div class="pt-24 pb-20 bg-slate-50 min-h-screen">

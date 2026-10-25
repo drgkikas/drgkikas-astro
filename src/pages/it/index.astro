@@ -7,20 +7,21 @@ const schemaBundle = JSON.stringify({
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Physician",
-      "@id": "https://drgkikas.com/it/#physician",
+      "@type": ["Person", "Physician"],
+      "@id": "https://drgkikas.com/#physician",
       "name": "Paschalis Gkikas",
+      "jobTitle": "Psichiatra - Psicoterapeuta",
       "medicalSpecialty": "Psychiatry",
-      "url": "https://drgkikas.com/it/",
+      "url": "https://drgkikas.com/iatros",
       "image": "https://drgkikas.com/images/iatros-profile.png",
-      "telephone": "+302118500016"
+      "telephone": "+302118500016",
+      "worksFor": { "@id": "https://drgkikas.com/#clinic" }
     },
     {
       "@type": "MedicalClinic",
-      "@id": "https://drgkikas.com/it/#clinic",
-      "name": "Smart CNS Center",
-      "image": "https://drgkikas.com/logo.jpg",
-      "url": "https://drgkikas.com/it/",
+      "@id": "https://drgkikas.com/#clinic",
+      "name": "Studio Psichiatrico Privato di Paschalis Gkikas",
+      "url": "https://drgkikas.com",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Via Xenofontos 15A",
@@ -28,19 +29,31 @@ const schemaBundle = JSON.stringify({
         "postalCode": "105 57",
         "addressCountry": "GR"
       },
-      "telephone": "+302118500016"
+      "telephone": "+302118500016",
+      "medicalSpecialty": "Psychiatry"
     },
     {
       "@type": "WebSite",
-      "@id": "https://drgkikas.com/it/#website",
-      "url": "https://drgkikas.com/it/",
-      "name": "Dr. Paschalis Gkikas - Psichiatra"
+      "@id": "https://drgkikas.com/#website",
+      "url": "https://drgkikas.com",
+      "name": "Dr. Paschalis Gkikas - Psichiatra",
+      "publisher": { "@id": "https://drgkikas.com/#physician" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://drgkikas.com/it/#webpage",
+      "url": "https://drgkikas.com/it",
+      "name": "Paschalis Gkikas | Psichiatra ad Atene | rTMS e farmacogenomica",
+      "isPartOf": { "@id": "https://drgkikas.com/#website" },
+      "about": { "@id": "https://drgkikas.com/#physician" },
+      "inLanguage": "it"
     }
   ]
 });
 ---
 
 <Layout schema={schemaBundle} 
+  canonicalURL="https://drgkikas.com/it"
   title="Paschalis Gkikas | Psichiatra ad Atene | rTMS e farmacogenomica" 
   description="Paschalis Gkikas — Psichiatra ad Atene. Servizi specializzati in rTMS, farmacogenomica e psicoterapia presso lo Smart CNS Center."
 >

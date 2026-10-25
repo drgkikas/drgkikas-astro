@@ -15,9 +15,102 @@ const { slug } = Astro.params;
 const entry = await getEntry('blog', slug);
 if (!entry) return Astro.redirect('/404');
 const { Content } = await render(entry);
+
+// Build canonical URL
+const canonicalURL = `https://drgkikas.com/arthra-blog/${slug}`;
+
+// Shared entity references
+const PHYSICIAN_ID = "https://drgkikas.com/#physician";
+const CLINIC_ID = "https://drgkikas.com/#clinic";
+
+// Parse existing frontmatter schema if present
+let existingSchemaGraph: any[] = [];
+if (entry.data.schema) {
+  try {
+    const raw = entry.data.schema.trim();
+    const parsed = JSON.parse(raw);
+    if (Array.isArray(parsed)) {
+      existingSchemaGraph = parsed;
+    } else if (parsed["@graph"]) {
+      existingSchemaGraph = parsed["@graph"];
+    } else if (parsed["@type"]) {
+      existingSchemaGraph = [parsed];
+    }
+  } catch (_) {
+    // malformed frontmatter schema — skip
+  }
+}
+
+// Strip any existing BlogPosting/Article/Organization/Physician from frontmatter to avoid duplicates or misattributions
+const filteredExisting = existingSchemaGraph.filter(
+  (e: any) => !["BlogPosting", "Article", "NewsArticle", "MedicalClinic", "MedicalOrganization", "Organization", "Physician", "Person"].includes(e["@type"])
+);
+
+// Check if a MedicalWebPage exists in frontmatter
+const hasMedicalWebPage = filteredExisting.some((e: any) => e["@type"] === "MedicalWebPage");
+
+// Correct identity on existing entities: ensure publisher/author/provider point to drgkikas.com entities
+const patchedExisting = filteredExisting.map((e: any) => {
+  const item = { ...e };
+  if (item.publisher) {
+    item.publisher = { "@id": CLINIC_ID };
+  }
+  if (item.author) {
+    item.author = { "@id": PHYSICIAN_ID };
+  }
+  if (item.provider) {
+    item.provider = { "@id": PHYSICIAN_ID };
+  }
+  if (item["@type"] === "MedicalWebPage") {
+    item["@id"] = `${canonicalURL}#webpage`;
+    item.url = canonicalURL;
+    item.mainEntity = { "@id": `${canonicalURL}#article` };
+  }
+  return item;
+});
+
+// Build BlogPosting entity from frontmatter data
+const blogPostingEntity: any = {
+  "@type": "BlogPosting",
+  "@id": `${canonicalURL}#article`,
+  "headline": entry.data.title,
+  "description": entry.data.description,
+  "url": canonicalURL,
+  "mainEntityOfPage": { "@id": hasMedicalWebPage ? `${canonicalURL}#webpage` : canonicalURL },
+  "author": { "@id": PHYSICIAN_ID },
+  "publisher": { "@id": CLINIC_ID },
+  "inLanguage": "el"
+};
+
+// Only add dates if present in frontmatter and are valid
+const pubDate = entry.data.pubDate ?? entry.data.date;
+if (pubDate) {
+  const dateStr = typeof pubDate === "string"
+    ? pubDate
+    : pubDate instanceof Date
+      ? pubDate.toISOString().slice(0, 10)
+      : null;
+  if (dateStr) {
+    blogPostingEntity.datePublished = dateStr;
+    blogPostingEntity.dateModified = dateStr;
+  }
+}
+
+// Add image only if a real asset is defined
+if (entry.data.image) {
+  blogPostingEntity.image = `https://drgkikas.com${entry.data.image}`;
+}
+
+const schemaBundle = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    blogPostingEntity,
+    ...patchedExisting
+  ]
+});
 ---
 
-<Layout title={entry.data.title} description={entry.data.description} schema={entry.data.schema}>
+<Layout title={entry.data.title} description={entry.data.description} canonicalURL={canonicalURL} schema={schemaBundle}>
   <Header />
   <main class="pt-24 pb-16 bg-white min-h-screen">
     <article class="max-w-3xl mx-auto px-4 sm:px-6 mt-12 prose prose-lg prose-blue

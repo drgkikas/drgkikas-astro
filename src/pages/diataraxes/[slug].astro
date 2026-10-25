@@ -24,6 +24,7 @@ const canonicalURL = new URL(Astro.url.pathname, 'https://drgkikas.com').href;
 const faqEntities = (entry.data.faqs && entry.data.faqs.length > 0)
   ? [{
       "@type": "FAQPage",
+      "@id": `${canonicalURL}#faq`,
       "mainEntity": entry.data.faqs.map(f => ({
         "@type": "Question",
         "name": f.question,
@@ -36,7 +37,31 @@ const schemaBundle = JSON.stringify({
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "MedicalWebPage",
+      "@id": `${canonicalURL}#webpage`,
+      "name": entry.data.title,
+      "description": entry.data.description,
+      "url": canonicalURL,
+      "inLanguage": "el",
+      "mainEntity": { "@id": `${canonicalURL}#article` },
+      "about": { "@id": `${canonicalURL}#condition` },
+      "breadcrumb": { "@id": `${canonicalURL}#breadcrumb` }
+    },
+    {
+      "@type": "Article",
+      "@id": `${canonicalURL}#article`,
+      "headline": entry.data.title,
+      "description": entry.data.description,
+      "url": canonicalURL,
+      "inLanguage": "el",
+      "mainEntityOfPage": { "@id": `${canonicalURL}#webpage` },
+      "author": { "@id": "https://drgkikas.com/#physician" },
+      "publisher": { "@id": "https://drgkikas.com/#clinic" },
+      "about": { "@id": `${canonicalURL}#condition` }
+    },
+    {
       "@type": "MedicalCondition",
+      "@id": `${canonicalURL}#condition`,
       "name": entry.data.title,
       "description": entry.data.description,
       "associatedAnatomy": {
@@ -53,10 +78,11 @@ const schemaBundle = JSON.stringify({
     },
     {
       "@type": "BreadcrumbList",
+      "@id": `${canonicalURL}#breadcrumb`,
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Αρχική", "item": "https://drgkikas.com/" },
         { "@type": "ListItem", "position": 2, "name": "Διαταραχές", "item": "https://drgkikas.com/diataraxes" },
-        { "@type": "ListItem", "position": 3, "name": entry.data.title, "item": "https://drgkikas.com/diataraxes/" + slug }
+        { "@type": "ListItem", "position": 3, "name": entry.data.title, "item": canonicalURL }
       ]
     },
     ...faqEntities

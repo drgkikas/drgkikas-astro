@@ -84,9 +84,33 @@ const displayDisorders = staticDisorders.map(sd => {
   const collectionEntry = disorders.find(d => d.id === `it/${sd.id}`);
   return collectionEntry ? { id: sd.id, data: collectionEntry.data } : sd;
 });
+
+const canonicalURL = "https://drgkikas.com/it/diataraxes";
+const schemaBundle = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": `${canonicalURL}#webpage`,
+      "url": canonicalURL,
+      "name": "Disturbi psichiatrici",
+      "description": "Scopri i sintomi e i moderni approcci terapeutici per depressione, ansia, OCD e altre condizioni psichiatriche.",
+      "inLanguage": "it",
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": displayDisorders.map((dis, idx) => ({
+          "@type": "ListItem",
+          "position": idx + 1,
+          "name": (dis as any).data?.title || (dis as any).title,
+          "url": `https://drgkikas.com/it/diataraxes/${dis.id}`
+        }))
+      }
+    }
+  ]
+});
 ---
 
-<Layout title="Disturbi psichiatrici | Paschalis Gkikas" description="Scopri i sintomi e i moderni approcci terapeutici per depressione, ansia, OCD e altre condizioni psichiatriche. Informazioni dal dott. Paschalis Gkikas.">
+<Layout title="Disturbi psichiatrici | Paschalis Gkikas" description="Scopri i sintomi e i moderni approcci terapeutici per depressione, ansia, OCD e altre condizioni psichiatriche. Informazioni dal dott. Paschalis Gkikas." canonicalURL={canonicalURL} schema={schemaBundle}>
   <Header />
   <main class="py-24 bg-slate-50 min-h-screen">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">

@@ -1,15 +1,46 @@
-﻿---
+---
 export const prerender = false;
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/UI/Header.astro';
 import Footer from '../../components/UI/Footer.astro';
 import Pcl5 from '../../components/Tests/Pcl5';
+
+const canonicalURL = "https://drgkikas.com/psychometrika/pcl5";
+
+const schemaBundle = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalWebPage",
+      "@id": `${canonicalURL}#webpage`,
+      "name": "PCL-5 — Κλίμακα Μετατραυματικού Στρες (PTSD Test)",
+      "description": "Διαδραστικό ερωτηματολόγιο αυτοαναφοράς για συμπτώματα μετατραυματικού στρες (PCL-5 κατά DSM-5). Δεν υποκαθιστά την κλινική αξιολόγηση από ειδικό.",
+      "url": canonicalURL,
+      "inLanguage": "el",
+      "mainEntity": {
+        "@id": `${canonicalURL}#application`
+      }
+    },
+    {
+      "@type": "WebApplication",
+      "@id": `${canonicalURL}#application`,
+      "name": "PCL-5",
+      "url": canonicalURL,
+      "description": "Διαδραστικό ερωτηματολόγιο αυτοαναφοράς για συμπτώματα PTSD κατά DSM-5.",
+      "inLanguage": "el",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript"
+    }
+  ]
+});
 ---
 
 <Layout
   title="PCL-5 — Κλίμακα Μετατραυματικού Στρες (PTSD Test)"
   description="Αξιολογήστε συμπτώματα μετατραυματικού στρες με το PCL-5 (DSM-5). Άμεσα αποτελέσματα και ερμηνεία στο email σας."
-  canonicalURL="https://drgkikas.com/psychometrika/pcl5"
+  canonicalURL={canonicalURL}
+  schema={schemaBundle}
 >
   <Header />
   <main class="min-h-screen bg-slate-50 py-24">

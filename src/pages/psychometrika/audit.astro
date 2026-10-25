@@ -1,15 +1,46 @@
-﻿---
+---
 export const prerender = false;
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/UI/Header.astro';
 import Footer from '../../components/UI/Footer.astro';
 import Audit from '../../components/Tests/Audit';
+
+const canonicalURL = "https://drgkikas.com/psychometrika/audit";
+
+const schemaBundle = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalWebPage",
+      "@id": `${canonicalURL}#webpage`,
+      "name": "AUDIT — Κλίμακα Χρήσης Αλκοόλ & Εξάρτησης",
+      "description": "Διαδραστικό ερωτηματολόγιο αυτοαναφοράς για την αξιολόγηση της σχέσης με το αλκοόλ (WHO AUDIT). Δεν υποκαθιστά την κλινική αξιολόγηση από ειδικό.",
+      "url": canonicalURL,
+      "inLanguage": "el",
+      "mainEntity": {
+        "@id": `${canonicalURL}#application`
+      }
+    },
+    {
+      "@type": "WebApplication",
+      "@id": `${canonicalURL}#application`,
+      "name": "AUDIT",
+      "url": canonicalURL,
+      "description": "Διαδραστικό ερωτηματολόγιο 10 ερωτήσεων της WHO για την αξιολόγηση χρήσης αλκοόλ.",
+      "inLanguage": "el",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript"
+    }
+  ]
+});
 ---
 
 <Layout
   title="AUDIT — Κλίμακα Χρήσης Αλκοόλ & Εξάρτησης"
   description="Αξιολογήστε τη σχέση σας με το αλκοόλ με το AUDIT (WHO). Άμεσα αποτελέσματα και ερμηνεία στο email σας."
-  canonicalURL="https://drgkikas.com/psychometrika/audit"
+  canonicalURL={canonicalURL}
+  schema={schemaBundle}
 >
   <Header />
   <main class="min-h-screen bg-slate-50 py-24">

@@ -8,19 +8,20 @@ const schemaBundle = JSON.stringify({
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Physician",
+      "@type": ["Person", "Physician"],
       "@id": "https://drgkikas.com/#physician",
       "name": "Πασχάλης Γκίκας",
+      "jobTitle": "Ψυχίατρος - Ψυχοθεραπευτής",
       "medicalSpecialty": "Psychiatry",
-      "url": "https://drgkikas.com",
+      "url": "https://drgkikas.com/iatros",
       "image": "https://drgkikas.com/images/iatros-profile.png",
-      "telephone": "+302118500016"
+      "telephone": "+302118500016",
+      "worksFor": { "@id": "https://drgkikas.com/#clinic" }
     },
     {
       "@type": "MedicalClinic",
       "@id": "https://drgkikas.com/#clinic",
-      "name": "Smart CNS Center",
-      "image": "https://drgkikas.com/logo.jpg",
+      "name": "Ιδιωτικό Ψυχιατρικό Ιατρείο Πασχάλη Γκίκα",
       "url": "https://drgkikas.com",
       "address": {
         "@type": "PostalAddress",
@@ -29,19 +30,32 @@ const schemaBundle = JSON.stringify({
         "postalCode": "105 57",
         "addressCountry": "GR"
       },
-      "telephone": "+302118500016"
+      "telephone": "+302118500016",
+      "medicalSpecialty": "Psychiatry"
     },
     {
       "@type": "WebSite",
       "@id": "https://drgkikas.com/#website",
       "url": "https://drgkikas.com",
-      "name": "Δρ. Πασχάλης Γκίκας - Ψυχίατρος"
+      "name": "Δρ. Πασχάλης Γκίκας - Ψυχίατρος",
+      "publisher": { "@id": "https://drgkikas.com/#physician" },
+      "inLanguage": "el"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://drgkikas.com/#webpage",
+      "url": "https://drgkikas.com",
+      "name": "Πασχάλης Γκίκας | Ψυχίατρος Αθήνα | rTMS & Φαρμακογονιδιωματική",
+      "isPartOf": { "@id": "https://drgkikas.com/#website" },
+      "about": { "@id": "https://drgkikas.com/#physician" },
+      "inLanguage": "el"
     }
   ]
 });
 ---
 
 <Layout schema={schemaBundle} 
+  canonicalURL="https://drgkikas.com"
   title="Πασχάλης Γκίκας | Ψυχίατρος Αθήνα | rTMS & Φαρμακογονιδιωματική" 
   description="Πασχάλης Γκίκας — Ψυχίατρος στην Αθήνα. Εξειδικευμένες υπηρεσίες rTMS, Φαρμακογονιδιωματικής και Ψυχοθεραπείας στο Smart CNS Center."
 >

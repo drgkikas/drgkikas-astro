@@ -9,9 +9,33 @@ const posts = (await getCollection('blog')).sort((a, b) => {
   const dateB = new Date(b.data.pubDate || b.data.date || 0);
   return dateB.getTime() - dateA.getTime();
 });
+
+const canonicalURL = "https://drgkikas.com/arthra-blog";
+const schemaBundle = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": `${canonicalURL}#webpage`,
+      "url": canonicalURL,
+      "name": "Άρθρα Ψυχιατρικής & Εξελίξεις Νευροτροποποίησης (Blog)",
+      "description": "Ενημερωθείτε για τις τελευταίες εξελίξεις στην ψυχιατρική, τη νευροτροποποίηση (rTMS) και τη φαρμακογονιδιωματική μέσα από την επιστημονική αρθρογραφία του Πασχάλη Γκίκα.",
+      "inLanguage": "el",
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": posts.map((post, idx) => ({
+          "@type": "ListItem",
+          "position": idx + 1,
+          "name": post.data.title,
+          "url": `https://drgkikas.com/arthra-blog/${post.id}`
+        }))
+      }
+    }
+  ]
+});
 ---
 
-<Layout title="Άρθρα Ψυχιατρικής & Εξελίξεις Νευροτροποποίησης (Blog)" description="Ενημερωθείτε για τις τελευταίες εξελίξεις στην ψυχιατρική, τη νευροτροποποίηση (rTMS) και τη φαρμακογονιδιωματική μέσα από την επιστημονική αρθρογραφία του Πασχάλη Γκίκα.">
+<Layout title="Άρθρα Ψυχιατρικής & Εξελίξεις Νευροτροποποίησης (Blog)" description="Ενημερωθείτε για τις τελευταίες εξελίξεις στην ψυχιατρική, τη νευροτροποποίηση (rTMS) και τη φαρμακογονιδιωματική μέσα από την επιστημονική αρθρογραφία του Πασχάλη Γκίκα." canonicalURL={canonicalURL} schema={schemaBundle}>
   <Header />
   <main class="py-24 bg-slate-50 min-h-screen">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">

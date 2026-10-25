@@ -79,12 +79,37 @@ const badgeColors: Record<string, string> = {
   'Αλκοόλ': 'bg-rose-100 text-rose-700',
   'Τραύμα · PTSD': 'bg-slate-100 text-slate-700',
 };
+
+const canonicalURL = "https://drgkikas.com/psychometrika";
+const schemaBundle = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": `${canonicalURL}#webpage`,
+      "url": canonicalURL,
+      "name": "Ψυχομετρικά Εργαλεία & Τεστ",
+      "description": "7 επιστημονικά επικυρωμένα ψυχομετρικά ερωτηματολόγια αυτοαξιολόγησης.",
+      "inLanguage": "el",
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": tests.map((t, idx) => ({
+          "@type": "ListItem",
+          "position": idx + 1,
+          "name": `${t.title} — ${t.subtitle}`,
+          "url": `https://drgkikas.com/psychometrika/${t.slug}`
+        }))
+      }
+    }
+  ]
+});
 ---
 
 <Layout
   title="Ψυχομετρικά Εργαλεία & Τεστ"
   description="7 επιστημονικά επικυρωμένα ψυχομετρικά ερωτηματολόγια. Λάβετε τα αποτελέσματά σας αμέσως και ερμηνεία στο email σας."
-  canonicalURL="https://drgkikas.com/psychometrika"
+  canonicalURL={canonicalURL}
+  schema={schemaBundle}
 >
   <Header />
   <main class="min-h-screen bg-slate-50 py-24">

@@ -11,13 +11,26 @@ const schemaBundle = JSON.stringify({
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "MedicalProcedure",
+      "@type": "MedicalWebPage",
+      "@id": `${canonicalURL}#webpage`,
       "name": title,
       "description": description,
-      "url": canonicalURL
+      "url": canonicalURL,
+      "inLanguage": "en",
+      "mainEntity": { "@id": `${canonicalURL}#procedure` },
+      "breadcrumb": { "@id": `${canonicalURL}#breadcrumb` }
+    },
+    {
+      "@type": "MedicalProcedure",
+      "@id": `${canonicalURL}#procedure`,
+      "name": title,
+      "description": description,
+      "url": canonicalURL,
+      "provider": { "@id": "https://drgkikas.com/#physician" }
     },
     {
       "@type": "BreadcrumbList",
+      "@id": `${canonicalURL}#breadcrumb`,
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://drgkikas.com/en" },
         { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://drgkikas.com/en/ypiresies" },
@@ -28,7 +41,7 @@ const schemaBundle = JSON.stringify({
 });
 ---
 
-<Layout title={title} description={description} schema={schemaBundle}>
+<Layout title={title} description={description} canonicalURL={canonicalURL} schema={schemaBundle}>
   <Header />
   <main class="pt-24 pb-16 bg-slate-50 min-h-screen">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

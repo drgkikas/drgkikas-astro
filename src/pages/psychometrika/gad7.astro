@@ -1,15 +1,46 @@
-﻿---
+---
 export const prerender = false;
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/UI/Header.astro';
 import Footer from '../../components/UI/Footer.astro';
 import Gad7 from '../../components/Tests/Gad7';
+
+const canonicalURL = "https://drgkikas.com/psychometrika/gad7";
+
+const schemaBundle = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalWebPage",
+      "@id": `${canonicalURL}#webpage`,
+      "name": "GAD-7 — Κλίμακα Γενικευμένου Άγχους & Τεστ",
+      "description": "Διαδραστικό ερωτηματολόγιο αυτοαναφοράς για την αξιολόγηση συμπτωμάτων άγχους (GAD-7). Δεν υποκαθιστά την κλινική αξιολόγηση από ειδικό.",
+      "url": canonicalURL,
+      "inLanguage": "el",
+      "mainEntity": {
+        "@id": `${canonicalURL}#application`
+      }
+    },
+    {
+      "@type": "WebApplication",
+      "@id": `${canonicalURL}#application`,
+      "name": "GAD-7",
+      "url": canonicalURL,
+      "description": "Διαδραστικό ερωτηματολόγιο 7 ερωτήσεων για συμπτώματα γενικευμένου άγχους.",
+      "inLanguage": "el",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript"
+    }
+  ]
+});
 ---
 
 <Layout
   title="GAD-7 — Κλίμακα Γενικευμένου Άγχους & Τεστ"
   description="Αξιολογήστε τα επίπεδα άγχους με το GAD-7. Άμεσα αποτελέσματα και ερμηνεία στο email σας."
-  canonicalURL="https://drgkikas.com/psychometrika/gad7"
+  canonicalURL={canonicalURL}
+  schema={schemaBundle}
 >
   <Header />
   <main class="min-h-screen bg-slate-50 py-24">

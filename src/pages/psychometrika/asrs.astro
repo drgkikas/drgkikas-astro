@@ -1,15 +1,46 @@
-﻿---
+---
 export const prerender = false;
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/UI/Header.astro';
 import Footer from '../../components/UI/Footer.astro';
 import Asrs from '../../components/Tests/Asrs';
+
+const canonicalURL = "https://drgkikas.com/psychometrika/asrs";
+
+const schemaBundle = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalWebPage",
+      "@id": `${canonicalURL}#webpage`,
+      "name": "ASRS-v1.1 — Κλίμακα ADHD Ενηλίκων (ΔΕΠΥ Test)",
+      "description": "Διαδραστικό ερωτηματολόγιο αυτοαναφοράς για συμπτώματα ADHD στους ενήλικες (WHO ASRS-v1.1). Δεν υποκαθιστά την κλινική αξιολόγηση από ειδικό.",
+      "url": canonicalURL,
+      "inLanguage": "el",
+      "mainEntity": {
+        "@id": `${canonicalURL}#application`
+      }
+    },
+    {
+      "@type": "WebApplication",
+      "@id": `${canonicalURL}#application`,
+      "name": "ASRS-v1.1",
+      "url": canonicalURL,
+      "description": "Διαδραστικό ερωτηματολόγιο αυτοαναφοράς για συμπτώματα ADHD (ΔΕΠΥ) ενηλίκων.",
+      "inLanguage": "el",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript"
+    }
+  ]
+});
 ---
 
 <Layout
   title="ASRS-v1.1 — Κλίμακα ADHD Ενηλίκων (ΔΕΠΥ Test)"
   description="Αξιολογήστε συμπτώματα ADHD στους ενήλικες με το ASRS-v1.1 (WHO). Άμεσα αποτελέσματα και ερμηνεία στο email σας."
-  canonicalURL="https://drgkikas.com/psychometrika/asrs"
+  canonicalURL={canonicalURL}
+  schema={schemaBundle}
 >
   <Header />
   <main class="min-h-screen bg-slate-50 py-24">

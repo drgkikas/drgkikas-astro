@@ -50,9 +50,39 @@ const services = [
     description: "Intervento cognitivo e comportamentale complementare, integrato nei protocolli di neuromodulazione."
   }
 ];
+
+const canonicalURL = "https://drgkikas.com/it/ypiresies";
+
+const schemaBundle = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": `${canonicalURL}#webpage`,
+      "url": canonicalURL,
+      "name": "Servizi Psichiatrici ad Atene | Paschalis Gkikas",
+      "description": "Scoprite la nostra gamma di servizi psichiatrici specializzati ad Atene: dalla neuromodulazione rTMS alla farmacogenomica PGx, fino alla psicoterapia CBT e alla valutazione ADHD.",
+      "inLanguage": "it",
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": services.map((s, index) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "name": s.title,
+          "url": s.id === 'rtms' ? 'https://drgkikas.com/it/rtms' : `https://drgkikas.com/it/ypiresies/${s.id}/`
+        }))
+      }
+    }
+  ]
+});
 ---
 
-<Layout title="Servizi Psichiatrici ad Atene | Paschalis Gkikas" description="Scoprite la nostra gamma di servizi psichiatrici specializzati ad Atene: dalla neuromodulazione rTMS alla farmacogenomica PGx, fino alla psicoterapia CBT e alla valutazione ADHD.">
+<Layout
+  title="Servizi Psichiatrici ad Atene | Paschalis Gkikas"
+  description="Scoprite la nostra gamma di servizi psichiatrici specializzati ad Atene: dalla neuromodulazione rTMS alla farmacogenomica PGx, fino alla psicoterapia CBT e alla valutazione ADHD."
+  canonicalURL={canonicalURL}
+  schema={schemaBundle}
+>
   <Header />
   <main class="py-24 bg-slate-50 min-h-screen">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">

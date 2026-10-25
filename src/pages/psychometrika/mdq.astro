@@ -1,15 +1,46 @@
-﻿---
+---
 export const prerender = false;
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/UI/Header.astro';
 import Footer from '../../components/UI/Footer.astro';
 import Mdq from '../../components/Tests/Mdq';
+
+const canonicalURL = "https://drgkikas.com/psychometrika/mdq";
+
+const schemaBundle = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalWebPage",
+      "@id": `${canonicalURL}#webpage`,
+      "name": "MDQ — Ερωτηματολόγιο Διαταραχής Διάθεσης (Bipolar)",
+      "description": "Διαδραστικό ερωτηματολόγιο αυτοαναφοράς για ενδείξεις διπολικής διαταραχής (MDQ). Δεν υποκαθιστά την κλινική αξιολόγηση από ειδικό.",
+      "url": canonicalURL,
+      "inLanguage": "el",
+      "mainEntity": {
+        "@id": `${canonicalURL}#application`
+      }
+    },
+    {
+      "@type": "WebApplication",
+      "@id": `${canonicalURL}#application`,
+      "name": "MDQ",
+      "url": canonicalURL,
+      "description": "Διαδραστικό ερωτηματολόγιο αυτοαναφοράς για ανίχνευση ενδείξεων διαταραχής διάθεσης.",
+      "inLanguage": "el",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript"
+    }
+  ]
+});
 ---
 
 <Layout
   title="MDQ — Ερωτηματολόγιο Διαταραχής Διάθεσης (Bipolar)"
   description="Ανιχνεύστε ενδείξεις διπολικής διαταραχής με το MDQ. Άμεσα αποτελέσματα και ερμηνεία στο email σας."
-  canonicalURL="https://drgkikas.com/psychometrika/mdq"
+  canonicalURL={canonicalURL}
+  schema={schemaBundle}
 >
   <Header />
   <main class="min-h-screen bg-slate-50 py-24">
