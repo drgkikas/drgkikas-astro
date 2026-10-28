@@ -92,5 +92,5 @@ Quando sono presenti gravi complicanze fisiche, come BMI inferiore a 15, aritmie
 
 ## Servizi e trattamenti correlati
 
-* [Monitoraggio psichiatrico](/it/ypiresies/psychiatriki-parakolouthisi/)
-* [Seduta psichiatrica online](/it/ypiresies/online-synedria/)
+* [Monitoraggio psichiatrico](/it/ypiresies/psychiatriki-parakolouthisi)
+* [Seduta psichiatrica online](/it/ypiresies/online-synedria)

@@ -89,5 +89,5 @@ Quando la dimenticanza interferisce con le responsabilità professionali o quoti
 
 ## Servizi e trattamenti correlati
 
-* [Monitoraggio psichiatrico](/it/ypiresies/psychiatriki-parakolouthisi/)
-* [Seduta psichiatrica online](/it/ypiresies/online-synedria/)
+* [Monitoraggio psichiatrico](/it/ypiresies/psychiatriki-parakolouthisi)
+* [Seduta psichiatrica online](/it/ypiresies/online-synedria)

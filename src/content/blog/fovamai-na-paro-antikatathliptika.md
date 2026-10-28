@@ -247,11 +247,11 @@ schema: |
 ## Δείτε επίσης
 
 *   [Ψυχίατρος στην Αθήνα (Αρχική)](/)
-*   [Ψυχοθεραπεία](/ypiresies/psychotherapeia/)
-*   [rTMS / Νευροτροποποίηση](/rtms/)
-*   [Φαρμακογονιδιωματική (PGx)](/ypiresies/pgx/)
-*   [Διαταραχές ύπνου](/diataraxes/diataraxes-ypnou/)
-*   [Απαντήσεις ψυχικής υγείας (Blog)](/arthra-blog/)
+*   [Ψυχοθεραπεία](/ypiresies/psychotherapeia)
+*   [rTMS / Νευροτροποποίηση](/rtms)
+*   [Φαρμακογονιδιωματική (PGx)](/ypiresies/pgx)
+*   [Διαταραχές ύπνου](/diataraxes/diataraxes-ypnou)
+*   [Απαντήσεις ψυχικής υγείας (Blog)](/arthra-blog)
 
 ---
 

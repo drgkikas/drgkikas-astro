@@ -22,5 +22,10 @@ export const onRequest = defineMiddleware(async (context, next) => {
   response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
   response.headers.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=(), payment=(), usb=()');
 
+  // Edge Caching για Cloudflare CDN (για όλα τα ασφαλή GET requests εκτός /api/)
+  if (context.request.method === 'GET' && !context.url.pathname.startsWith('/api/')) {
+    response.headers.set('Cache-Control', 'public, max-age=0, s-maxage=86400, stale-while-revalidate=604800');
+  }
+
   return response;
 });

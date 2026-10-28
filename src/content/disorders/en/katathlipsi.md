@@ -75,5 +75,5 @@ Depression can be recurrent (ICD-10 F33). Proper follow-up and preventive use of
 ## Related services & treatments
 
 * [rTMS — Neuromodulation](/en/rtms)
-* [Psychiatric follow-up](/en/ypiresies/psychiatriki-parakolouthisi/)
-* [Pharmacogenomics (PGx)](/en/ypiresies/pgx/)
+* [Psychiatric follow-up](/en/ypiresies/psychiatriki-parakolouthisi)
+* [Pharmacogenomics (PGx)](/en/ypiresies/pgx)

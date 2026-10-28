@@ -89,5 +89,5 @@ When forgetfulness affects professional or daily responsibilities, when you repe
 
 ## Related services & treatments
 
-* [Psychiatric follow-up](/en/ypiresies/psychiatriki-parakolouthisi/)
-* [Online psychiatric session](/en/ypiresies/online-synedria/)
+* [Psychiatric follow-up](/en/ypiresies/psychiatriki-parakolouthisi)
+* [Online psychiatric session](/en/ypiresies/online-synedria)

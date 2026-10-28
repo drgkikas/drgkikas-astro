@@ -93,5 +93,5 @@ Sì. Cannabis ad alto contenuto di THC, cocaina, amfetamine e alcol possono indu
 
 ## Servizi e trattamenti correlati
 
-* [Monitoraggio psichiatrico](/it/ypiresies/psychiatriki-parakolouthisi/)
-* [Seduta psichiatrica online](/it/ypiresies/online-synedria/)
+* [Monitoraggio psichiatrico](/it/ypiresies/psychiatriki-parakolouthisi)
+* [Seduta psichiatrica online](/it/ypiresies/online-synedria)

@@ -83,5 +83,5 @@ Symptoms remit when menstrual cycles stop. However, the perimenopausal period â€
 
 ## Related services & treatments
 
-* [Psychiatric follow-up](/en/ypiresies/psychiatriki-parakolouthisi/)
-* [Online psychiatric session](/en/ypiresies/online-synedria/)
+* [Psychiatric follow-up](/en/ypiresies/psychiatriki-parakolouthisi)
+* [Online psychiatric session](/en/ypiresies/online-synedria)

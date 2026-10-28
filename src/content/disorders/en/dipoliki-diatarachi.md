@@ -88,5 +88,5 @@ The genetic contribution is among the strongest in psychiatry. The risk in a fir
 
 ## Related services & treatments
 
-* [Psychiatric follow-up](/en/ypiresies/psychiatriki-parakolouthisi/)
-* [Online psychiatric session](/en/ypiresies/online-synedria/)
+* [Psychiatric follow-up](/en/ypiresies/psychiatriki-parakolouthisi)
+* [Online psychiatric session](/en/ypiresies/online-synedria)

@@ -87,5 +87,5 @@ For classic chronic insomnia, diagnosis is clinical. Polysomnography is mainly i
 
 ## Related services & treatments
 
-* [Psychiatric follow-up](/en/ypiresies/psychiatriki-parakolouthisi/)
-* [Online psychiatric session](/en/ypiresies/online-synedria/)
+* [Psychiatric follow-up](/en/ypiresies/psychiatriki-parakolouthisi)
+* [Online psychiatric session](/en/ypiresies/online-synedria)

@@ -83,5 +83,5 @@ I sintomi regrediscono con la cessazione dei cicli mestruali. Tuttavia, il perio
 
 ## Servizi e trattamenti correlati
 
-* [Monitoraggio psichiatrico](/it/ypiresies/psychiatriki-parakolouthisi/)
-* [Seduta psichiatrica online](/it/ypiresies/online-synedria/)
+* [Monitoraggio psichiatrico](/it/ypiresies/psychiatriki-parakolouthisi)
+* [Seduta psichiatrica online](/it/ypiresies/online-synedria)

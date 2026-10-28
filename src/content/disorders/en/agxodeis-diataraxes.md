@@ -91,6 +91,6 @@ Clinical data show a significant reduction in anxiety symptoms with rTMS, partic
 
 ## Related services & treatments
 
-* [Psychiatric follow-up](/en/ypiresies/psychiatriki-parakolouthisi/)
-* [Psychotherapy](/en/ypiresies/psychotherapeia/)
-* [Online psychiatric session](/en/ypiresies/online-synedria/)
+* [Psychiatric follow-up](/en/ypiresies/psychiatriki-parakolouthisi)
+* [Psychotherapy](/en/ypiresies/psychotherapeia)
+* [Online psychiatric session](/en/ypiresies/online-synedria)

@@ -101,5 +101,5 @@ Emerging research data suggest that neuromodulation with rTMS over the prefronta
 
 ## Related services & treatments
 
-* [Psychiatric follow-up](/en/ypiresies/psychiatriki-parakolouthisi/)
-* [Online psychiatric session](/en/ypiresies/online-synedria/)
+* [Psychiatric follow-up](/en/ypiresies/psychiatriki-parakolouthisi)
+* [Online psychiatric session](/en/ypiresies/online-synedria)

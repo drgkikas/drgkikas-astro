@@ -301,7 +301,7 @@ FDA clearance σημαίνει ότι ο FDA επέτρεψε τη διάθεσ�
 
 ## Σχετικά άρθρα
 
-- [rTMS: Τι είναι και πώς λειτουργεί](/rtms/)
+- [rTMS: Τι είναι και πώς λειτουργεί](/rtms)
 - [rTMS και κατάθλιψη](/rtms/endixeis/katathlipsi)
 - [rTMS στην ανθεκτική κατάθλιψη](/rtms/endixeis/trd)
 - [Κόστος και διαδικασία rTMS](/rtms/core/kostos-kai-diadikasia)

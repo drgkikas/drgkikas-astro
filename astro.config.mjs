@@ -43,6 +43,7 @@ function getRtmsUrls() {
 // https://astro.build/config
 export default defineConfig({
   output: 'server',
+  trailingSlash: 'never',
   site: 'https://drgkikas.com',
   redirects: {
     '/diataraxes/dipoliki-diataraxi': '/diataraxes/dipoliki-diatarachi',

@@ -75,5 +75,5 @@ La depressione può essere ricorrente (ICD-10 F33). Un follow-up adeguato e l’
 ## Servizi e trattamenti correlati
 
 * [rTMS — Neuromodulazione](/it/rtms)
-* [Monitoraggio psichiatrico](/it/ypiresies/psychiatriki-parakolouthisi/)
-* [Farmacogenomica (PGx)](/it/ypiresies/pgx/)
+* [Monitoraggio psichiatrico](/it/ypiresies/psychiatriki-parakolouthisi)
+* [Farmacogenomica (PGx)](/it/ypiresies/pgx)

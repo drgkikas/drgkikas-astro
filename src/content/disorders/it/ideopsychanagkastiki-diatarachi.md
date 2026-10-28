@@ -89,5 +89,5 @@ I dati clinici sono positivi, soprattutto nei casi resistenti. Scopri di più su
 ## Servizi e trattamenti correlati
 
 * [rTMS per l'OCD](/it/rtms/endixeis/ocd)
-* [Monitoraggio psichiatrico](/it/ypiresies/psychiatriki-parakolouthisi/)
-* [Seduta psichiatrica online](/it/ypiresies/online-synedria/)
+* [Monitoraggio psichiatrico](/it/ypiresies/psychiatriki-parakolouthisi)
+* [Seduta psichiatrica online](/it/ypiresies/online-synedria)

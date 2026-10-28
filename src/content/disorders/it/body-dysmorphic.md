@@ -74,5 +74,5 @@ Se riconosci questi pattern in te stesso o in una persona vicina, una valutazion
 
 ## Servizi e trattamenti correlati
 
-* [Psicoterapia](/it/ypiresies/psychotherapeia/)
-* [Monitoraggio psichiatrico](/it/ypiresies/psychiatriki-parakolouthisi/)
+* [Psicoterapia](/it/ypiresies/psychotherapeia)
+* [Monitoraggio psichiatrico](/it/ypiresies/psychiatriki-parakolouthisi)

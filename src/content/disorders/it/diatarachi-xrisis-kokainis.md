@@ -114,5 +114,5 @@ La coesistenza di disturbo bipolare, ADHD o depressione è frequente. Il trattam
 ## Servizi e trattamenti correlati
 
 * [rTMS per la dipendenza da cocaina](/it/rtms/endixeis/kokaini)
-* [Monitoraggio psichiatrico](/it/ypiresies/psychiatriki-parakolouthisi/)
-* [Seduta psichiatrica online](/it/ypiresies/online-synedria/)
+* [Monitoraggio psichiatrico](/it/ypiresies/psychiatriki-parakolouthisi)
+* [Seduta psichiatrica online](/it/ypiresies/online-synedria)

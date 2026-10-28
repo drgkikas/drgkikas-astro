@@ -31,7 +31,7 @@ await build({
     'node:*',
     '__STATIC_CONTENT_MANIFEST',
   ],
-  minify: false,
+  minify: true,
   logLevel: 'info',
 });
 

@@ -89,5 +89,5 @@ Clinical data are positive, particularly for resistant cases. Learn more about [
 ## Related services & treatments
 
 * [rTMS for OCD](/en/rtms/endixeis/ocd)
-* [Psychiatric follow-up](/en/ypiresies/psychiatriki-parakolouthisi/)
-* [Online psychiatric session](/en/ypiresies/online-synedria/)
+* [Psychiatric follow-up](/en/ypiresies/psychiatriki-parakolouthisi)
+* [Online psychiatric session](/en/ypiresies/online-synedria)

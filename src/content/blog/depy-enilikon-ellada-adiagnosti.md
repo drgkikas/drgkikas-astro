@@ -230,12 +230,12 @@ schema: |
 Αν οι δυσκολίες προσοχής και οργάνωσης επηρεάζουν την καθημερινότητά σας, μια εξειδικευμένη ψυχιατρική αξιολόγηση μπορεί να ξεκαθαρίσει την αιτία.
 
 **Σχετικές πηγές:**
-*   [Ο Ψυχίατρος Πασχάλης Γκίκας](/iatros/)
-*   [Αγχώδεις Διαταραχές](/diataraxes/agxodeis-diataraxes/)
-*   [Κατάθλιψη (MDD)](/diataraxes/katathlipsi/)
-*   [Διαταραχές Ύπνου](/diataraxes/diataraxes-ypnou/)
-*   [Φαρμακογονιδιωματική (PGx)](/farmakogonidiomatiki/)
-*   [Επικοινωνία & Ραντεβού](/epikoinonia/)
+*   [Ο Ψυχίατρος Πασχάλης Γκίκας](/iatros)
+*   [Αγχώδεις Διαταραχές](/diataraxes/agxodeis-diataraxes)
+*   [Κατάθλιψη (MDD)](/diataraxes/katathlipsi)
+*   [Διαταραχές Ύπνου](/diataraxes/diataraxes-ypnou)
+*   [Φαρμακογονιδιωματική (PGx)](/farmakogonidiomatiki)
+*   [Επικοινωνία & Ραντεβού](/epikoinonia)
 
 ---
 

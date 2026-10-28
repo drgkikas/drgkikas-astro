@@ -114,5 +114,5 @@ Coexisting bipolar disorder, ADHD or depression is common. Treatment must addres
 ## Related services & treatments
 
 * [rTMS for Cocaine Addiction](/en/rtms/endixeis/kokaini)
-* [Psychiatric follow-up](/en/ypiresies/psychiatriki-parakolouthisi/)
-* [Online psychiatric session](/en/ypiresies/online-synedria/)
+* [Psychiatric follow-up](/en/ypiresies/psychiatriki-parakolouthisi)
+* [Online psychiatric session](/en/ypiresies/online-synedria)
