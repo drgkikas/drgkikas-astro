@@ -47,6 +47,9 @@ export default defineConfig({
   redirects: {
     '/diataraxes/dipoliki-diataraxi': '/diataraxes/dipoliki-diatarachi',
     '/ypiresies/rtms': '/rtms',
+    '/ypiresies/psychotherapy': '/ypiresies/psychotherapeia',
+    '/en/ypiresies/psychotherapy': '/en/ypiresies/psychotherapeia',
+    '/it/ypiresies/psychotherapy': '/it/ypiresies/psychotherapeia',
   },
   adapter: cloudflare({
     imageService: 'passthrough',

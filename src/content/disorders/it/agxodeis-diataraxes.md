@@ -92,5 +92,5 @@ I dati clinici mostrano una riduzione significativa dei sintomi ansiosi con la r
 ## Servizi e trattamenti correlati
 
 * [Monitoraggio psichiatrico](/it/ypiresies/psychiatriki-parakolouthisi/)
-* [Psicoterapia mirata](/it/ypiresies/psychotherapy/)
+* [Psicoterapia](/it/ypiresies/psychotherapeia/)
 * [Seduta psichiatrica online](/it/ypiresies/online-synedria/)

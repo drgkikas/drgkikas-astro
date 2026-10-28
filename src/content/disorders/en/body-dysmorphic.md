@@ -74,5 +74,5 @@ If you recognize these patterns in yourself or someone close to you, timely psyc
 
 ## Related services & treatments
 
-* [Targeted psychotherapy](/en/ypiresies/psychotherapy/)
+* [Psychotherapy](/en/ypiresies/psychotherapeia/)
 * [Psychiatric follow-up](/en/ypiresies/psychiatriki-parakolouthisi/)
