@@ -63,15 +63,15 @@ I disturbi d’ansia non sono “debolezza di carattere” ή “eccessiva sensi
 ## Approccio terapeutico
 
 ### Trattamenti di prima linea
-1. **Farmacoterapia guidata dal genoma (PGx):** SSRI e SNRI rappresentano il cardine farmacologico. In ambulatorio, la scelta del farmaco non avviene per tentativi ed errori — è guidata dall’analisi farmacogenomica per individuare il trattamento più appropriato sin dalla prima seduta.
-2. **Terapia cognitivo-comportamentale (CBT):** Efficacia dimostrata nel GAD, nel disturbo d’ansia sociale e nel disturbo di panico.
+1. **Farmacoterapia guidata dal genoma (PGx):** SSRI e SNRI rappresentano il cardine farmacologico. In ambulatorio, la scelta del farmaco non avviene per tentativi ed errori — è guidata dall’[analisi farmacogenomica (PGx)](/it/ypiresies/pgx) per individuare il trattamento più appropriato sin dalla prima seduta.
+2. **[Terapia cognitivo-comportamentale (CBT)](/it/ypiresies/psychotherapeia):** Efficacia dimostrata nel GAD, nel disturbo d’ansia sociale e nel disturbo di panico.
 
 ### Seconda linea e casi resistenti al trattamento
 Nei pazienti che non rispondono adeguatamente alla farmacoterapia:
 
-* **rTMS (stimolazione magnetica transcranica ripetitiva):** La neuromodulazione con rTMS ha mostrato risultati significativi nei disturbi d’ansia, con targeting della corteccia prefrontale dorsolaterale destra (rDLPFC) per ridurre l’iperattività. È un trattamento approvato, spesso utilizzato nei pazienti nei quali i metodi tradizionali non hanno prodotto i risultati desiderati.
+* **[rTMS (stimolazione magnetica transcranica ripetitiva)](/it/rtms):** La neuromodulazione con rTMS ha mostrato risultati significativi nei disturbi d’ansia, con targeting della corteccia prefrontale dorsolaterale destra (rDLPFC) per ridurre l’iperattività. È un trattamento approvato, spesso utilizzato nei pazienti nei quali i metodi tradizionali non hanno prodotto i risultati desiderati.
 * **tDCS (stimolazione transcranica a corrente diretta):** Neuromodulazione complementare per l’ansia cronica.
-* Revisione dello schema farmacologico sulla base di un’analisi PGx aggiornata.
+* Revisione dello schema farmacologico sulla base di un’analisi [PGx](/it/ypiresies/pgx) aggiornata.
 
 Ogni caso clinico viene trattato come unico. Non esiste un protocollo “di routine” — esistono la storia individuale, il genoma e il piano terapeutico costruito specificamente per la persona.
 
@@ -87,10 +87,12 @@ Sì. Palpitazioni, dispnea e dolore toracico durante un attacco di panico vengon
 Dipende dal tipo e dalla gravità. Di solito la farmacoterapia prosegue per almeno 12 mesi dopo la remissione, mentre la CBT può concludersi in un numero limitato di sedute.
 
 ### La rTMS è efficace per l’ansia?
-I dati clinici mostrano una riduzione significativa dei sintomi ansiosi con la rTMS, soprattutto come parte di un trattamento combinato nei casi resistenti. Il medico valuta caso per caso se rappresenta un’opzione indicata.
+I dati clinici mostrano una riduzione significativa dei sintomi ansiosi con la [neuromodulazione rTMS](/it/rtms), soprattutto come parte di un trattamento combinato nei casi resistenti. Il medico valuta caso per caso se rappresenta un’opzione indicata.
 
 ## Servizi e trattamenti correlati
 
-* [Monitoraggio psichiatrico](/it/ypiresies/psychiatriki-parakolouthisi)
+* [rTMS — Neuromodulazione](/it/rtms)
+* [Farmacogenomica (PGx)](/it/ypiresies/pgx)
 * [Psicoterapia](/it/ypiresies/psychotherapeia)
+* [Monitoraggio psichiatrico](/it/ypiresies/psychiatriki-parakolouthisi)
 * [Seduta psichiatrica online](/it/ypiresies/online-synedria)

@@ -142,7 +142,15 @@ const schemaBundle = JSON.stringify({
                 <a href="/it/ypiresies/psychiatriki-parakolouthisi" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-300 transition-all font-bold text-slate-800">Monitoraggio psichiatrico &rarr;</a>
               </>
             )}
-            {!['adhd-adult'].includes(slug) && (
+            {slug === 'agxodeis-diataraxes' && (
+              <>
+                <a href="/it/rtms" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-300 transition-all font-bold text-slate-800">rTMS — Neuromodulazione &rarr;</a>
+                <a href="/it/ypiresies/pgx" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-300 transition-all font-bold text-slate-800">Farmacogenomica (PGx) &rarr;</a>
+                <a href="/it/ypiresies/psychotherapeia" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-300 transition-all font-bold text-slate-800">Psicoterapia &rarr;</a>
+                <a href="/it/ypiresies/psychiatriki-parakolouthisi" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-300 transition-all font-bold text-slate-800">Monitoraggio psichiatrico &rarr;</a>
+              </>
+            )}
+            {!['adhd-adult', 'agxodeis-diataraxes'].includes(slug) && (
               <>
                 <a href="/it/ypiresies/psychiatriki-parakolouthisi" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-300 transition-all font-bold text-slate-800">Monitoraggio psichiatrico &rarr;</a>
                 <a href="/it/ypiresies/online-synedria" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-300 transition-all font-bold text-slate-800">Sessione psichiatrica online &rarr;</a>
