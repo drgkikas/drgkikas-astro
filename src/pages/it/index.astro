@@ -19,10 +19,13 @@ const schemaBundle = JSON.stringify({
       "worksFor": { "@id": "https://drgkikas.com/#clinic" }
     },
     {
-      "@type": "MedicalClinic",
+      "@type": ["MedicalClinic", "MedicalOrganization", "Organization"],
       "@id": "https://drgkikas.com/#clinic",
       "name": "Studio Psichiatrico Privato di Paschalis Gkikas",
       "url": "https://drgkikas.com",
+      "logo": "https://drgkikas.com/logo.jpg",
+      "image": "https://drgkikas.com/logo.jpg",
+      "priceRange": "€€",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Via Xenofontos 15A",
