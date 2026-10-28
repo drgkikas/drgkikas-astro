@@ -51,6 +51,7 @@ export default defineConfig({
     '/ypiresies/psychotherapy': '/ypiresies/psychotherapeia',
     '/en/ypiresies/psychotherapy': '/en/ypiresies/psychotherapeia',
     '/it/ypiresies/psychotherapy': '/it/ypiresies/psychotherapeia',
+    '/pgx': '/ypiresies/pgx',
   },
   adapter: cloudflare({
     imageService: 'passthrough',
@@ -60,7 +61,7 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
   integrations: [react(), sitemap({
-    filter: (page) => (!page.includes('/pgx/') || page.includes('/ypiresies/pgx')) && !page.includes('/ypiresies/rtms'),
+    filter: (page) => (!page.endsWith('/pgx') || page.endsWith('/ypiresies/pgx')) && !page.includes('/ypiresies/rtms'),
     customPages: getRtmsUrls(),
     serialize(item) {
       // Strip trailing slash so sitemap URLs match canonical link tags
