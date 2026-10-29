@@ -55,7 +55,7 @@ schema: |
       "keywords": "κιρκάδια κατάθλιψη, circadian depression, κιρκάδιος ρυθμός, διαταραχές διάθεσης, κατάθλιψη, διπολική διαταραχή, κινησιογραφία, φωτοθεραπεία, μελατονίνη",
       "citation": [
         "https://doi.org/10.1016/j.neubiorev.2021.02.045",
-        "https://psychiatryonline.org/doi/10.1176/appi.books.9780890427828.index",
+        "https://www.appi.org/products/dsm-library/desk-reference-to-the-diagnostic-criteria-from-(1)",
         "https://findacode.com/icd-11/block-1359329403.html",
         "https://doi.org/10.1111/jsr.12371",
         "https://doi.org/10.1016/j.jad.2011.01.011",
@@ -302,7 +302,7 @@ schema: |
 
 <div class="space-y-2 text-slate-800">
   <p id="ref-1" class="!mb-2 text-base"><span id="ref-1"></span><strong>1.</strong> Carpenter JS, Crouse JJ, Scott EM, Naismith SL, Wilson C, Scott J, et al. Circadian depression: a mood disorder phenotype. Neurosci Biobehav Rev. 2021;126:79-101. <a href="https://doi.org/10.1016/j.neubiorev.2021.02.045" target="_blank" rel="noopener">doi:10.1016/j.neubiorev.2021.02.045</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/33689801/" target="_blank" rel="noopener">PubMed</a></p>
-  <p id="ref-2" class="!mb-2 text-base"><span id="ref-2"></span><strong>2.</strong> American Psychiatric Association. Desk Reference to the Diagnostic Criteria From DSM-5-TR. Washington, DC: American Psychiatric Association Publishing; 2022. <a href="https://psychiatryonline.org/doi/10.1176/appi.books.9780890427828.index" target="_blank" rel="noopener">Σύνδεσμος</a></p>
+  <p id="ref-2" class="!mb-2 text-base"><span id="ref-2"></span><strong>2.</strong> American Psychiatric Association. Desk Reference to the Diagnostic Criteria From DSM-5-TR. Washington, DC: American Psychiatric Association Publishing; 2022. <a href="https://www.appi.org/products/dsm-library/desk-reference-to-the-diagnostic-criteria-from-(1)" target="_blank" rel="noopener">Σύνδεσμος</a></p>
   <p id="ref-3" class="!mb-2 text-base"><span id="ref-3"></span><strong>3.</strong> World Health Organization. ICD-11 for Mortality and Morbidity Statistics (version 2024-01): 7A6 Circadian rhythm sleep-wake disorders. Geneva: WHO. Διαθέσιμο μέσω Find-A-Code. <a href="https://findacode.com/icd-11/block-1359329403.html" target="_blank" rel="noopener">Σύνδεσμος</a></p>
   <p id="ref-4" class="!mb-2 text-base"><span id="ref-4"></span><strong>4.</strong> Borbély AA, Daan S, Wirz-Justice A, Deboer T. The two-process model of sleep regulation: a reappraisal. J Sleep Res. 2016;25(2):131-143. <a href="https://doi.org/10.1111/jsr.12371" target="_blank" rel="noopener">doi:10.1111/jsr.12371</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/26762182/" target="_blank" rel="noopener">PubMed</a></p>
   <p id="ref-5" class="!mb-2 text-base"><span id="ref-5"></span><strong>5.</strong> Baglioni C, Battagliese G, Feige B, Spiegelhalder K, Nissen C, Voderholzer U, et al. Insomnia as a predictor of depression: a meta-analytic evaluation of longitudinal epidemiological studies. J Affect Disord. 2011;135(1-3):10-19. <a href="https://doi.org/10.1016/j.jad.2011.01.011" target="_blank" rel="noopener">doi:10.1016/j.jad.2011.01.011</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/21300408/" target="_blank" rel="noopener">PubMed</a></p>
