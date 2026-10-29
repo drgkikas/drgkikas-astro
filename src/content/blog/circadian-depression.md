@@ -8,7 +8,7 @@ dateModified: 2026-10-29
 author: "Πασχάλης Γκίκας"
 kategoria: "Διαταραχές Διάθεσης & Ύπνου"
 keywords: "κιρκάδια κατάθλιψη, circadian depression, κιρκάδιος ρυθμός, διαταραχές διάθεσης, κατάθλιψη, διπολική διαταραχή, κινησιογραφία, φωτοθεραπεία, μελατονίνη"
-image: "/images/dr-gkikas-portrait.jpg"
+image: "/images/blog/circadian-depression-hero.webp"
 canonical: "https://drgkikas.com/arthra-blog/circadian-depression"
 schema: |
   [
