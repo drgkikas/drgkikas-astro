@@ -1,6 +1,7 @@
 ---
 title: "Complesso di Tersite — Disturbo da dismorfismo corporeo"
 description: "Il disturbo da dismorfismo corporeo (BDD) è una preoccupazione intensa e compulsiva per “difetti” fisici immaginari o minimamente visibili. Scopri come la psichiatria moderna tratta questo disturbo debilitante."
+metaDescription: "Dismorfismo corporeo (BDD): diagnosi e trattamento specialistico dell'ossessione per l'aspetto fisico con psicoterapia CBT e farmacoterapia ad Atene."
 icd10: "F45.2"
 faqs: []
 ---

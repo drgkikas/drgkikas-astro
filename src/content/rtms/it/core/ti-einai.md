@@ -1,6 +1,7 @@
 ---
 title: "Che cosa sono rTMS e iTBS?"
 description: "Scopri che cosa sono rTMS e iTBS, quali sono le principali differenze e come questi trattamenti approvati di neuromodulazione non invasiva vengono applicati nella pratica senza anestesia."
+metaDescription: "Cos'è la rTMS: stimolazione magnetica transcranica ripetitiva non invasiva, principi neurobiologici e differenze sostanziali rispetto all'ECT."
 order: 10
 ---
 

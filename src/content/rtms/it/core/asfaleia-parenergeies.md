@@ -1,6 +1,7 @@
 ---
 title: "Sicurezza ed effetti collaterali — Cosa aspettarsi"
 description: "Una guida dettagliata alla sicurezza della rTMS: effetti collaterali comuni e rari, controindicazioni e confronto con la farmacoterapia. A cura del Dr Paschalis Gkikas, Direttore Medico dello Smart CNS Center."
+metaDescription: "Sicurezza ed effetti collaterali della rTMS: terapia non invasiva senza sedazione. Profilo di tollerabilità, controindicazioni e linee guida."
 order: 20
 ---
 

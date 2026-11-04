@@ -1,6 +1,7 @@
 ---
 title: "Oscillazioni neurali"
 description: "Che cosa sono le oscillazioni neurali — delta, theta, alfa, beta, gamma — e come la rTMS utilizza l’entrainment nella depressione, nell’ansia e nel dolore cronico."
+metaDescription: "rTMS e oscillazioni neurali: sincronizzazione dei ritmi cerebrali theta, alpha e gamma per ripristinare i circuiti nella depressione e nel DOC."
 order: 50
 ---
 

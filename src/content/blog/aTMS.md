@@ -2,6 +2,7 @@
 title: "rTMS σε ημέρες αντί για εβδομάδες; Τι αλλάζει με το accelerated TMS"
 seoTitle: "rTMS σε ημέρες αντί για εβδομάδες; Τι αλλάζει με το accelerated TMS | drGkikas"
 description: "Η νέα FDA clearance της MagVenture για accelerated TMS φέρνει στο προσκήνιο πιο ευέλικτα πρωτόκολλα rTMS για την κατάθλιψη, με περισσότερες συνεδρίες την ημέρα και λιγότερες ημέρες θεραπείας."
+metaDescription: "Επιταχυνόμενο rTMS (aiTBS / SAINT): πολλαπλές συνεδρίες ημερησίως για ταχεία ύφεση της ανθεκτικής κατάθλιψης. Κλινικά δεδομένα και αποτελεσματικότητα."
 pubDate: 2026-05-26
 date: 2026-05-26
 author: "drGkikas"

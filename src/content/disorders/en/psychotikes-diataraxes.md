@@ -1,6 +1,7 @@
 ---
 title: "Psychotic Disorders: Schizophrenia & Psychosis"
 description: "Psychotic disorders, including schizophrenia, can be well-managed conditions with a significant neurobiological footprint. Psychiatrist Paschalis Gkikas provides specialized diagnosis and treatment in Athens."
+metaDescription: "Psychotic disorders and schizophrenia: early recognition, differential diagnosis, modern pharmacotherapy, and psychosocial support in Athens."
 icd10: "F20–F29"
 faqs:
   - question: "Is schizophrenia curable?"

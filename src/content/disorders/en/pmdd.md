@@ -1,6 +1,7 @@
 ---
 title: "PMDD — Premenstrual Dysphoric Disorder"
 description: "PMDD, Premenstrual Dysphoric Disorder. Neurobiology, differential diagnosis and personalized treatment with SSRIs and pharmacogenomics by psychiatrist Paschalis Gkikas."
+metaDescription: "Premenstrual Dysphoric Disorder (PMDD): accurate diagnosis and evidence-based medical treatments for severe premenstrual mood symptoms in Athens."
 icd10: "GA34.41"
 faqs:
   - question: "What is the difference between PMS and PMDD?"

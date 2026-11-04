@@ -1,6 +1,7 @@
 ---
 title: "PMDD — Disturbo disforico premestruale"
 description: "PMDD, disturbo disforico premestruale. Neurobiologia, diagnosi differenziale e trattamento personalizzato con SSRI e farmacogenomica con lo psichiatra Paschalis Gkikas."
+metaDescription: "Disturbo disforico premestruale (PMDD): diagnosi differenziale e opzioni terapeutiche specialistiche per i sintomi emotivi e fisici ad Atene."
 icd10: "GA34.41"
 faqs:
   - question: "Qual è la differenza tra PMS e PMDD?"

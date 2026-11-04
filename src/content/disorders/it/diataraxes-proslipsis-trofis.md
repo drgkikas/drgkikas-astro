@@ -1,6 +1,7 @@
 ---
 title: "Disturbi del comportamento alimentare — anoressia, bulimia"
 description: "Anoressia nervosa, bulimia nervosa e disturbo da alimentazione incontrollata. Base neurobiologica, approccio diagnostico e opzioni terapeutiche moderne con lo psichiatra Paschalis Gkikas ad Atene."
+metaDescription: "Disturbi alimentari (anoressia, bulimia, binge eating): sintomi, valutazione clinica e trattamento psichiatrico integrato ad Atene."
 icd10: "F50"
 faqs:
   - question: "Una persona con anoressia nervosa può avere un peso “normale”?"

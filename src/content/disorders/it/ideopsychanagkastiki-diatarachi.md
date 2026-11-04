@@ -1,6 +1,7 @@
 ---
 title: "Disturbo ossessivo-compulsivo (OCD)"
 description: "Disturbo ossessivo-compulsivo (OCD). Ossessioni, compulsioni, neurobiologia e trattamento moderno con ERP, SSRI e rTMS con lo psichiatra Paschalis Gkikas ad Atene."
+metaDescription: "Disturbo ossessivo-compulsivo (DOC): diagnosi e cura con psicoterapia CBT-ERP, farmacoterapia mirata e protocolli rTMS per casi resistenti ad Atene."
 icd10: "F42"
 faqs:
   - question: "L’OCD è lo stesso disturbo della “personalità ossessivo-compulsiva”?"

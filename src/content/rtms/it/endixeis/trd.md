@@ -1,6 +1,7 @@
 ---
 title: "Depressione resistente al trattamento (TRD)"
 description: "Depressione resistente al trattamento (TRD): quando gli antidepressivi non aiutano in modo sufficiente. La rTMS come opzione terapeutica moderna e clinicamente indicata."
+metaDescription: "rTMS per la depressione resistente (TRD): efficacia clinica, protocolli approvati e meccanismi di neuromodulazione quando i farmaci non bastano."
 order: 20
 ---
 

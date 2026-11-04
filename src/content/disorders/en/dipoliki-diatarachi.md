@@ -1,6 +1,7 @@
 ---
 title: "Bipolar Disorder: Symptoms & Treatment"
 description: "Bipolar disorder type I and type II, cyclothymia. A neurobiological approach, mood stabilizers, pharmacogenomics and rTMS by psychiatrist Paschalis Gkikas in Athens."
+metaDescription: "Bipolar disorder: diagnosis of mania and depression, tailored treatment with mood stabilizers, and long-term psychiatric management in Athens."
 icd10: "F31"
 faqs:
   - question: "How does bipolar disorder differ from depression?"

@@ -1,6 +1,7 @@
 ---
 title: "ADHD negli adulti"
 description: "L’ADHD negli adulti non è mancanza di volontà, ma una condizione del neurosviluppo. Scopri come influisce sulle funzioni esecutive e perché una diagnosi clinica accurata è importante."
+metaDescription: "ADHD negli adulti ad Atene: valutazione clinica con DIVA-5, diagnosi differenziale e percorsi terapeutici personalizzati con il Dr. Paschalis Gkikas."
 icd10: "F90.0"
 faqs:
   - question: "L’ADHD può nascondersi dietro altri sintomi?"

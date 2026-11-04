@@ -1,6 +1,7 @@
 ---
 title: "Alcohol Use Disorder: Dependence & Discontinuation"
 description: "Alcohol Use Disorder, dependence and recovery. Neurobiology, withdrawal syndrome and modern treatment with pharmacogenomics by psychiatrist Paschalis Gkikas in Athens."
+metaDescription: "Alcohol use disorder: safe medical detoxification, relapse prevention, anti-craving medications, and structured psychotherapy in Athens, Greece."
 icd10: "F10"
 faqs:
   - question: "What amount of alcohol is considered “dangerous”?"

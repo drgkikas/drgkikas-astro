@@ -1,6 +1,7 @@
 ---
 title: "Eating Disorders — Anorexia, Bulimia"
 description: "Anorexia nervosa, bulimia nervosa and binge eating disorder. Neurobiological basis, diagnostic approach and modern treatment options by psychiatrist Paschalis Gkikas in Athens."
+metaDescription: "Eating disorders (anorexia, bulimia, binge eating): clinical evaluation, medical risks, and multidisciplinary psychiatric care in Athens, Greece."
 icd10: "F50"
 faqs:
   - question: "Can someone with anorexia nervosa have “normal” weight?"

@@ -1,6 +1,7 @@
 ---
 title: "Thersites Complex — Body Dysmorphic Disorder"
 description: "Body Dysmorphic Disorder (BDD) is an intense, compulsive preoccupation with imagined or minimally visible physical “defects”. Learn how modern psychiatry treats this debilitating disorder."
+metaDescription: "Body Dysmorphic Disorder (BDD): expert diagnosis and specialized treatment for obsessive appearance concerns using CBT and pharmacotherapy in Athens."
 icd10: "F45.2"
 faqs: []
 ---

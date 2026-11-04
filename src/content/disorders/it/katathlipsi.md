@@ -1,6 +1,7 @@
 ---
 title: "Depressione (MDD)"
 description: "Il disturbo depressivo maggiore è una condizione neurobiologica. Scopri le linee moderne di trattamento, dalla farmacologia classica alla neuromodulazione avanzata."
+metaDescription: "Depressione maggiore ad Atene: diagnosi e cure avanzate con farmacoterapia, psicoterapia, test PGx e rTMS per forme resistenti ai farmaci."
 icd10: "F32, F33"
 faqs:
   - question: "Come capisco se ho una depressione “clinica” o semplice tristezza?"

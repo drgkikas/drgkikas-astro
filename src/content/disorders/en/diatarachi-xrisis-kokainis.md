@@ -1,6 +1,7 @@
 ---
 title: "Cocaine and Stimulant Use Disorder"
 description: "Cocaine use is a serious psychiatric disorder with a neurobiological basis. Psychiatrist Paschalis Gkikas provides specialized assessment and treatment in Athens."
+metaDescription: "Cocaine use disorder: psychiatric evaluation, evidence-based psychotherapy, and modern rTMS protocols for craving reduction in Athens, Greece."
 icd10: "F14.1, F14.2"
 faqs:
   - question: "Can someone stop cocaine alone?"

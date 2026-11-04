@@ -1,6 +1,7 @@
 ---
 title: "What are rTMS and iTBS?"
 description: "Learn what rTMS and iTBS are, their main differences, and how these approved non-invasive neuromodulation treatments are applied in practice without anaesthesia."
+metaDescription: "What is rTMS: repetitive Transcranial Magnetic Stimulation explained. Mechanism of action, safety profile, and differences from ECT in Athens."
 order: 10
 ---
 

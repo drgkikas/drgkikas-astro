@@ -1,6 +1,7 @@
 ---
 title: "Manifestazioni psicosomatiche: quando la mente parla attraverso il corpo"
 description: "Le manifestazioni psicosomatiche sono sintomi fisici reali con una causa psicologica. Lo psichiatra Paschalis Gkikas valuta e tratta i disturbi psicosomatici con un approccio integrato ad Atene."
+metaDescription: "Disturbi psicosomatici e somatizzazione: comprendere l'asse cervello-corpo, diagnosi accurata e trattamento integrato dello stress ad Atene."
 icd10: "F45"
 faqs:
   - question: "Se gli esami sono normali, significa che non ho un problema?"

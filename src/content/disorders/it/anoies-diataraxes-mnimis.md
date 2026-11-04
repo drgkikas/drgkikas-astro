@@ -1,6 +1,7 @@
 ---
 title: "Demenza e disturbi della memoria (Alzheimer, MCI)"
 description: "Demenza, malattia di Alzheimer e decadimento cognitivo lieve (MCI): diagnosi, neurobiologia e opzioni terapeutiche moderne con lo psichiatra Paschalis Gkikas ad Atene."
+metaDescription: "Demenza e disturbi della memoria ad Atene: riconoscimento dei sintomi precoci, diagnosi differenziale e supporto terapeutico per il declino cognitivo."
 icd10: "F00–F09"
 faqs:
   - question: "Qual è la differenza tra MCI e Alzheimer?"

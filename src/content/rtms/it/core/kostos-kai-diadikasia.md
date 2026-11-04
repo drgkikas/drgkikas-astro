@@ -1,6 +1,7 @@
 ---
 title: "rTMS: costo e procedura"
 description: "Tutto ciò che è utile sapere prima di iniziare un trattamento rTMS allo Smart CNS Center: durata, sedute, valutazione iniziale e modalità con cui viene definito il costo finale."
+metaDescription: "Costi e procedura rTMS ad Atene: valutazione clinica, mappatura della soglia motoria, piano delle sessioni e trasparenza tariffaria completa."
 order: 30
 ---
 

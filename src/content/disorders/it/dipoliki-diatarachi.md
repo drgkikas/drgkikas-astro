@@ -1,6 +1,7 @@
 ---
 title: "Disturbo bipolare: sintomi e trattamento"
 description: "Disturbo bipolare di tipo I e II, ciclotimia. Approccio neurobiologico, stabilizzatori dell’umore, farmacogenomica e rTMS con lo psichiatra Paschalis Gkikas ad Atene."
+metaDescription: "Disturbo bipolare: diagnosi e cura delle fasi maniacali e depressive con stabilizzatori dell'umore e psicoterapia di supporto ad Atene."
 icd10: "F31"
 faqs:
   - question: "In cosa il disturbo bipolare differisce dalla depressione?"

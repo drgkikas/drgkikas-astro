@@ -1,6 +1,7 @@
 ---
 title: "Obsessive-Compulsive Disorder (OCD)"
 description: "Obsessive-Compulsive Disorder (OCD). Obsessions, compulsions, neurobiology and modern treatment with ERP, SSRIs and rTMS by psychiatrist Paschalis Gkikas in Athens."
+metaDescription: "Obsessive-Compulsive Disorder (OCD): expert diagnosis, ERP psychotherapy, targeted medication, and clinical rTMS for resistant OCD in Athens."
 icd10: "F42"
 faqs:
   - question: "Is OCD the same disorder as “obsessive-compulsive personality”?"

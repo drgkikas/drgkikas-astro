@@ -1,6 +1,7 @@
 ---
 title: "Psychosomatic Manifestations: When the Mind Speaks Through the Body"
 description: "Psychosomatic manifestations are real physical symptoms with psychological causation. Psychiatrist Paschalis Gkikas assesses and treats psychosomatic disorders with an integrated approach in Athens."
+metaDescription: "Psychosomatic symptoms and somatization: understanding the brain-body axis, comprehensive medical evaluation, and integrated therapy in Athens."
 icd10: "F45"
 faqs:
   - question: "If my tests are normal, does that mean I have no problem?"

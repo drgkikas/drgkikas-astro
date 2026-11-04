@@ -1,6 +1,7 @@
 ---
 title: "Disturbi psicotici: schizofrenia e psicosi"
 description: "I disturbi psicotici, inclusa la schizofrenia, possono essere condizioni ben gestibili con una significativa impronta neurobiologica. Lo psichiatra Paschalis Gkikas fornisce diagnosi e trattamento specialistici ad Atene."
+metaDescription: "Disturbi psicotici e schizofrenia: diagnosi precoce, farmacoterapia moderna e percorsi di riabilitazione psicosociale personalizzati ad Atene."
 icd10: "F20–F29"
 faqs:
   - question: "La schizofrenia è guaribile?"

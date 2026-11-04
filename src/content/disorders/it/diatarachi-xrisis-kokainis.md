@@ -1,6 +1,7 @@
 ---
 title: "Disturbo da uso di cocaina e stimolanti"
 description: "L’uso di cocaina rappresenta un grave disturbo psichiatrico con una base neurobiologica. Lo psichiatra Paschalis Gkikas offre valutazione specialistica e trattamento ad Atene."
+metaDescription: "Disturbo da uso di cocaina: approccio psichiatrico integrato con psicoterapia, farmacoterapia e protocolli rTMS per la riduzione del craving ad Atene."
 icd10: "F14.1, F14.2"
 faqs:
   - question: "Una persona può smettere la cocaina da sola?"

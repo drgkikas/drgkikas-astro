@@ -1,6 +1,7 @@
 ---
 title: "Disturbo da uso di alcol: dipendenza e sospensione"
 description: "Disturbo da uso di alcol, dipendenza e recupero. Neurobiologia, sindrome da astinenza e trattamento moderno con farmacogenomica con lo psichiatra Paschalis Gkikas ad Atene."
+metaDescription: "Disturbo da uso di alcol: disintossicazione medica protetta, prevenzione delle ricadute con farmacoterapia mirata e psicoterapia ad Atene."
 icd10: "F10"
 faqs:
   - question: "Quale quantità di alcol è considerata “pericolosa”?"

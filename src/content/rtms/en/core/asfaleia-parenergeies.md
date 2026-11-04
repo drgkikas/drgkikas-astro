@@ -1,6 +1,7 @@
 ---
 title: "Safety & Side Effects — What to Expect"
 description: "A detailed guide to rTMS safety: common and rare side effects, contraindications, and comparison with pharmacotherapy. By Dr Paschalis Gkikas, Medical Director of Smart CNS Center."
+metaDescription: "Safety and side effects of rTMS: non-invasive therapy with high tolerability and no sedation. Common side effects, contraindications, and safety."
 order: 20
 ---
 

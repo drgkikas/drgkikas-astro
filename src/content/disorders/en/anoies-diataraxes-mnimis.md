@@ -1,6 +1,7 @@
 ---
 title: "Dementia & Memory Disorders (Alzheimer’s disease, MCI)"
 description: "Dementia, Alzheimer’s disease and Mild Cognitive Impairment (MCI): diagnosis, neurobiology and modern treatment options by psychiatrist Paschalis Gkikas in Athens."
+metaDescription: "Dementia and memory disorders: early detection, differential diagnosis of Alzheimer's, and comprehensive cognitive care in Athens, Greece."
 icd10: "F00–F09"
 faqs:
   - question: "What is the difference between MCI and Alzheimer’s disease?"
