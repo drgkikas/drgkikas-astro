@@ -34,9 +34,11 @@ const schemaBundle = JSON.stringify({
     }
   ]
 });
+const metaDescription = undefined;
 ---
 
-<Layout title="Άρθρα Ψυχιατρικής & Εξελίξεις Νευροτροποποίησης (Blog)" description="Ενημερωθείτε για τις τελευταίες εξελίξεις στην ψυχιατρική, τη νευροτροποποίηση (rTMS) και τη φαρμακογονιδιωματική μέσα από την επιστημονική αρθρογραφία του Πασχάλη Γκίκα." canonicalURL={canonicalURL} schema={schemaBundle}>
+<Layout
+  metaDescription={metaDescription} title="Άρθρα Ψυχιατρικής & Εξελίξεις Νευροτροποποίησης (Blog)" description="Ενημερωθείτε για τις τελευταίες εξελίξεις στην ψυχιατρική, τη νευροτροποποίηση (rTMS) και τη φαρμακογονιδιωματική μέσα από την επιστημονική αρθρογραφία του Πασχάλη Γκίκα." canonicalURL={canonicalURL} schema={schemaBundle}>
   <Header />
   <main class="py-24 bg-slate-50 min-h-screen">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">

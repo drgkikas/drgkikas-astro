@@ -9,6 +9,7 @@ import CookieConsent from '../components/UI/CookieConsent.astro';
 interface Props {
   title: string;
   description?: string;
+  metaDescription?: string;
   canonicalURL?: string;
   image?: string;
   schema?: string;
@@ -20,6 +21,7 @@ interface Props {
 const { 
   title, 
   description = "Πασχάλης Γκίκας — Ψυχίατρος στην Αθήνα. Εξειδικευμένες υπηρεσίες rTMS, Φαρμακογονιδιωματικής και Ψυχοθεραπείας στο Smart CNS Center.", 
+  metaDescription,
   canonicalURL,
   image = "/images/dr-gkikas-portrait.jpg",
   schema,
@@ -101,7 +103,7 @@ const isMultilingual =
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <link rel="canonical" href={canonical} />
-    <meta name="description" content={description} />
+    <meta name="description" content={metaDescription ?? description} />
     
     {isMultilingual && (
       <>

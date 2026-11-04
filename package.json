@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && node post-build-worker.mjs",
+    "build": "astro build && node post-build-worker.mjs && node scripts/check-meta-descriptions.mjs",
     "preview": "astro preview",
     "astro": "astro",
     "generate-types": "wrangler types"

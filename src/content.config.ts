@@ -5,6 +5,7 @@ import { glob } from 'astro/loaders';
 const pageSchema = z.object({
   title: z.string(),
   description: z.string(),
+  metaDescription: z.string().optional(),
   canonicalURL: z.string().optional(),
   icon: z.string().optional(),
   heroImage: z.string().optional(),
@@ -34,6 +35,7 @@ const blog = defineCollection({
     title: z.string(),
     seoTitle: z.string().optional(),
     description: z.string(),
+    metaDescription: z.string().optional(),
     date: z.date().optional(),
     pubDate: z.date().optional(),
     dateModified: z.date().optional(),
