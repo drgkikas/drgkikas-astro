@@ -13,12 +13,21 @@ export async function getStaticPaths() {
 }
 
 const { slug } = Astro.params;
-const entry = await getEntry('blog', slug);
+const rawSlug = slug || '';
+let entry = await getEntry('blog', rawSlug);
+if (!entry) {
+  try {
+    const decoded = decodeURIComponent(rawSlug).normalize('NFC');
+    if (decoded !== rawSlug) {
+      entry = await getEntry('blog', decoded);
+    }
+  } catch (e) {}
+}
 if (!entry) return Astro.redirect('/404');
 const { Content } = await render(entry);
 
 // Build canonical URL
-const canonicalURL = `https://drgkikas.com/arthra-blog/${slug}`;
+const canonicalURL = `https://drgkikas.com/arthra-blog/${entry.id}`;
 
 // Shared entity references
 const PHYSICIAN_ID = "https://drgkikas.com/#physician";

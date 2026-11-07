@@ -52,6 +52,8 @@ export default defineConfig({
     '/en/ypiresies/psychotherapy': '/en/ypiresies/psychotherapeia',
     '/it/ypiresies/psychotherapy': '/it/ypiresies/psychotherapeia',
     '/pgx': '/ypiresies/pgx',
+    '/arthra-blog/cocaine': '/arthra-blog/κοκαΐνη',
+    '/arthra-blog/κοκαινη': '/arthra-blog/κοκαΐνη',
   },
   adapter: cloudflare({
     imageService: 'passthrough',
