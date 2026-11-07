@@ -42,6 +42,8 @@ const blog = defineCollection({
     updatedDate: z.date().optional(),
     author: z.string().default('Dr. Πασχάλης Γκίκας'),
     image: z.string().optional(),
+    cardImage: z.string().optional(),
+    hideTopImage: z.boolean().optional(),
     kategoria: z.string().optional(),
     keywords: z.string().optional(),
     schema: z.string().optional(),

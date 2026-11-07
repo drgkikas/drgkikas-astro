@@ -151,7 +151,7 @@ const schemaBundle = JSON.stringify({
       prose-h3:mt-12 prose-h3:mb-5
       prose-ul:my-8 prose-li:my-3
       prose-blockquote:border-l-4 prose-blockquote:border-blue-400 prose-blockquote:bg-blue-50/50 prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:rounded-r-xl prose-blockquote:not-italic">
-      {entry.data.image && (
+      {entry.data.image && !entry.data.hideTopImage && (
         <div class="mb-10 rounded-2xl overflow-hidden shadow-lg border border-slate-100 bg-slate-50 flex justify-center">
           <img src={entry.data.image} alt={entry.data.title} class="w-full max-h-[500px] object-contain" />
         </div>
