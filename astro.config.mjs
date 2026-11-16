@@ -54,6 +54,8 @@ export default defineConfig({
     '/pgx': '/ypiresies/pgx',
     '/arthra-blog/cocaine': '/arthra-blog/κοκαΐνη',
     '/arthra-blog/κοκαινη': '/arthra-blog/κοκαΐνη',
+    '/arthra-blog/diadiktyaki-apati-psychologikes-synepeies': '/arthra-blog/διαδικτυακή-απάτη-ψυχολογικές-συνέπειες',
+    '/arthra-blog/διαδικτυακη-απατη-ψυχολογικες-συνεπειες': '/arthra-blog/διαδικτυακή-απάτη-ψυχολογικές-συνέπειες',
   },
   adapter: cloudflare({
     imageService: 'passthrough',
