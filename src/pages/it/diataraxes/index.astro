@@ -10,6 +10,11 @@ const disorders = await getCollection('disorders', ({ id }) => id.startsWith('it
 // Fallback for missing translations in the collection
 const staticDisorders = [
   {
+    id: "trd",
+    title: "Depressione Resistente (TRD)",
+    description: "Cosa fare quando i farmaci antidepressivi non funzionano: opzioni terapeutiche avanzate, rTMS, esketamina, TEC e farmacogenomica."
+  },
+  {
     id: "adhd-adult",
     title: "ADHD negli adulti",
     description: "L’ADHD negli adulti non è mancanza di volontà, ma una condizione del neurosviluppo. Μάθετε πώς επηρεάζει τις εκτελεστικές λειτουργίες."
@@ -83,8 +88,8 @@ const staticDisorders = [
 
 const displayDisorders = staticDisorders.map(sd => {
   const collectionEntry = disorders.find(d => d.id === `it/${sd.id}`);
-  return collectionEntry ? { id: sd.id, data: collectionEntry.data } : sd;
-});
+  return collectionEntry ? { id: sd.id, data: collectionEntry.data, title: collectionEntry.data.title, description: collectionEntry.data.description } : sd;
+}).sort((a, b) => (a.title || a.data?.title || "").localeCompare(b.title || b.data?.title || "", "it"));
 
 const canonicalURL = "https://drgkikas.com/it/diataraxes";
 const schemaBundle = JSON.stringify({

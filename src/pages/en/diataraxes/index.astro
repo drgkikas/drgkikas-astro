@@ -10,6 +10,11 @@ const disorders = await getCollection('disorders', ({ id }) => id.startsWith('en
 // Fallback for missing translations in the collection (until they are all added)
 const staticDisorders = [
   {
+    id: "trd",
+    title: "Treatment-Resistant Depression (TRD)",
+    description: "When antidepressants do not work: diagnostic review, pharmacological augmentation, rTMS, esketamine, and specialized options in Athens."
+  },
+  {
     id: "adhd-adult",
     title: "Adult ADHD",
     description: "Adult ADHD is not a lack of willpower, but a neurodevelopmental condition. Learn how it affects executive functions and why accurate clinical diagnosis matters."
@@ -84,8 +89,8 @@ const staticDisorders = [
 // Merge collection data with static fallback
 const displayDisorders = staticDisorders.map(sd => {
   const collectionEntry = disorders.find(d => d.id === `en/${sd.id}`);
-  return collectionEntry ? { id: sd.id, data: collectionEntry.data } : sd;
-});
+  return collectionEntry ? { id: sd.id, data: collectionEntry.data, title: collectionEntry.data.title, description: collectionEntry.data.description } : sd;
+}).sort((a, b) => (a.title || a.data?.title || "").localeCompare(b.title || b.data?.title || "", "en"));
 
 const canonicalURL = "https://drgkikas.com/en/diataraxes";
 const schemaBundle = JSON.stringify({

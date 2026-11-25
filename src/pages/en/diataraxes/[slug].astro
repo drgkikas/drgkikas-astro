@@ -135,6 +135,14 @@ const schemaBundle = JSON.stringify({
         <div class="mt-20 pt-12 border-t border-slate-100">
           <h2 class="text-2xl font-bold text-slate-900 mb-8">Related Services & Treatments</h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {slug === 'trd' && (
+              <>
+                <a href="/en/rtms/endixeis/trd" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-300 transition-all font-bold text-slate-800">rTMS — Protocol for TRD &rarr;</a>
+                <a href="/en/ypiresies/pgx" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-300 transition-all font-bold text-slate-800">Pharmacogenomics (PGx) &rarr;</a>
+                <a href="/en/ypiresies/psychiatriki-parakolouthisi" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-300 transition-all font-bold text-slate-800">Psychiatric Evaluation & Second Opinion &rarr;</a>
+                <a href="/psychometrika/phq9" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-300 transition-all font-bold text-slate-800">PHQ-9 Depression Test &rarr;</a>
+              </>
+            )}
             {slug === 'adhd-adult' && (
               <>
                 <a href="/en/ypiresies/adhd-evaluation" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-300 transition-all font-bold text-slate-800">Adult ADHD Assessment &rarr;</a>
@@ -150,7 +158,7 @@ const schemaBundle = JSON.stringify({
                 <a href="/en/ypiresies/psychiatriki-parakolouthisi" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-300 transition-all font-bold text-slate-800">Psychiatric Follow-up &rarr;</a>
               </>
             )}
-            {!['adhd-adult', 'agxodeis-diataraxes'].includes(slug) && (
+            {!['adhd-adult', 'agxodeis-diataraxes', 'trd'].includes(slug) && (
               <>
                 <a href="/en/ypiresies/psychiatriki-parakolouthisi" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-300 transition-all font-bold text-slate-800">Psychiatric Follow-up &rarr;</a>
                 <a href="/en/ypiresies/online-synedria" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-300 transition-all font-bold text-slate-800">Online Psychiatric Session &rarr;</a>

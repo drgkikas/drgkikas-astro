@@ -135,6 +135,14 @@ const schemaBundle = JSON.stringify({
         <div class="mt-20 pt-12 border-t border-slate-100">
           <h2 class="text-2xl font-bold text-slate-900 mb-8">Servizi e trattamenti correlati</h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {slug === 'trd' && (
+              <>
+                <a href="/it/rtms/endixeis/trd" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-300 transition-all font-bold text-slate-800">rTMS — Protocollo Depressione Resistente &rarr;</a>
+                <a href="/it/ypiresies/pgx" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-300 transition-all font-bold text-slate-800">Farmacogenomica (PGx) &rarr;</a>
+                <a href="/it/ypiresies/psychiatriki-parakolouthisi" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-300 transition-all font-bold text-slate-800">Monitoraggio psichiatrico e second opinion &rarr;</a>
+                <a href="/psychometrika/phq9" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-300 transition-all font-bold text-slate-800">Test PHQ-9 &rarr;</a>
+              </>
+            )}
             {slug === 'adhd-adult' && (
               <>
                 <a href="/it/ypiresies/adhd-evaluation" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-300 transition-all font-bold text-slate-800">Valutazione ADHD Adulti &rarr;</a>
@@ -150,7 +158,7 @@ const schemaBundle = JSON.stringify({
                 <a href="/it/ypiresies/psychiatriki-parakolouthisi" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-300 transition-all font-bold text-slate-800">Monitoraggio psichiatrico &rarr;</a>
               </>
             )}
-            {!['adhd-adult', 'agxodeis-diataraxes'].includes(slug) && (
+            {!['adhd-adult', 'agxodeis-diataraxes', 'trd'].includes(slug) && (
               <>
                 <a href="/it/ypiresies/psychiatriki-parakolouthisi" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-300 transition-all font-bold text-slate-800">Monitoraggio psichiatrico &rarr;</a>
                 <a href="/it/ypiresies/online-synedria" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-300 transition-all font-bold text-slate-800">Sessione psichiatrica online &rarr;</a>

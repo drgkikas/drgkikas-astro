@@ -139,6 +139,14 @@ const schemaBundle = JSON.stringify({
         <div class="mt-20 pt-12 border-t border-slate-100">
           <h2 class="text-2xl font-bold text-slate-900 mb-8">Σχετικές Υπηρεσίες & Θεραπείες</h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {slug.toLowerCase() === 'trd' && (
+              <>
+                <a href="/rtms/endixeis/trd" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-amber-300 transition-all font-bold text-slate-800">rTMS — Πρωτόκολλο για Ανθεκτική Κατάθλιψη &rarr;</a>
+                <a href="/ypiresies/pgx" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-amber-300 transition-all font-bold text-slate-800">Φαρμακογονιδιωματική (PGx) &rarr;</a>
+                <a href="/ypiresies/psychiatriki-parakolouthisi" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-amber-300 transition-all font-bold text-slate-800">Ψυχιατρική Παρακολούθηση & Επανεκτίμηση &rarr;</a>
+                <a href="/psychometrika/phq9" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-amber-300 transition-all font-bold text-slate-800">Τεστ Αυτοαξιολόγησης PHQ-9 &rarr;</a>
+              </>
+            )}
             {slug.toLowerCase() === 'katathlipsi' && (
               <>
                 <a href="/rtms" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-amber-300 transition-all font-bold text-slate-800">rTMS — Νευροτροποποίηση &rarr;</a>
@@ -173,7 +181,7 @@ const schemaBundle = JSON.stringify({
                 <a href="/ypiresies/psychiatriki-parakolouthisi" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-amber-300 transition-all font-bold text-slate-800">Ψυχιατρική Παρακολούθηση &rarr;</a>
               </>
             )}
-            {!['katathlipsi', 'agxodeis-diataraxes', 'adhd-adult', 'diataraxes-ypnou', 'psychotikes-diataraxes', 'diatarachi-xrisis-alkool', 'diatarachi-xrisis-kokainis', 'body-dysmorphic'].includes(slug.toLowerCase()) && (
+            {!['katathlipsi', 'agxodeis-diataraxes', 'adhd-adult', 'diataraxes-ypnou', 'psychotikes-diataraxes', 'diatarachi-xrisis-alkool', 'diatarachi-xrisis-kokainis', 'body-dysmorphic', 'trd'].includes(slug.toLowerCase()) && (
               <>
                 <a href="/ypiresies/psychiatriki-parakolouthisi" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-amber-300 transition-all font-bold text-slate-800">Ψυχιατρική Παρακολούθηση &rarr;</a>
                 <a href="/ypiresies/online-synedria" class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-amber-300 transition-all font-bold text-slate-800">Online Ψυχιατρική Συνεδρία &rarr;</a>
