@@ -24,9 +24,9 @@ faqs:
 
 ## Τι σημαίνει ανθεκτική κατάθλιψη και πώς ορίζεται;
 
-Ανθεκτική κατάθλιψη ονομάζεται συνήθως η [μείζων καταθλιπτική διαταραχή](/diataraxes/katathlipsi) που δεν βελτιώνεται ικανοποιητικά μετά από τουλάχιστον δύο επαρκείς αντικαταθλιπτικές δοκιμές. Δεν υπάρχει ενιαίος ορισμός· οι οδηγίες CANMAT 2023 χρησιμοποιούν και τον ευρύτερο όρο «δύσκολα θεραπεύσιμη κατάθλιψη» [1].
+Ανθεκτική κατάθλιψη ονομάζεται συνήθως η [μείζων καταθλιπτική διαταραχή](/diataraxes/katathlipsi) που δεν βελτιώνεται ικανοποιητικά μετά από τουλάχιστον δύο επαρκείς αντικαταθλιπτικές δοκιμές. Δεν υπάρχει ενιαίος ορισμός· οι οδηγίες CANMAT 2023 χρησιμοποιούν και τον ευρύτερο όρο «δύσκολα θεραπεύσιμη κατάθλιψη» [[1]](#ref-1).
 
-Δεν είναι «ανίατη» κατάσταση. Σημαίνει ότι η πρώτη γραμμή δεν επαρκεί και χρειάζεται διαφορετικός σχεδιασμός. Στη μελέτη STAR*D, η πιθανότητα ύφεσης μειωνόταν με κάθε επόμενο θεραπευτικό βήμα: 36,8%, 30,6%, 13,7% και 13,0% στα τέσσερα βήματα [2].
+Δεν είναι «ανίατη» κατάσταση. Σημαίνει ότι η πρώτη γραμμή δεν επαρκεί και χρειάζεται διαφορετικός σχεδιασμός. Στη μελέτη STAR*D, η πιθανότητα ύφεσης μειωνόταν με κάθε επόμενο θεραπευτικό βήμα: 36,8%, 30,6%, 13,7% και 13,0% στα τέσσερα βήματα [[2]](#ref-2).
 
 ---
 
@@ -50,7 +50,7 @@ faqs:
 2. **Τη δόση και τη διάρκεια** κάθε προηγούμενης αγωγής.
 3. **Τη συμμόρφωση** στη θεραπεία.
 4. **Τους παράγοντες που διατηρούν τα συμπτώματα:** [ποιότητα ύπνου](/diataraxes/diataraxes-ypnou), κατανάλωση αλκοόλ και ουσίες, χρόνιες στρεσογόνες συνθήκες.
-5. **Τη [φαρμακογονιδιωματική εξέταση (PGx)](/ypiresies/pgx), όταν ενδείκνυται.** Μπορεί να βοηθήσει στην επιλογή και τη δοσολογία φαρμάκων με βάση τον μεταβολισμό τους, αλλά αποτελεί εργαλείο υποστήριξης των θεραπευτικών αποφάσεων και όχι υποκατάστατο της κλινικής κρίσης. Στην Ελλάδα διατίθεται ελληνικό πάνελ (iDNA PGx-CNS) με 24 πολυμορφισμούς σε 13 γονίδια για 28 φάρμακα του κεντρικού νευρικού συστήματος [3].
+5. **Τη [φαρμακογονιδιωματική εξέταση (PGx)](/ypiresies/pgx), όταν ενδείκνυται.** Μπορεί να βοηθήσει στην επιλογή και τη δοσολογία φαρμάκων με βάση τον μεταβολισμό τους, αλλά αποτελεί εργαλείο υποστήριξης των θεραπευτικών αποφάσεων και όχι υποκατάστατο της κλινικής κρίσης. Στην Ελλάδα διατίθεται ελληνικό πάνελ (iDNA PGx-CNS) με 24 πολυμορφισμούς σε 13 γονίδια για 28 φάρμακα του κεντρικού νευρικού συστήματος [[3]](#ref-3).
 
 **Τι να έχετε μαζί σας στο ραντεβού:** λίστα με όλα τα φάρμακα που έχετε πάρει (όνομα, δόση, διάρκεια, αποτέλεσμα, ανεπιθύμητες), προηγούμενες εξετάσεις αίματος και ιστορικό ψυχοθεραπείας.
 
@@ -59,7 +59,7 @@ faqs:
 ## Ποιες είναι οι κύριες επιλογές για ανθεκτική κατάθλιψη;
 
 - **Αλλαγή αντικαταθλιπτικού** σε άλλη φαρμακολογική κατηγορία.
-- **Ενίσχυση της αγωγής** με προσθήκη δεύτερου παράγοντα (π.χ. αριπιπραζόλη ή λίθιο) [1].
+- **Ενίσχυση της αγωγής** με προσθήκη δεύτερου παράγοντα (π.χ. αριπιπραζόλη ή λίθιο) [[1]](#ref-1).
 - **[Ψυχοθεραπεία](/ypiresies/psychotherapeia)** (π.χ. γνωσιακή-συμπεριφορική / CBT), μόνη ή σε συνδυασμό με φάρμακα.
 - **[rTMS (Επαναληπτικός Διακρανιακός Μαγνητικός Ερεθισμός)](/rtms/endixeis/trd)**.
 - **Εσκεταμίνη ή κεταμίνη**.
@@ -75,7 +75,7 @@ faqs:
 - την ανάγκη για γρήγορη ανταπόκριση,
 - τις συνοδές παθήσεις, τις προτιμήσεις και τις πρακτικές δυνατότητες του ασθενούς.
 
-Στις οδηγίες CANMAT, ως ενίσχυση μετά από δύο αποτυχίες η αριπιπραζόλη είναι πρώτης γραμμής, ενώ το λίθιο και η κεταμίνη/εσκεταμίνη είναι δεύτερης γραμμής [1]. Για τη νευροδιέγερση, το [rTMS](/rtms) είναι πρώτης γραμμής για όσους έχουν αποτύχει σε τουλάχιστον ένα αντικαταθλιπτικό και η ΗΣΘ δεύτερης γραμμής, αν και σε ορισμένες επείγουσες περιπτώσεις πρώτης [4].
+Στις οδηγίες CANMAT, ως ενίσχυση μετά από δύο αποτυχίες η αριπιπραζόλη είναι πρώτης γραμμής, ενώ το λίθιο και η κεταμίνη/εσκεταμίνη είναι δεύτερης γραμμής [[1]](#ref-1). Για τη νευροδιέγερση, το [rTMS](/rtms) είναι πρώτης γραμμής για όσους έχουν αποτύχει σε τουλάχιστον ένα αντικαταθλιπτικό και η ΗΣΘ δεύτερης γραμμής, αν και σε ορισμένες επείγουσες περιπτώσεις πρώτης [[4]](#ref-4).
 
 ---
 
@@ -85,14 +85,14 @@ faqs:
 
 Είναι μη επεμβατική μέθοδος: μαγνητικοί παλμοί διεγείρουν συγκεκριμένα κυκλώματα του εγκεφάλου (όπως ο [αριστερός DLPFC](/rtms/pos-leitourgei/dlpfc)) που συμμετέχουν στη ρύθμιση της διάθεσης. Δεν απαιτεί αναισθησία ούτε νοσηλεία και ο ασθενής παραμένει ξύπνιος. Μετά τη συνεδρία μπορεί να συνεχίσει κανονικά τις καθημερινές του δραστηριότητες.
 
-**Η μελέτη της έγκρισης.** Η βασική μελέτη των O’Reardon et al. (2007) ήταν διπλά τυφλή και πολυκεντρική. Συμμετείχαν 301 ασθενείς με μείζονα κατάθλιψη χωρίς φαρμακευτική αγωγή, που δεν είχαν ωφεληθεί από προηγούμενη θεραπεία, και τυχαιοποιήθηκαν σε ενεργό rTMS (155) ή εικονική διέγερση (146) [5]. Η ενεργός θεραπεία υπερείχε της εικονικής στις εβδομάδες 4 και 6 στις κλίμακες MADRS και HDRS, και στη βάση αυτών των δεδομένων ο FDA ενέκρινε το 2008 το πρώτο σύστημα TMS για φαρμακευτικά ανθεκτική κατάθλιψη [5].
+**Η μελέτη της έγκρισης.** Η βασική μελέτη των O’Reardon et al. (2007) ήταν διπλά τυφλή και πολυκεντρική. Συμμετείχαν 301 ασθενείς με μείζονα κατάθλιψη χωρίς φαρμακευτική αγωγή, που δεν είχαν ωφεληθεί από προηγούμενη θεραπεία, και τυχαιοποιήθηκαν σε ενεργό rTMS (155) ή εικονική διέγερση (146) [[5]](#ref-5). Η ενεργός θεραπεία υπερείχε της εικονικής στις εβδομάδες 4 και 6 στις κλίμακες MADRS και HDRS, και στη βάση αυτών των δεδομένων ο FDA ενέκρινε το 2008 το πρώτο σύστημα TMS για φαρμακευτικά ανθεκτική κατάθλιψη [[5]](#ref-5).
 
 **Τι γνωρίζουμε από τις μελέτες:**
-- Σε μετα-ανάλυση τυχαιοποιημένων μελετών, με μονόπλευρο rTMS η ύφεση ήταν 16,0% και η ανταπόκριση 25,1%, έναντι 5,7% και 11,0% με εικονική διέγερση [6].
-- **rTMS και iTBS:** η διαλείπουσα διέγερση Theta Burst (iTBS) διαρκεί μόλις 3 λεπτά ανά συνεδρία έναντι 37,5 λεπτών του κλασικού rTMS 10 Hz. Στη μελέτη THREE-D (*Lancet*), ανταπόκριση και ύφεση ήταν 49% και 32% με iTBS έναντι 47% και 27% με 10 Hz [7].
-- **Επιταχυνόμενο πρωτόκολλο SNT (SAINT):** πρωτόκολλο iTBS υψηλής δόσης με στόχευση βάσει λειτουργικής απεικόνισης του εγκεφάλου, που ολοκληρώνεται σε πέντε ημέρες. Στη διπλά τυφλή μελέτη των Cole et al. (2022) ύφεση πέτυχε το 79% των ασθενών εντός 4 εβδομάδων. Ο FDA το ενέκρινε τον Σεπτέμβριο του 2022. Η μελέτη ήταν μικρή (29 ενήλικες) και χρειάζονται μεγαλύτερες μελέτες [8].
+- Σε μετα-ανάλυση τυχαιοποιημένων μελετών, με μονόπλευρο rTMS η ύφεση ήταν 16,0% και η ανταπόκριση 25,1%, έναντι 5,7% και 11,0% με εικονική διέγερση [[6]](#ref-6).
+- **rTMS και iTBS:** η διαλείπουσα διέγερση Theta Burst (iTBS) διαρκεί μόλις 3 λεπτά ανά συνεδρία έναντι 37,5 λεπτών του κλασικού rTMS 10 Hz. Στη μελέτη THREE-D (*Lancet*), ανταπόκριση και ύφεση ήταν 49% και 32% με iTBS έναντι 47% και 27% με 10 Hz [[7]](#ref-7).
+- **Επιταχυνόμενο πρωτόκολλο SNT (SAINT):** πρωτόκολλο iTBS υψηλής δόσης με στόχευση βάσει λειτουργικής απεικόνισης του εγκεφάλου, που ολοκληρώνεται σε πέντε ημέρες. Στη διπλά τυφλή μελέτη των Cole et al. (2022) ύφεση πέτυχε το 79% των ασθενών εντός 4 εβδομάδων. Ο FDA το ενέκρινε τον Σεπτέμβριο του 2022. Η μελέτη ήταν μικρή (29 ενήλικες) και χρειάζονται μεγαλύτερες μελέτες [[8]](#ref-8).
 - Η ανταπόκριση παρακολουθείται συστηματικά με κλινικές κλίμακες βαρύτητας (όπως το [τεστ PHQ-9](/psychometrika/phq9)) πριν, κατά τη διάρκεια και μετά τη σειρά των συνεδριών.
-- Η συχνότερη ανεπιθύμητη ενέργεια είναι ο ήπιος, παροδικός πονοκέφαλος [7].
+- Η συχνότερη ανεπιθύμητη ενέργεια είναι ο ήπιος, παροδικός πονοκέφαλος [[7]](#ref-7).
 
 → Περισσότερα στην αναλυτική σελίδα μας για το [πρωτόκολλο rTMS στην ανθεκτική κατάθλιψη (TRD)](/rtms/endixeis/trd).
 
@@ -100,7 +100,7 @@ faqs:
 
 ## Πώς συγκρίνονται κεταμίνη και ηλεκτροσπασμοθεραπεία σε αποτελεσματικότητα;
 
-Η πιο σημαντική άμεση σύγκριση είναι η **μελέτη ELEKT-D (*NEJM* 2023)**. Ήταν ανοιχτή μελέτη μη κατωτερότητας σε πέντε κέντρα των ΗΠΑ. Τυχαιοποιήθηκαν 403 ασθενείς και οι 365 έλαβαν θεραπεία. Στο τέλος των τριών εβδομάδων, ανταπόκριση είχε το 55,4% με ενδοφλέβια κεταμίνη και το 41,2% με ΗΣΘ (διαφορά 14,2 ποσοστιαίες μονάδες), και η κεταμίνη κρίθηκε μη κατώτερη [9]. Η ΗΣΘ συνδέθηκε με μυοσκελετικές ανεπιθύμητες ενέργειες και η κεταμίνη με διάσχιση [9].
+Η πιο σημαντική άμεση σύγκριση είναι η **μελέτη ELEKT-D (*NEJM* 2023)**. Ήταν ανοιχτή μελέτη μη κατωτερότητας σε πέντε κέντρα των ΗΠΑ. Τυχαιοποιήθηκαν 403 ασθενείς και οι 365 έλαβαν θεραπεία. Στο τέλος των τριών εβδομάδων, ανταπόκριση είχε το 55,4% με ενδοφλέβια κεταμίνη και το 41,2% με ΗΣΘ (διαφορά 14,2 ποσοστιαίες μονάδες), και η κεταμίνη κρίθηκε μη κατώτερη [[9]](#ref-9). Η ΗΣΘ συνδέθηκε με μυοσκελετικές ανεπιθύμητες ενέργειες και η κεταμίνη με διάσχιση [[9]](#ref-9).
 
 Τα αποτελέσματα αυτά αφορούν ασθενείς με ανθεκτική κατάθλιψη χωρίς ψυχωτικά χαρακτηριστικά και δεν γενικεύονται στην ενδορρινική εσκεταμίνη, που είναι διαφορετικό σκεύασμα με δική του ένδειξη.
 
@@ -111,9 +111,9 @@ faqs:
 | Παράμετρος | Εσκεταμίνη (ενδορρινική) | Κεταμίνη (ενδοφλέβια) |
 |---|---|---|
 | **Πότε εξετάζεται** | Ανθεκτική κατάθλιψη, σε συνδυασμό με αντικαταθλιπτικό από το στόμα | Ανθεκτική κατάθλιψη, ανάλογα με τη διαθεσιμότητα και την ιατρική κρίση |
-| **Στοιχεία** | **ESCAPE-TRD (NEJM 2023):** ύφεση την εβδομάδα 8 σε 27,1% έναντι 17,6% με quetiapine XR. Ανοιχτή μελέτη, χρηματοδότηση Janssen [10] | **ELEKT-D (NEJM 2023):** ανταπόκριση 55,4% έναντι 41,2% με ΗΣΘ, χωρίς ψύχωση [9] |
+| **Στοιχεία** | **ESCAPE-TRD (NEJM 2023):** ύφεση την εβδομάδα 8 σε 27,1% έναντι 17,6% με quetiapine XR. Ανοιχτή μελέτη, χρηματοδότηση Janssen [[10]](#ref-10) | **ELEKT-D (NEJM 2023):** ανταπόκριση 55,4% έναντι 41,2% με ΗΣΘ, χωρίς ψύχωση [[9]](#ref-9) |
 | **Στην πράξη** | Χορήγηση σε εξειδικευμένο χώρο με παρακολούθηση, αρχικά δύο φορές την εβδομάδα | Χορήγηση σε ελεγχόμενο νοσοκομειακό / ιατρικό περιβάλλον |
-| **Ανεπιθύμητες** | Ζάλη, διάσχιση, παροδική αύξηση αρτηριακής πίεσης | Διάσχιση, αιμοδυναμικές μεταβολές [9] |
+| **Ανεπιθύμητες** | Ζάλη, διάσχιση, παροδική αύξηση αρτηριακής πίεσης | Διάσχιση, αιμοδυναμικές μεταβολές [[9]](#ref-9) |
 | **Διατήρηση** | Χρειάζεται συνήθως συνεχής θεραπεία με αραιότερες συνεδρίες | Διαφέρει και απαιτεί εξατομικευμένο σχεδιασμό |
 | **Προσοχή** | Απαιτείται ιατρική αξιολόγηση (αρτηριακή πίεση, ψυχωτικά στοιχεία, ιστορικό χρήσης ουσιών) | Ίδιες προφυλάξεις |
 
@@ -124,11 +124,11 @@ faqs:
 ## Πότε δικαιολογείται η ηλεκτροσπασμοθεραπεία έναντι φαρμάκων;
 
 Η ΗΣΘ (ECT) θεωρείται από τις πιο αποτελεσματικές θεραπείες για σοβαρή ανθεκτική κατάθλιψη. Εξετάζεται ιδιαίτερα όταν:
-- η κατάθλιψη είναι σοβαρή ή συνοδεύεται από ψυχωτικά χαρακτηριστικά ή υψηλό αυτοκτονικό κίνδυνο [11],
+- η κατάθλιψη είναι σοβαρή ή συνοδεύεται από ψυχωτικά χαρακτηριστικά ή υψηλό αυτοκτονικό κίνδυνο [[11]](#ref-11),
 - υπάρχει άμεση ανάγκη για ταχεία ανταπόκριση (π.χ. κατατονία, άρνηση λήψης τροφής και υγρών),
-- άλλες θεραπείες έχουν αποτύχει ή δεν είναι ανεκτές [4].
+- άλλες θεραπείες έχουν αποτύχει ή δεν είναι ανεκτές [[4]](#ref-4).
 
-Γίνεται υπό γενική αναισθησία και μυοχάλαση. Στη μελέτη ELEKT-D, η ανάκληση μνήμης ήταν χαμηλότερη με ΗΣΘ σε σχέση με την κεταμίνη στις τρεις εβδομάδες [9]. Στην Ελλάδα η διαθεσιμότητα της ΗΣΘ είναι δυστυχώς μικρή και αφορά συγκεκριμένα δημόσια νοσοκομεία.
+Γίνεται υπό γενική αναισθησία και μυοχάλαση. Στη μελέτη ELEKT-D, η ανάκληση μνήμης ήταν χαμηλότερη με ΗΣΘ σε σχέση με την κεταμίνη στις τρεις εβδομάδες [[9]](#ref-9). Στην Ελλάδα η διαθεσιμότητα της ΗΣΘ είναι δυστυχώς μικρή και αφορά συγκεκριμένα δημόσια νοσοκομεία.
 
 ---
 
@@ -139,18 +139,18 @@ faqs:
 | **Αναισθησία** | Όχι | Ναι (γενική αναισθησία & μυοχάλαση) |
 | **Νοσηλεία** | Όχι, εξωτερικές συνεδρίες | Εξαρτάται από την περίπτωση (συχνά νοσηλεία) |
 | **Επιστροφή στις δραστηριότητες** | Άμεσα | Μετά την ανάρρωση από την αναισθησία |
-| **Πότε προτιμάται** | Ανθεκτική κατάθλιψη χωρίς άμεσο κίνδυνο ζωής, όταν επιθυμείται μη επεμβατική επιλογή [4] | Σοβαρή κατάθλιψη, ψύχωση, κατατονία, ανάγκη άμεσης ταχείας ανταπόκρισης [4, 11] |
+| **Πότε προτιμάται** | Ανθεκτική κατάθλιψη χωρίς άμεσο κίνδυνο ζωής, όταν επιθυμείται μη επεμβατική επιλογή [[4]](#ref-4) | Σοβαρή κατάθλιψη, ψύχωση, κατατονία, ανάγκη άμεσης ταχείας ανταπόκρισης [[4]](#ref-4), [[11]](#ref-11) |
 
 ---
 
 ## Ποιες μελέτες αναφέρονται περισσότερο για την ανθεκτική κατάθλιψη;
 
-- **STAR*D:** Μεγάλη μελέτη διαδοχικών θεραπευτικών βημάτων. Έδειξε ότι η πιθανότητα ύφεσης μειώνεται με κάθε επόμενο βήμα [2].
-- **O’Reardon 2007:** Η μελέτη βάσει της οποίας εγκρίθηκε το rTMS από τον FDA για πρώτη φορά [5].
-- **THREE-D:** Σύγκριση iTBS και κλασικού rTMS 10 Hz [7].
-- **SNT/SAINT (Cole 2022):** Επιταχυνόμενο πρωτόκολλο iTBS, εγκεκριμένο από τον FDA το 2022 [8].
-- **ELEKT-D:** Ενδοφλέβια κεταμίνη έναντι ΗΣΘ [9].
-- **ESCAPE-TRD:** Εσκεταμίνη έναντι quetiapine XR [10].
+- **STAR*D:** Μεγάλη μελέτη διαδοχικών θεραπευτικών βημάτων. Έδειξε ότι η πιθανότητα ύφεσης μειώνεται με κάθε επόμενο βήμα [[2]](#ref-2).
+- **O’Reardon 2007:** Η μελέτη βάσει της οποίας εγκρίθηκε το rTMS από τον FDA για πρώτη φορά [[5]](#ref-5).
+- **THREE-D:** Σύγκριση iTBS και κλασικού rTMS 10 Hz [[7]](#ref-7).
+- **SNT/SAINT (Cole 2022):** Επιταχυνόμενο πρωτόκολλο iTBS, εγκεκριμένο από τον FDA το 2022 [[8]](#ref-8).
+- **ELEKT-D:** Ενδοφλέβια κεταμίνη έναντι ΗΣΘ [[9]](#ref-9).
+- **ESCAPE-TRD:** Εσκεταμίνη έναντι quetiapine XR [[10]](#ref-10).
 
 Κάθε μελέτη αφορά συγκεκριμένο πληθυσμό και σχεδιασμό, και τα αποτελέσματα δεν μεταφέρονται αυτούσια σε κάθε ασθενή.
 
@@ -158,11 +158,11 @@ faqs:
 
 ## Ποιες υπό μελέτη θεραπείες υπάρχουν;
 
-**Ψιλοκυβίνη.** Η πιο προχωρημένη από τις υπό μελέτη θεραπείες είναι η συνθετική ψιλοκυβίνη COMP360 της Compass Pathways. Στη μελέτη φάσης 3 COMP005, μία εφάπαξ δόση 25 mg οδήγησε σε μεγαλύτερη μείωση της βαρύτητας στην κλίμακα MADRS την εβδομάδα 6 από το εικονικό φάρμακο. Στη δεύτερη μελέτη, COMP006, συμμετείχαν 581 άτομα και δύο δόσεις 25 mg με απόσταση τριών εβδομάδων υπερείχαν της δόσης 1 mg κατά 3,8 μονάδες MADRS την εβδομάδα 6. Τα αποτελέσματα των 26 εβδομάδων, σύμφωνα με την εταιρεία, επιβεβαιώνουν ταχεία έναρξη και διατήρηση του οφέλους [12]. 
+**Ψιλοκυβίνη.** Η πιο προχωρημένη από τις υπό μελέτη θεραπείες είναι η συνθετική ψιλοκυβίνη COMP360 της Compass Pathways. Στη μελέτη φάσης 3 COMP005, μία εφάπαξ δόση 25 mg οδήγησε σε μεγαλύτερη μείωση της βαρύτητας στην κλίμακα MADRS την εβδομάδα 6 από το εικονικό φάρμακο. Στη δεύτερη μελέτη, COMP006, συμμετείχαν 581 άτομα και δύο δόσεις 25 mg με απόσταση τριών εβδομάδων υπερείχαν της δόσης 1 mg κατά 3,8 μονάδες MADRS την εβδομάδα 6. Τα αποτελέσματα των 26 εβδομάδων, σύμφωνα με την εταιρεία, επιβεβαιώνουν ταχεία έναρξη και διατήρηση του οφέλους [[12]](#ref-12). 
 
-*Δεν είναι εγκεκριμένη θεραπεία.* Η αίτηση έγκρισης προς τον FDA ολοκληρώθηκε στις 9 Νοεμβρίου 2026. Τα στοιχεία προέρχονται κυρίως από ανακοινώσεις της χορηγού εταιρείας, και οι ανεπιθύμητες ενέργειες χαρακτηρίστηκαν ήπιες ή μέτριες, με υποχώρηση των περισσότερων εντός 24 ωρών [12]. Επειδή είναι πειραματική θεραπεία, δεν υπάρχει ακόμη καθεστώς έγκρισης.
+*Δεν είναι εγκεκριμένη θεραπεία.* Η αίτηση έγκρισης προς τον FDA ολοκληρώθηκε στις 9 Νοεμβρίου 2026. Τα στοιχεία προέρχονται κυρίως από ανακοινώσεις της χορηγού εταιρείας, και οι ανεπιθύμητες ενέργειες χαρακτηρίστηκαν ήπιες ή μέτριες, με υποχώρηση των περισσότερων εντός 24 ωρών [[12]](#ref-12). Επειδή είναι πειραματική θεραπεία, δεν υπάρχει ακόμη καθεστώς έγκρισης.
 
-**ONE-D (ολόκληρη σειρά rTMS σε μία ημέρα).** Πρωτόκολλο που συγκεντρώνει 20 συνεδρίες iTBS σε μία ημέρα, με φαρμακευτική ενίσχυση της νευροπλαστικότητας εκτός ένδειξης. Οι πρώτες παρατηρήσεις από τον Καναδά και τις ΗΠΑ είναι ελπιδοφόρες, αλλά πρώιμες [13]. Η Clinical TMS Society σημείωσε τον Δεκέμβριο του 2025 ότι τα διαθέσιμα στοιχεία δεν αρκούν για να τεκμηριώσουν αποτελεσματικότητα [14].
+**ONE-D (ολόκληρη σειρά rTMS σε μία ημέρα).** Πρωτόκολλο που συγκεντρώνει 20 συνεδρίες iTBS σε μία ημέρα, με φαρμακευτική ενίσχυση της νευροπλαστικότητας εκτός ένδειξης. Οι πρώτες παρατηρήσεις από τον Καναδά και τις ΗΠΑ είναι ελπιδοφόρες, αλλά πρώιμες [[13]](#ref-13). Η Clinical TMS Society σημείωσε τον Δεκέμβριο του 2025 ότι τα διαθέσιμα στοιχεία δεν αρκούν για να τεκμηριώσουν αποτελεσματικότητα [[14]](#ref-14).
 
 ---
 
@@ -178,7 +178,7 @@ faqs:
 
 ## Ποιες επιλογές υπάρχουν στην Ελλάδα για ανθεκτική κατάθλιψη;
 
-Στην Ελλάδα είναι διαθέσιμες η φαρμακοθεραπεία (αλλαγή, ενίσχυση), η ψυχοθεραπεία και το [rTMS](/rtms). Η εσκεταμίνη (Spravato) κυκλοφορεί στην ελληνική αγορά, με κάτοχο άδειας τη Janssen-Cilag International NV [15]. Για αποζημίωση από τον ΕΟΠΥΥ απαιτείται προέγκριση από επιτροπή φαρμάκων εξωτερικού και υψηλού κόστους [15]. Η ΗΣΘ και η ενδοφλέβια κεταμίνη έχουν δυστυχώς μικρή διαθεσιμότητα και προσφέρονται σε συγκεκριμένα νοσοκομεία.
+Στην Ελλάδα είναι διαθέσιμες η φαρμακοθεραπεία (αλλαγή, ενίσχυση), η ψυχοθεραπεία και το [rTMS](/rtms). Η εσκεταμίνη (Spravato) κυκλοφορεί στην ελληνική αγορά, με κάτοχο άδειας τη Janssen-Cilag International NV [[15]](#ref-15). Για αποζημίωση από τον ΕΟΠΥΥ απαιτείται προέγκριση από επιτροπή φαρμάκων εξωτερικού και υψηλού κόστους [[15]](#ref-15). Η ΗΣΘ και η ενδοφλέβια κεταμίνη έχουν δυστυχώς μικρή διαθεσιμότητα και προσφέρονται σε συγκεκριμένα νοσοκομεία.
 
 Στο **Smart CNS Center** (Ξενοφώντος 15Α, Σύνταγμα, Αθήνα) γίνεται εξειδικευμένη αξιολόγηση ανθεκτικής κατάθλιψης, με rTMS, φαρμακογονιδιωματική (PGx), βελτιστοποίηση φαρμακοθεραπείας και ψυχοθεραπεία. → [Κλείστε ραντεβού](/epikoinonia)
 
@@ -196,7 +196,7 @@ faqs:
 Συνήθως ναι, αλλά η απόφαση ανήκει στον θεράποντα ιατρό.
 
 **Πόσο διαρκεί μια σειρά rTMS;**  
-Το πρωτόκολλο καθορίζεται από τη διαταραχή. Στην κατάθλιψη η σειρά περιλαμβάνει τουλάχιστον 30 συνεδρίες και κάθε συνεδρία διαρκεί 3 ή 19 λεπτά, ανάλογα με το πρωτόκολλο. Με μία συνεδρία την ημέρα, η συνολική διάρκεια είναι τυπικά 6 εβδομάδες. Επειδή το σύστημα MagVenture, που χρησιμοποιούμε στο ιατρείο, έχει έγκριση του FDA για [επιταχυνόμενα πρωτόκολλα](/arthra-blog/aTMS) με 2 έως 10 συνεδρίες την ημέρα, ο συνολικός χρόνος μπορεί να μειωθεί σημαντικά [16]. Η ανταπόκριση μετριέται με κλίμακες βαρύτητας πριν, κατά τη διάρκεια και μετά τη σειρά.
+Το πρωτόκολλο καθορίζεται από τη διαταραχή. Στην κατάθλιψη η σειρά περιλαμβάνει τουλάχιστον 30 συνεδρίες και κάθε συνεδρία διαρκεί 3 ή 19 λεπτά, ανάλογα με το πρωτόκολλο. Με μία συνεδρία την ημέρα, η συνολική διάρκεια είναι τυπικά 6 εβδομάδες. Επειδή το σύστημα MagVenture, που χρησιμοποιούμε στο ιατρείο, έχει έγκριση του FDA για [επιταχυνόμενα πρωτόκολλα](/arthra-blog/aTMS) με 2 έως 10 συνεδρίες την ημέρα, ο συνολικός χρόνος μπορεί να μειωθεί σημαντικά [[16]](#ref-16). Η ανταπόκριση μετριέται με κλίμακες βαρύτητας πριν, κατά τη διάρκεια και μετά τη σειρά.
 
 ---
 
@@ -210,21 +210,23 @@ faqs:
 
 ---
 
-## Πηγές
+## Βιβλιογραφία
 
-1. Lam RW et al. [CANMAT 2023 Update on Clinical Guidelines for Management of Major Depressive Disorder in Adults](https://pmc.ncbi.nlm.nih.gov/articles/PMC11351064/). *Can J Psychiatry* 2024;69(9):641–687.
-2. Rush AJ et al. [Acute and longer-term outcomes in depressed outpatients requiring one or several treatment steps: a STAR*D report](https://pubmed.ncbi.nlm.nih.gov/17074942/). *Am J Psychiatry* 2006;163:1905–17.
-3. Bothos E et al. [Clinical pharmacogenomics in action: design, assessment and implementation of a novel pharmacogenetic panel supporting drug selection for diseases of the central nervous system (iDNA Genomics PGx–CNS)](https://link.springer.com/article/10.1186/s12967-021-02816-3). *J Transl Med* 2021;19:151.
-4. Milev RV et al. [CANMAT 2016 Clinical Guidelines for the Management of Adults with Major Depressive Disorder, Section 4: Neurostimulation Treatments](https://pmc.ncbi.nlm.nih.gov/articles/PMC4994792/). *Can J Psychiatry* 2016;61(9):561–575.
-5. O’Reardon JP et al. [Efficacy and safety of transcranial magnetic stimulation in the acute treatment of major depression: a multisite randomized controlled trial](https://pubmed.ncbi.nlm.nih.gov/17573044/). *Biol Psychiatry* 2007;62:1208–16.
-6. Sehatzadeh S, Daskalakis ZJ, Yap B et al. [Unilateral and bilateral repetitive transcranial magnetic stimulation for treatment-resistant depression: a meta-analysis of randomized controlled trials over 2 decades](https://pmc.ncbi.nlm.nih.gov/articles/PMC6488490/). *J Psychiatry Neurosci* 2019;44(3):151–163.
-7. Blumberger DM et al. [Effectiveness of theta burst versus high-frequency repetitive transcranial magnetic stimulation in patients with depression (THREE-D): a randomised non-inferiority trial](https://pubmed.ncbi.nlm.nih.gov/29726344/). *Lancet* 2018;391:1683–92.
-8. Cole EJ et al. [Stanford Neuromodulation Therapy (SNT): a double-blind randomized controlled trial](https://pubmed.ncbi.nlm.nih.gov/34711062/). *Am J Psychiatry* 2022;179:132–41.
-9. Anand A et al. [Ketamine versus ECT for nonpsychotic treatment-resistant major depression](https://pubmed.ncbi.nlm.nih.gov/37224232/). *N Engl J Med* 2023;388:2315–25.
-10. Reif A et al. [Esketamine nasal spray versus quetiapine for treatment-resistant depression](https://pubmed.ncbi.nlm.nih.gov/37792613/). *N Engl J Med* 2023;389:1298–309.
-11. Ruiz AC et al. [New insights into the mechanisms of electroconvulsive therapy in treatment-resistant depression](https://www.frontiersin.org/articles/10.3389/fpsyt.2025.1614076/full). *Front Psychiatry* 2025;16:1614076.
-12. Compass Pathways. Ανακοινώσεις αποτελεσμάτων COMP005 και COMP006 (2025–2026): [Compass Pathways Successfully Achieves Primary Endpoint in Second Phase 3 Trial Evaluating COMP360 Psilocybin for Treatment-Resistant Depression](https://ir.compasspathways.com/News--Events-/news/news-details/2026/Compass-Pathways-Successfully-Achieves-Primary-Endpoint-in-Second-Phase-3-Trial-Evaluating-COMP360-Psilocybin-for-Treatment-Resistant-Depression/default.aspx) και [Compass Pathways completes FDA application psilocybin therapy prepares launch](https://www.nasdaq.com/articles/compass-pathways-completes-fda-application-psilocybin-therapy-prepares-launch).
-13. Vaughn D et al. [Real-world effectiveness of a single-day regimen for transcranial magnetic stimulation using Optimized, Neuroplasticity-Enhanced techniques in Depression (ONE-D)](https://doi.org/10.1016/j.transm.2025.100200). *Transcranial Magnetic Stimulation* 2025;5:100200.
-14. Clinical TMS Society. [Statement on level of evidence for single-day TMS combined with medications](https://clinicaltmssociety.org/wp-content/uploads/2026/03/Statement-of-concern-regarding-ONE-D-advertising-CTMSS-Nov2025-FINAL_For-EC-approval-1.pdf). Δεκέμβριος 2025.
-15. Γαληνός. [SPRAVATO ρινικό εκνέφωμα, διάλυμα 28 mg (Janssen-Cilag International NV)](https://www.galinos.gr/web/drugs/main/drugs/spravato).
-16. MagVenture. [Έγκριση (clearance) του FDA για επιταχυνόμενα πρωτόκολλα TMS στη μείζονα κατάθλιψη](https://magventure.com/us/magventure-receives-fda-clearance-for-accelerated-tms/), 26 Μαΐου 2026.
+<div class="space-y-2 text-slate-800">
+  <p id="ref-1" class="!mb-2 text-base"><span id="ref-1"></span><strong>1.</strong> Lam RW et al. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11351064/" target="_blank" rel="noopener">CANMAT 2023 Update on Clinical Guidelines for Management of Major Depressive Disorder in Adults</a>. <em>Can J Psychiatry</em> 2024;69(9):641–687.</p>
+  <p id="ref-2" class="!mb-2 text-base"><span id="ref-2"></span><strong>2.</strong> Rush AJ et al. <a href="https://pubmed.ncbi.nlm.nih.gov/17074942/" target="_blank" rel="noopener">Acute and longer-term outcomes in depressed outpatients requiring one or several treatment steps: a STAR*D report</a>. <em>Am J Psychiatry</em> 2006;163:1905–17.</p>
+  <p id="ref-3" class="!mb-2 text-base"><span id="ref-3"></span><strong>3.</strong> Bothos E et al. <a href="https://link.springer.com/article/10.1186/s12967-021-02816-3" target="_blank" rel="noopener">Clinical pharmacogenomics in action: design, assessment and implementation of a novel pharmacogenetic panel supporting drug selection for diseases of the central nervous system (iDNA Genomics PGx–CNS)</a>. <em>J Transl Med</em> 2021;19:151.</p>
+  <p id="ref-4" class="!mb-2 text-base"><span id="ref-4"></span><strong>4.</strong> Milev RV et al. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4994792/" target="_blank" rel="noopener">CANMAT 2016 Clinical Guidelines for the Management of Adults with Major Depressive Disorder, Section 4: Neurostimulation Treatments</a>. <em>Can J Psychiatry</em> 2016;61(9):561–575.</p>
+  <p id="ref-5" class="!mb-2 text-base"><span id="ref-5"></span><strong>5.</strong> O’Reardon JP et al. <a href="https://pubmed.ncbi.nlm.nih.gov/17573044/" target="_blank" rel="noopener">Efficacy and safety of transcranial magnetic stimulation in the acute treatment of major depression: a multisite randomized controlled trial</a>. <em>Biol Psychiatry</em> 2007;62:1208–16.</p>
+  <p id="ref-6" class="!mb-2 text-base"><span id="ref-6"></span><strong>6.</strong> Sehatzadeh S, Daskalakis ZJ, Yap B et al. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6488490/" target="_blank" rel="noopener">Unilateral and bilateral repetitive transcranial magnetic stimulation for treatment-resistant depression: a meta-analysis of randomized controlled trials over 2 decades</a>. <em>J Psychiatry Neurosci</em> 2019;44(3):151–163.</p>
+  <p id="ref-7" class="!mb-2 text-base"><span id="ref-7"></span><strong>7.</strong> Blumberger DM et al. <a href="https://pubmed.ncbi.nlm.nih.gov/29726344/" target="_blank" rel="noopener">Effectiveness of theta burst versus high-frequency repetitive transcranial magnetic stimulation in patients with depression (THREE-D): a randomised non-inferiority trial</a>. <em>Lancet</em> 2018;391:1683–92.</p>
+  <p id="ref-8" class="!mb-2 text-base"><span id="ref-8"></span><strong>8.</strong> Cole EJ et al. <a href="https://pubmed.ncbi.nlm.nih.gov/34711062/" target="_blank" rel="noopener">Stanford Neuromodulation Therapy (SNT): a double-blind randomized controlled trial</a>. <em>Am J Psychiatry</em> 2022;179:132–41.</p>
+  <p id="ref-9" class="!mb-2 text-base"><span id="ref-9"></span><strong>9.</strong> Anand A et al. <a href="https://pubmed.ncbi.nlm.nih.gov/37224232/" target="_blank" rel="noopener">Ketamine versus ECT for nonpsychotic treatment-resistant major depression</a>. <em>N Engl J Med</em> 2023;388:2315–25.</p>
+  <p id="ref-10" class="!mb-2 text-base"><span id="ref-10"></span><strong>10.</strong> Reif A et al. <a href="https://pubmed.ncbi.nlm.nih.gov/37792613/" target="_blank" rel="noopener">Esketamine nasal spray versus quetiapine for treatment-resistant depression</a>. <em>N Engl J Med</em> 2023;389:1298–309.</p>
+  <p id="ref-11" class="!mb-2 text-base"><span id="ref-11"></span><strong>11.</strong> Ruiz AC et al. <a href="https://www.frontiersin.org/articles/10.3389/fpsyt.2025.1614076/full" target="_blank" rel="noopener">New insights into the mechanisms of electroconvulsive therapy in treatment-resistant depression</a>. <em>Front Psychiatry</em> 2025;16:1614076.</p>
+  <p id="ref-12" class="!mb-2 text-base"><span id="ref-12"></span><strong>12.</strong> Compass Pathways. Ανακοινώσεις αποτελεσμάτων COMP005 και COMP006 (2025–2026): <a href="https://ir.compasspathways.com/News--Events-/news/news-details/2026/Compass-Pathways-Successfully-Achieves-Primary-Endpoint-in-Second-Phase-3-Trial-Evaluating-COMP360-Psilocybin-for-Treatment-Resistant-Depression/default.aspx" target="_blank" rel="noopener">τα αποτελέσματα της COMP006</a> και <a href="https://www.nasdaq.com/articles/compass-pathways-completes-fda-application-psilocybin-therapy-prepares-launch" target="_blank" rel="noopener">η ολοκλήρωση της αίτησης προς FDA, Νοέμβριος 2026</a>.</p>
+  <p id="ref-13" class="!mb-2 text-base"><span id="ref-13"></span><strong>13.</strong> Vaughn D et al. <a href="https://doi.org/10.1016/j.transm.2025.100200" target="_blank" rel="noopener">Real-world effectiveness of a single-day regimen for transcranial magnetic stimulation using Optimized, Neuroplasticity-Enhanced techniques in Depression (ONE-D)</a>. <em>Transcranial Magnetic Stimulation</em> 2025;5:100200.</p>
+  <p id="ref-14" class="!mb-2 text-base"><span id="ref-14"></span><strong>14.</strong> Clinical TMS Society. <a href="https://clinicaltmssociety.org/wp-content/uploads/2026/03/Statement-of-concern-regarding-ONE-D-advertising-CTMSS-Nov2025-FINAL_For-EC-approval-1.pdf" target="_blank" rel="noopener">Statement on level of evidence for single-day TMS combined with medications</a>. Δεκέμβριος 2025.</p>
+  <p id="ref-15" class="!mb-2 text-base"><span id="ref-15"></span><strong>15.</strong> Γαληνός. <a href="https://www.galinos.gr/web/drugs/main/drugs/spravato" target="_blank" rel="noopener">SPRAVATO ρινικό εκνέφωμα, διάλυμα 28 mg (Janssen-Cilag International NV)</a>.</p>
+  <p id="ref-16" class="!mb-2 text-base"><span id="ref-16"></span><strong>16.</strong> MagVenture. <a href="https://magventure.com/us/magventure-receives-fda-clearance-for-accelerated-tms/" target="_blank" rel="noopener">Έγκριση (clearance) του FDA για επιταχυνόμενα πρωτόκολλα TMS στη μείζονα κατάθλιψη</a>, 26 Μαΐου 2026.</p>
+</div>
